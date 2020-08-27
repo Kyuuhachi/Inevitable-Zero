@@ -1,13 +1,15 @@
 import kouzou as k
-from kouzou import _
+from kouzou import _, ref
+from collections import defaultdict
 
 zstr = k.iso(
 	lambda a: a.replace("\1", "\n"),
 	lambda b: b.replace("\n", "\1"),
 )@k.enc("cp932")@k.zbytes()
 
-questStruct = k.list(80)@k.struct(
-	_.n@k.u1,
+questStruct = k.while_(lambda x: x.n != 0xFF)@k.struct(
+	ref.n@k.u1,
+	_.n@ref.n,
 
 	k.iso( # I should add a bitstring handler
 		lambda a: {"unk": bool(a&0x20), "side": bool(a&0x10), "chapter": a&0xF},
@@ -22,5 +24,7 @@ questStruct = k.list(80)@k.struct(
 	_.name@k.at(k.u4)@zstr,
 	_.client@k.at(k.u4)@zstr,
 	_.description@k.at(k.u4)@zstr,
-	_.steps@k.at(k.u4)@k.list(32)@k.at(k.u4)@zstr,
+	_.steps@k.at(k.u4)@k.list(k.switch(ref.n,
+		defaultdict(lambda: 32, { 0: 2, 0xFF: 1})
+	))@k.at(k.u4)@zstr,
 )

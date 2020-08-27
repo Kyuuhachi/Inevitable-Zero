@@ -315,6 +315,46 @@ class list(element):
 
 	def __repr__(self): return f"list({self._count!r})"
 
+
+class while_(element):
+	def __init__(self, predicate):
+		self._predicate = predicate
+
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is not None
+		xs = []
+		while True:
+			xs.append(inner.read(ctx))
+			if not self._predicate(xs[-1]):
+				break
+		return xs
+
+	def write(self, ctx, v, inner=None):
+		assert inner is not None
+		for i, val in enumerate(v):
+			inner.write(ctx, val)
+			assert self._predicate(val) == (i != len(v)-1)
+
+	def __repr__(self): return f"while_({self._predicate!r})"
+
+
+class switch(element):
+	def __init__(self, cond, clauses):
+		self._cond = element.one(cond)
+		self._clauses = clauses # These .one are done at runtime
+
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is None
+		return element.one(self._clauses[self._cond.read(ctx)]).read(ctx)
+
+	def write(self, ctx, v, inner=None):
+		assert inner is None
+		# The .read() here is not a typo.
+		return element.one(self._clauses[self._cond.read(ctx)]).write(ctx, v)
+
+	def __repr__(self): return f"switch({self._cond!r}, {self._clauses!r})"
+
+
 class tuple(element):
 	def __init__(self, *items):
 		self._items = [element.one(i) for i in items]
@@ -416,7 +456,7 @@ class lookahead(element):
 		assert inner is not None
 		origpos = ctx.tell()
 		try:
-			return inner.read(ctx)
+			return inner.read(ctx, nil_ok)
 		finally:
 			ctx.seek(origpos)
 
@@ -487,6 +527,7 @@ class WriteContext(Context):
 		super().__init__(file)
 		self._later = dfsqueue()
 		self._last = []
+
 	def write(self, bytes):
 		self.file.write(bytes)
 

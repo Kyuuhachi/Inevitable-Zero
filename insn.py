@@ -71,9 +71,9 @@ class text(k.element):
 
 		while ch := ctx.read(1)[0]:
 			if ch == 0x00: break
-			elif ch == 0x01: tag("line")
-			elif ch == 0x02: tag("wait")
-			elif ch == 0x03: tag("page")
+			elif ch == 0x01: segment.extend(b"\n") # line
+			elif ch == 0x02: segment.extend(b"\r") # wait
+			elif ch == 0x03: segment.extend(b"\f") # page
 			elif ch == 0x05: tag("05")
 			elif ch == 0x06: tag("06")
 			elif ch == 0x07: tag("color", k.u1.read(ctx))
@@ -81,36 +81,6 @@ class text(k.element):
 			elif ch == 0x18: tag("18")
 			elif ch == 0x1F: tag("item", k.u2.read(ctx))
 			elif ch <= 0x1F: raise ValueError("%02X" % ch)
-			elif ch == 0x23:
-				i = 0
-				while ch := ctx.read(1)[0]:
-					if 0x30 <= ch <= 0x39:
-						i = i*10+ch-0x30
-					else:
-						break
-
-				ch = chr(ch)
-				if 0: pass
-				elif ch == "I": tag("icon", i)
-				elif ch == "F": tag("img", i)
-				elif ch == "x": tag("x", i)
-				elif ch == "y": tag("y", i)
-				elif ch == "S": tag("size", i)
-				elif ch == "W": tag("speed", i)
-				elif ch == "i": tag("item", i)
-				elif ch == "R":
-					b = bytearray()
-					while ch := ctx.read(1)[0]:
-						if ch == 0x23: break
-						else: b.append(ch)
-					tag("ruby", (i, b.decode("cp932")))
-				elif ch == "P": tag("P", i) # something with position I think
-				elif ch == "C": tag("color", i)
-				elif ch == "A": tag("A", i)
-				elif ch == "T": tag("T", i)
-				elif ch == "K": tag("K", i)
-				elif 1: tag(ch, i)
-				else: raise ValueError(ch, i)
 			else:
 				segment.append(ch)
 

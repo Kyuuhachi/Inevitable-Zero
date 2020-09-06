@@ -1,6 +1,5 @@
 import kouzou as k
-from kouzou import _, ref
-from util import if_
+from kouzou import _
 import decompile
 
 scenaprefix = "0atcrme"
@@ -62,7 +61,8 @@ class text(k.element):
 				segment.clear()
 			elements.append(a)
 
-		while ch := ctx.read(1)[0]:
+		read = ctx.file.read # This saves several seconds
+		while ch := read(1)[0]:
 			if ch == 0x00: break
 			elif ch == 0x01: tag("line")#segment.extend(b"\n") # line
 			elif ch == 0x02: tag("wait")#segment.extend(b"\r") # wait
@@ -94,7 +94,7 @@ class text(k.element):
 				elif v[0] == "color": ctx.write(b"\x07"); k.u1.write(ctx, v[1])
 				elif v[0] == "0x09": ctx.write(b"\x09")
 				elif v[0] == "0x18": ctx.write(b"\x18")
-				elif v[0] == "item": ctx.write(b"\x18"); k.u2.write(ctx, v[1])
+				elif v[0] == "item": ctx.write(b"\x1F"); k.u2.write(ctx, v[1])
 				else: raise ValueError(v)
 			else:
 				ctx.write(v.encode("cp932"))
@@ -111,15 +111,13 @@ CHAR = "CHAR"|k.iso(Char, int)@k.u2
 class Function(int): pass
 FUNCTION = "FUNCTION"|k.iso(Function, int)@k.u2
 
-class Addr(int): pass
 class ADDR(k.element):
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is not None
-		return Addr(inner.read(ctx))
+		return inner.read(ctx)
 
 	def write(self, ctx, v, inner=None):
 		assert inner is not None
-		assert isinstance(v, k.ref), v
 		(v@inner).write(ctx, None)
 
 	def size(self, inner):
@@ -213,7 +211,7 @@ class script(k.element):
 
 			if self._loop:
 				(k.const(Insn("FORK_LOOP_ITER"))@script.single).read(ctx, True)
-				(k.const(Insn("GOTO", Addr(start)))@script.single).read(ctx, True)
+				(k.const(Insn("GOTO", start))@script.single).read(ctx, True)
 			else:
 				(0@k.u1).read(ctx, True)
 			return scr
@@ -233,7 +231,7 @@ class script(k.element):
 
 			if self._loop:
 				(k.const(Insn("FORK_LOOP_ITER"))@script.single).write(ctx, None)
-				(k.const(Insn("GOTO", Addr(start)))@script.single).write(ctx, None)
+				(k.const(Insn("GOTO", start))@script.single).write(ctx, None)
 			else:
 				(0@k.u1).write(ctx, None)
 
@@ -329,7 +327,7 @@ class battle(k.element):
 		def write(self, ctx, v, inner=None):
 			assert inner is not None
 			probs = [p for p, _ in v]
-			assert len(probs) < 4, probs
+			assert len(probs) <= 4, probs
 			assert 0 not in probs, probs
 			while len(probs) < 4: probs.append(0)
 			ctx.write(bytes(probs))

@@ -1,6 +1,5 @@
 import kouzou as k
 from kouzou import _, ref
-from util import if_
 import insn
 
 ###
@@ -32,14 +31,13 @@ class extra(k.element):
 
 	def write(self, ctx, v, inner=None):
 		assert inner is not None
-		if v is None:
+		if v is not None:
 			pos = ctx.tell()
+			inner.write(ctx, v)
 			@ctx.later
 			def ensure_extra():
 				assert ctx.scope["func_start"] != pos
 			ensure_extra.__qualname__ = repr(self@inner)
-		else:
-			inner.write(ctx, v)
 
 	def __repr__(self):
 		return "extra"
@@ -112,7 +110,7 @@ scenaStruct = k.struct(
 	_.triggers@k.at(ref.trigger_start)@k.list(ref.trigger_count)@k.struct(
 		_.pos@k.tuple(k.f4, k.f4, k.f4),
 		_.range@k.f4,
-		_._@k.numpy((4, 4), "f4"),
+		_._@k.list(4)@k.list(4)@k.f4,
 		_._2@k.bytes(16), # Must be a function in here, at least
 	),
 
@@ -149,20 +147,34 @@ geofront_tweaks = { # For Geofront v1.0.2
 
 def __main__():
 	import pathlib
+	import util
+	import io
 	JP = pathlib.Path(...)
 	EN = pathlib.Path(...)
 	VITA = pathlib.Path(...)
 
 	for game, file in [("geofront", EN), ("jp", JP)]:
 		print(file)
-		for fn in sorted(file.glob("*.bin")):
+		for fn in sorted(file.glob("c0250.bin")):
 			with fn.open("rb") as f:
-				print(fn)
-				c = k.ReadContext(f)
-				c.scope["_insns"] = insn.insn_zero_pc
+				sc = {}
+				sc["_insns"] = insn.insn_zero_pc
 				if game == "geofront" and fn.stem in geofront_tweaks:
-					c.scope["_geofront_tweaks"] = geofront_tweaks[fn.stem]
-				scenaStruct.read(c)
+					sc["_geofront_tweaks"] = geofront_tweaks[fn.stem]
+				v = k.read(scenaStruct, f, dict(sc))
+
+				try:
+					f = io.BytesIO()
+					k.write(scenaStruct, f, v, dict(sc))
+					f.seek(0)
+					v2 = k.read(scenaStruct, f, dict(sc))
+					for a, b in util.diff(v.code, v2.code):
+						print(repr(a), repr(b))
+					print(v == v2)
+				except Exception:
+					import traceback
+					print(fn)
+					traceback.print_exc()
 
 if __name__ == "__main__":
 	__main__()

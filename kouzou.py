@@ -558,7 +558,7 @@ class numpy(element):
 	def write(self, ctx, v, inner=None):
 		import numpy as np
 		assert inner is None
-		v = np.array(v, dtype=self._dt)
+		v = np.array(v, dtype=self._dtype)
 		self._shape.write(ctx, v.shape)
 		ctx.write(v.tobytes())
 

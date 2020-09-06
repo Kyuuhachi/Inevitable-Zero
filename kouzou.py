@@ -1,5 +1,5 @@
-import abc
 from functools import partial
+import struct as _struct
 
 CONSTANT_TYPES = (int, bytes, str, float)
 
@@ -20,20 +20,24 @@ class dotdict(dict):
 	__delattr__ = dict.__delitem__
 
 
-class element(abc.ABC):
+class element:
 	@staticmethod
 	def one(v, /):
 		if isinstance(v, CONSTANT_TYPES): return const(v)
-		assert isinstance(v, element)
+		assert isinstance(v, element), v
 		return v
 
 	def __matmul__(self, other): return _compose(self, other)
 	def __rmatmul__(self, other): return element.one(other) @ self
+	def __ror__(self, other):
+		if isinstance(other, str):
+			return alias(other, self)
+		return NotImplemented
 
-	@abc.abstractmethod
-	def read(self, ctx, nil_ok=False, inner=None): ...
-	@abc.abstractmethod
-	def write(self, ctx, v, inner=None): ...
+	def read(self, ctx, nil_ok=False, inner=None):
+		raise NotImplementedError
+	def write(self, ctx, v, inner=None):
+		raise NotImplementedError
 
 	def size(self, inner=None): return NotImplemented
 
@@ -114,6 +118,18 @@ class iso(element):
 	def __invert__(self):
 		return iso(self._write, self._read)
 
+class alias(element):
+	def __init__(self, name, el):
+		self._name = name
+		self._el = el
+
+		self.read = el.read
+		self.write = el.write
+		self.size = el.size
+
+	def __repr__(self):
+		return self._name
+
 # {{{1 Primitives
 
 class int(element):
@@ -137,33 +153,44 @@ class int(element):
 		return self._size
 
 	def __repr__(self):
-		for k, v in type(self)._defaults.items():
-			if self == v: return k
 		return f"int({self._size}, signed={self._signed!r}, endian={self._endian!r})"
 
-int._defaults = {
-	"u1": int(1, signed=False),
-	"u2": int(2, signed=False),
-	"u4": int(4, signed=False),
-	"u8": int(8, signed=False),
+u1 = "u1"|int(1, signed=False)
+u2 = "u2"|int(2, signed=False)
+u4 = "u4"|int(4, signed=False)
+u8 = "u8"|int(8, signed=False)
 
-	"i1": int(1, signed=True),
-	"i2": int(2, signed=True),
-	"i4": int(4, signed=True),
-	"i8": int(8, signed=True),
+i1 = "i1"|int(1, signed=True)
+i2 = "i2"|int(2, signed=True)
+i4 = "i4"|int(4, signed=True)
+i8 = "i8"|int(8, signed=True)
 
-	"u1be": int(1, signed=False, endian="big"),
-	"u2be": int(2, signed=False, endian="big"),
-	"u4be": int(4, signed=False, endian="big"),
-	"u8be": int(8, signed=False, endian="big"),
+u1be = "u1be"|int(1, signed=False, endian="big")
+u2be = "u2be"|int(2, signed=False, endian="big")
+u4be = "u4be"|int(4, signed=False, endian="big")
+u8be = "u8be"|int(8, signed=False, endian="big")
 
-	"i1be": int(1, signed=True, endian="big"),
-	"i2be": int(2, signed=True, endian="big"),
-	"i4be": int(4, signed=True, endian="big"),
-	"i8be": int(8, signed=True, endian="big"),
-}
+i1be = "i1be"|int(1, signed=True, endian="big")
+i2be = "i2be"|int(2, signed=True, endian="big")
+i4be = "i4be"|int(4, signed=True, endian="big")
+i8be = "i8be"|int(8, signed=True, endian="big")
 
-globals().update(int._defaults)
+class f4(element):
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is None
+		return _struct.unpack("f", ctx.read(4))[0]
+
+	def write (self, ctx, v, inner=None):
+		assert inner is None
+		ctx.write(_struct.pack("f", v))
+
+	def size(self, inner=None):
+		assert inner is None
+		return 4
+
+	def __repr__(self):
+		return "f4"
+f4 = f4()
 
 
 class bytes(element):
@@ -184,7 +211,7 @@ class bytes(element):
 		return self._size.__index__()
 
 	def __repr__(self):
-		return f"bytes({self._size})"
+		return f"bytes({self._size!r})"
 
 class zbytes(element):
 	def read(self, ctx, nil_ok=False, inner=None):
@@ -276,7 +303,6 @@ class struct(element):
 		assert inner is None
 		for x in self._items:
 			x.write(ctx, v)
-		return NIL
 
 	def size(self, inner=None):
 		assert inner is None
@@ -295,7 +321,10 @@ class list(element):
 
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is not None
-		return [inner.read(ctx) for _ in range(self._count.read(ctx))]
+		count = self._count.read(ctx)
+		if count < 0:
+			raise ValueError("negative count")
+		return [inner.read(ctx) for _ in range(count)]
 
 	def write(self, ctx, v, inner=None):
 		assert inner is not None
@@ -306,8 +335,8 @@ class list(element):
 
 	def size(self, inner=None):
 		assert inner is not None
-		# Would technically be possible to find the size of non-constant-sized
-		# lists if I add a ctx parameter, but who cares.
+		# Would be possible to find the size of non-constant-sized lists
+		# if I add a ctx parameter, but doesn't seem important enough right now
 		try:
 			return self._count.__index__() * inner.size()
 		except Exception:
@@ -379,7 +408,42 @@ class tuple(element):
 	def __repr__(self):
 		return f"tuple({', '.join(map(repr, self._items))})"
 
-# {{{1 Ref
+# {{{1 Utils
+
+class div(iso):
+	def __init__(self, divisor):
+		super().__init__(self._read, self._write)
+		self._divisor = divisor
+
+	def _read(self, v):
+		if v % self._divisor:
+			raise ValueError(f"{v} is not divisible by {self._divisor}")
+		return v // self._divisor
+
+	def _write(self, v):
+		return v * self._divisor
+
+	def __repr__(self):
+		return f"div({self._divisor!r})"
+
+class add(element):
+	def __init__(self, addend):
+		self._addend = element.one(addend)
+
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is not None
+		v2 = self._addend.read(ctx)
+		return inner.read(ctx) + v2
+
+	def write(self, ctx, v, inner=None):
+		assert inner is not None
+		v2 = self._addend.read(ctx)
+		inner.write(ctx, v - v2)
+
+	def __repr__(self):
+		return f"add({self._addend!r})"
+
+# {{{1 Structure
 
 class ref(element, metaclass=field_meta):
 	def __init__(self, name):
@@ -414,7 +478,7 @@ class ref(element, metaclass=field_meta):
 
 class at(element):
 	def __init__(self, pos):
-		self._pos = pos
+		self._pos = element.one(pos)
 
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is not None
@@ -430,23 +494,18 @@ class at(element):
 		assert inner is not None
 		pos = ctx.tell()
 		ctx.write(_bytes(self._pos.size()))
-		chunkpos = None
 
 		@ctx.later
 		def fill_at():
-			nonlocal chunkpos
 			ctx.seek(0, 2)
 			chunkpos = ctx.tell()
 			inner.write(ctx, v)
-
-		@ctx.later
-		def fill_ref():
 			ctx.seek(pos)
 			self._pos.write(ctx, chunkpos)
 
 	def size(self, inner=None):
 		assert inner is not None
-		return inner.size()
+		return self._pos.size()
 
 	def __repr__(self):
 		return f"at({self._pos!r})"
@@ -471,6 +530,34 @@ class lookahead(element):
 	def __repr__(self):
 		return "lookahead"
 lookahead = lookahead()
+
+# {{{1 Extras
+class numpy(element):
+	def __init__(self, shape, dtype):
+		import numpy as np
+		if not isinstance(shape, _tuple):
+			shape = (shape,)
+		self._shape = tuple(*shape)
+		self._dtype = np.dtype(dtype)
+
+	def read(self, ctx, nil_ok=False, inner=None):
+		import numpy as np
+		assert inner is None
+		shape = self._shape.read(ctx)
+		return np.frombuffer(
+			ctx.read(self._dtype.itemsize * np.product(shape)),
+			dtype=self._dtype
+		).reshape(shape)
+
+	def write(self, ctx, v, inner=None):
+		import numpy as np
+		assert inner is None
+		v = np.array(v, dtype=self._dt)
+		self._shape.write(ctx, v.shape)
+		ctx.write(v.tobytes())
+
+	def __repr__(self):
+		return "numpy({self._shape!r}, {self._dtype!r})"
 
 # {{{1 IO
 

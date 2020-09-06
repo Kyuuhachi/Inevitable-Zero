@@ -5,7 +5,7 @@ from util import if_
 scenaprefix = "0atcrme"
 def toscenaref(n):
 	if n == 0xFFFFFFFF: return None
-	assert n & 0xFF000000 == 0x21000000
+	assert n & 0xFF000000 == 0x21000000, hex(n)
 	a = (n & 0xF00000) >> 20
 	b = (n & 0x0FFFF0) >> 4
 	c = (n & 0x00000F) >> 0
@@ -19,10 +19,10 @@ def fromscenaref(n):
 	a = scenaprefix.find(n[0])
 	b = int(n[1:5], 16)
 	if len(n) == 7:
-		assert n[5] == "_"
+		assert n[5] == "_", n
 		c = int(n[6], 16)
 	else:
-		assert len(n) == 5
+		assert len(n) == 5, n
 		c = 0
 	return 0x21000000 | a << 20 | b << 4 | c
 
@@ -31,7 +31,7 @@ scenaref = "scenaref"|k.iso(toscenaref, fromscenaref)@k.u4
 monsterprefix = ["ms", "as", "bs"]
 def tomonsterref(n):
 	if n == 0x0: return None
-	assert n & 0xFF000000 == 0x30000000
+	assert n & 0xFF000000 == 0x30000000, hex(n)
 	a = (n & 0xF00000) >> 20
 	b = n & 0x0FFFFF
 	return f"{monsterprefix[a]}{b:05x}"
@@ -41,10 +41,10 @@ def frommonsterref(n):
 	a = scenaprefix.find(n[0])
 	b = int(n[1:5], 16)
 	if len(n) == 7:
-		assert n[5] == "_"
+		assert n[5] == "_", n
 		c = int(n[6], 16)
 	else:
-		assert len(n) == 5
+		assert len(n) == 5, n
 		c = 0
 	return 0x30000000 | a << 20 | b << 4 | c
 

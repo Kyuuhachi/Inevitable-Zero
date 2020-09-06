@@ -66,3 +66,50 @@ def decompile(asm):
 		a, asm = parse(asm)
 		o.append(a)
 	return o
+
+def compile(expr, label, brk=None):
+	for op in expr:
+		if op.name == "BREAK":
+			yield insn.Insn("GOTO", brk)
+
+		elif op.name == "IF":
+			if op.args[2] is None:
+				l = label()
+				yield insn.Insn("IF", op.args[0], l)
+				yield from compile(op.args[1], label, brk)
+				yield l
+			else:
+				l = label()
+				l2 = label()
+				yield insn.Insn("IF", op.args[0], l)
+				yield from compile(op.args[1], label, brk)
+				yield insn.Insn("GOTO", l2)
+				yield l
+				yield from compile(op.args[2], label, brk)
+				yield l2
+
+		elif op.name == "WHILE":
+			l = label()
+			l2 = label()
+			yield l
+			yield insn.Insn("IF", op.args[0], l2)
+			yield from compile(op.args[1], label, l2)
+			yield insn.Insn("GOTO", l)
+			yield l2
+
+		elif op.name == "SWITCH":
+			end = label()
+			labels = [label() for _ in op.args[1]]
+			yield insn.Insn(
+				"SWITCH",
+				op.args[0],
+				[(k, l) for k, l in zip(op.args[1], labels) if k is not None],
+				labels[-1] if None in op.args[1] else end
+			)
+			for l, code in zip(labels, op.args[1].values()):
+				yield l
+				yield from compile(code, label, end)
+			yield end
+
+		else:
+			yield op

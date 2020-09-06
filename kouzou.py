@@ -35,9 +35,9 @@ class element:
 		return NotImplemented
 
 	def read(self, ctx, nil_ok=False, inner=None):
-		raise NotImplementedError
+		raise NotImplementedError(self)
 	def write(self, ctx, v, inner=None):
-		raise NotImplementedError
+		raise NotImplementedError(self)
 
 	def size(self, inner=None): return NotImplemented
 
@@ -60,7 +60,7 @@ class _compose(element):
 
 	def size(self, inner=None):
 		assert inner is None
-		return self._lhs.size(self.rhs)
+		return self._lhs.size(self._rhs)
 
 	def __repr__(self): return f"{self._lhs!r}@{self._rhs!r}"
 
@@ -84,7 +84,7 @@ class const(element):
 			if v != self._val:
 				raise ValueError(f"Expected {self._val!r}, got {v!r}")
 		else:
-			inner.write(ctx, self._val, False)
+			inner.write(ctx, self._val)
 
 	def size(self, inner=None):
 		assert inner is None
@@ -144,7 +144,7 @@ class int(element):
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is None
 		return _int.from_bytes(ctx.read(self._size), self._endian, signed=self._signed)
-	def write (self, ctx, v, inner=None):
+	def write(self, ctx, v, inner=None):
 		assert inner is None
 		ctx.write(v.__index__().to_bytes(self._size, self._endian, signed=self._signed))
 
@@ -394,7 +394,7 @@ class tuple(element):
 
 	def write(self, ctx, v, inner=None):
 		assert inner is None
-		assert len(v) == len(self._items)
+		assert len(v) == len(self._items), (self, v)
 		for x, val in zip(self._items, v):
 			x.write(ctx, val)
 
@@ -440,6 +440,10 @@ class add(element):
 		v2 = self._addend.read(ctx)
 		inner.write(ctx, v - v2)
 
+	def size(self, inner=None):
+		assert inner is not None
+		return self._addend.size() + inner.size()
+
 	def __repr__(self):
 		return f"add({self._addend!r})"
 
@@ -466,6 +470,7 @@ class ref(element, metaclass=field_meta):
 			def fill_ref():
 				ctx.seek(pos)
 				inner.write(ctx, ctx.scope[self._name])
+			fill_ref.__qualname__ = repr(self@inner)
 
 	def size(self, inner=None):
 		assert inner is None
@@ -502,6 +507,7 @@ class at(element):
 			inner.write(ctx, v)
 			ctx.seek(pos)
 			self._pos.write(ctx, chunkpos)
+		fill_at.__qualname__ = repr(self@inner)
 
 	def size(self, inner=None):
 		assert inner is not None
@@ -593,9 +599,11 @@ class dfsqueue:
 		return f"dfsqueue({self.items!r})"
 
 class Context:
-	def __init__(self, file):
+	def __init__(self, file, scope=None):
+		if scope is None:
+			scope = {}
 		self.file = file
-		self.scope = {}
+		self.scope = scope
 
 	def tell(self):
 		return self.file.tell()
@@ -610,8 +618,8 @@ class ReadContext(Context):
 		return v
 
 class WriteContext(Context):
-	def __init__(self, file):
-		super().__init__(file)
+	def __init__(self, file, scope):
+		super().__init__(file, scope)
 		self._later = dfsqueue()
 		self._last = []
 
@@ -620,14 +628,43 @@ class WriteContext(Context):
 
 	def later(self, func):
 		self._later.append(func)
+		return func
 
-def read(type, f):
-	c = ReadContext(f)
+def read(type, f, scope=None):
+	c = ReadContext(f, scope)
 	v = type.read(c)
 	return v
 
-def write(type, f, v):
-	c = WriteContext(f)
+def write(type, f, v, scope=None):
+	c = WriteContext(f, scope)
 	type.write(c, v)
 	for f in c._later:
 		f()
+
+class tracing:
+	def __enter__(self):
+		import sys
+		self.origtrace = sys.gettrace()
+
+		depth = 0
+
+		@sys.settrace
+		def trace(frame, what, obj):
+			nonlocal depth
+			if what == "call" and frame.f_code.co_name in ["read", "write"]:
+				self = frame.f_locals.get("self")
+				if isinstance(self, element) and not isinstance(self, _compose):
+					if frame.f_code.co_name == "write" and not isinstance(self, field):
+						print(*" "*depth, frame.f_locals["ctx"].tell(), self, repr(frame.f_locals["v"]))
+					else:
+						print(*" "*depth, frame.f_locals["ctx"].tell(), self)
+					depth += 1
+					def traceinner(frame, what, obj):
+						nonlocal depth
+						if what == "return":
+							depth -= 1
+					return traceinner
+
+	def __exit__(self, *a):
+		import sys
+		sys.settrace(self.origtrace)

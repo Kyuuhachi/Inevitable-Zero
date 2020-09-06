@@ -251,11 +251,29 @@ class script:
 		end = ctx.tell()
 		while True:
 			op = script.single.read(ctx)
+
+			# Geofront accidentally broke a few pointers. I don't know if these are all of them.
+			if ctx.scope["_game"] == "en" and ctx.scope["_filename"] == "a0000":
+				if op.pos == 0x1883 and op.name == "GOTO" and op.args[0] == Addr(0x183B):
+					op.args = (Addr(0x1892),)
+
+			if ctx.scope["_game"] == "en" and ctx.scope["_filename"] == "m1080":
+				if op.pos == 0x675 and op.name == "GOTO" and op.args[0] == Addr(0x69B):
+					op.args = (Addr(0x696),)
+				if op.pos == 0x67A and op.name == "IF" and op.args[1] == Addr(0x69B):
+					op.args = (op.args[0], Addr(0x696))
+
+			if ctx.scope["_game"] == "en" and ctx.scope["_filename"] == "t1210":
+				if op.pos == 0x2D7 and op.name == "GOTO" and op.args[0] == Addr(0x302):
+					op.args = (Addr(0x2F8),)
+				if op.pos == 0x2DC and op.name == "IF" and op.args[1] == Addr(0x302):
+					op.args = (op.args[0], Addr(0x2F8))
+
 			if op.name == "GOTO": end = max(end, op.args[0])
 			if op.name == "IF": end = max(end, op.args[1])
 			if op.name == "SWITCH": end = max([end, *(x[1] for x in op.args[1]), op.args[2]])
 			xs.append(op)
-			if op.name == "RETURN" and ctx.tell() > end: break
+			if op.name == "RETURN" and op.pos >= end: break
 		return xs
 
 

@@ -6,18 +6,47 @@ import insn
 ###
 
 chcp_types = {
-	7: "chr",
-	8: "apl",
-	9: "monster",
+	7: "chr/ch",
+	8: "apl/ch",
+	9: "monster/ch",
 }
 def tochcp(n):
 	if n == 0:
 		return None
 	a, b = n >> 20, n & 0xFFFFFF
-	return f"{chcp_types[a]}/ch{b:05x}"
+	return f"{chcp_types[a]}{b:05x}"
+
+def fromchcp(n):
+	if n is None:
+		return 0
+	for i, v in chcp_types.items():
+		if n.startswith(v):
+			return i << 20 | int(n[len(v):], 16)
+
+class extra(k.element):
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is not None
+		if ctx.scope["func_start"] == ctx.tell():
+			return None
+		return inner.read(ctx)
+
+	def write(self, ctx, v, inner=None):
+		assert inner is not None
+		if v is None:
+			pos = ctx.tell()
+			@ctx.later
+			def ensure_extra():
+				assert ctx.scope["func_start"] != pos
+			ensure_extra.__qualname__ = repr(self@inner)
+		else:
+			inner.write(ctx, v)
+
+	def __repr__(self):
+		return "extra"
+extra = extra()
 
 # TODO
-chcp = k.iso(tochcp, ...)@k.u4
+chcp = "chcp"|k.iso(tochcp, fromchcp)@k.u4
 
 scenaStruct = k.struct(
 	_.name1@k.enc("cp932")@k.fbytes(10),
@@ -40,6 +69,8 @@ scenaStruct = k.struct(
 	ref.func_count@k.div(4)@k.u2,
 
 	ref.anim_start@k.u2,
+	# I'll just assume that it's animations all the way from anim_start to
+	# func_start. The 12 is the size of the anim struct.
 	ref.anim_count@k.div(12)@k.add(k.div(-1)@ref.anim_start)@ref.func_start,
 
 	ref.label_start@k.u2,
@@ -61,13 +92,13 @@ scenaStruct = k.struct(
 	_.chcp@k.at(ref.chcp_start)@k.list(ref.chcp_count)@chcp,
 
 	_.npcs@k.at(ref.npc_start)@k.list(ref.npc_count)@k.struct(
-		_.pos@k.tuple(k.i4, k.i4, k.i4),
+		_.pos@insn.POS,
 		_.angle@k.u2,
 		_._@k.bytes(2*7), # A function or two in here
 	),
 
 	_.monsters@k.at(ref.monster_start)@k.list(ref.monster_count)@k.struct(
-		_.pos@k.tuple(k.i4, k.i4, k.i4),
+		_.pos@insn.POS,
 		_.angle@k.u2,
 		_.unk1@k.u2,
 		_.battle@insn.battle.inner,
@@ -86,14 +117,16 @@ scenaStruct = k.struct(
 	),
 
 	_.objects@k.at(ref.object_start)@k.list(ref.object_count)@k.struct(
-		_.pos@k.tuple(k.i4, k.i4, k.i4),
+		_.pos@insn.POS,
 		_.range@k.u4,
-		_.pos2@k.tuple(k.i4, k.i4, k.i4),
+		_.pos2@insn.POS,
 		_.flags@k.u4,
 		_.function@k.u4,
 	),
 
-	_.extra@if_(84@ref.func_start, False)@k.bytes(64),
+	_.extra@extra@k.bytes(64),
+
+	_.code@k.at(ref.func_start)@k.list(ref.func_count)@k.at(k.u4)@insn.script,
 
 	_.anim@k.at(ref.anim_start)@k.list(ref.anim_count)@k.struct(
 		_.speed@k.u2,

@@ -544,7 +544,7 @@ insns_zero_pc = [
 	insn("QUEST_LIST", k.while_(lambda v: v != -1)@k.i2),
 	insn("QUEST_BONUS_BP", k.u2, k.u2),
 	None, # QUEST_BONUS_MIRA
-	insn("0x2E", k.bytes(3)), # 2E..42 match Sora numerically, but the signatures don't match...
+	insn("0x2E", k.bytes(3)),
 	insn("0x2F", k.bytes(2)),
 
 	insn("PARTY_CLEAR"),
@@ -724,12 +724,12 @@ insns_zero_pc = [
 	None,
 	None,
 	insn("0xCE", choice({
-		0: insn("0", k.bytes(1)),
-		1: insn("1", k.bytes(1), zstr),
-		2: insn("2", k.bytes(6)),
-		3: insn("3", k.bytes(2)),
-		4: insn("4", k.bytes(2)),
-		5: insn("5", k.bytes(2)),
+		0: insn("0", k.u1),
+		1: insn("1", k.u1, zstr),
+		2: insn("2", k.u1, k.i4, k.u1),
+		3: insn("3", k.u1, k.u1),
+		4: insn("4", k.u1, k.u1),
+		5: insn("5", k.u1, k.u1),
 	})),
 	None,
 

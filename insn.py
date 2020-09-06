@@ -298,36 +298,47 @@ script = script()
 
 class battle(k.element):
 	# Credits to Ouroboros for these structs
-	layout = "battle.layout"|k.at(k.u2)@k.list(8)@k.struct(
-		_.pos@k.tuple(k.u1, k.u1),
-		_.angle@k.u2,
-	)
+	class sepith(k.element):
+		def read(self, ctx, nil_ok=False, inner=None):
+			assert inner is None
+			x = k.u4.read(ctx)
+			if x == 0:
+				return None
+			else:
+				return (k.at(x)@k.list(7)@k.u1).read(ctx)
 
-	battleSetup = "battle.setup"|k.struct(
-		_.enemies@k.list(8)@monsterref,
-		_.position@layout,
-		_.position2@layout,
-		_.bgm@k.u2,
-		_.bgm2@k.u2,
-		_.atRoll@k.at(k.u4)@k.struct(
-			_.none@k.u1,
-			_.hp10@k.u1,
-			_.hp50@k.u1,
-			_.ep10@k.u1,
-			_.ep50@k.u1,
-			_.cp10@k.u1,
-			_.cp50@k.u1,
-			_.sepith@k.u1,
-			_.critical@k.u1,
-			_.vanish@k.u1,
-			_.death@k.u1,
-			_.guard@k.u1,
-			_.rush@k.u1, # Is this and teamrush swapped?
-			_.arts_guard@k.u1,
-			_.teamrush@k.u1,
-			_.unknown@k.u1,
-		),
-	)
+		def write(self, ctx, v, inner=None):
+			assert inner is None
+			if v is None:
+				k.u4.write(ctx, 0)
+			else:
+				(k.at(k.u4)@k.list(7)@k.u1).write(ctx, v)
+
+		def __repr__(self):
+			return "battle.sepith"
+	sepith = sepith()
+
+	class setups(k.element):
+		def read(self, ctx, nil_ok=False, inner=None):
+			assert inner is not None
+			probs = list(ctx.read(4))
+			while probs and not probs[-1]: probs.pop()
+			assert 0 not in probs, probs
+			return [(p, inner.read(ctx)) for p in probs]
+
+		def write(self, ctx, v, inner=None):
+			assert inner is not None
+			probs = [p for p, _ in v]
+			assert len(probs) < 4, probs
+			assert 0 not in probs, probs
+			while len(probs) < 4: probs.append(0)
+			ctx.write(bytes(probs))
+			for _, v in v:
+				inner.write(ctx, v)
+
+		def __repr__(self):
+			return "battle.setups"
+	setups = setups()
 
 	inner = "battle.inner"|k.at(k.u2)@k.struct(
 		_.flags@k.u2,
@@ -339,30 +350,73 @@ class battle(k.element):
 		_.moveSpeed@k.u2,
 		_.unk2@k.u2,
 		_.battlefield@k.at(k.u4)@zstr,
-
-		ref.sepith_start@k.u4,
-		_.sepith@if_(0@ref.sepith_start, False)@k.at(ref.sepith_start)@k.list(7)@k.u1,
-
-		ref.prob1@k.u1,
-		ref.prob2@k.u1,
-		ref.prob3@k.u1,
-		ref.prob4@k.u1,
-		_.prob@k.tuple(ref.prob1, ref.prob2, ref.prob3, ref.prob4),
-		_.setups@k.tuple(
-			if_(0@ref.prob1, False)@battleSetup,
-			if_(0@ref.prob2, False)@battleSetup,
-			if_(0@ref.prob3, False)@battleSetup,
-			if_(0@ref.prob4, False)@battleSetup,
+		_.sepith@sepith,
+		_.setups@setups@k.struct(
+			_.enemies@k.list(8)@monsterref,
+			_.position@k.at(k.u2)@k.list(8)@k.tuple(k.u1, k.u1, k.u2),
+			_.position2@k.at(k.u2)@k.list(8)@k.tuple(k.u1, k.u1, k.u2),
+			_.bgm@k.u2,
+			_.bgm2@k.u2,
+			_.atRoll@k.at(k.u4)@k.struct(
+				_.none@k.u1,
+				_.hp10@k.u1,
+				_.hp50@k.u1,
+				_.ep10@k.u1,
+				_.ep50@k.u1,
+				_.cp10@k.u1,
+				_.cp50@k.u1,
+				_.sepith_up@k.u1,
+				_.critical@k.u1,
+				_.vanish@k.u1,
+				_.death@k.u1,
+				_.guard@k.u1,
+				_.rush@k.u1, # Is this and teamrush swapped?
+				_.arts_guard@k.u1,
+				_.teamrush@k.u1,
+				_.unknown@k.u1,
+			),
 		),
 	)
 
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is None
+
 		if k.lookahead.read(ctx, False, k.i2) == -1:
-			return k.bytes(61).read(ctx)
-		info = battle.inner.read(ctx)
-		x = k.bytes(13).read(ctx)
-		return (info, x)
+			(-1@k.i4).read(ctx, True)
+			return k.tuple(
+				True,
+				k.bytes(5),
+				k.list(4)@monsterref,
+				k.list(4)@monsterref,
+				k.bytes(20)
+			).read(ctx)
+
+		return k.tuple(
+			False,
+			battle.inner,
+			k.bytes(13),
+		).read(ctx)
+
+	def write(self, ctx, v, inner=None):
+		assert inner is None
+		if v[0]:
+			(-1@k.i4).write(ctx, None)
+			k.tuple(
+				True,
+				k.bytes(5),
+				k.list(4)@monsterref,
+				k.list(4)@monsterref,
+				k.bytes(20)
+			).write(ctx, v)
+		else:
+			k.tuple(
+				False,
+				battle.inner,
+				k.bytes(13),
+			).write(ctx, v)
+
+	def __repr__(self):
+		return "battle"
 battle = battle()
 
 class CHAR_ANIMATION(k.element):

@@ -152,11 +152,11 @@ class choice(k.element):
 	def __repr__(self):
 		return f"choice({self._options!r})"
 
-class script:
+class script(k.element):
 	class single(k.element):
 		def read(self, ctx, nil_ok=False, inner=None):
 			assert inner is None
-			insn = ctx.scope["insn_type"]
+			insn = ctx.scope["_insns"]
 			start = ctx.tell()
 			v = insn.read(ctx)
 			assert isinstance(v, Insn)
@@ -166,7 +166,7 @@ class script:
 		def write(self, ctx, v, inner=None):
 			assert inner is None
 			assert isinstance(v, Insn)
-			insn = ctx.scope["insn_type"]
+			insn = ctx.scope["_insns"]
 			insn.write(ctx, v)
 
 		def __repr__(self):
@@ -216,8 +216,8 @@ class script:
 		def __repr__(self):
 			return f"script.fork({self._loop!r})"
 
-	@staticmethod
-	def read(ctx):
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is None
 		tweaks = ctx.scope.get("_geofront_tweaks", {})
 
 		xs = []
@@ -259,6 +259,10 @@ class script:
 					break
 
 		return decompile.decompile(xs)
+
+	def __repr__(self):
+		return f"script"
+script = script()
 
 class battle(k.element):
 	# Credits to Ouroboros for these structs

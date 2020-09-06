@@ -19,25 +19,6 @@ def tochcp(n):
 # TODO
 chcp = k.iso(tochcp, ...)@k.u4
 
-###
-
-class code(k.element):
-	def __init__(self, funcs, insns):
-		self._funcs = funcs
-		self._insns = insns
-
-	def read(self, ctx, nil_ok=False, inner=None):
-		assert inner is None
-		ctx.scope["insn_type"] = self._insns
-
-		funcs = []
-		for a in self._funcs.read(ctx):
-			ctx.seek(a)
-			funcs.append(insn.script.read(ctx))
-		return funcs
-
-	write = ...
-
 scenaStruct = k.struct(
 	_.name1@k.enc("cp932")@k.fbytes(10),
 	_.name2@k.enc("cp932")@k.fbytes(10),
@@ -57,7 +38,6 @@ scenaStruct = k.struct(
 
 	ref.func_start@k.u2,
 	ref.func_count@k.div(4)@k.u2,
-	ref.funcs@k.at(ref.func_start)@k.list(ref.func_count)@insn.ADDR,
 
 	ref.anim_start@k.u2,
 	ref.anim_count@k.div(12)@k.add(k.div(-1)@ref.anim_start)@ref.func_start,
@@ -122,7 +102,7 @@ scenaStruct = k.struct(
 		_.frames@k.list(8)@k.u1,
 	),
 
-	_.code@code(ref.funcs, insn.insn_zero_pc),
+	_.code@k.at(ref.func_start)@k.list(ref.func_count)@k.at(insn.ADDR)@insn.script,
 )
 
 geofront_tweaks = { # For Geofront v1.0.2
@@ -148,6 +128,7 @@ def __main__():
 			with fn.open("rb") as f:
 				print(fn)
 				c = k.ReadContext(f)
+				c.scope["_insns"] = insn.insn_zero_pc
 				if game == "geofront" and fn.stem in geofront_tweaks:
 					c.scope["_geofront_tweaks"] = geofront_tweaks[fn.stem]
 				scenaStruct.read(c)

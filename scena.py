@@ -134,19 +134,17 @@ scenaStruct = k.struct(
 		_.count@k.u1,
 		_.frames@k.list(8)@k.u1,
 	),
-
-	_.code@k.at(ref.func_start)@k.list(ref.func_count)@k.at(insn.ADDR)@insn.script,
 )
 
 geofront_tweaks = { # For Geofront v1.0.2
-	"a0000": {0x183b: 0x1892},
-	"c0110": {0x24d56: 0x2f578},
-	"c011b": {0x16924: 0x1c789},
-	"c011c": {0x1266a: 0x16349},
+	"a0000": {0x0183B: 0x01892},
+	"c0110": {0x24D56: 0x2F578},
+	"c011b": {0x16924: 0x1C789},
+	"c011c": {0x1266A: 0x16349},
 	"c1130": {"reorder": True},
-	"m1080": {0x69b: 0x696},
-	"m3033": {0x1361: 0x1449},
-	"t1210": {0x302: 0x2f8},
+	"m1080": {0x0069B: 0x00696},
+	"m3033": {0x01361: 0x01449},
+	"t1210": {0x00302: 0x002f8},
 }
 
 def __main__():

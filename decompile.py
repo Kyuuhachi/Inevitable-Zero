@@ -51,7 +51,9 @@ def parse(asm, brk=None):
 		cases = {}
 		ends = [addr for addr, _ in groups[1:]] + [endpos]
 		for (addr, k), end in zip(groups, ends):
-			cases[k], _, asm_ = till(asm_, end, brk=endpos, hasaddr=False)
+			for k_ in k[:-1]:
+				cases[k_] = []
+			cases[k[-1]], _, asm_ = till(asm_, end, brk=endpos, hasaddr=False)
 		return insn.Insn("SWITCH", head.args[0], cases), asm_
 
 	return asm[0], asm[1:]

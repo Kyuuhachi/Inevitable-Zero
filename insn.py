@@ -327,11 +327,17 @@ class battle(k.element):
 		x = k.bytes(13).read(ctx)
 		return (info, x)
 battle = battle()
-# def BATTLE():
-# 	if f.at().i4() == -1:
-# 		return Insn(k.u4, k.bytes(57))
-# 	else:
-# 		return Insn(None, k.u2, k.bytes(13))
+
+class CHAR_ANIMATION(k.element):
+	def read(self, ctx, nil_ok=False, inner=None):
+		length = k.u1.read(ctx)
+		if length == 0:
+			(0@k.u1).read(ctx, True)
+		return list(ctx.read(length))
+
+	def __repr__(self):
+		return "CHAR_ANIMATION"
+CHAR_ANIMATION = CHAR_ANIMATION()
 
 
 expr_ops = [
@@ -573,8 +579,8 @@ insns_zero_pc = [
 		2: insn("2", CHAR, k.u1, k.u4),
 	})),
 
-	insn("0xA0", k.bytes(6)),
-	insn("0xA1", CHAR, k.u2, k.bytes(k.u1)),
+	insn("0xA0", CHAR, k.u2, k.u2),
+	insn("CHAR_ANIMATION", CHAR, k.u2, CHAR_ANIMATION),
 	insn("0xA2", CHAR, k.bytes(2)),
 	insn("0xA3", CHAR, k.bytes(2)),
 	insn("0xA4", CHAR, k.bytes(2)),

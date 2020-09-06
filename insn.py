@@ -31,23 +31,17 @@ scenaref = "scenaref"|k.iso(toscenaref, fromscenaref)@k.u4
 
 monsterprefix = ["ms", "as", "bs"]
 def tomonsterref(n):
-	if n == 0x0: return None
+	if n == 0: return None
 	assert n & 0xFF000000 == 0x30000000, hex(n)
 	a = (n & 0xF00000) >> 20
 	b = n & 0x0FFFFF
 	return f"{monsterprefix[a]}{b:05x}"
 
 def frommonsterref(n):
-	if n is None: return 0xFFFFFFFF
-	a = scenaprefix.find(n[0])
-	b = int(n[1:5], 16)
-	if len(n) == 7:
-		assert n[5] == "_", n
-		c = int(n[6], 16)
-	else:
-		assert len(n) == 5, n
-		c = 0
-	return 0x30000000 | a << 20 | b << 4 | c
+	if n is None: return 0
+	for i, v in enumerate(monsterprefix):
+		if n.startswith(v):
+			return 0x30000000 | i << 20 | int(n[len(v):], 16)
 
 monsterref = "monsterref"|k.iso(tomonsterref, frommonsterref)@k.u4
 
@@ -62,24 +56,22 @@ class text(k.element):
 
 		elements = []
 		segment = bytearray()
-		def tag(k, v=None):
+		def tag(*a):
 			if segment:
 				elements.append(segment.decode("cp932"))
 				segment.clear()
-			if not elements or not isinstance(elements[-1], dict):
-				elements.append({})
-			elements[-1][k] = v
+			elements.append(a)
 
 		while ch := ctx.read(1)[0]:
 			if ch == 0x00: break
-			elif ch == 0x01: segment.extend(b"\n") # line
-			elif ch == 0x02: segment.extend(b"\r") # wait
-			elif ch == 0x03: segment.extend(b"\f") # page
-			elif ch == 0x05: tag("05")
-			elif ch == 0x06: tag("06")
+			elif ch == 0x01: tag("line")#segment.extend(b"\n") # line
+			elif ch == 0x02: tag("wait")#segment.extend(b"\r") # wait
+			elif ch == 0x03: tag("page")#segment.extend(b"\f") # page
+			elif ch == 0x05: tag("0x05")
+			elif ch == 0x06: tag("0x06")
 			elif ch == 0x07: tag("color", k.u1.read(ctx))
-			elif ch == 0x09: tag("09")
-			elif ch == 0x18: tag("18")
+			elif ch == 0x09: tag("0x09")
+			elif ch == 0x18: tag("0x18")
 			elif ch == 0x1F: tag("item", k.u2.read(ctx))
 			elif ch <= 0x1F: raise ValueError("%02X" % ch)
 			else:
@@ -88,6 +80,25 @@ class text(k.element):
 		if segment: elements.append(segment.decode("cp932"))
 
 		return elements
+
+	def write(self, ctx, v, inner=None):
+		assert inner is None
+		for v in v:
+			if isinstance(v, tuple):
+				if 0: pass
+				elif v[0] == "line": ctx.write(b"\x01")
+				elif v[0] == "wait": ctx.write(b"\x02")
+				elif v[0] == "page": ctx.write(b"\x03")
+				elif v[0] == "0x05": ctx.write(b"\x05")
+				elif v[0] == "0x06": ctx.write(b"\x06")
+				elif v[0] == "color": ctx.write(b"\x07"); k.u1.write(ctx, v[1])
+				elif v[0] == "0x09": ctx.write(b"\x09")
+				elif v[0] == "0x18": ctx.write(b"\x18")
+				elif v[0] == "item": ctx.write(b"\x18"); k.u2.write(ctx, v[1])
+				else: raise ValueError(v)
+			else:
+				ctx.write(v.encode("cp932"))
+		ctx.write(b"\0")
 
 	def __repr__(self):
 		return "text"
@@ -101,7 +112,23 @@ class Function(int): pass
 FUNCTION = "FUNCTION"|k.iso(Function, int)@k.u2
 
 class Addr(int): pass
-ADDR = "ADDR"|k.iso(Addr, int)@k.u4
+class ADDR(k.element):
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is not None
+		return Addr(inner.read(ctx))
+
+	def write(self, ctx, v, inner=None):
+		assert inner is not None
+		assert isinstance(v, k.ref), v
+		(v@inner).write(ctx, None)
+
+	def size(self, inner):
+		assert inner is not None
+		return inner.size()
+
+	def __repr__(self):
+		return "ADDR"
+ADDR = ADDR()@k.u4
 
 class Insn:
 	def __init__(self, name, *args):
@@ -139,15 +166,14 @@ class choice(k.element):
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is None
 		insn = self._options[k.u1.read(ctx)]
-		v = Insn(insn.name, *insn.args.read(ctx))
-		return v
+		return Insn(insn.name, *insn.args.read(ctx))
 
 	def write(self, ctx, v, inner=None):
 		assert inner is None
 		assert isinstance(v, Insn)
 		i = self._names[v.name]
 		k.u1.write(ctx, i)
-		self._options[i].args.write(ctx, v)
+		self._options[i].args.write(ctx, v.args)
 
 	def __repr__(self):
 		return f"choice({self._options!r})"
@@ -156,9 +182,8 @@ class script(k.element):
 	class single(k.element):
 		def read(self, ctx, nil_ok=False, inner=None):
 			assert inner is None
-			insn = ctx.scope["_insns"]
 			start = ctx.tell()
-			v = insn.read(ctx)
+			v = ctx.scope["_insns"].read(ctx)
 			assert isinstance(v, Insn)
 			v.pos = start
 			return v
@@ -166,8 +191,7 @@ class script(k.element):
 		def write(self, ctx, v, inner=None):
 			assert inner is None
 			assert isinstance(v, Insn)
-			insn = ctx.scope["_insns"]
-			insn.write(ctx, v)
+			ctx.scope["_insns"].write(ctx, v)
 
 		def __repr__(self):
 			return "script.single"
@@ -339,6 +363,11 @@ class CHAR_ANIMATION(k.element):
 		if length == 0:
 			(0@k.u1).read(ctx, True)
 		return list(ctx.read(length))
+
+	def write(self, ctx, v, inner=None):
+		assert inner is None
+		k.u1.write(ctx, len(v))
+		ctx.write(bytes(v) or b"\0")
 
 	def __repr__(self):
 		return "CHAR_ANIMATION"

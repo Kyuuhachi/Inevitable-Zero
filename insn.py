@@ -284,8 +284,16 @@ class script(k.element):
 
 		return decompile.decompile(xs)
 
+	def write(self, ctx, v, inner=None):
+		assert inner is None
+		for op in decompile.compile(v, lambda: k.ref(object())):
+			if isinstance(op, k.ref):
+				op.write(ctx, ctx.tell())
+			else:
+				script.single.write(ctx, op)
+
 	def __repr__(self):
-		return f"script"
+		return "script"
 script = script()
 
 class battle(k.element):

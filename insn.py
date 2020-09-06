@@ -1,6 +1,7 @@
 import kouzou as k
 from kouzou import _, ref
 from util import if_
+import decompile
 
 scenaprefix = "0atcrme"
 def toscenaref(n):
@@ -217,35 +218,47 @@ class script:
 
 	@staticmethod
 	def read(ctx):
+		tweaks = ctx.scope.get("_geofront_tweaks", {})
+
 		xs = []
 		end = ctx.tell()
+		def addr(a):
+			nonlocal end
+			if a in tweaks:
+				a = tweaks[a]
+			if a > end:
+				end = a
+			return a
+
 		while True:
 			op = script.single.read(ctx)
-
-			# Geofront accidentally broke a few pointers. I don't know if these are all of them.
-			if ctx.scope["_game"] == "en" and ctx.scope["_filename"] == "a0000":
-				if op.pos == 0x1883 and op.name == "GOTO" and op.args[0] == Addr(0x183B):
-					op.args = (Addr(0x1892),)
-
-			if ctx.scope["_game"] == "en" and ctx.scope["_filename"] == "m1080":
-				if op.pos == 0x675 and op.name == "GOTO" and op.args[0] == Addr(0x69B):
-					op.args = (Addr(0x696),)
-				if op.pos == 0x67A and op.name == "IF" and op.args[1] == Addr(0x69B):
-					op.args = (op.args[0], Addr(0x696))
-
-			if ctx.scope["_game"] == "en" and ctx.scope["_filename"] == "t1210":
-				if op.pos == 0x2D7 and op.name == "GOTO" and op.args[0] == Addr(0x302):
-					op.args = (Addr(0x2F8),)
-				if op.pos == 0x2DC and op.name == "IF" and op.args[1] == Addr(0x302):
-					op.args = (op.args[0], Addr(0x2F8))
-
-			if op.name == "GOTO": end = max(end, op.args[0])
-			if op.name == "IF": end = max(end, op.args[1])
-			if op.name == "SWITCH": end = max([end, *(x[1] for x in op.args[1]), op.args[2]])
 			xs.append(op)
-			if op.name == "RETURN" and op.pos >= end: break
-		return xs
 
+			if op.name == "GOTO":
+				op.args = (addr(op.args[0]),)
+			if op.name == "IF":
+				op.args = (op.args[0], addr(op.args[1]))
+			if op.name == "SWITCH":
+				op.args = (op.args[0], [(k, addr(v)) for k, v in op.args[1]], addr(op.args[2]))
+			if op.name == "RETURN" and op.pos >= end:
+				break
+
+		# I have no idea what happened in this one.
+		if tweaks.get("reorder"):
+			for i, op in enumerate(xs):
+				if op.name == "IF" and op.args[1] < op.pos:
+					toMove = []
+					while True:
+						toMove.append(xs.pop(i))
+						if xs[i].name == "IF": break
+
+					for j, op2 in enumerate(xs):
+						if op2.pos == op.args[1]:
+							xs[j:j] = toMove
+							break
+					break
+
+		return decompile.decompile(xs)
 
 class battle(k.element):
 	# Credits to Ouroboros for these structs

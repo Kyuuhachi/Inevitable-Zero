@@ -125,19 +125,31 @@ scenaStruct = k.struct(
 	_.code@code(ref.funcs, insn.insn_zero_pc),
 )
 
+geofront_tweaks = { # For Geofront v1.0.2
+	"a0000": {0x183b: 0x1892},
+	"c0110": {0x24d56: 0x2f578},
+	"c011b": {0x16924: 0x1c789},
+	"c011c": {0x1266a: 0x16349},
+	"c1130": {"reorder": True},
+	"m1080": {0x69b: 0x696},
+	"m3033": {0x1361: 0x1449},
+	"t1210": {0x302: 0x2f8},
+}
+
 def __main__():
 	import pathlib
 	JP = pathlib.Path(...)
 	EN = pathlib.Path(...)
 	VITA = pathlib.Path(...)
 
-	for game, file in [("en", EN), ("jp", JP)]:
+	for game, file in [("geofront", EN), ("jp", JP)]:
 		print(file)
 		for fn in sorted(file.glob("*.bin")):
 			with fn.open("rb") as f:
+				print(fn)
 				c = k.ReadContext(f)
-				c.scope["_game"] = game
-				c.scope["_filename"] = fn.stem
+				if game == "geofront" and fn.stem in geofront_tweaks:
+					c.scope["_geofront_tweaks"] = geofront_tweaks[fn.stem]
 				scenaStruct.read(c)
 
 if __name__ == "__main__":

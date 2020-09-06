@@ -124,3 +124,21 @@ scenaStruct = k.struct(
 
 	_.code@code(ref.funcs, insn.insn_zero_pc),
 )
+
+def __main__():
+	import pathlib
+	JP = pathlib.Path(...)
+	EN = pathlib.Path(...)
+	VITA = pathlib.Path(...)
+
+	for game, file in [("en", EN), ("jp", JP)]:
+		print(file)
+		for fn in sorted(file.glob("*.bin")):
+			with fn.open("rb") as f:
+				c = k.ReadContext(f)
+				c.scope["_game"] = game
+				c.scope["_filename"] = fn.stem
+				scenaStruct.read(c)
+
+if __name__ == "__main__":
+	__main__()

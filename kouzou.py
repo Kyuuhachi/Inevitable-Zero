@@ -34,6 +34,9 @@ class element:
 			return alias(other, self)
 		return NotImplemented
 
+	def __rrshift__(self, other): return _after(other, self)
+	def __lshift__(self, other): return _before(self, other)
+
 	def read(self, ctx, nil_ok=False, inner=None):
 		raise NotImplementedError(self)
 	def write(self, ctx, v, inner=None):
@@ -63,6 +66,54 @@ class _compose(element):
 		return self._lhs.size(self._rhs)
 
 	def __repr__(self): return f"{self._lhs!r}@{self._rhs!r}"
+
+class _before(element):
+	def __init__(self, lhs, rhs):
+		self._lhs = element.one(lhs)
+		self._rhs = element.one(rhs)
+
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is None
+		a = self._lhs.read(ctx)
+		b = self._rhs.read(ctx, True)
+		if b is not NIL:
+			raise ValueError(f"... << {self._rhs!r} ... must return nil")
+		return a
+
+	def write(self, ctx, v, inner=None):
+		assert inner is None
+		self._lhs.write(ctx, v)
+		self._rhs.write(ctx, v)
+
+	def size(self, inner=None):
+		assert inner is None
+		return self._lhs.size() + self._rhs._size
+
+	def __repr__(self): return f"{self._lhs!r} << {self._rhs!r}"
+
+class _after(element):
+	def __init__(self, lhs, rhs):
+		self._lhs = element.one(lhs)
+		self._rhs = element.one(rhs)
+
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is None
+		a = self._lhs.read(ctx, True)
+		b = self._rhs.read(ctx)
+		if a is not NIL:
+			raise ValueError(f"{self._lhs!r} >> ... must return nil")
+		return b
+
+	def write(self, ctx, v, inner=None):
+		assert inner is None
+		self._lhs.write(ctx, v)
+		self._rhs.write(ctx, v)
+
+	def size(self, inner=None):
+		assert inner is None
+		return self._lhs.size() + self._rhs._size
+
+	def __repr__(self): return f"{self._lhs!r} >> {self._rhs!r}"
 
 
 class const(element):

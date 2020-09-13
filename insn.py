@@ -174,7 +174,7 @@ class choice(k.element):
 		self._options[i].args.write(ctx, v.args)
 
 	def __repr__(self):
-		return f"choice({self._options!r})"
+		return f"choice((...{len(self._options)} items))"
 
 class script(k.element):
 	class single(k.element):

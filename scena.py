@@ -22,6 +22,8 @@ def fromchcp(n):
 		if n.startswith(v):
 			return i << 20 | int(n[len(v):], 16)
 
+chcp = "chcp"|k.iso(tochcp, fromchcp)@k.u4
+
 class extra(k.element):
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is not None
@@ -32,19 +34,26 @@ class extra(k.element):
 	def write(self, ctx, v, inner=None):
 		assert inner is not None
 		if v is not None:
-			pos = ctx.tell()
 			inner.write(ctx, v)
-			@ctx.later
-			def ensure_extra():
-				assert ctx.scope["func_start"] != pos
-			ensure_extra.__qualname__ = repr(self@inner)
 
 	def __repr__(self):
 		return "extra"
 extra = extra()
 
-# TODO
-chcp = "chcp"|k.iso(tochcp, fromchcp)@k.u4
+class labels(k.element):
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is not None
+		return inner.read(ctx)
+
+	def write(self, ctx, v, inner=None):
+		assert inner is not None
+		if not v:
+			ctx.later(ctx.tell(), k.u2, lambda: 0)
+		inner.write(ctx, v)
+
+	def __repr__(self):
+		return "labels"
+labels = labels()
 
 scenaStruct = k.struct(
 	_.name1@k.enc("cp932")@k.fbytes(10),
@@ -53,15 +62,16 @@ scenaStruct = k.struct(
 	_.location@k.u2,
 	_.bgm@k.u2,
 	_.flags@k.u4,
-
 	_.includes@k.list(6)@insn.scenaref,
-	_.name3@k.at(k.u4)@insn.zstr,
 
-	ref.chcp_start@k.u2,
-	ref.npc_start@k.u2,
-	ref.monster_start@k.u2,
-	ref.trigger_start@k.u2,
-	ref.object_start@k.u2,
+	k.cursor("name", k.u4),
+	_.name3@k.advance("name")@insn.zstr,
+
+	k.cursor("chcp", k.u2),
+	k.cursor("npc", k.u2),
+	k.cursor("monster", k.u2),
+	k.cursor("trigger", k.u2),
+	k.cursor("object", k.u2),
 
 	ref.func_start@k.u2,
 	ref.func_count@k.div(4)@k.u2,
@@ -71,31 +81,26 @@ scenaStruct = k.struct(
 	# func_start. The 12 is the size of the anim struct.
 	ref.anim_count@k.div(12)@k.add(k.div(-1)@ref.anim_start)@ref.func_start,
 
-	ref.label_start@k.u2,
-	ref.label_count@k.u2,
-	_.labels@k.at(ref.label_start)@k.list(ref.label_count)@k.struct(
-		_.pos@k.tuple(k.f4, k.f4, k.f4),
-		_.unk@k.bytes(4),
-		_.name@k.at(k.u4)@insn.zstr,
+	_.labels@labels@(
+		k.cursor("label", k.u2) >>
+		k.list(k.u2)@k.advance("label")@k.struct(
+			_.pos@k.tuple(k.f4, k.f4, k.f4),
+			_.unk@k.bytes(4),
+			_.name@k.later("string", k.u4)@insn.zstr,
+		)
 	),
 
-	ref.chcp_count@k.u1,
-	ref.npc_count@k.u1,
-	ref.monster_count@k.u1,
-	ref.trigger_count@k.u1,
-	ref.object_count@k.u1,
+	_.chcp@k.list(k.u1)@k.advance("chcp")@chcp,
 
-	_.unk13@k.bytes(3),
-
-	_.chcp@k.at(ref.chcp_start)@k.list(ref.chcp_count)@chcp,
-
-	_.npcs@k.at(ref.npc_start)@k.list(ref.npc_count)@k.struct(
+	_.npcs@k.list(k.u1)@k.advance("npc")@k.struct(
+		_.name@k.advance("name")@insn.zstr,
 		_.pos@insn.POS,
 		_.angle@k.u2,
 		_._@k.bytes(2*7), # A function or two in here
 	),
 
-	_.monsters@k.at(ref.monster_start)@k.list(ref.monster_count)@k.struct(
+	_.monsters@k.list(k.u1)@k.advance("monster")@k.struct(
+		_.name@k.advance("name")@insn.zstr,
 		_.pos@insn.POS,
 		_.angle@k.u2,
 		_.unk1@k.u2,
@@ -107,14 +112,14 @@ scenaStruct = k.struct(
 		_.moveAnim@k.u4
 	),
 
-	_.triggers@k.at(ref.trigger_start)@k.list(ref.trigger_count)@k.struct(
+	_.triggers@k.list(k.u1)@k.advance("trigger")@k.struct(
 		_.pos@k.tuple(k.f4, k.f4, k.f4),
 		_.range@k.f4,
 		_._@k.list(4)@k.list(4)@k.f4,
 		_._2@k.bytes(16), # Must be a function in here, at least
 	),
 
-	_.objects@k.at(ref.object_start)@k.list(ref.object_count)@k.struct(
+	_.objects@k.list(k.u1)@k.advance("object")@k.struct(
 		_.pos@insn.POS,
 		_.range@k.u4,
 		_.pos2@insn.POS,
@@ -122,16 +127,38 @@ scenaStruct = k.struct(
 		_.function@k.u4,
 	),
 
+	_.unk13@k.bytes(3),
+
 	_.extra@extra@k.bytes(64),
 
-	_.code@k.at(ref.func_start)@k.list(ref.func_count)@k.at(k.u4)@insn.script,
+	_.code@k.later("functable", ref.func_start)@k.list(ref.func_count)@k.later("script", k.u4)@insn.script,
 
-	_.anim@k.at(ref.anim_start)@k.list(ref.anim_count)@k.struct(
+	_.anim@k.later("anim", ref.anim_start)@k.list(ref.anim_count)@k.struct(
 		_.speed@k.u2,
 		_._@k.u1,
 		_.count@k.u1,
 		_.frames@k.list(8)@k.u1,
 	),
+
+	k.nowC("label"),
+	k.nowC("trigger"),
+	k.nowC("object"),
+	k.nowC("chcp"),
+	k.nowC("npc"),
+	k.nowC("monster"),
+
+	# This is not the same order as in the original files (those have AT rolls
+	# first), but writing that order would complicate things significantly.
+	k.now("battle"),
+	k.now("sepith"),
+	k.now("battleLayout"),
+	k.now("atRoll"),
+
+	k.now("anim"),
+	k.now("functable"),
+	k.now("script"),
+	k.nowC("name"),
+	k.now("string"),
 )
 
 geofront_tweaks = { # For Geofront v1.0.2
@@ -157,17 +184,17 @@ def __main__():
 		print(file)
 		for fn in sorted(file.glob("c0250.bin")):
 			with fn.open("rb") as f:
-				sc = {}
-				sc["_insns"] = insn.insn_zero_pc
+				f = io.BytesIO(f.read())
+				gftw = {}
 				if game == "geofront" and fn.stem in geofront_tweaks:
-					sc["_geofront_tweaks"] = geofront_tweaks[fn.stem]
-				v = k.read(scenaStruct, f, dict(sc))
+					gftw["_geofront_tweaks"] = geofront_tweaks[fn.stem]
+				v = k.read(scenaStruct, f, {"_insns": insn.insn_zero_pc, **gftw})
 
 				try:
 					f = io.BytesIO()
-					k.write(scenaStruct, f, v, dict(sc))
+					k.write(scenaStruct, f, v, {"_insns": insn.insn_zero_pc})
 					f.seek(0)
-					v2 = k.read(scenaStruct, f, dict(sc))
+					v2 = k.read(scenaStruct, f, {"_insns": insn.insn_zero_pc})
 					for a, b in util.diff(v.code, v2.code):
 						print(repr(a), repr(b))
 					print(v == v2)

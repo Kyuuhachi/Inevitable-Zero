@@ -303,14 +303,14 @@ class battle(k.element):
 			if x == 0:
 				return None
 			else:
-				return (k.at(x)@k.list(7)@k.u1).read(ctx)
+				return (k.later("sepith", x)@k.list(7)@k.u1).read(ctx)
 
 		def write(self, ctx, v, inner=None):
 			assert inner is None
 			if v is None:
 				k.u4.write(ctx, 0)
 			else:
-				(k.at(k.u4)@k.list(7)@k.u1).write(ctx, v)
+				(k.later("sepith", k.u4)@k.list(7)@k.u1).write(ctx, v)
 
 		def __repr__(self):
 			return "battle.sepith"
@@ -338,7 +338,7 @@ class battle(k.element):
 			return "battle.setups"
 	setups = setups()
 
-	inner = "battle.inner"|k.at(k.u2)@k.struct(
+	inner = "battle.inner"|k.later("battle", k.u2)@k.struct(
 		_.flags@k.u2,
 		_.level@k.u2,
 		_.unk@k.u1,
@@ -347,15 +347,15 @@ class battle(k.element):
 		_.canMove@k.u1,
 		_.moveSpeed@k.u2,
 		_.unk2@k.u2,
-		_.battlefield@k.at(k.u4)@zstr,
+		_.battlefield@k.later("string", k.u4)@zstr,
 		_.sepith@sepith,
 		_.setups@setups@k.struct(
 			_.enemies@k.list(8)@monsterref,
-			_.position@k.at(k.u2)@k.list(8)@k.tuple(k.u1, k.u1, k.u2),
-			_.position2@k.at(k.u2)@k.list(8)@k.tuple(k.u1, k.u1, k.u2),
+			_.position@k.later("battleLayout", k.u2)@k.list(8)@k.tuple(k.u1, k.u1, k.u2),
+			_.position2@k.later("battleLayout", k.u2)@k.list(8)@k.tuple(k.u1, k.u1, k.u2),
 			_.bgm@k.u2,
 			_.bgm2@k.u2,
-			_.atRoll@k.at(k.u4)@k.struct(
+			_.atRoll@k.later("atRoll", k.u4)@k.struct(
 				_.none@k.u1,
 				_.hp10@k.u1,
 				_.hp50@k.u1,

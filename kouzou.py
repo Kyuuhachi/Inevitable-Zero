@@ -1,5 +1,6 @@
 from functools import partial
 import struct as _struct
+from collections import defaultdict
 
 CONSTANT_TYPES = (int, bytes, str, float)
 
@@ -515,13 +516,8 @@ class ref(element, metaclass=field_meta):
 		if inner is None:
 			ctx.scope[self._name] = v
 		else:
-			pos = ctx.tell()
+			ctx.later(ctx.tell(), inner, lambda: ctx.scope[self._name])
 			ctx.write(_bytes(inner.size()))
-			@ctx.later
-			def fill_ref():
-				ctx.seek(pos)
-				inner.write(ctx, ctx.scope[self._name])
-			fill_ref.__qualname__ = repr(self@inner)
 
 	def size(self, inner=None):
 		assert inner is None
@@ -532,8 +528,10 @@ class ref(element, metaclass=field_meta):
 			return f"ref.{self._name}"
 		return f"ref({self._name!r})"
 
-class at(element):
-	def __init__(self, pos):
+# {{{2 Later/now
+class later(element):
+	def __init__(self, key, pos):
+		self._key = key
 		self._pos = element.one(pos)
 
 	def read(self, ctx, nil_ok=False, inner=None):
@@ -550,22 +548,104 @@ class at(element):
 		assert inner is not None
 		pos = ctx.tell()
 		ctx.write(_bytes(self._pos.size()))
-
-		@ctx.later
-		def fill_at():
-			ctx.seek(0, 2)
-			chunkpos = ctx.tell()
-			inner.write(ctx, v)
-			ctx.seek(pos)
-			self._pos.write(ctx, chunkpos)
-		fill_at.__qualname__ = repr(self@inner)
+		ctx.scope.setdefault("_later", defaultdict(_list))[self._key].append((self._pos, pos, inner, v))
 
 	def size(self, inner=None):
 		assert inner is not None
 		return self._pos.size()
 
 	def __repr__(self):
-		return f"at({self._pos!r})"
+		return f"later({self._key!r}, {self._pos!r})"
+
+class now(element):
+	def __init__(self, key):
+		self._key = key
+
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is None
+		assert nil_ok
+		return NIL
+
+	def write(self, ctx, v, inner=None):
+		assert inner is None
+
+		for (posT, pos, valT, val) in ctx.scope.get("_later", defaultdict(_list)).pop(self._key, []):
+			ctx.later(pos, posT, lambda p=ctx.tell(): p)
+			valT.write(ctx, val)
+
+	def __repr__(self):
+		return f"now({self._key!r})"
+
+# {{{2 Cursor/advance/nowC
+class cursor(element):
+	def __init__(self, key, pos):
+		self._key = key
+		self._pos = pos
+
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is None
+		assert nil_ok
+		v = self._pos.read(ctx)
+		ctx.scope.setdefault("_cursors", {})[self._key] = v
+		return NIL
+
+	def write(self, ctx, v, inner=None):
+		assert inner is None
+		ctx.scope.setdefault("_cursorItems", {})[self._key] = []
+		ctx.later(ctx.tell(), self._pos, lambda: ctx.scope["_cursors"].pop(self._key))
+		ctx.write(_bytes(self._pos.size()))
+
+	def size(self, inner=None):
+		assert inner is None
+		return self._pos.size()
+
+	def __repr__(self):
+		return f"cursor({self._key!r}, {self.pos!r})"
+
+
+class advance(element):
+	def __init__(self, key):
+		self._key = key
+
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is not None
+		pos = ctx.scope["_cursors"][self._key]
+		origpos = ctx.tell()
+		try:
+			ctx.seek(pos)
+			v = inner.read(ctx)
+			ctx.scope["_cursors"][self._key] = ctx.tell()
+			return v
+		finally:
+			ctx.seek(origpos)
+
+	def write(self, ctx, v, inner=None):
+		assert inner is not None
+		ctx.scope["_cursorItems"][self._key].append((inner, v))
+
+	def __repr__(self):
+		return f"advance({self._key!r})"
+
+class nowC(element):
+	def __init__(self, key):
+		self._key = key
+
+	def read(self, ctx, nil_ok=False, inner=None):
+		assert inner is None
+		assert nil_ok
+		return NIL
+
+	def write(self, ctx, v, inner=None):
+		assert inner is None
+
+		ctx.scope.setdefault("_cursors", {})[self._key] = ctx.tell()
+		for valT, val in ctx.scope["_cursorItems"].pop(self._key):
+			valT.write(ctx, val)
+
+	def __repr__(self):
+		return f"nowC({self._key!r})"
+
+# {{{2
 
 class lookahead(element):
 	def read(self, ctx, nil_ok=False, inner=None):
@@ -618,37 +698,6 @@ class numpy(element):
 
 # {{{1 IO
 
-class dfsqueue:
-	def __init__(self, init=()):
-		self.stack = _list(init)
-		self.top = None
-
-	def append(self, *item):
-		self.stack.extend(item)
-
-	def extend(self, items):
-		self.stack.extend(items)
-
-	def __iter__(self):
-		assert self.top is None, "Multiple concurrent iterations not supported"
-		s = self.stack
-		self.top = 0
-		while s:
-			s[self.top:] = s[self.top:][::-1]
-			val = s.pop()
-			self.top = len(s)
-			yield val
-		self.top = None
-
-	@property
-	def items(self):
-		stack = _list(self.stack)
-		stack[self.top:] = stack[self.top:][::-1]
-		return stack[::-1]
-
-	def __repr__(self):
-		return f"dfsqueue({self.items!r})"
-
 class Context:
 	def __init__(self, file, scope=None):
 		if scope is None:
@@ -671,26 +720,28 @@ class ReadContext(Context):
 class WriteContext(Context):
 	def __init__(self, file, scope):
 		super().__init__(file, scope)
-		self._later = dfsqueue()
-		self._last = []
+		self._later = []
 
 	def write(self, bytes):
 		self.file.write(bytes)
 
-	def later(self, func):
-		self._later.append(func)
-		return func
+	def later(self, pos, type, val):
+		self._later.append((pos, type, val))
 
 def read(type, f, scope=None):
-	c = ReadContext(f, scope)
-	v = type.read(c)
+	ctx = ReadContext(f, scope)
+	v = type.read(ctx)
 	return v
 
 def write(type, f, v, scope=None):
-	c = WriteContext(f, scope)
-	type.write(c, v)
-	for f in c._later:
-		f()
+	ctx = WriteContext(f, scope)
+	type.write(ctx, v)
+	if scope.get("_later"): raise ValueError("Unhandled later(): ", scope.get("_later"))
+	if scope.get("_cursor"): raise ValueError("Unhandled cursor(): ", scope.get("_cursor"))
+	while ctx._later:
+		pos, type, v = ctx._later.pop()
+		ctx.seek(pos)
+		type.write(ctx, v())
 
 class tracing:
 	def __enter__(self):

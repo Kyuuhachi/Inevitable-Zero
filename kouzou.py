@@ -765,6 +765,7 @@ class tracing:
 						nonlocal depth
 						if what == "return":
 							depth -= 1
+							print(*" "*depth, what, obj)
 					return traceinner
 
 	def __exit__(self, *a):

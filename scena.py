@@ -96,7 +96,9 @@ scenaStruct = k.struct(
 		_.name@k.advance("name")@insn.zstr,
 		_.pos@insn.POS,
 		_.angle@k.u2,
-		_._@k.bytes(2*7), # A function or two in here
+		_._1@k.bytes(8),
+		_.function@insn.FUNCTION,
+		_._2@k.bytes(4),
 	),
 
 	_.monsters@k.list(k.u1)@k.advance("monster")@k.struct(
@@ -114,8 +116,10 @@ scenaStruct = k.struct(
 	_.triggers@k.list(k.u1)@k.advance("trigger")@k.struct(
 		_.pos@k.tuple(k.f4, k.f4, k.f4),
 		_.range@k.f4,
-		_._@k.list(4)@k.list(4)@k.f4,
-		_._2@k.bytes(16), # Must be a function in here, at least
+		_.transform@k.list(16)@k.f4,
+		_._1@k.bytes(3),
+		_.function@insn.FUNCTION,
+		_._2@k.bytes(11),
 	),
 
 	_.objects@k.list(k.u1)@k.advance("object")@k.struct(
@@ -128,7 +132,7 @@ scenaStruct = k.struct(
 
 	_.unk13@k.bytes(3),
 
-	_.extra@extra@k.bytes(64),
+	_.extra@extra@k.tuple(k.bytes(60),insn.FUNCTION,insn.FUNCTION),
 
 	_.code@k.later("functable", ref.func_start)@k.list(ref.func_count)@k.later("script", k.u4)@insn.script,
 

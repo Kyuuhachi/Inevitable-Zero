@@ -108,8 +108,8 @@ text = text()
 class Char(int): pass
 CHAR = "CHAR"|k.iso(Char, int)@k.u2
 
-class Function(int): pass
-FUNCTION = "FUNCTION"|k.iso(Function, int)@k.u2
+class Function(tuple): pass
+FUNCTION = "FUNCTION"|k.iso(Function, tuple)@k.tuple(k.u1, k.u1)
 
 class ADDR(k.element):
 	def read(self, ctx, nil_ok=False, inner=None):
@@ -484,7 +484,7 @@ insns_zero_pc = [
 	insn("IF", expr, ADDR),
 	insn("GOTO", ADDR),
 	insn("SWITCH", expr, k.list(k.u1)@k.tuple(k.u2, ADDR), ADDR),
-	insn("CALL", FUNCTION), # u2
+	insn("CALL", FUNCTION),
 	insn("NEW_SCENE", scenaref, k.bytes(4)),
 	None,
 	insn("SLEEP", k.u2),
@@ -510,7 +510,7 @@ insns_zero_pc = [
 	None,
 	insn("EVENT_BEGIN", k.u1),
 	insn("EVENT_END", k.u1),
-	insn("0x1B", k.u2, k.u2),
+	insn("0x1B", k.u1, FUNCTION, k.u1),
 	None,
 	insn("0x1D", choice({
 		0: insn("0", k.bytes(3), k.i4, k.i4, k.i4, k.i4, k.i4, k.i4),
@@ -562,8 +562,8 @@ insns_zero_pc = [
 	None,
 	insn("ITEM_ADD", k.u2, k.u2),
 
-	insn("ITEM_REMOVE", k.bytes(4)),
-	insn("ITEM_GET", k.bytes(3)),
+	insn("ITEM_REMOVE", k.u2, k.u2),
+	insn("ITEM_GET", k.u2, k.u1),
 	insn("0x42", k.u1, k.u2, k.bytes(1)),
 	insn("PARTY_POSITION", k.u1),
 	insn("FORK_FUNC", CHAR, k.u1, FUNCTION),
@@ -572,7 +572,7 @@ insns_zero_pc = [
 	insn("FORK_LOOP", CHAR, k.u1, script.fork(True)),
 	insn("FORK_AWAIT", CHAR, k.u1),
 	insn("0x49"),
-	insn("EVENT", k.u2),
+	insn("EVENT", FUNCTION),
 	insn("0x4B", CHAR, k.i1),
 	insn("0x4C", CHAR, k.i1),
 	None,
@@ -606,11 +606,11 @@ insns_zero_pc = [
 	insn("0x67", k.u2), # Cam
 	insn("CAM_OFFSET", POS, k.u4),
 	insn("0x69", k.bytes(3)),
-	insn("0x6A", k.bytes(10)),
+	insn("0x6A", k.bytes(6)),
 	insn("0x6B", CHAR),
-	insn("CAM_DISTANCE", k.bytes(8)),
+	insn("CAM_DISTANCE", k.u4, k.u4),
 	insn("CAM_MOVE", k.bytes(10)),
-	insn("0x6E", k.bytes(8)),
+	insn("0x6E", k.u4, k.u4),
 	insn("0x6F", k.bytes(1)),
 
 	insn("0x70", k.u1, k.bytes(2)),
@@ -647,7 +647,7 @@ insns_zero_pc = [
 	insn("0x89", k.bytes(2)),
 	None,
 	None,
-	insn("0x8C", CHAR, k.bytes(1)),
+	insn("0x8C", CHAR, k.u1),
 	insn("0x8D", k.bytes(3)),
 	insn("0x8E", CHAR, zstr),
 	insn("0x8F", CHAR, POS, k.u2),
@@ -655,7 +655,7 @@ insns_zero_pc = [
 	insn("0x90", CHAR, POS, k.bytes(2)),
 	insn("0x91", CHAR, k.bytes(4)),
 	insn("0x92", CHAR, k.i4, k.i4, k.u2),
-	insn("0x93", CHAR, k.u2, k.u2),
+	insn("CHAR_ROTATE", CHAR, k.u2, k.u2),
 	insn("0x94", CHAR, k.i4, k.i4, k.i4, k.i4, k.u4),
 	insn("0x95", CHAR, k.i4, k.i4, k.i4, k.u4, k.u1),
 	insn("0x96", CHAR, POS, k.u4, k.u1),
@@ -680,7 +680,7 @@ insns_zero_pc = [
 	insn("0xA4", CHAR, k.bytes(2)),
 	insn("0xA5", CHAR, k.bytes(2)),
 	insn("0xA6", CHAR, k.u4, k.u4, k.u4, k.u4),
-	insn("0xA7", k.bytes(10)),
+	insn("0xA7", FUNCTION, k.bytes(8)),
 	insn("0xA8", k.bytes(9)),
 	insn("0xA9", k.u2),
 	insn("0xAA", k.u2),
@@ -715,16 +715,16 @@ insns_zero_pc = [
 	insn("ACHIEVEMENT", k.bytes(2)),
 	None,
 	insn("0xC7", k.bytes(5)),
-	insn("0xC8", k.bytes(30), zstr),
+	insn("FULLBODY", k.bytes(30), zstr),
 	insn("0xC9", k.bytes(2), k.i4, k.u4, k.u4),
 	insn("0xCA", k.bytes(3)),
 	insn("0xCB", k.bytes(4), zstr, k.bytes(3)),
 	None,
 	None,
-	insn("0xCE", choice({
-		0: insn("0", k.u1),
-		1: insn("1", k.u1, zstr),
-		2: insn("2", k.u1, k.i4, k.u1),
+	insn("MENU_CUSTOM", choice({
+		0: insn("INIT", k.u1),
+		1: insn("ADD", k.u1, zstr),
+		2: insn("FINISH", k.u1, k.i4, k.u1),
 		3: insn("3", k.u1, k.u1),
 		4: insn("4", k.u1, k.u1),
 		5: insn("5", k.u1, k.u1),
@@ -735,10 +735,10 @@ insns_zero_pc = [
 	insn("0xD1", k.bytes(3), zstr),
 	None,
 	insn("0xD3", CHAR, k.bytes(16)),
-	insn("0xD4", k.bytes(5)),
-	insn("0xD5", k.bytes(1)),
+	insn("0xD4", k.u1, k.u1, k.u1, k.u1, k.u1),
+	insn("0xD5", k.u1),
 	insn("0xD6", k.bytes(2)),
-	None,
+	None, # This or D8 is probably VITA_C7
 	None,
 	None,
 	insn("0xDA", k.bytes(1)),
@@ -803,26 +803,27 @@ insns_zero_vita = [
 	*insns_zero_pc[0xC7:0xCB+1], # 0xB8..0xBC
 	None,
 	*insns_zero_pc[0xCE:0xD6+1], # 0xBE..0xC6
-	None,
+	insn("VITA_C7", k.bytes(2)), # C7; either D7 or D8
 	None,
 	*insns_zero_pc[0xDA:0xDE+1], # 0xC9..0xCD
 	*insns_zero_pc[0xE0:0xE7+1], # 0xCE..0xD5
 	None,
 	*insns_zero_pc[0xEE:0xF2+1], # 0xD7..0xDB
-	*[None]*36,
+	None,
+	None,
+	None,
+	*insns_zero_pc[0xF8:0xF8+1], # 0xDF..0xDF
+	insn("VITA_E0"),
+	insn("VITA_E1", k.list(12)@k.u4),
+	insn("VITA_E2", k.bytes(13), k.u4, k.u4),
+	insn("VITA_E3", k.bytes(1), zstr, k.u4, k.u4, k.bytes(1)),
+	insn("VITA_E4", k.bytes(3)),
+	insn("VITA_E5", k.u1, k.u1, zstr, zstr, POS, POS, POS, k.u1),
+	insn("VITA_E6", k.u1, k.u1, POS, POS, k.u4, k.tuple(k.u1, k.u1, k.u1, k.u1), k.u4),
+	insn("VITA_E7", k.u1, k.u1),
+	insn("VITA_E8", k.bytes(1)),
+	insn("VITA_E9", k.u2, k.bytes(32)),
+	*[None]*22,
 ]
-insns_zero_vita[0xC7] = insn("VITA_C7", k.bytes(2))
-insns_zero_vita[0xD7:0xDB+1] = insns_zero_pc[0xEE:0xF2+1]
-insns_zero_vita[0xDF] = insn("VITA_DF", k.bytes(2))
-insns_zero_vita[0xE0] = insn("VITA_E0")
-insns_zero_vita[0xE1] = insn("VITA_E1", k.list(12)@k.u4)
-insns_zero_vita[0xE2] = insn("VITA_E2", k.bytes(13), k.u4, k.u4)
-insns_zero_vita[0xE3] = insn("VITA_E3", k.bytes(1), zstr, k.u4, k.u4, k.bytes(1))
-insns_zero_vita[0xE4] = insn("VITA_E4", k.bytes(3))
-insns_zero_vita[0xE5] = insn("VITA_E5", k.u1, k.u1, zstr, zstr, POS, POS, POS, k.u1)
-insns_zero_vita[0xE6] = insn("VITA_E6", k.u1, k.u1, POS, POS, k.u4, k.tuple(k.u1, k.u1, k.u1, k.u1), k.u4)
-insns_zero_vita[0xE7] = insn("VITA_E7", k.u1, k.u1)
-insns_zero_vita[0xE8] = insn("VITA_E8", k.bytes(1))
-insns_zero_vita[0xE9] = insn("VITA_E9", k.u2, k.bytes(32))
 assert len(insns_zero_vita) == 256, len(insns_zero_vita)
 insn_zero_vita = choice(insns_zero_vita)

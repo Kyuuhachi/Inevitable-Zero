@@ -600,7 +600,7 @@ class cursor(element):
 		return self._pos.size()
 
 	def __repr__(self):
-		return f"cursor({self._key!r}, {self.pos!r})"
+		return f"cursor({self._key!r}, {self._pos!r})"
 
 
 class advance(element):

@@ -170,37 +170,84 @@ geofront_tweaks = { # For Geofront v1.0.2
 	"m3033": {0x01361: 0x01449},
 	"t1210": {0x00302: 0x002f8},
 }
+import shutil
+from pathlib import Path
+
+def dump(inpath, outpath, mode):
+	inpath, outpath = Path(inpath), Path(outpath)
+	insns = {
+		"jp": insn.insn_zero_pc,
+		"vita": insn.insn_zero_vita,
+	}[mode]
+	if outpath.exists():
+		shutil.rmtree(outpath)
+	outpath.mkdir(parents=True, exist_ok=True)
+	for file in sorted(inpath.glob("c0*.bin")):
+		print(file)
+		with file.open("rb") as f:
+			data = k.read(scenaStruct, f, {"_insns": insns})
+		with (outpath/file.name).with_suffix(".py").open("wt") as f:
+			f.write("data = ")
+			pprint(f, {**data, "code": CustomRepr(f"[None]*{len(data['code'])}")})
+			f.write("\n")
+			for i, func in enumerate(data["code"]):
+				f.write(f"\ndata[{'code'!r}][{i!r}] = ")
+				pprint(f, func)
+				f.write("\n")
+
+
+class CustomRepr:
+	def __init__(self, repr):
+		self.repr = repr
+	def __repr__(self): return self.repr
+
+def pprint(f, data, indent=0):
+	if isinstance(data, dict):
+		f.write("{")
+		for i, (k, v) in enumerate(data.items()):
+			if i: f.write(",")
+			f.write("\n" + "\t"*(indent+1))
+			f.write(repr(k))
+			f.write(": ")
+			pprint(f, v, indent+1)
+		if data:
+			f.write("\n" + "\t"*indent)
+		f.write("}")
+		return
+
+	if isinstance(data, list):
+		f.write("[")
+		for i, v in enumerate(data):
+			if i: f.write(",")
+			f.write("\n" + "\t"*(indent+1))
+			pprint(f, v, indent+1)
+		if data:
+			f.write("\n" + "\t"*indent)
+		f.write("]")
+		return
+
+	if isinstance(data, insn.Insn):
+		if data.name in ("IF", "WHILE", "SWITCH"):
+			f.write(f"Insn({data.name!r}, {data.args[0]!r}")
+			for v in data.args[1:]:
+				f.write(",")
+				f.write("\n" + "\t"*(indent+1))
+				pprint(f, v, indent+1)
+			f.write("\n" + "\t"*indent)
+			f.write(")")
+		else:
+			f.write(repr(data))
+		return
+
+	f.write(repr(data))
 
 def __main__():
-	import pathlib
-	import util
-	import io
-	JP = pathlib.Path(...)
-	EN = pathlib.Path(...)
-	VITA = pathlib.Path(...)
+	JP = Path(...)
+	EN = Path(...)
+	VITA = Path(...)
 
-	for game, file in [("geofront", EN), ("jp", JP)]:
-		print(file)
-		for fn in sorted(file.glob("c0250.bin")):
-			with fn.open("rb") as f:
-				f = io.BytesIO(f.read())
-				gftw = {}
-				if game == "geofront" and fn.stem in geofront_tweaks:
-					gftw["_geofront_tweaks"] = geofront_tweaks[fn.stem]
-				v = k.read(scenaStruct, f, {"_insns": insn.insn_zero_pc, **gftw})
-
-				try:
-					f = io.BytesIO()
-					k.write(scenaStruct, f, v, {"_insns": insn.insn_zero_pc})
-					f.seek(0)
-					v2 = k.read(scenaStruct, f, {"_insns": insn.insn_zero_pc})
-					for a, b in util.diff(v.code, v2.code):
-						print(repr(a), repr(b))
-					print(v == v2)
-				except Exception:
-					import traceback
-					print(fn)
-					traceback.print_exc()
+	dump(VITA, Path("dump/vita"), "vita")
+	dump(JP, Path("dump/jp"), "jp")
 
 if __name__ == "__main__":
 	__main__()

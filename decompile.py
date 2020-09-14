@@ -26,10 +26,15 @@ def parse(asm, brk=None):
 			return insn.Insn("WHILE", head.args[0], body), asm_
 
 		iftrue, addr, asm_ = till(asm[1:], head.args[1], brk=brk)
-		iffalse = None
+		cases = [(head.args[0], iftrue)]
 		if addr is not None:
 			iffalse, _, asm_ = till(asm_, addr, brk=brk, hasaddr=False)
-		return insn.Insn("IF", head.args[0], iftrue, iffalse), asm_
+			if len(iffalse) == 1 and iffalse[0].name == "IF":
+				cases.extend(iffalse[0].args[0])
+			else:
+				cases.append((None, iffalse))
+
+		return insn.Insn("IF", cases), asm_
 
 	if asm[0].name == "SWITCH":
 		head = asm[0]
@@ -73,29 +78,30 @@ def compile(expr, label, brk=None):
 			yield insn.Insn("GOTO", brk)
 
 		elif op.name == "IF":
-			if op.args[2] is None:
-				l = label()
-				yield insn.Insn("IF", op.args[0], l)
-				yield from compile(op.args[1], label, brk)
-				yield l
-			else:
-				l = label()
-				l2 = label()
-				yield insn.Insn("IF", op.args[0], l)
-				yield from compile(op.args[1], label, brk)
-				yield insn.Insn("GOTO", l2)
-				yield l
-				yield from compile(op.args[2], label, brk)
-				yield l2
+			end = label()
+			has_else = False
+			for cond, body in op.args[0]:
+				if has_else:
+					raise ValueError("invalid else", op)
+				if cond is None:
+					has_else = True
+					yield from compile(body, label, brk)
+				else:
+					l = label()
+					yield insn.Insn("IF", cond, l)
+					yield from compile(body, label, brk)
+					yield insn.Insn("GOTO", end)
+					yield l
+			yield end
 
 		elif op.name == "WHILE":
 			l = label()
-			l2 = label()
+			end = label()
 			yield l
-			yield insn.Insn("IF", op.args[0], l2)
-			yield from compile(op.args[1], label, l2)
+			yield insn.Insn("IF", op.args[0], end)
+			yield from compile(op.args[1], label, end)
 			yield insn.Insn("GOTO", l)
-			yield l2
+			yield end
 
 		elif op.name == "SWITCH":
 			end = label()

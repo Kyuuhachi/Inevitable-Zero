@@ -208,12 +208,12 @@ class CustomRepr:
 def pprint(f, data, indent=0):
 	if isinstance(data, dict):
 		f.write("{")
-		for i, (k, v) in enumerate(data.items()):
-			if i: f.write(",")
+		for k, v in data.items():
 			f.write("\n" + "\t"*(indent+1))
 			f.write(repr(k))
 			f.write(": ")
 			pprint(f, v, indent+1)
+			f.write(",")
 		if data:
 			f.write("\n" + "\t"*indent)
 		f.write("}")
@@ -221,26 +221,38 @@ def pprint(f, data, indent=0):
 
 	if isinstance(data, list):
 		f.write("[")
-		for i, v in enumerate(data):
-			if i: f.write(",")
+		for v in data:
 			f.write("\n" + "\t"*(indent+1))
 			pprint(f, v, indent+1)
+			f.write(",")
 		if data:
 			f.write("\n" + "\t"*indent)
 		f.write("]")
 		return
 
-	if isinstance(data, insn.Insn):
-		if data.name in ("IF", "WHILE", "SWITCH"):
-			f.write(f"Insn({data.name!r}, {data.args[0]!r}")
-			for v in data.args[1:]:
-				f.write(",")
-				f.write("\n" + "\t"*(indent+1))
-				pprint(f, v, indent+1)
-			f.write("\n" + "\t"*indent)
+	if isinstance(data, insn.Insn) and data.name == "IF":
+		f.write(f"Insn({data.name!r}, [")
+		for cond, body in data.args[0]:
+			f.write("\n" + "\t"*(indent+1))
+			f.write("(")
+			f.write(repr(cond))
+			f.write(", ")
+			pprint(f, body, indent+1)
 			f.write(")")
-		else:
-			f.write(repr(data))
+			f.write(",")
+		f.write("\n" + "\t"*indent + "])")
+		return
+
+	if isinstance(data, insn.Insn) and data.name == "WHILE":
+		f.write(f"Insn({data.name!r}, {data.args[0]!r}, ")
+		pprint(f, data.args[1], indent)
+		f.write(")")
+		return
+
+	if isinstance(data, insn.Insn) and data.name == "SWITCH":
+		f.write(f"Insn({data.name!r}, {data.args[0]!r}, ")
+		pprint(f, data.args[1], indent)
+		f.write(")")
 		return
 
 	f.write(repr(data))

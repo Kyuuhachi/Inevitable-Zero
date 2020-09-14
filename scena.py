@@ -186,7 +186,7 @@ def dump(inpath, outpath, mode):
 	if outpath.exists():
 		shutil.rmtree(outpath)
 	outpath.mkdir(parents=True, exist_ok=True)
-	for file in sorted(inpath.glob("c0*.bin")):
+	for file in sorted(inpath.glob("*.bin")):
 		print(file)
 		with file.open("rb") as f:
 			data = k.read(scenaStruct, f, {"_insns": insns})

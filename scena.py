@@ -100,7 +100,6 @@ scenaStruct = k.struct(
 	),
 
 	_.monsters@k.list(k.u1)@k.advance("monster")@k.struct(
-		_.name@k.advance("name")@insn.zstr,
 		_.pos@insn.POS,
 		_.angle@k.u2,
 		_.unk1@k.u2,

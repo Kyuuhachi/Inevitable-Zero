@@ -787,3 +787,42 @@ insns_zero_pc = [
 ]
 assert len(insns_zero_pc) == 256
 insn_zero_pc = choice(insns_zero_pc)
+
+insns_zero_vita = [
+	None,
+	*insns_zero_pc[0x01:0x11+1], # 0x01..0x11
+	None,
+	*insns_zero_pc[0x14:0x17+1], # 0x13..0x16
+	*insns_zero_pc[0x19:0x1B+1], # 0x17..0x19
+	*insns_zero_pc[0x1D:0x32+1], # 0x1A..0x2F
+	*insns_zero_pc[0x35:0x79+1], # 0x30..0x74
+	*insns_zero_pc[0x7D:0x7D+1], # 0x75..0x75
+	*insns_zero_pc[0x82:0x83+1], # 0x76..0x77
+	*insns_zero_pc[0x85:0xBE+1], # 0x78..0xB1
+	*insns_zero_pc[0xC0:0xC5+1], # 0xB2..0xB7
+	*insns_zero_pc[0xC7:0xCB+1], # 0xB8..0xBC
+	None,
+	*insns_zero_pc[0xCE:0xD6+1], # 0xBE..0xC6
+	None,
+	None,
+	*insns_zero_pc[0xDA:0xDE+1], # 0xC9..0xCD
+	*insns_zero_pc[0xE0:0xE7+1], # 0xCE..0xD5
+	None,
+	*insns_zero_pc[0xEE:0xF2+1], # 0xD7..0xDB
+	*[None]*36,
+]
+insns_zero_vita[0xC7] = insn("VITA_C7", k.bytes(2))
+insns_zero_vita[0xD7:0xDB+1] = insns_zero_pc[0xEE:0xF2+1]
+insns_zero_vita[0xDF] = insn("VITA_DF", k.bytes(2))
+insns_zero_vita[0xE0] = insn("VITA_E0")
+insns_zero_vita[0xE1] = insn("VITA_E1", k.list(12)@k.u4)
+insns_zero_vita[0xE2] = insn("VITA_E2", k.bytes(13), k.u4, k.u4)
+insns_zero_vita[0xE3] = insn("VITA_E3", k.bytes(1), zstr, k.u4, k.u4, k.bytes(1))
+insns_zero_vita[0xE4] = insn("VITA_E4", k.bytes(3))
+insns_zero_vita[0xE5] = insn("VITA_E5", k.u1, k.u1, zstr, zstr, POS, POS, POS, k.u1)
+insns_zero_vita[0xE6] = insn("VITA_E6", k.u1, k.u1, POS, POS, k.u4, k.tuple(k.u1, k.u1, k.u1, k.u1), k.u4)
+insns_zero_vita[0xE7] = insn("VITA_E7", k.u1, k.u1)
+insns_zero_vita[0xE8] = insn("VITA_E8", k.bytes(1))
+insns_zero_vita[0xE9] = insn("VITA_E9", k.u2, k.bytes(32))
+assert len(insns_zero_vita) == 256, len(insns_zero_vita)
+insn_zero_vita = choice(insns_zero_vita)

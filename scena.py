@@ -209,7 +209,6 @@ def dump(inpath, outpath, mode, verbose=False):
 				pprint(f, func, verbose)
 				f.write("\n")
 
-
 class CustomRepr:
 	def __init__(self, repr):
 		self.repr = repr
@@ -265,6 +264,12 @@ def pprint(f, data, verbose=False, indent=0):
 		f.write(")")
 		return
 
+	if isinstance(data, insn.Insn) and data.name in ["FORK", "FORK_LOOP"]:
+		f.write(f"Insn({data.name!r}, {data.args[0]!r}, {data.args[1]!r}, ")
+		pprint(f, data.args[2], verbose, indent)
+		f.write(")")
+		return
+
 	if isinstance(data, insn.Insn) and verbose:
 		f.write(f"Insn({data.name!r}")
 		prevText = False
@@ -283,7 +288,7 @@ def pprint(f, data, verbose=False, indent=0):
 					f.write(repr(line))
 				prevText = True
 			else:
-				pprint(f, arg, verbose, indent+1)
+				f.write(repr(arg))
 				prevText = False
 
 		if prevText:

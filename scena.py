@@ -198,6 +198,7 @@ def dump(inpath, outpath, mode):
 			data = k.read(scenaStruct, f, params)
 
 		with (outpath/file.name).with_suffix(".py").open("wt") as f:
+			f.write("if 0: from . import Insn\n")
 			f.write("data = ")
 			pprint(f, {**data, "code": CustomRepr(f"[None]*{len(data['code'])}")})
 			f.write("\n")

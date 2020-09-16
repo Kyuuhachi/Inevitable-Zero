@@ -1,6 +1,7 @@
 import kouzou as k
 from kouzou import _
 import decompile
+import re
 
 scenaprefix = "0atcrme"
 def toscenaref(n):
@@ -50,54 +51,49 @@ POS = "POS"|k.tuple(k.i4, k.i4, k.i4)
 zstr = "zstr"|k.enc("cp932")@k.zbytes()
 
 class text(k.element):
+	# Apparently '＂' can be encoded as both EE FC and FA 57, which makes it not
+	# roundtrippable. That character exists in a single string, so it's not
+	# worth caring about.
+
+	FORMAT_RE = re.compile(r"\{(\w+)(?: (\d+))?\}|([\n\r\f])")
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is None
 
-		elements = []
-		segment = bytearray()
-		def tag(*a):
-			if segment:
-				elements.append(segment.decode("cp932"))
-				segment.clear()
-			elements.append(a)
-
+		buffer = bytearray()
 		read = ctx.file.read # This saves several seconds
 		while ch := read(1)[0]:
-			if ch == 0x00: break
-			elif ch == 0x01: tag("line")#segment.extend(b"\n") # line
-			elif ch == 0x02: tag("wait")#segment.extend(b"\r") # wait
-			elif ch == 0x03: tag("page")#segment.extend(b"\f") # page
-			elif ch == 0x05: tag("0x05")
-			elif ch == 0x06: tag("0x06")
-			elif ch == 0x07: tag("color", k.u1.read(ctx))
-			elif ch == 0x09: tag("0x09")
-			elif ch == 0x18: tag("0x18")
-			elif ch == 0x1F: tag("item", k.u2.read(ctx))
+			if 0: pass
+			elif ch == 0x01: buffer.extend(b"\n") # line
+			elif ch == 0x02: buffer.extend(b"\r") # wait
+			elif ch == 0x03: buffer.extend(b"\f") # page
+			elif ch == 0x05: buffer.extend(b"{0x05}")
+			elif ch == 0x06: buffer.extend(b"{0x06}")
+			elif ch == 0x07: buffer.extend(b"{color %d}" % k.u1.read(ctx))
+			elif ch == 0x09: buffer.extend(b"{0x09}")
+			elif ch == 0x18: buffer.extend(b"{0x18}")
+			elif ch == 0x1F: buffer.extend(b"{item %d}" % k.u2.read(ctx))
 			elif ch <= 0x1F: raise ValueError("%02X" % ch)
-			else:
-				segment.append(ch)
-
-		if segment: elements.append(segment.decode("cp932"))
-
-		return elements
+			else: buffer.append(ch)
+		return buffer.decode("cp932")
 
 	def write(self, ctx, v, inner=None):
 		assert inner is None
-		for v in v:
-			if isinstance(v, tuple):
-				if 0: pass
-				elif v[0] == "line": ctx.write(b"\x01")
-				elif v[0] == "wait": ctx.write(b"\x02")
-				elif v[0] == "page": ctx.write(b"\x03")
-				elif v[0] == "0x05": ctx.write(b"\x05")
-				elif v[0] == "0x06": ctx.write(b"\x06")
-				elif v[0] == "color": ctx.write(b"\x07"); k.u1.write(ctx, v[1])
-				elif v[0] == "0x09": ctx.write(b"\x09")
-				elif v[0] == "0x18": ctx.write(b"\x18")
-				elif v[0] == "item": ctx.write(b"\x1F"); k.u2.write(ctx, v[1])
-				else: raise ValueError(v)
-			else:
-				ctx.write(v.encode("cp932"))
+		end = 0
+		for format in self.FORMAT_RE.finditer(v):
+			ctx.write(v[end:format.start()].encode("cp932"))
+			tag = format.group(3) or format.group(1)
+			if 0: pass
+			elif tag == "\n": ctx.write(b"\x01")
+			elif tag == "\r": ctx.write(b"\x02")
+			elif tag == "\f": ctx.write(b"\x03")
+			elif tag == "0x05": ctx.write(b"\x05")
+			elif tag == "0x06": ctx.write(b"\x06")
+			elif tag == "color":ctx.write(b"\x07"); k.u1.write(ctx, int(format.group(2)))
+			elif tag == "0x09": ctx.write(b"\x09")
+			elif tag == "0x18": ctx.write(b"\x18")
+			elif tag == "item": ctx.write(b"\x1F"); k.u2.write(ctx, int(format.group(2)))
+			else: raise ValueError(format.group())
+			end = format.end()
 		ctx.write(b"\0")
 
 	def __repr__(self):

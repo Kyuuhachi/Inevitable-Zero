@@ -60,7 +60,7 @@ class text(k.element):
 		assert inner is None
 
 		buffer = bytearray()
-		read = ctx.file.read # This saves several seconds
+		read = ctx.file.read # This saves a few percent of time
 		while ch := read(1)[0]:
 			if 0: pass
 			elif ch == 0x01: buffer.extend(b"\n") # line

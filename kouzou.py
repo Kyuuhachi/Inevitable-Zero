@@ -736,8 +736,8 @@ def read(type, f, scope=None):
 def write(type, f, v, scope=None):
 	ctx = WriteContext(f, scope)
 	type.write(ctx, v)
-	if scope.get("_later"): raise ValueError("Unhandled later(): ", scope.get("_later"))
-	if scope.get("_cursor"): raise ValueError("Unhandled cursor(): ", scope.get("_cursor"))
+	if v := ctx.scope.get("_later"): raise ValueError("Unhandled later(): ", v)
+	if v := ctx.scope.get("_cursor"): raise ValueError("Unhandled cursor(): ", v)
 	while ctx._later:
 		pos, type, v = ctx._later.pop()
 		ctx.seek(pos)

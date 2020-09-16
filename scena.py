@@ -182,6 +182,7 @@ def dump(inpath, outpath, mode):
 	insns = {
 		"jp": insn.insn_zero_pc,
 		"vita": insn.insn_zero_vita,
+		"geofront": insn.insn_zero_pc,
 	}[mode]
 	if outpath.exists():
 		shutil.rmtree(outpath)
@@ -189,11 +190,19 @@ def dump(inpath, outpath, mode):
 	for file in sorted(inpath.glob("*.bin")):
 		print(file)
 		with file.open("rb") as f:
-			data = k.read(scenaStruct, f, {"_insns": insns})
+			params = {
+				"_insns": insns,
+			}
+			if mode == "geofront" and file.stem in geofront_tweaks:
+				params["_geofront_tweaks"] = geofront_tweaks[file.stem]
+			data = k.read(scenaStruct, f, params)
+
 		with (outpath/file.name).with_suffix(".py").open("wt") as f:
 			f.write("data = ")
 			pprint(f, {**data, "code": CustomRepr(f"[None]*{len(data['code'])}")})
 			f.write("\n")
+			# Printhing functions like this makes it easier to see the indices
+			# of functions, both while reading the code and in diff context lines.
 			for i, func in enumerate(data["code"]):
 				f.write(f"\ndata[{'code'!r}][{i!r}] = ")
 				pprint(f, func)
@@ -264,6 +273,7 @@ def __main__():
 
 	dump(VITA, Path("dump/vita"), "vita")
 	dump(JP, Path("dump/jp"), "jp")
+	dump(EN, Path("dump/en"), "geofront")
 
 if __name__ == "__main__":
 	__main__()

@@ -177,7 +177,7 @@ geofront_tweaks = { # For Geofront v1.0.2
 import shutil
 from pathlib import Path
 
-def dump(inpath, outpath, mode):
+def dump(inpath, outpath, mode, verbose=False):
 	inpath, outpath = Path(inpath), Path(outpath)
 	insns = {
 		"jp": insn.insn_zero_pc,
@@ -206,7 +206,7 @@ def dump(inpath, outpath, mode):
 			# of functions, both while reading the code and in diff context lines.
 			for i, func in enumerate(data["code"]):
 				f.write(f"\ndata[{'code'!r}][{i!r}] = ")
-				pprint(f, func)
+				pprint(f, func, verbose)
 				f.write("\n")
 
 
@@ -215,14 +215,14 @@ class CustomRepr:
 		self.repr = repr
 	def __repr__(self): return self.repr
 
-def pprint(f, data, indent=0):
+def pprint(f, data, verbose=False, indent=0):
 	if isinstance(data, dict):
 		f.write("{")
 		for k, v in data.items():
 			f.write("\n" + "\t"*(indent+1))
 			f.write(repr(k))
 			f.write(": ")
-			pprint(f, v, indent+1)
+			pprint(f, v, verbose, indent+1)
 			f.write(",")
 		if data:
 			f.write("\n" + "\t"*indent)
@@ -233,7 +233,7 @@ def pprint(f, data, indent=0):
 		f.write("[")
 		for v in data:
 			f.write("\n" + "\t"*(indent+1))
-			pprint(f, v, indent+1)
+			pprint(f, v, verbose, indent+1)
 			f.write(",")
 		if data:
 			f.write("\n" + "\t"*indent)
@@ -247,7 +247,7 @@ def pprint(f, data, indent=0):
 			f.write("(")
 			f.write(repr(cond))
 			f.write(", ")
-			pprint(f, body, indent+1)
+			pprint(f, body, verbose, indent+1)
 			f.write(")")
 			f.write(",")
 		f.write("\n" + "\t"*indent + "])")
@@ -255,13 +255,39 @@ def pprint(f, data, indent=0):
 
 	if isinstance(data, insn.Insn) and data.name == "WHILE":
 		f.write(f"Insn({data.name!r}, {data.args[0]!r}, ")
-		pprint(f, data.args[1], indent)
+		pprint(f, data.args[1], verbose, indent)
 		f.write(")")
 		return
 
 	if isinstance(data, insn.Insn) and data.name == "SWITCH":
 		f.write(f"Insn({data.name!r}, {data.args[0]!r}, ")
-		pprint(f, data.args[1], indent)
+		pprint(f, data.args[1], verbose, indent)
+		f.write(")")
+		return
+
+	if isinstance(data, insn.Insn) and verbose:
+		f.write(f"Insn({data.name!r}")
+		prevText = False
+		for arg in data.args:
+			f.write(",")
+			if isinstance(arg, insn.Text):
+				pass
+			elif prevText:
+				f.write("\n" + "\t"*(indent+1))
+			else:
+				f.write(" ")
+
+			if isinstance(arg, insn.Text):
+				for line in arg.splitlines(keepends=True):
+					f.write("\n" + "\t"*(indent+1))
+					f.write(repr(line))
+				prevText = True
+			else:
+				pprint(f, arg, verbose, indent+1)
+				prevText = False
+
+		if prevText:
+			f.write("\n" + "\t"*indent)
 		f.write(")")
 		return
 
@@ -272,9 +298,9 @@ def __main__():
 	EN = Path(...)
 	VITA = Path(...)
 
-	dump(VITA, Path("dump/vita"), "vita")
-	dump(JP, Path("dump/jp"), "jp")
-	dump(EN, Path("dump/en"), "geofront")
+	dump(VITA, Path("dump/vita"), "vita", True)
+	dump(JP, Path("dump/jp"), "jp", True)
+	dump(EN, Path("dump/en"), "geofront", True)
 
 if __name__ == "__main__":
 	__main__()

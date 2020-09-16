@@ -50,6 +50,7 @@ monsterref = "monsterref"|k.iso(tomonsterref, frommonsterref)@k.u4
 POS = "POS"|k.tuple(k.i4, k.i4, k.i4)
 zstr = "zstr"|k.enc("cp932")@k.zbytes()
 
+class Text(str): pass
 class text(k.element):
 	# Apparently '＂' can be encoded as both EE FC and FA 57, which makes it not
 	# roundtrippable. That character exists in a single string, so it's not
@@ -74,7 +75,7 @@ class text(k.element):
 			elif ch == 0x1F: buffer.extend(b"{item %d}" % k.u2.read(ctx))
 			elif ch <= 0x1F: raise ValueError("%02X" % ch)
 			else: buffer.append(ch)
-		return buffer.decode("cp932")
+		return Text(buffer.decode("cp932"))
 
 	def write(self, ctx, v, inner=None):
 		assert inner is None

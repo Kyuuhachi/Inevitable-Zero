@@ -11,26 +11,30 @@ class CustomRepr:
 		self.repr = repr
 	def __repr__(self): return self.repr
 
-def dump(f, data, compact):
+def dump(f, data, mode):
 	f.write("if 0: from . import Insn\n")
 	f.write("data = ")
-	pprint(f, {**data, "code": CustomRepr(f"[None]*{len(data['code'])}")})
+	pprint(f, {**data, "code": CustomRepr(f"[None]*{len(data['code'])}")}, mode)
 	f.write("\n")
 	# Printhing functions like this makes it easier to see the indices
 	# of functions, both while reading the code and in diff context lines.
 	for i, func in enumerate(data["code"]):
 		f.write(f"\ndata[{'code'!r}][{i!r}] = ")
-		pprint(f, func, compact)
+		pprint(f, func, mode)
 		f.write("\n")
 
-def pprint(f, data, compact=False, indent=0):
+def pprint(f, data, mode, indent=0):
+	if isinstance(data, insn.Text) and mode == "diff":
+		f.write("...")
+		return
+
 	if isinstance(data, dict):
 		f.write("{")
 		for k, v in data.items():
 			f.write("\n" + "\t"*(indent+1))
 			f.write(repr(k))
 			f.write(": ")
-			pprint(f, v, compact, indent+1)
+			pprint(f, v, mode, indent+1)
 			f.write(",")
 		if data:
 			f.write("\n" + "\t"*indent)
@@ -41,7 +45,7 @@ def pprint(f, data, compact=False, indent=0):
 		f.write("[")
 		for v in data:
 			f.write("\n" + "\t"*(indent+1))
-			pprint(f, v, compact, indent+1)
+			pprint(f, v, mode, indent+1)
 			f.write(",")
 		if data:
 			f.write("\n" + "\t"*indent)
@@ -55,7 +59,7 @@ def pprint(f, data, compact=False, indent=0):
 			f.write("(")
 			f.write(repr(cond))
 			f.write(", ")
-			pprint(f, body, compact, indent+1)
+			pprint(f, body, mode, indent+1)
 			f.write(")")
 			f.write(",")
 		f.write("\n" + "\t"*indent + "])")
@@ -63,19 +67,19 @@ def pprint(f, data, compact=False, indent=0):
 
 	if isinstance(data, insn.Insn) and data.name == "WHILE":
 		f.write(f"Insn({data.name!r}, {data.args[0]!r}, ")
-		pprint(f, data.args[1], compact, indent)
+		pprint(f, data.args[1], mode, indent)
 		f.write(")")
 		return
 
 	if isinstance(data, insn.Insn) and data.name == "SWITCH":
 		f.write(f"Insn({data.name!r}, {data.args[0]!r}, ")
-		pprint(f, data.args[1], compact, indent)
+		pprint(f, data.args[1], mode, indent)
 		f.write(")")
 		return
 
 	if isinstance(data, insn.Insn) and data.name in ["FORK", "FORK_LOOP"]:
 		f.write(f"Insn({data.name!r}, {data.args[0]!r}, {data.args[1]!r}, ")
-		pprint(f, data.args[2], compact, indent)
+		pprint(f, data.args[2], mode, indent)
 		f.write(")")
 		return
 
@@ -84,7 +88,7 @@ def pprint(f, data, compact=False, indent=0):
 		prevText = False
 		for arg in data.args:
 			f.write(",")
-			if isinstance(arg, insn.Text) and not compact:
+			if isinstance(arg, insn.Text) and mode == "verbose":
 				for line in arg.splitlines(keepends=True):
 					f.write("\n" + "\t"*(indent+1))
 					f.write(repr(line))
@@ -94,7 +98,10 @@ def pprint(f, data, compact=False, indent=0):
 					f.write("\n" + "\t"*(indent+1))
 				else:
 					f.write(" ")
-				f.write(repr(arg))
+				if isinstance(arg, insn.Text) and mode == "diff":
+					f.write("...")
+				else:
+					f.write(repr(arg))
 				prevText = False
 
 		if prevText:
@@ -105,11 +112,12 @@ def pprint(f, data, compact=False, indent=0):
 	f.write(repr(data))
 
 argp = argparse.ArgumentParser()
-argp.add_argument("-c", "--compact", action="store_true")
+argp.add_argument("-v", "--verbose", dest="dump_mode", action="store_const", const="verbose")
+argp.add_argument("-d", "--diff", dest="dump_mode", action="store_const", const="diff")
 argp.add_argument("-m", "--mode", choices=["jp", "geofront", "vita"], required=True)
 argp.add_argument("inpath", type=Path)
 argp.add_argument("outpath", type=Path)
-def __main__(compact, mode, inpath, outpath):
+def __main__(dump_mode, mode, inpath, outpath):
 	if not inpath.is_dir():
 		raise ValueError("inpath must be a directory")
 
@@ -136,7 +144,7 @@ def __main__(compact, mode, inpath, outpath):
 			data = kouzou.read(scena.scenaStruct, f, params)
 
 		with outfile.open("wt") as f:
-			dump(f, data, compact)
+			dump(f, data, dump_mode)
 
 if __name__ == "__main__":
 	__main__(**argp.parse_args().__dict__)

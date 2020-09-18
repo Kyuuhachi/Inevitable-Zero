@@ -8,7 +8,7 @@ import scena
 import insn
 import dump
 from insn import Insn
-from translate import translator
+import translate
 
 class Context:
 	def __init__(self, vitapath, pcpath, is_geofront=None):
@@ -51,7 +51,7 @@ class Context:
 
 	def _do_translate(self, name, translation):
 		if translation is None:
-			translation = translator(name)
+			translation = translate.null_translator()
 		if self.is_geofront:
 			self.pc_scripts[name] = do_transform(
 				self.pc_scripts[name],
@@ -62,19 +62,22 @@ class Context:
 def patch_furniture_minigames(ctx):
 	# There are minigames on some room furniture in the Vita version, let's
 	# import that. Since the minigames don't exist on PC, it doesn't quite work.
-	for file, func in [
-			("c0110_1", 33), ("c0110_1", 35), ("c0110_1", 38),
-			("c011b", 73), ("c011b", 75), ("c011b", 78),
-			("c011c", 58), ("c011c", 60), ("c011c", 63),
+	tr = translate.translator("furniture_minigames")
+	for file, funcs in [
+			("c0110_1", (33, 35, 38)),
+			("c011b", (73, 75, 78)),
+			("c011c", (58, 60, 63)),
 	]:
-		with ctx.get(file, translator("furniture_minigames")) as (vita, pc):
-			vita_, pc_ = vita.code[func], pc.code[func]
-			assert vita_[10] == pc_[10]
-			pc_[11:11] = vita_[11:17]
-			assert vita_[18] == pc_[18]
-			assert vita_[22] == pc_[22]
-			assert vita_[23].name == "IF"
-			pc_.insert(23, vita_[23])
+		tr.pos = 0
+		with ctx.get(file, tr) as (vita, pc):
+			for func in funcs:
+				vita_, pc_ = vita.code[func], pc.code[func]
+				assert vita_[10] == pc_[10]
+				pc_[11:11] = vita_[11:17]
+				assert vita_[18] == pc_[18]
+				assert vita_[22] == pc_[22]
+				assert vita_[23].name == "IF"
+				pc_.insert(23, vita_[23])
 
 def patch_quests(ctx):
 	for file, func in [
@@ -120,7 +123,8 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 9, "@IF", 0, 1)
 		copy_clause(vita, pc, 11, "@IF:1", 0, 0)
 
-	ctx.copy("c0210_1")
+	tr = translate.translator("quest1")
+	ctx.copy("c0210_1", tr)
 
 	with ctx.get("c0400") as (vita, pc):
 		copy_clause(vita, pc, 49, pc.code[49].index(Insn('EXPR_VAR', 3, [Insn('CONST', 0), Insn('SET'), Insn('END')]))+9)
@@ -193,7 +197,8 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 5, *path1, "@IF", 0, 0)
 		copy_clause(vita, pc, 6, "@IF", 0, 0)
 
-	ctx.copy("t0520_1")
+	tr = translate.translator("quest2")
+	ctx.copy("t0520_1", tr)
 
 	with ctx.get("t1000") as (vita, pc):
 		pc.includes = vita.includes
@@ -238,7 +243,8 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 3, "@IF", 0, 0)
 		copy_clause(vita, pc, 5, "@IF", 0, 0)
 
-	ctx.copy("t1030_1")
+	tr = translate.translator("quest3")
+	ctx.copy("t1030_1", tr)
 
 	with ctx.get("t1050") as (vita, pc):
 		pc.includes = vita.includes
@@ -266,7 +272,8 @@ def patch_quests(ctx):
 			get_(pc.code[32], "@IF", 0, 2, 1, "@MENU").args[4]
 		pc.code[64].insert(4, vita.code[64][4])
 
-	ctx.copy("t1500_1")
+	tr = translate.translator("quest4")
+	ctx.copy("t1500_1", tr)
 
 	with ctx.get("t1520") as (vita, pc):
 		pc.includes = vita.includes
@@ -279,7 +286,7 @@ def patch_quests(ctx):
 		assert vita_[4].args[0][0][1][0] == pc_[4]
 		pc_[4] = vita_[4]
 
-	with ctx.get("t1530_1") as (vita, pc):
+	with ctx.get("t1530_1", tr) as (vita, pc):
 		pc.includes = vita.includes
 		pc.code.append(vita.code[79])
 		pc.code.append(vita.code[80])
@@ -300,7 +307,7 @@ def patch_quests(ctx):
 				if not getattr(npc.name, "translated", False):
 					npc.name = [npc2.name for npc1, npc2 in zip(vita2.npcs, pc2.npcs) if npc1.name == npc.name]
 
-	with ctx.get("t1540_1") as (vita, pc):
+	with ctx.get("t1540_1", tr) as (vita, pc):
 		pc.includes = vita.includes
 		pc.code.append(vita.code[50])
 		pc.code.append(vita.code[51])
@@ -322,7 +329,8 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 25, "@IF:-1", 0, 0)
 		copy_clause(vita, pc, 11, "@IF", [Insn('FLAG', 1536), Insn('END')], "@IF", 0, 0)
 
-	ctx.copy("t4010_1")
+	tr = translate.translator("quest5")
+	ctx.copy("t4010_1", tr)
 
 	with ctx.get("r0000") as (vita, pc):
 		copy_clause(vita, pc, 1, 0)
@@ -362,10 +370,10 @@ def patch_misc(ctx):
 			Insn(names[1], *insn.args[:-1], b),
 		)
 
-	misc = translator("misc")
+	miscTranslator = translate.translator("misc")
 
 	# A rather important line in which the Gang learns how to spell
-	with ctx.get("c011b", misc.scope("write-down")) as (vita, pc):
+	with ctx.get("c011b", miscTranslator) as (vita, pc):
 		v, p = vita.code[35], pc.code[35]
 		start = next(i-2 for i, (a, b) in enumerate(zip(v, p)) if a.name != b.name)
 		end = next(-i+1 for i, (a, b) in enumerate(zip(v[::-1], p[::-1])) if a.name != b.name)
@@ -375,8 +383,10 @@ def patch_misc(ctx):
 		p[start:end] = [line1, *v[start+1:end-1], line2]
 
 	# Fran saying "Ah, Lloyd!"
+	pos = miscTranslator.pos
 	for script, func in ("c011c", 39), ("c011c", 40), ("r2050", 17):
-		with ctx.get(script, misc.scope("ah-lloyd")) as (vita, pc):
+		miscTranslator.pos = pos
+		with ctx.get(script, miscTranslator) as (vita, pc):
 			startP = next(i+1 for i, a in enumerate(pc.code[func]) if a.name == "TEXT_SET_NAME")
 			startV = next(i+1 for i, a in enumerate(vita.code[func]) if a.name == "TEXT_SET_NAME")
 			pc.code[func][startP:startP] = vita.code[func][startV:startV+2]
@@ -497,7 +507,7 @@ def permute(tr, xs):
 
 def do_transform(obj, tr):
 	if isinstance(obj, insn.Translate) and not getattr(obj, "translated", False):
-		if isinstance(tr.get("translate"), translator):
+		if isinstance(tr.get("translate"), translate.BaseTranslator):
 			obj = type(obj)(tr["translate"].translate(obj))
 		obj.translated = True
 		return obj

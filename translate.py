@@ -39,6 +39,7 @@ class translator(BaseTranslator):
 	def load(text):
 		lines = []
 		for p in text.splitlines():
+			p = p.split("##")[0].rstrip(" ")
 			if not p: continue
 			if p.startswith("\t"):
 				lines[-1][1].append(p[1:])

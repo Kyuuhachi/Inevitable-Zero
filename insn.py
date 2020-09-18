@@ -738,8 +738,8 @@ insns_zero_pc = [
 	insn("0xD4", k.u1, k.u1, k.u1, k.u1, k.u1),
 	insn("0xD5", k.u1),
 	insn("0xD6", k.bytes(2)),
-	None, # This or D8 is probably VITA_C7
-	None,
+	insn("VITA_C7", k.bytes(2)),
+	None, # VITA_C7 could be this one, need to test
 	None,
 	insn("0xDA", k.bytes(1)),
 	insn("0xDB"),

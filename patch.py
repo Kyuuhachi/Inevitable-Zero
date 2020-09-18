@@ -552,10 +552,10 @@ def __main__(vitapath, pcpath, outpath):
 	patch_quests(ctx)
 	patch_misc(ctx)
 
-	# for name, script in ctx.pc_scripts.items():
-		# with (outpath / name).with_suffix(".bin").open("wb") as f:
-		# 	params = { "_insns": insn.insn_zero_pc }
-		# 	kouzou.write(scena.scenaStruct, f, script, params)
+	for name, script in ctx.pc_scripts.items():
+		with (outpath / name).with_suffix(".bin").open("wb") as f:
+			params = { "_insns": insn.insn_zero_pc }
+			kouzou.write(scena.scenaStruct, f, script, params)
 
 	for name, script in ctx.vita_scripts.items():
 		with (Path("scr/vita") / name).with_suffix(".py").open("wt") as f:

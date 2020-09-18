@@ -1,6 +1,7 @@
 from functools import partial
 import struct as _struct
-from collections import defaultdict
+from collections import defaultdict, ChainMap
+from contextlib import contextmanager
 
 CONSTANT_TYPES = (int, bytes, str, float)
 
@@ -371,20 +372,22 @@ class struct(element):
 
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is None
-		vs = {}
-		for x in self._items:
-			val = x.read(ctx, True)
-			if val is not NIL:
-				assert isinstance(val, dict), f"Invalid struct item: {val!r} (from {x!r})"
-				if dup := set(vs.keys() & val.keys()):
-					raise ValueError(f"Duplicate keys in {self!r}: {dup!r}")
-				vs.update(val)
-		return dotdict(vs)
+		with ctx.newscope():
+			vs = {}
+			for x in self._items:
+				val = x.read(ctx, True)
+				if val is not NIL:
+					assert isinstance(val, dict), f"Invalid struct item: {val!r} (from {x!r})"
+					if dup := set(vs.keys() & val.keys()):
+						raise ValueError(f"Duplicate keys in {self!r}: {dup!r}")
+					vs.update(val)
+			return dotdict(vs)
 
 	def write(self, ctx, v, inner=None):
 		assert inner is None
-		for x in self._items:
-			x.write(ctx, v)
+		with ctx.newscope():
+			for x in self._items:
+				x.write(ctx, v)
 
 	def size(self, inner=None):
 		assert inner is None
@@ -578,7 +581,9 @@ class later(element):
 		assert inner is not None
 		pos = ctx.tell()
 		ctx.write(_bytes(self._pos.size()))
-		ctx.scope.setdefault("_later", defaultdict(_list))[self._key].append((self._pos, pos, inner, v))
+		ctx.root.setdefault("_later", defaultdict(_list))[self._key].append(
+			(self._pos, pos, inner, v, ctx.scope)
+		)
 
 	def size(self, inner=None):
 		assert inner is not None
@@ -599,9 +604,10 @@ class now(element):
 	def write(self, ctx, v, inner=None):
 		assert inner is None
 
-		for (posT, pos, valT, val) in ctx.scope.get("_later", defaultdict(_list)).pop(self._key, []):
+		for (posT, pos, valT, val, scope) in ctx.root.get("_later", defaultdict(_list)).pop(self._key, []):
 			ctx.later(pos, posT, lambda p=ctx.tell(): p)
-			valT.write(ctx, val)
+			with ctx.newscope(scope):
+				valT.write(ctx, val)
 
 	def __repr__(self):
 		return f"now({self._key!r})"
@@ -616,13 +622,13 @@ class cursor(element):
 		assert inner is None
 		assert nil_ok
 		v = self._pos.read(ctx)
-		ctx.scope.setdefault("_cursors", {})[self._key] = v
+		ctx.root.setdefault("_cursors", {})[self._key] = v
 		return NIL
 
 	def write(self, ctx, v, inner=None):
 		assert inner is None
-		ctx.scope.setdefault("_cursorItems", {})[self._key] = []
-		ctx.later(ctx.tell(), self._pos, lambda: ctx.scope["_cursors"].pop(self._key))
+		ctx.root.setdefault("_cursorItems", {})[self._key] = []
+		ctx.later(ctx.tell(), self._pos, lambda: ctx.root["_cursors"].pop(self._key))
 		ctx.write(_bytes(self._pos.size()))
 
 	def size(self, inner=None):
@@ -639,19 +645,19 @@ class advance(element):
 
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is not None
-		pos = ctx.scope["_cursors"][self._key]
+		pos = ctx.root["_cursors"][self._key]
 		origpos = ctx.tell()
 		try:
 			ctx.seek(pos)
 			v = inner.read(ctx)
-			ctx.scope["_cursors"][self._key] = ctx.tell()
+			ctx.root["_cursors"][self._key] = ctx.tell()
 			return v
 		finally:
 			ctx.seek(origpos)
 
 	def write(self, ctx, v, inner=None):
 		assert inner is not None
-		ctx.scope["_cursorItems"][self._key].append((inner, v))
+		ctx.root["_cursorItems"][self._key].append((inner, v))
 
 	def __repr__(self):
 		return f"advance({self._key!r})"
@@ -668,8 +674,8 @@ class nowC(element):
 	def write(self, ctx, v, inner=None):
 		assert inner is None
 
-		ctx.scope.setdefault("_cursors", {})[self._key] = ctx.tell()
-		for valT, val in ctx.scope["_cursorItems"].pop(self._key):
+		ctx.root.setdefault("_cursors", {})[self._key] = ctx.tell()
+		for valT, val in ctx.root["_cursorItems"].pop(self._key):
 			valT.write(ctx, val)
 
 	def __repr__(self):
@@ -730,16 +736,26 @@ class numpy(element):
 
 class Context:
 	def __init__(self, file, scope=None):
-		if scope is None:
-			scope = {}
 		self.file = file
-		self.scope = scope
+		self.root = {}
+		self.scope = ChainMap()
+		if scope is not None:
+			self.scope.maps.append(scope)
 
 	def tell(self):
 		return self.file.tell()
 
 	def seek(self, where, whence=0):
 		self.file.seek(where, whence)
+
+	@contextmanager
+	def newscope(self, scope=None):
+		old_scope = self.scope
+		try:
+			self.scope = scope if scope is not None else self.scope.new_child()
+			yield
+		finally:
+			self.scope = old_scope
 
 class ReadContext(Context):
 	def read(self, size):
@@ -756,7 +772,7 @@ class WriteContext(Context):
 		self.file.write(bytes)
 
 	def later(self, pos, type, val):
-		self._later.append((pos, type, val))
+		self._later.append((pos, type, val, self.scope))
 
 def read(type, f, scope=None):
 	ctx = ReadContext(f, scope)
@@ -766,12 +782,13 @@ def read(type, f, scope=None):
 def write(type, f, v, scope=None):
 	ctx = WriteContext(f, scope)
 	type.write(ctx, v)
-	if v := ctx.scope.get("_later"): raise ValueError("Unhandled later(): ", v)
-	if v := ctx.scope.get("_cursor"): raise ValueError("Unhandled cursor(): ", v)
+	if v := ctx.root.get("_later"): raise ValueError("Unhandled later(): ", v)
+	if v := ctx.root.get("_cursor"): raise ValueError("Unhandled cursor(): ", v)
 	while ctx._later:
-		pos, type, v = ctx._later.pop()
+		pos, type, v, sc = ctx._later.pop()
 		ctx.seek(pos)
-		type.write(ctx, v())
+		with ctx.newscope(sc):
+			type.write(ctx, v())
 
 class tracing:
 	def __enter__(self):

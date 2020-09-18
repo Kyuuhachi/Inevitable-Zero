@@ -140,7 +140,7 @@ class battle:
 						struct.write(ctx, item)
 				return vals
 
-			ctx.scope["_battles"] = {
+			ctx.root["_battles"] = {
 				"atRoll": write(battle._atRoll, [s["atRoll"] for b in battles for _, s in b["setups"]]),
 				"sepith": write(battle._sepith, [b["sepith"] for b in battles if b["sepith"] is not None]),
 				"layout": write(battle._layout, [s[k] for b in battles for _, s in b["setups"] for k in ["position", "position2"]]),
@@ -154,7 +154,7 @@ class battle:
 	class later(k.later):
 		def write(self, ctx, v, inner=None):
 			assert inner is not None
-			ctx.later(ctx.tell(), self._pos, lambda: ctx.scope["_battles"][self._key][repr(v)])
+			ctx.later(ctx.tell(), self._pos, lambda: ctx.root["_battles"][self._key][repr(v)])
 			ctx.write(bytes(self._pos.size()))
 
 		def __repr__(self):

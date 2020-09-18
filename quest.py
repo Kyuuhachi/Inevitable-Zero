@@ -27,7 +27,4 @@ questStruct = k.while_(lambda x: x["n"] != 0xFF)@k.struct(
 	_.steps@k.later("steps", k.u4)@k.list(k.switch(ref.n,
 		defaultdict(lambda: 32, { 0: 2, 0xFF: 1})
 	))@k.later("step", k.u4)@zstr,
-	k.now("name"),
-	k.now("steps"),
-	k.now("step"),
-)
+) << k.now("steps") << k.now("name") << k.now("step")

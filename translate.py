@@ -1,5 +1,5 @@
 import re
-DIALOGUE_RE = re.compile(r"^(?:\{[^}]+\}|#\d+[A-Z])*(.*?)(?:\{[^}]+\}|#\d+[A-Z])*\r$", re.DOTALL)
+DIALOGUE_RE = re.compile(r"^(?:(?:\{[^}]+\})*(?:#\d+[A-Z])+)?(.*?)(?:\{[^}]+\}|#\d+[A-Z])*\r$", re.DOTALL)
 
 class translator:
 	def __init__(self, name):

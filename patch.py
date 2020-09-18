@@ -112,7 +112,7 @@ def patch_quests(ctx):
 	copy_clause(vita, pc, 5, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
 	copy_condition(vita, pc, 5, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1040), Insn('END')], 0)
 
-	vita, pc = ctx.get("c1130")
+	vita, pc = ctx.get("c1130") # This script is very different in the Geofront version, due to realphabetization
 	pc.includes = vita.includes
 	pc.chcp = vita.chcp
 	vita = transform_funcs(vita, {
@@ -122,9 +122,9 @@ def patch_quests(ctx):
 	vita = transform_npcs(vita, {
 		11: copy(pc.npcs, vita.npcs[11]),
 	})
-	copy_clause(vita, pc, 3, 0)
 	copy_clause(vita, pc, 2, "@IF:0", [Insn('FLAG', 1055), Insn('END')], -1)
 	copy_clause(vita, pc, 2, "@IF:0", [Insn('FLAG', 1040), Insn('END')], -1)
+	copy_clause(vita, pc, 3, 0)
 	copy_clause(vita, pc, 14, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
 	copy_clause(vita, pc, 14, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
 
@@ -189,6 +189,7 @@ def patch_quests(ctx):
 	vita = transform_npcs(vita, {
 		2: copy(pc.npcs, vita.npcs[2]),
 	})
+	# XXX Cabilan and Lughman don't have flag 0x0080 in Vita
 	pc.code[4][-3:-1] = vita.code[4][-2:-1]
 
 	vita, pc = ctx.get("t1020")
@@ -214,7 +215,7 @@ def patch_quests(ctx):
 	copy_clause(vita, pc, 3, "@IF", 0, 0)
 	copy_clause(vita, pc, 5, "@IF", 0, 0)
 
-	vita, pc = ctx.get("t1050") # XXX I'm sure this can be improved
+	vita, pc = ctx.get("t1050")
 	pc.includes = vita.includes
 	vita = transform_funcs(vita, {
 		12: copy(pc.code, vita.code[12]),
@@ -290,6 +291,8 @@ def patch_quests(ctx):
 
 	vita, pc = ctx.get("r0000")
 	copy_clause(vita, pc, 1, 0)
+	vita, pc = ctx.get("r1000")
+	copy_clause(vita, pc, 0, 0)
 	vita, pc = ctx.get("r1500")
 	copy_clause(vita, pc, 1, 0)
 	vita, pc = ctx.get("r2000")
@@ -316,6 +319,60 @@ def patch_quests(ctx):
 
 # e0111 (EFF_LOAD typo) and e3000 (bgm in Lechter's singing)
 # are slightly more important
+
+def patch_other(ctx):
+	def split(insn, at, *, formatA=lambda a: a, formatB=lambda b: b, names=None):
+		if names is None:
+			names = (insn.name, insn.name)
+		text = insn.args[-1]
+		a, b = text.split(at, 1)
+		a, b = type(text)(formatA(a)), type(text)(formatB(b))
+		a.__dict__ = b.__dict__ = insn.args[-1].__dict__
+		return (
+			Insn(names[0], *insn.args[:-1], a),
+			Insn(names[1], *insn.args[:-1], b),
+		)
+
+	# A rather important line in which the Gang learns how to spell
+	vita, pc = ctx.get("c011b")
+	v, p = vita.code[35], pc.code[35]
+	start = next(i-2 for i, (a, b) in enumerate(zip(v, p)) if a.name != b.name)
+	end = next(-i+1 for i, (a, b) in enumerate(zip(v[::-1], p[::-1])) if a.name != b.name)
+	assert v[start].name == p[start].name == 'TEXT_TALK'
+	assert v[end].name == p[end].name == 'TEXT_WAIT'
+	line1, line2 = split(p[start], "\f")
+	p[start:end] = [line1, *v[start+1:end-1], line2]
+
+	# Fran saying "Oh, Lloyd!"
+	for (script, func) in ("c011c", 39), ("c011c", 40), ("r2050", 17):
+		vita, pc = ctx.get(script)
+		startP = next(i+1 for i, a in enumerate(pc.code[func]) if a.name == "TEXT_SET_NAME")
+		startV = next(i+1 for i, a in enumerate(vita.code[func]) if a.name == "TEXT_SET_NAME")
+		pc.code[func][startP:startP] = vita.code[func][startV:startV+2]
+
+	# Some lines were split in two for some reason
+	vita, pc = ctx.get("c1310")
+	pc_ = get_(pc.code[11], "@IF:1", [Insn('FLAG', 801), Insn('END')], "@IF", None)
+	line1, line2 = split(pc_[0], "\n", formatA=lambda a:"{0x06}%s\r"%a)
+	pc_[0:2] = [line1, pc_[1], line2, pc_[1]]
+
+	vita, pc = ctx.get("c110b")
+	idx1 = next(i for i, a in enumerate(vita.code[6]) if a.name == "TEXT_SET_POS")
+	idx2 = next(i for i, a in enumerate(vita.code[6]) if a.name == "TEXT_TALK")
+	pc.code[6][idx1:idx1] = vita.code[6][idx1:idx1+6]
+	pc.code[6][idx1+1], pc.code[6][idx2] = split(pc.code[6][idx2], "\f", names=("TEXT_MESSAGE", "TEXT_TALK"))
+
+	vita, pc = ctx.get("c110c")
+	idx = next(i for i, a in enumerate(pc.code[41]) if a.name == "FORK_FUNC")
+	pc.code[41][idx:idx] = vita.code[41][idx:idx+5]
+	pc.code[41][idx+1], pc.code[41][idx+7] = split(pc.code[41][idx+7], "#600W",
+		formatA=lambda a:a.rstrip()+"\r",
+		formatB=lambda b:"{color 0}"+b.replace("#20W", "#20W#3300058V"),
+	)
+	if ctx.is_geofront:
+		# This voice line is misplaced
+		idx = next(~i for i, a in enumerate(pc.code[41][::-1]) if a.name == "TEXT_TALK")
+		pc.code[41][idx].args[1] = pc.code[41][idx].args[1].replace("#3300058V", "#3300107V")
 
 def get(vita, pc, *path):
 	return (get_(vita, *path), get_(pc, *path))
@@ -452,6 +509,7 @@ def __main__(vitapath, pcpath, outpath):
 
 	patch_furniture_minigames(ctx)
 	patch_quests(ctx)
+	patch_other(ctx)
 
 	if ctx.is_geofront:
 		for name in ctx.pc_scripts:

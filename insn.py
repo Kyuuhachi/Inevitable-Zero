@@ -131,7 +131,7 @@ ADDR = ADDR()@k.u4
 class Insn:
 	def __init__(self, name, *args):
 		self.name = name
-		self.args = args
+		self.args = list(args)
 		self.pos = None # Used mostly for decompilation
 
 	def __eq__(self, other):
@@ -546,7 +546,7 @@ insns_zero_pc = [
 	insn("0x2F", k.bytes(2)),
 
 	insn("PARTY_CLEAR"),
-	insn("0x31", k.bytes(4)),
+	insn("0x31", k.bytes(4)), # This one is fishy
 	insn("0x32", k.bytes(4)),
 	None,
 	None,

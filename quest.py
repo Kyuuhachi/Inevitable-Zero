@@ -7,7 +7,7 @@ zstr = k.iso(
 	lambda b: b.replace("\n", "\1"),
 )@k.enc("cp932")@k.zbytes()
 
-questStruct = k.while_(lambda x: x.n != 0xFF)@k.struct(
+questStruct = k.while_(lambda x: x["n"] != 0xFF)@k.struct(
 	ref.n@k.u1,
 	_.n@ref.n,
 

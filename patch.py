@@ -5,6 +5,7 @@ from contextlib import contextmanager
 
 import kouzou
 import scena
+import quest
 import insn
 import dump
 from insn import Insn
@@ -13,23 +14,27 @@ import translate
 class Context:
 	def __init__(self, vitapath, pcpath, is_geofront=None):
 		if is_geofront is None:
-			is_geofront = "data_en" in pcpath.absolute().parts
+			is_geofront = pcpath.name == "data_en"
 		self.vitapath = vitapath
 		self.vita_scripts = {}
+		with (vitapath/"text/t_quest._dt").open("rb") as f:
+			self.vita_quests = kouzou.read(quest.questStruct, f)
 		self.pcpath = pcpath
 		self.pc_scripts = {}
+		with (pcpath/"text/t_quest._dt").open("rb") as f:
+			self.pc_quests = kouzou.read(quest.questStruct, f)
 		self.is_geofront = is_geofront
 
 	def _get_vita(self, name):
 		if name not in self.vita_scripts:
-			with (self.vitapath / name).with_suffix(".bin").open("rb") as f:
+			with (self.vitapath/"scena"/name).with_suffix(".bin").open("rb") as f:
 				params = { "_insns": insn.insn_zero_vita }
 				self.vita_scripts[name] = kouzou.read(scena.scenaStruct, f, params)
 		return self.vita_scripts[name]
 
 	def _get_pc(self, name):
 		if name not in self.pc_scripts:
-			with (self.pcpath / name).with_suffix(".bin").open("rb") as f:
+			with (self.pcpath/"scena"/name).with_suffix(".bin").open("rb") as f:
 				params = { "_insns": insn.insn_zero_pc }
 				if self.is_geofront and name in scena.geofront_tweaks:
 					params["_geofront_tweaks"] = scena.geofront_tweaks[name]
@@ -40,7 +45,7 @@ class Context:
 		return self.pc_scripts[name]
 
 	def copy(self, name, translation=None):
-		assert not (self.pcpath / name).with_suffix(".bin").exists()
+		assert not (self.pcpath/name).with_suffix(".bin").exists()
 		self.pc_scripts[name] = self._get_vita(name)
 		self._do_translate(name, translation)
 
@@ -57,6 +62,18 @@ class Context:
 				self.pc_scripts[name],
 				{ "translate": translation },
 			)
+
+	def copy_quest(self, n, translation):
+		self.pc_quests[n] = {
+			**self.vita_quests[n],
+			"name": translation.translate(self.vita_quests[n]["name"]),
+			"client": translation.translate(self.vita_quests[n]["client"]),
+			"description": translation.translate(self.vita_quests[n]["description"]),
+			"steps": [
+				translation.translate(vs) if vs != ps else ps
+				for vs, ps in zip(self.vita_quests[n]["steps"], self.pc_quests[n]["steps"])
+			],
+		}
 
 
 def patch_furniture_minigames(ctx):
@@ -87,93 +104,29 @@ def patch_quests(ctx):
 		with ctx.get(file) as (vita, pc):
 			vita_, pc_ = get(vita, pc, "code", func, "@WHILE", 1, "@SWITCH", 1)
 			pc_[0] = vita_[0]
-
+	
+	# 54, 57
 	with ctx.get("c0110") as (vita, pc):
 		vita_, pc_ = vita.code[46], pc.code[46]
 		assert pc_[-6:-4] == vita_[-8:-6]
 		pc_[-4:-4] = vita_[-6:-4]
 
-	with ctx.get("c0000") as (vita, pc):
-		pc.includes = vita.includes
-		vita = transform_funcs(vita, {
-			55: copy(pc.code, vita.code[55]),
-			60: copy(pc.code, vita.code[60]),
-		}, include=0)
-		copy_condition(vita, pc, 6, "@IF", [Insn('FLAG', 1055), Insn('END')], 0)
-		copy_clause(vita, pc, 6, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-
-	with ctx.get("c0100") as (vita, pc):
-		pc.includes = vita.includes
-
-	with ctx.get("c0100_1") as (vita, pc):
-		copy_clause(vita, pc, 8, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 8, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-
-	with ctx.get("c020c") as (vita, pc):
-		pc.includes = vita.includes
-		copy_clause(vita, pc, 9, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", 0, 0)
-
-	with ctx.get("c0210") as (vita, pc):
-		pc.includes = vita.includes
-		copy_clause(vita, pc, 2, 0)
-		copy_clause(vita, pc, 2, -2)
-		copy_clause(vita, pc, 5, "@IF:0", 0, 0)
-		copy_condition(vita, pc, 5, "@IF:2", 0, 0, 1, "@IF", None, "@WHILE", 1, "@IF:1", 0, -1, 1, 1)
-		copy_clause(vita, pc, 9, "@IF", 0, 0)
-		copy_clause(vita, pc, 9, "@IF", 0, 1)
-		copy_clause(vita, pc, 11, "@IF:1", 0, 0)
-
-	tr = translate.translator("quest1")
-	ctx.copy("c0210_1", tr)
-
+	# 56, 58
 	with ctx.get("c0400") as (vita, pc):
 		copy_clause(vita, pc, 49, pc.code[49].index(Insn('EXPR_VAR', 3, [Insn('CONST', 0), Insn('SET'), Insn('END')]))+9)
 		copy_clause(vita, pc, 49, pc.code[49].index(Insn('EXPR_VAR', 3, [Insn('CONST', 0), Insn('SET'), Insn('END')]))+10)
 		copy_clause(vita, pc, 49, pc.code[49].index(Insn('ITEM_REMOVE', 805, 1))+8)
 		copy_clause(vita, pc, 49, pc.code[49].index(Insn('ITEM_REMOVE', 805, 1))+9)
 
-	with ctx.get("c1100") as (vita, pc):
-		pc.includes = vita.includes
-		copy_clause(vita, pc, 5, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_condition(vita, pc, 5, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1040), Insn('END')], 0)
+	quest54(ctx)
+	quest55(ctx)
+	quest56(ctx)
+	quest57(ctx)
+	quest58(ctx)
 
-	with ctx.get("c1130") as (vita, pc): # This script is very different in the Geofront version, due to realphabetization
-		pc.includes = vita.includes
-		pc.chcp = vita.chcp
-		vita = transform_funcs(vita, {
-			2: copy(pc.code, vita.code[2]),
-			56: copy(pc.code, vita.code[56]),
-		}, include=0)
-		vita = transform_npcs(vita, {
-			11: copy(pc.npcs, vita.npcs[11]),
-		})
-		copy_clause(vita, pc, 2, "@IF:0", [Insn('FLAG', 1055), Insn('END')], -1)
-		copy_clause(vita, pc, 2, "@IF:0", [Insn('FLAG', 1040), Insn('END')], -1)
-		copy_clause(vita, pc, 3, 0)
-		copy_clause(vita, pc, 14, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 14, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-
-	with ctx.get("c1200") as (vita, pc):
-		pc.includes = vita.includes
-		vita = transform_funcs(vita, {
-			59: copy(pc.code, vita.code[59]),
-			60: copy(pc.code, vita.code[60]),
-		}, include=0)
-		copy_clause(vita, pc, 12, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 12, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 13, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 13, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-		copy_condition(vita, pc, 16, "@IF:0", [Insn('FLAG', 1055), Insn('END')], 0)
-		copy_condition(vita, pc, 16, "@IF:0", [Insn('FLAG', 1040), Insn('END')], 0)
-
-	with ctx.get("c1410") as (vita, pc):
-		pc.includes = vita.includes
-		copy_clause(vita, pc, 6, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 6, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 34, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 34, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-
-	# tXXXX
+def quest54(ctx):
+	tr = translate.translator("quest54")
+	ctx.copy_quest(54, tr)
 
 	with ctx.get("t0500") as (vita, pc):
 		pc.includes = vita.includes
@@ -197,8 +150,11 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 5, *path1, "@IF", 0, 0)
 		copy_clause(vita, pc, 6, "@IF", 0, 0)
 
-	tr = translate.translator("quest2")
 	ctx.copy("t0520_1", tr)
+
+def quest55(ctx):
+	tr = translate.translator("quest55")
+	ctx.copy_quest(55, tr)
 
 	with ctx.get("t1000") as (vita, pc):
 		pc.includes = vita.includes
@@ -243,7 +199,6 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 3, "@IF", 0, 0)
 		copy_clause(vita, pc, 5, "@IF", 0, 0)
 
-	tr = translate.translator("quest3")
 	ctx.copy("t1030_1", tr)
 
 	with ctx.get("t1050") as (vita, pc):
@@ -257,6 +212,67 @@ def patch_quests(ctx):
 
 	with ctx.get("t105b") as (vita, pc):
 		pc.code[14].insert(-4, vita.code[14][-5])
+
+def quest56(ctx):
+	tr = translate.translator("quest56")
+	ctx.copy_quest(56, tr)
+
+	with ctx.get("c0000") as (vita, pc):
+		pc.includes = vita.includes
+		vita = transform_funcs(vita, {
+			55: copy(pc.code, vita.code[55]),
+			60: copy(pc.code, vita.code[60]),
+		}, include=0)
+		copy_condition(vita, pc, 6, "@IF", [Insn('FLAG', 1055), Insn('END')], 0)
+		copy_clause(vita, pc, 6, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
+
+	with ctx.get("c0100") as (vita, pc):
+		pc.includes = vita.includes
+
+	with ctx.get("c0100_1") as (vita, pc):
+		copy_clause(vita, pc, 8, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 8, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
+
+	with ctx.get("c1100") as (vita, pc):
+		pc.includes = vita.includes
+		copy_clause(vita, pc, 5, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_condition(vita, pc, 5, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1040), Insn('END')], 0)
+
+	with ctx.get("c1130") as (vita, pc): # This script is very different in the Geofront version, due to realphabetization
+		pc.includes = vita.includes
+		pc.chcp = vita.chcp
+		vita = transform_funcs(vita, {
+			2: copy(pc.code, vita.code[2]),
+			56: copy(pc.code, vita.code[56]),
+		}, include=0)
+		vita = transform_npcs(vita, {
+			11: copy(pc.npcs, vita.npcs[11]),
+		})
+		copy_clause(vita, pc, 2, "@IF:0", [Insn('FLAG', 1055), Insn('END')], -1)
+		copy_clause(vita, pc, 2, "@IF:0", [Insn('FLAG', 1040), Insn('END')], -1)
+		copy_clause(vita, pc, 3, 0)
+		copy_clause(vita, pc, 14, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 14, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
+
+	with ctx.get("c1200") as (vita, pc):
+		pc.includes = vita.includes
+		vita = transform_funcs(vita, {
+			59: copy(pc.code, vita.code[59]),
+			60: copy(pc.code, vita.code[60]),
+		}, include=0)
+		copy_clause(vita, pc, 12, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 12, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 13, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 13, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
+		copy_condition(vita, pc, 16, "@IF:0", [Insn('FLAG', 1055), Insn('END')], 0)
+		copy_condition(vita, pc, 16, "@IF:0", [Insn('FLAG', 1040), Insn('END')], 0)
+
+	with ctx.get("c1410") as (vita, pc):
+		pc.includes = vita.includes
+		copy_clause(vita, pc, 6, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 6, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 34, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 34, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
 
 	with ctx.get("t1500") as (vita, pc):
 		pc.includes = vita.includes
@@ -272,7 +288,6 @@ def patch_quests(ctx):
 			get_(pc.code[32], "@IF", 0, 2, 1, "@MENU").args[4]
 		pc.code[64].insert(4, vita.code[64][4])
 
-	tr = translate.translator("quest4")
 	ctx.copy("t1500_1", tr)
 
 	with ctx.get("t1520") as (vita, pc):
@@ -322,6 +337,16 @@ def patch_quests(ctx):
 		pc.includes = vita.includes
 		copy_clause(vita, pc, 14, "@IF", 0, 1)
 
+	with ctx.get("e0010") as (vita, pc):
+		vita = transform_funcs(vita, {
+			19: copy(pc.code, vita.code[19]),
+		}, include=0)
+		copy_clause(vita, pc, 0, "@IF", 0, -1)
+
+def quest57(ctx):
+	tr = translate.translator("quest57")
+	ctx.copy_quest(57, tr)
+
 	with ctx.get("t4010") as (vita, pc):
 		pc.includes = vita.includes
 		for func in 21, 22, 24, 28, 29:
@@ -329,8 +354,31 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 25, "@IF:-1", 0, 0)
 		copy_clause(vita, pc, 11, "@IF", [Insn('FLAG', 1536), Insn('END')], "@IF", 0, 0)
 
-	tr = translate.translator("quest5")
 	ctx.copy("t4010_1", tr)
+
+def quest58(ctx):
+	tr = translate.translator("quest58")
+	ctx.copy_quest(58, tr)
+
+	with ctx.get("c020c") as (vita, pc):
+		pc.includes = vita.includes
+		copy_clause(vita, pc, 9, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", 0, 0)
+
+	with ctx.get("c0210") as (vita, pc):
+		pc.includes = vita.includes
+		copy_clause(vita, pc, 2, 0)
+		copy_clause(vita, pc, 2, -2)
+		copy_clause(vita, pc, 5, "@IF:0", 0, 0)
+		copy_condition(vita, pc, 5, "@IF:2", 0, 0, 1, "@IF", None, "@WHILE", 1, "@IF:1", 0, -1, 1, 1)
+		copy_clause(vita, pc, 9, "@IF", 0, 0)
+		copy_clause(vita, pc, 9, "@IF", 0, 1)
+		copy_clause(vita, pc, 11, "@IF:1", 0, 0)
+
+	ctx.copy("c0210_1", tr)
+
+	with ctx.get("e3010") as (vita, pc):
+		copy_clause(vita, pc, 2, pc.code[2].index(Insn('ITEM_REMOVE', 846, 1))+1)
+		copy_clause(vita, pc, 2, pc.code[2].index(Insn('ITEM_REMOVE', 846, 1))+2)
 
 	with ctx.get("r0000") as (vita, pc):
 		copy_clause(vita, pc, 1, 0)
@@ -341,15 +389,6 @@ def patch_quests(ctx):
 	with ctx.get("r2000") as (vita, pc):
 		copy_clause(vita, pc, 0, 0)
 
-	with ctx.get("e0010") as (vita, pc):
-		vita = transform_funcs(vita, {
-			19: copy(pc.code, vita.code[19]),
-		}, include=0)
-		copy_clause(vita, pc, 0, "@IF", 0, -1)
-
-	with ctx.get("e3010") as (vita, pc):
-		copy_clause(vita, pc, 2, pc.code[2].index(Insn('ITEM_REMOVE', 846, 1))+1)
-		copy_clause(vita, pc, 2, pc.code[2].index(Insn('ITEM_REMOVE', 846, 1))+2)
 
 # m0000, m0001, m0002, m0010, m0100, m0110, m0111, m0112, m3002, m3099, r2050, r2070, c1400, c140b
 # contain minor, probably aesthetic, changes
@@ -545,6 +584,8 @@ def __main__(vitapath, pcpath, outpath):
 	if outpath.exists():
 		shutil.rmtree(outpath)
 	outpath.mkdir(parents=True, exist_ok=True)
+	(outpath/"scena").mkdir()
+	(outpath/"text").mkdir()
 
 	ctx = Context(vitapath, pcpath)
 
@@ -552,17 +593,21 @@ def __main__(vitapath, pcpath, outpath):
 	patch_quests(ctx)
 	patch_misc(ctx)
 
+	for name, script in ctx.vita_scripts.items():
+		with (Path("scr/vita")/name).with_suffix(".py").open("wt") as f:
+			dump.dump(f, script, "diff")
 	for name, script in ctx.pc_scripts.items():
-		with (outpath / name).with_suffix(".bin").open("wb") as f:
+		with (Path("scr/pc")/name).with_suffix(".py").open("wt") as f:
+			dump.dump(f, script, "diff")
+
+	with (outpath/"text/t_quest._dt").open("wb") as f:
+		kouzou.write(quest.questStruct, f, ctx.pc_quests)
+
+	for name, script in ctx.pc_scripts.items():
+		with (outpath/"scena"/name).with_suffix(".bin").open("wb") as f:
 			params = { "_insns": insn.insn_zero_pc }
 			kouzou.write(scena.scenaStruct, f, script, params)
 
-	for name, script in ctx.vita_scripts.items():
-		with (Path("scr/vita") / name).with_suffix(".py").open("wt") as f:
-			dump.dump(f, script, "diff")
-	for name, script in ctx.pc_scripts.items():
-		with (Path("scr/pc") / name).with_suffix(".py").open("wt") as f:
-			dump.dump(f, script, "diff")
 
 if __name__ == "__main__":
 	__main__(**argp.parse_args().__dict__)

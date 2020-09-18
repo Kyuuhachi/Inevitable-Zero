@@ -120,6 +120,8 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 9, "@IF", 0, 1)
 		copy_clause(vita, pc, 11, "@IF:1", 0, 0)
 
+	ctx.copy("c0210_1")
+
 	with ctx.get("c0400") as (vita, pc):
 		copy_clause(vita, pc, 49, pc.code[49].index(Insn('EXPR_VAR', 3, [Insn('CONST', 0), Insn('SET'), Insn('END')]))+9)
 		copy_clause(vita, pc, 49, pc.code[49].index(Insn('EXPR_VAR', 3, [Insn('CONST', 0), Insn('SET'), Insn('END')]))+10)
@@ -191,6 +193,8 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 5, *path1, "@IF", 0, 0)
 		copy_clause(vita, pc, 6, "@IF", 0, 0)
 
+	ctx.copy("t0520_1")
+
 	with ctx.get("t1000") as (vita, pc):
 		pc.includes = vita.includes
 		pc.chcp = vita.chcp
@@ -234,6 +238,8 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 3, "@IF", 0, 0)
 		copy_clause(vita, pc, 5, "@IF", 0, 0)
 
+	ctx.copy("t1030_1")
+
 	with ctx.get("t1050") as (vita, pc):
 		pc.includes = vita.includes
 		vita = transform_funcs(vita, {
@@ -259,6 +265,8 @@ def patch_quests(ctx):
 		get_(pc.code[32], "@IF", 0, 0, 1, "@IF", None, "@MENU").args[4] = \
 			get_(pc.code[32], "@IF", 0, 2, 1, "@MENU").args[4]
 		pc.code[64].insert(4, vita.code[64][4])
+
+	ctx.copy("t1500_1")
 
 	with ctx.get("t1520") as (vita, pc):
 		pc.includes = vita.includes
@@ -314,6 +322,8 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 25, "@IF:-1", 0, 0)
 		copy_clause(vita, pc, 11, "@IF", [Insn('FLAG', 1536), Insn('END')], "@IF", 0, 0)
 
+	ctx.copy("t4010_1")
+
 	with ctx.get("r0000") as (vita, pc):
 		copy_clause(vita, pc, 1, 0)
 	with ctx.get("r1000") as (vita, pc):
@@ -332,12 +342,6 @@ def patch_quests(ctx):
 	with ctx.get("e3010") as (vita, pc):
 		copy_clause(vita, pc, 2, pc.code[2].index(Insn('ITEM_REMOVE', 846, 1))+1)
 		copy_clause(vita, pc, 2, pc.code[2].index(Insn('ITEM_REMOVE', 846, 1))+2)
-
-	ctx.copy("c0210_1")
-	ctx.copy("t0520_1")
-	ctx.copy("t1030_1")
-	ctx.copy("t1500_1")
-	ctx.copy("t4010_1")
 
 # m0000, m0001, m0002, m0010, m0100, m0110, m0111, m0112, m3002, m3099, r2050, r2070, c1400, c140b
 # contain minor, probably aesthetic, changes

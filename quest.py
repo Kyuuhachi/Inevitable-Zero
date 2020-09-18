@@ -21,10 +21,13 @@ questStruct = k.while_(lambda x: x.n != 0xFF)@k.struct(
 	_.unk2@k.u1,
 	0@k.u2,
 	_.flags@k.tuple(k.u2, k.u2),
-	_.name@k.at(k.u4)@zstr,
-	_.client@k.at(k.u4)@zstr,
-	_.description@k.at(k.u4)@zstr,
-	_.steps@k.at(k.u4)@k.list(k.switch(ref.n,
+	_.name@k.later("name", k.u4)@zstr,
+	_.client@k.later("name", k.u4)@zstr,
+	_.description@k.later("name", k.u4)@zstr,
+	_.steps@k.later("steps", k.u4)@k.list(k.switch(ref.n,
 		defaultdict(lambda: 32, { 0: 2, 0xFF: 1})
-	))@k.at(k.u4)@zstr,
+	))@k.later("step", k.u4)@zstr,
+	k.now("name"),
+	k.now("steps"),
+	k.now("step"),
 )

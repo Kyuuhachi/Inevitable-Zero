@@ -311,7 +311,7 @@ insns_zero_pc = [
 	insn("FADE_OFF", k.u4, k.bytes(4)),
 	insn("0x0D"),
 	insn("CROSSFADE", k.u4),
-	insn("BATTLE", k.lazy(lambda: scena.battle)),
+	insn("BATTLE", k.lazy(lambda: scena.battle.insn)),
 
 	insn("EXIT_SET_ENABLED", k.u1, k.u1),
 	insn("0x11", k.bytes(3), k.u4, k.u4, k.u4),

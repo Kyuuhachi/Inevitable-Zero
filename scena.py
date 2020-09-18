@@ -63,7 +63,7 @@ def frommonsterref(n):
 			return 0x30000000 | i << 20 | int(n[len(v):], 16)
 monsterref = "monsterref"|k.iso(tomonsterref, frommonsterref)@k.u4
 
-class battle(k.element):
+class battle:
 	# Credits to Ouroboros for these structs
 	class sepith(k.element):
 		def read(self, ctx, nil_ok=False, inner=None):
@@ -145,46 +145,38 @@ class battle(k.element):
 		),
 	)
 
-	def read(self, ctx, nil_ok=False, inner=None):
-		assert inner is None
+	class insn(k.element):
+		npc_battle = (-1@k.i4) >> k.tuple(
+			True,
+			k.bytes(5),
+			k.list(4)@monsterref,
+			k.list(4)@monsterref,
+			k.bytes(20)
+		)
 
-		if k.lookahead.read(ctx, False, k.i2) == -1:
-			(-1@k.i4).read(ctx, True)
-			return k.tuple(
-				True,
-				k.bytes(5),
-				k.list(4)@monsterref,
-				k.list(4)@monsterref,
-				k.bytes(20)
-			).read(ctx)
-
-		return k.tuple(
+		standard_battle = k.tuple(
 			False,
-			battle.inner,
+			k.lazy(lambda: battle.inner),
 			k.bytes(13),
-		).read(ctx)
+		)
 
-	def write(self, ctx, v, inner=None):
-		assert inner is None
-		if v[0]:
-			(-1@k.i4).write(ctx, None)
-			k.tuple(
-				True,
-				k.bytes(5),
-				k.list(4)@monsterref,
-				k.list(4)@monsterref,
-				k.bytes(20)
-			).write(ctx, v)
-		else:
-			k.tuple(
-				False,
-				battle.inner,
-				k.bytes(13),
-			).write(ctx, v)
+		def read(self, ctx, nil_ok=False, inner=None):
+			assert inner is None
+			if k.lookahead.read(ctx, False, k.i2) == -1:
+				return self.npc_battle.read(ctx)
+			else:
+				return self.standard_battle.read(ctx)
 
-	def __repr__(self):
-		return "battle"
-battle = battle()
+		def write(self, ctx, v, inner=None):
+			assert inner is None
+			if v[0]:
+				self.npc_battle.write(ctx, v)
+			else:
+				self.standard_battle.write(ctx, v)
+
+		def __repr__(self):
+			return "battle.insn"
+	insn = insn()
 
 class CHAR_ANIMATION(k.element):
 	def read(self, ctx, nil_ok=False, inner=None):
@@ -328,6 +320,7 @@ scenaStruct = k.struct(
 	k.nowC("chcp"),
 	k.nowC("npc"),
 	k.nowC("monster"),
+
 
 	# This is not the same order as in the original files (those have AT rolls
 	# first), but writing that order would complicate things significantly.

@@ -1,6 +1,7 @@
 import shutil
 from pathlib import Path
 import argparse
+from contextlib import contextmanager
 
 import kouzou
 import scena
@@ -8,7 +9,6 @@ import insn
 import dump
 from insn import Insn
 from translate import translator
-from contextlib import contextmanager
 
 class Context:
 	def __init__(self, vitapath, pcpath, is_geofront=None):

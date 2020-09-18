@@ -39,21 +39,23 @@ class Context:
 				)
 		return self.pc_scripts[name]
 
-	def copy(self, name):
+	def copy(self, name, translation=None):
 		assert not (self.pcpath / name).with_suffix(".bin").exists()
 		self.pc_scripts[name] = self._get_vita(name)
-		self.do_translate(name)
+		self._do_translate(name, translation)
 
 	@contextmanager
-	def get(self, name):
+	def get(self, name, translation=None):
 		yield self._get_vita(name), self._get_pc(name)
-		self.do_translate(name)
+		self._do_translate(name, translation)
 
-	def do_translate(self, name):
+	def _do_translate(self, name, translation):
+		if translation is None:
+			translation = translator(name)
 		if self.is_geofront:
 			self.pc_scripts[name] = do_transform(
 				self.pc_scripts[name],
-				{ "translate": translator(name) },
+				{ "translate": translation },
 			)
 
 
@@ -65,7 +67,7 @@ def patch_furniture_minigames(ctx):
 			("c011b", 73), ("c011b", 75), ("c011b", 78),
 			("c011c", 58), ("c011c", 60), ("c011c", 63),
 	]:
-		with ctx.get(file) as (vita, pc):
+		with ctx.get(file, translator("furniture_minigames")) as (vita, pc):
 			vita_, pc_ = vita.code[func], pc.code[func]
 			assert vita_[10] == pc_[10]
 			pc_[11:11] = vita_[11:17]
@@ -350,8 +352,10 @@ def patch_other(ctx):
 			Insn(names[1], *insn.args[:-1], b),
 		)
 
+	misc = translator("misc")
+
 	# A rather important line in which the Gang learns how to spell
-	with ctx.get("c011b") as (vita, pc):
+	with ctx.get("c011b", misc.scope("write-down")) as (vita, pc):
 		v, p = vita.code[35], pc.code[35]
 		start = next(i-2 for i, (a, b) in enumerate(zip(v, p)) if a.name != b.name)
 		end = next(-i+1 for i, (a, b) in enumerate(zip(v[::-1], p[::-1])) if a.name != b.name)
@@ -360,9 +364,9 @@ def patch_other(ctx):
 		line1, line2 = split(p[start], "\f")
 		p[start:end] = [line1, *v[start+1:end-1], line2]
 
-	# Fran saying "Oh, Lloyd!"
+	# Fran saying "Ah, Lloyd!"
 	for script, func in ("c011c", 39), ("c011c", 40), ("r2050", 17):
-		with ctx.get(script) as (vita, pc):
+		with ctx.get(script, misc.scope("ah-lloyd")) as (vita, pc):
 			startP = next(i+1 for i, a in enumerate(pc.code[func]) if a.name == "TEXT_SET_NAME")
 			startV = next(i+1 for i, a in enumerate(vita.code[func]) if a.name == "TEXT_SET_NAME")
 			pc.code[func][startP:startP] = vita.code[func][startV:startV+2]

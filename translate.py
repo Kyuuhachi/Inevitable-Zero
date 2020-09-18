@@ -22,3 +22,6 @@ class translator:
 	def _translate(self, string):
 		print(self.name, repr(string))
 		return string
+
+	def scope(self, name):
+		return translator(self.name + "." + name)

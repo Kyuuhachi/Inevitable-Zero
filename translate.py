@@ -1,7 +1,7 @@
 import re
 from pathlib import Path
 
-DIALOGUE_RE = re.compile(r"^(?:(?:\{[^}]+\})*(?:#\d+[A-Z])+)?(.*?)(?:\{[^}]+\}|#\d+[A-Z])*\{wait\}$", re.DOTALL)
+DIALOGUE_RE = re.compile(r"^((?:\{[^}]+\}|#\d+[S])*)((?:#\d+[ABFPVWZ])*)(.*?)(\{wait\})$", re.DOTALL)
 PATH = Path("text")
 
 class BaseTranslator:
@@ -17,7 +17,7 @@ class BaseTranslator:
 		if string.endswith("{wait}"): # Dialogue
 			lines = []
 			for line in string.split("{page}"):
-				line2, nsub = DIALOGUE_RE.subn(lambda m: self._translate(m[1]), line)
+				line2, nsub = DIALOGUE_RE.subn(lambda m: m[2]+self._translate(m[1]+m[3])+m[4], line)
 				assert nsub == 1
 				lines.append(line2)
 			return "\f".join(lines)

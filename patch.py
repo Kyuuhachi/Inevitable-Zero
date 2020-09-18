@@ -345,7 +345,7 @@ def patch_quests(ctx):
 # e0111 (EFF_LOAD typo) and e3000 (bgm in Lechter's singing)
 # are slightly more important
 
-def patch_other(ctx):
+def patch_misc(ctx):
 	def split(insn, at, *, formatA=lambda a: a, formatB=lambda b: b, names=None):
 		if names is None:
 			names = (insn.name, insn.name)
@@ -536,7 +536,7 @@ def __main__(vitapath, pcpath, outpath):
 
 	patch_furniture_minigames(ctx)
 	patch_quests(ctx)
-	patch_other(ctx)
+	patch_misc(ctx)
 
 	# for name, script in ctx.pc_scripts.items():
 		# with (outpath / name).with_suffix(".bin").open("wb") as f:

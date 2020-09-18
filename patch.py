@@ -263,6 +263,12 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 9, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
 		copy_clause(vita, pc, 12, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
 
+	with ctx.get("t1530") as (vita, pc):
+		pc.includes = vita.includes
+		vita_, pc_ = get(vita, pc, "code", 5, "@IF:1", [Insn('FLAG', 1040), Insn('END')])
+		assert vita_[4].args[0][0][1][0] == pc_[4]
+		pc_[4] = vita_[4]
+
 	with ctx.get("t1530_1") as (vita, pc):
 		pc.includes = vita.includes
 		pc.code.append(vita.code[79])
@@ -274,11 +280,11 @@ def patch_quests(ctx):
 		copy_condition(vita, pc, 13, "@IF", [Insn('FLAG', 1040), Insn('END')], 0)
 		copy_clause(vita, pc, 17, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
 
-	with ctx.get("t1530") as (vita, pc):
+	with ctx.get("t1540") as (vita, pc):
 		pc.includes = vita.includes
-		vita_, pc_ = get(vita, pc, "code", 5, "@IF:1", [Insn('FLAG', 1040), Insn('END')])
-		assert vita_[4].args[0][0][1][0] == pc_[4]
-		pc_[4] = vita_[4]
+		pc.npcs.append(vita.npcs[41])
+		pc.npcs.append(vita.npcs[42])
+		copy_clause(vita, pc, 1, "@IF:-1", 0, 3)
 
 	with ctx.get("t1540_1") as (vita, pc):
 		pc.includes = vita.includes
@@ -290,12 +296,6 @@ def patch_quests(ctx):
 		copy_clause(vita, pc, 6, "@IF", 0, 1)
 		copy_clause(vita, pc, 7, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
 		copy_clause(vita, pc, 8, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-
-	with ctx.get("t1540") as (vita, pc):
-		pc.includes = vita.includes
-		pc.npcs.append(vita.npcs[41])
-		pc.npcs.append(vita.npcs[42])
-		copy_clause(vita, pc, 1, "@IF:-1", 0, 3)
 
 	with ctx.get("t1600") as (vita, pc):
 		pc.includes = vita.includes

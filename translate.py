@@ -62,6 +62,8 @@ class dump_translator(BaseTranslator):
 		if self.pos == len(self.lines):
 			self.lines.append((string, string))
 			for line in string.splitlines():
+				assert line != ""
+				assert line.replace("\u3000", "  ").replace("\n", " ").isprintable()
 				print(line, file=self.file)
 			for line in string.splitlines():
 				print("\t"+line, file=self.file)

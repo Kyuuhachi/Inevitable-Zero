@@ -182,6 +182,36 @@ class alias(element):
 	def __repr__(self):
 		return self._name
 
+class lazy(element):
+	def __init__(self, provider):
+		assert callable(provider)
+		self._provider = provider
+		self._init = False
+		self._value = None
+
+	@property
+	def value(self):
+		if not self._init:
+			self.value = self._provider()
+		return self._value
+
+	@value.setter
+	def value(self, v):
+		self._value = v
+		self._init = True
+
+	def read(self, ctx, nil_ok=False, inner=None):
+		return self.value.read(ctx, nil_ok, inner)
+
+	def write(self, ctx, v, inner=None):
+		return self.value.write(ctx, v, inner)
+
+	def size(self, ctx, v, inner=None):
+		return self.value.write(ctx, v, inner)
+
+	def __repr__(self):
+		return f"lazy({self._provider!r})"
+
 # {{{1 Primitives
 
 class int(element):

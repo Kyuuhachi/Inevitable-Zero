@@ -38,6 +38,10 @@ class Context:
 				)
 		return self.pc_scripts[name]
 
+	def copy(self, name):
+		assert not (self.pcpath / name).with_suffix(".bin").exists()
+		self.pc_scripts[name] = self.get_vita(name)
+
 	def get(self, name):
 		return self.get_vita(name), self.get_pc(name)
 
@@ -308,11 +312,11 @@ def patch_quests(ctx):
 	copy_clause(vita, pc, 2, pc.code[2].index(Insn('ITEM_REMOVE', 846, 1))+1)
 	copy_clause(vita, pc, 2, pc.code[2].index(Insn('ITEM_REMOVE', 846, 1))+2)
 
-	ctx.pc_scripts["c0210_1"] = ctx.get_vita("c0210_1")
-	ctx.pc_scripts["t0520_1"] = ctx.get_vita("t0520_1")
-	ctx.pc_scripts["t1030_1"] = ctx.get_vita("t1030_1")
-	ctx.pc_scripts["t1500_1"] = ctx.get_vita("t1500_1")
-	ctx.pc_scripts["t4010_1"] = ctx.get_vita("t4010_1")
+	ctx.copy("c0210_1")
+	ctx.copy("t0520_1")
+	ctx.copy("t1030_1")
+	ctx.copy("t1500_1")
+	ctx.copy("t4010_1")
 
 # m0000, m0001, m0002, m0010, m0100, m0110, m0111, m0112, m3002, m3099, r2050, r2070, c1400, c140b
 # contain minor, probably aesthetic, changes

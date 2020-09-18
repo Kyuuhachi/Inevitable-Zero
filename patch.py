@@ -7,6 +7,7 @@ import scena
 import insn
 import dump
 from insn import Insn
+from translate import translator
 
 class Context:
 	def __init__(self, vitapath, pcpath, is_geofront=None):
@@ -31,7 +32,10 @@ class Context:
 				params = { "_insns": insn.insn_zero_pc }
 				if self.is_geofront and name in scena.geofront_tweaks:
 					params["_geofront_tweaks"] = scena.geofront_tweaks[name]
-				self.pc_scripts[name] = kouzou.read(scena.scenaStruct, f, params)
+				self.pc_scripts[name] = do_transform(
+					kouzou.read(scena.scenaStruct, f, params),
+					{ "translate": True },
+				)
 		return self.pc_scripts[name]
 
 	def get(self, name):
@@ -54,7 +58,7 @@ def patch_furniture_minigames(ctx):
 		assert vita[23].name == "IF"
 		pc.insert(23, vita[23])
 
-def patch_quest_lists(ctx):
+def patch_quests(ctx):
 	for file, func in [
 			("c0110", 3),
 			("c011c", 8),
@@ -404,6 +408,12 @@ def permute(tr, xs):
 	return xs
 
 def do_transform(obj, tr):
+	if isinstance(obj, insn.Translate) and not getattr(obj, "translated", False):
+		if isinstance(tr.get("translate"), translator):
+			obj = type(obj)(tr["translate"].translate(obj))
+		obj.translated = True
+		return obj
+
 	if isinstance(obj, Insn):
 		obj.args = do_transform(obj.args, tr)
 		return obj
@@ -441,16 +451,19 @@ def __main__(vitapath, pcpath, outpath):
 	ctx = Context(vitapath, pcpath)
 
 	patch_furniture_minigames(ctx)
-	patch_quest_lists(ctx)
+	patch_quests(ctx)
 
-	for name, script in ctx.pc_scripts.items():
+	if ctx.is_geofront:
+		for name in ctx.pc_scripts:
+			ctx.pc_scripts[name] = do_transform(
+				ctx.pc_scripts[name],
+				{ "translate": translator(name) },
+			)
+
+	# for name, script in ctx.pc_scripts.items():
 		# with (outpath / name).with_suffix(".bin").open("wb") as f:
 		# 	params = { "_insns": insn.insn_zero_pc }
 		# 	kouzou.write(scena.scenaStruct, f, script, params)
-		with (outpath / name).with_suffix(".py").open("wt") as f:
-			dump.dump(f, script, False)
-		with (Path("scripts3") / name).with_suffix(".py").open("wt") as f:
-			dump.dump(f, script, False)
 
 	for name, script in ctx.vita_scripts.items():
 		with (Path("scr/vita") / name).with_suffix(".py").open("wt") as f:

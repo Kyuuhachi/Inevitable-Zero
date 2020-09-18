@@ -50,8 +50,11 @@ monsterref = "monsterref"|k.iso(tomonsterref, frommonsterref)@k.u4
 POS = "POS"|k.tuple(k.i4, k.i4, k.i4)
 zstr = "zstr"|k.enc("cp932")@k.zbytes()
 
-class Text(str): pass
-class text(k.element):
+class Translate(str): pass
+ZSTR = "ZSTR"|k.iso(Translate, str)@zstr
+
+class Text(Translate): pass
+class TEXT(k.element):
 	# Apparently '＂' can be encoded as both EE FC and FA 57, which makes it not
 	# roundtrippable. That character exists in a single string, so it's not
 	# worth caring about.
@@ -98,9 +101,9 @@ class text(k.element):
 		ctx.write(b"\0")
 
 	def __repr__(self):
-		return "text"
+		return "TEXT"
 
-text = text()
+TEXT = TEXT()
 
 class Char(int): pass
 CHAR = "CHAR"|k.iso(Char, int)@k.u2
@@ -581,20 +584,20 @@ insns_zero_pc = [
 	insn("EXPR_CHAR_ATTR", CHAR, k.u1, expr),
 	insn("TEXT_START", CHAR),
 	insn("TEXT_END", CHAR),
-	insn("TEXT_MESSAGE", CHAR, text),
+	insn("TEXT_MESSAGE", CHAR, TEXT),
 	None,
 	insn("TEXT_RESET", k.bytes(1)),
-	insn("MENU_TITLE", k.bytes(6), zstr),
+	insn("MENU_TITLE", k.bytes(6), ZSTR),
 	insn("TEXT_WAIT"),
 	insn("0x5A"),
 	insn("TEXT_SET_POS", k.i2, k.i2, k.i2, k.i2),
-	insn("TEXT_TALK", CHAR, text),
-	insn("TEXT_TALK2", CHAR, zstr, text),
-	insn("MENU", k.u2, k.i2, k.i2, k.u1, text),
+	insn("TEXT_TALK", CHAR, TEXT),
+	insn("TEXT_TALK2", CHAR, ZSTR, TEXT),
+	insn("MENU", k.u2, k.i2, k.i2, k.u1, TEXT),
 	insn("MENU_WAIT", k.u2),
 
 	insn("0x60", k.u2), # Something to do with menu
-	insn("TEXT_SET_NAME", zstr),
+	insn("TEXT_SET_NAME", ZSTR),
 	insn("0x62", CHAR),
 	insn("EMOTE", CHAR, k.i4, k.u4, k.tuple(k.u1, k.u1, k.u4, k.u1)),
 	insn("EMOTE_STOP", CHAR),
@@ -645,7 +648,7 @@ insns_zero_pc = [
 	None,
 	None,
 	insn("0x8C", CHAR, k.u1),
-	insn("0x8D", k.bytes(3)),
+	insn("0x8D", CHAR, k.u1),
 	insn("0x8E", CHAR, zstr),
 	insn("0x8F", CHAR, POS, k.u2),
 
@@ -677,7 +680,7 @@ insns_zero_pc = [
 	insn("0xA4", CHAR, k.bytes(2)),
 	insn("0xA5", CHAR, k.bytes(2)),
 	insn("0xA6", CHAR, k.u4, k.u4, k.u4, k.u4),
-	insn("0xA7", FUNCTION, k.bytes(8)),
+	insn("CHAR_SET_COLOR", CHAR, k.u4, k.u4),
 	insn("0xA8", k.bytes(9)),
 	insn("0xA9", k.u2),
 	insn("0xAA", k.u2),
@@ -720,7 +723,7 @@ insns_zero_pc = [
 	None,
 	insn("MENU_CUSTOM", choice({
 		0: insn("INIT", k.u1),
-		1: insn("ADD", k.u1, zstr),
+		1: insn("ADD", k.u1, ZSTR),
 		2: insn("FINISH", k.u1, k.i4, k.u1),
 		3: insn("3", k.u1, k.u1),
 		4: insn("4", k.u1, k.u1),

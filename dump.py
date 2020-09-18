@@ -23,46 +23,54 @@ def dump(f, data, mode):
 		pprint(f, func, mode)
 		f.write("\n")
 
+def commas(f, items, indent):
+	if indent is None:
+		has = False
+		for item in items:
+			if has:
+				f.write(", ")
+			yield item, None
+			has = True
+	else:
+		has = False
+		for item in items:
+			f.write("\n" + "\t"*(indent+1))
+			yield item, indent+1
+			f.write(",")
+			has = True
+		if has:
+			f.write("\n" + "\t"*indent)
+
 def pprint(f, data, mode, indent=0):
-	if isinstance(data, insn.Text) and mode == "diff":
+	if isinstance(data, insn.Translate) and mode == "diff":
 		f.write("...")
 		return
 
 	if isinstance(data, dict):
 		f.write("{")
-		for k, v in data.items():
-			f.write("\n" + "\t"*(indent+1))
-			f.write(repr(k))
+		for (k, v), ind in commas(f, data.items(), indent):
+			pprint(f, k, mode, None)
 			f.write(": ")
-			pprint(f, v, mode, indent+1)
-			f.write(",")
-		if data:
-			f.write("\n" + "\t"*indent)
+			pprint(f, v, mode, ind)
 		f.write("}")
 		return
 
 	if isinstance(data, list):
 		f.write("[")
-		for v in data:
-			f.write("\n" + "\t"*(indent+1))
-			pprint(f, v, mode, indent+1)
-			f.write(",")
-		if data:
-			f.write("\n" + "\t"*indent)
+		for v, ind in commas(f, data, indent):
+			pprint(f, v, mode, ind)
 		f.write("]")
 		return
 
 	if isinstance(data, insn.Insn) and data.name == "IF":
 		f.write(f"Insn({data.name!r}, [")
-		for cond, body in data.args[0]:
-			f.write("\n" + "\t"*(indent+1))
+		for (cond, body), ind in commas(f, data.args[0], indent):
 			f.write("(")
-			f.write(repr(cond))
+			pprint(f, cond, mode, None)
 			f.write(", ")
-			pprint(f, body, mode, indent+1)
+			pprint(f, body, mode, ind)
 			f.write(")")
-			f.write(",")
-		f.write("\n" + "\t"*indent + "])")
+		f.write("])")
 		return
 
 	if isinstance(data, insn.Insn) and data.name == "WHILE":
@@ -88,7 +96,7 @@ def pprint(f, data, mode, indent=0):
 		prevText = False
 		for arg in data.args:
 			f.write(",")
-			if isinstance(arg, insn.Text) and mode == "verbose":
+			if isinstance(arg, insn.Text) and mode == "verbose" and indent is not None:
 				for line in arg.splitlines(keepends=True):
 					f.write("\n" + "\t"*(indent+1))
 					f.write(repr(line))
@@ -98,10 +106,7 @@ def pprint(f, data, mode, indent=0):
 					f.write("\n" + "\t"*(indent+1))
 				else:
 					f.write(" ")
-				if isinstance(arg, insn.Text) and mode == "diff":
-					f.write("...")
-				else:
-					f.write(repr(arg))
+				pprint(f, arg, mode, None)
 				prevText = False
 
 		if prevText:

@@ -86,14 +86,14 @@ scenaStruct = k.struct(
 		k.list(k.u2)@k.advance("label")@k.struct(
 			_.pos@k.tuple(k.f4, k.f4, k.f4),
 			_.unk@k.bytes(4),
-			_.name@k.later("string", k.u4)@insn.zstr,
+			_.name@k.later("string", k.u4)@insn.ZSTR,
 		)
 	),
 
 	_.chcp@k.list(k.u1)@k.advance("chcp")@chcp,
 
 	_.npcs@k.list(k.u1)@k.advance("npc")@k.struct(
-		_.name@k.advance("name")@insn.zstr,
+		_.name@k.advance("name")@insn.ZSTR,
 		_.pos@insn.POS,
 		_.angle@k.u2,
 		_._1@k.bytes(8),
@@ -126,8 +126,9 @@ scenaStruct = k.struct(
 		_.pos@insn.POS,
 		_.range@k.u4,
 		_.pos2@insn.POS,
-		_.flags@k.u4,
-		_.function@k.u4,
+		_._1@k.bytes(3),
+		_.function@insn.FUNCTION,
+		_._2@k.bytes(3),
 	),
 
 	_.unk13@k.bytes(3),

@@ -371,7 +371,7 @@ def patch_misc(ctx):
 		end = next(-i+1 for i, (a, b) in enumerate(zip(v[::-1], p[::-1])) if a.name != b.name)
 		assert v[start].name == p[start].name == 'TEXT_TALK'
 		assert v[end].name == p[end].name == 'TEXT_WAIT'
-		line1, line2 = split(p[start], "\f")
+		line1, line2 = split(p[start], "{page}")
 		p[start:end] = [line1, *v[start+1:end-1], line2]
 
 	# Fran saying "Ah, Lloyd!"
@@ -384,20 +384,20 @@ def patch_misc(ctx):
 	# Some lines were split in two for some reason
 	with ctx.get("c1310") as (vita, pc):
 		pc_ = get_(pc.code[11], "@IF:1", [Insn('FLAG', 801), Insn('END')], "@IF", None)
-		line1, line2 = split(pc_[0], "\n", formatA=lambda a:"{0x06}%s\r"%a)
+		line1, line2 = split(pc_[0], "\n", formatA=lambda a:"{0x06}%s{wait}"%a)
 		pc_[0:2] = [line1, pc_[1], line2, pc_[1]]
 
 	with ctx.get("c110b") as (vita, pc):
 		idx1 = next(i for i, a in enumerate(vita.code[6]) if a.name == "TEXT_SET_POS")
 		idx2 = next(i for i, a in enumerate(vita.code[6]) if a.name == "TEXT_TALK")
 		pc.code[6][idx1:idx1] = vita.code[6][idx1:idx1+6]
-		pc.code[6][idx1+1], pc.code[6][idx2] = split(pc.code[6][idx2], "\f", names=("TEXT_MESSAGE", "TEXT_TALK"))
+		pc.code[6][idx1+1], pc.code[6][idx2] = split(pc.code[6][idx2], "{page}", names=("TEXT_MESSAGE", "TEXT_TALK"))
 
 	with ctx.get("c110c") as (vita, pc):
 		idx = next(i for i, a in enumerate(pc.code[41]) if a.name == "FORK_FUNC")
 		pc.code[41][idx:idx] = vita.code[41][idx:idx+5]
 		pc.code[41][idx+1], pc.code[41][idx+7] = split(pc.code[41][idx+7], "#600W",
-			formatA=lambda a:a.rstrip()+"\r",
+			formatA=lambda a:a.rstrip()+"{wait}",
 			formatB=lambda b:"{color 0}"+b.replace("#20W", "#20W#3300058V"),
 		)
 		if ctx.is_geofront:

@@ -1,5 +1,5 @@
 import re
-DIALOGUE_RE = re.compile(r"^(?:(?:\{[^}]+\})*(?:#\d+[A-Z])+)?(.*?)(?:\{[^}]+\}|#\d+[A-Z])*\r$", re.DOTALL)
+DIALOGUE_RE = re.compile(r"^(?:(?:\{[^}]+\})*(?:#\d+[A-Z])+)?(.*?)(?:\{[^}]+\}|#\d+[A-Z])*\{wait\}$", re.DOTALL)
 
 class translator:
 	def __init__(self, name):
@@ -10,9 +10,9 @@ class translator:
 			return string
 		if string.endswith("\n"): # Menu
 			return "".join(self._translate(s) + "\n" for s in string.splitlines())
-		if string.endswith("\r"): # Dialogue
+		if string.endswith("{wait}"): # Dialogue
 			lines = []
-			for line in string.split("\f"):
+			for line in string.split("{page}"):
 				line2, nsub = DIALOGUE_RE.subn(lambda m: self._translate(m[1]), line)
 				assert nsub == 1
 				lines.append(line2)

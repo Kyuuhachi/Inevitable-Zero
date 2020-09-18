@@ -59,7 +59,7 @@ class TEXT(k.element):
 	# roundtrippable. That character exists in a single string, so it's not
 	# worth caring about.
 
-	FORMAT_RE = re.compile(r"\{(\w+)(?: (\d+))?\}|([\n\r\f])")
+	FORMAT_RE = re.compile(r"\{(\w+)(?: (\d+))?\}|([\n])")
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is None
 
@@ -68,8 +68,8 @@ class TEXT(k.element):
 		while ch := read(1)[0]:
 			if 0: pass
 			elif ch == 0x01: buffer.extend(b"\n") # line
-			elif ch == 0x02: buffer.extend(b"\r") # wait
-			elif ch == 0x03: buffer.extend(b"\f") # page
+			elif ch == 0x02: buffer.extend(b"{wait}") # wait
+			elif ch == 0x03: buffer.extend(b"{page}") # page
 			elif ch == 0x05: buffer.extend(b"{0x05}")
 			elif ch == 0x06: buffer.extend(b"{0x06}")
 			elif ch == 0x07: buffer.extend(b"{color %d}" % k.u1.read(ctx))
@@ -88,8 +88,8 @@ class TEXT(k.element):
 			tag = format.group(3) or format.group(1)
 			if 0: pass
 			elif tag == "\n": ctx.write(b"\x01")
-			elif tag == "\r": ctx.write(b"\x02")
-			elif tag == "\f": ctx.write(b"\x03")
+			elif tag == "wait": ctx.write(b"\x02")
+			elif tag == "page": ctx.write(b"\x03")
 			elif tag == "0x05": ctx.write(b"\x05")
 			elif tag == "0x06": ctx.write(b"\x06")
 			elif tag == "color":ctx.write(b"\x07"); k.u1.write(ctx, int(format.group(2)))

@@ -9,7 +9,7 @@ class translator:
 		if not string.strip():
 			return string
 		if string.endswith("\n"): # Menu
-			return self._translate(string[:-1]) + "\n"
+			return "".join(self._translate(s) + "\n" for s in string.splitlines())
 		if string.endswith("\r"): # Dialogue
 			lines = []
 			for line in string.split("\f"):

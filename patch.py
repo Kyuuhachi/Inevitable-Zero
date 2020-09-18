@@ -46,6 +46,12 @@ class Context:
 	@contextmanager
 	def get(self, name):
 		yield self._get_vita(name), self._get_pc(name)
+		if self.is_geofront:
+			self.pc_scripts[name] = do_transform(
+				self.pc_scripts[name],
+				{ "translate": translator(name) },
+			)
+
 
 def patch_furniture_minigames(ctx):
 	# There are minigames on some room furniture in the Vita version, let's
@@ -517,13 +523,6 @@ def __main__(vitapath, pcpath, outpath):
 	patch_furniture_minigames(ctx)
 	patch_quests(ctx)
 	patch_other(ctx)
-
-	if ctx.is_geofront:
-		for name in ctx.pc_scripts:
-			ctx.pc_scripts[name] = do_transform(
-				ctx.pc_scripts[name],
-				{ "translate": translator(name) },
-			)
 
 	# for name, script in ctx.pc_scripts.items():
 		# with (outpath / name).with_suffix(".bin").open("wb") as f:

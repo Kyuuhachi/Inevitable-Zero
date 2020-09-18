@@ -67,19 +67,18 @@ class battle:
 	# Credits to Ouroboros for these structs
 	class sepith(k.element):
 		def read(self, ctx, nil_ok=False, inner=None):
-			assert inner is None
-			x = k.u4.read(ctx)
-			if x == 0:
+			assert inner is not None
+			if k.lookahead.read(ctx, False, k.u4) == 0:
 				return None
 			else:
-				return (k.later("sepith", x)@k.list(7)@k.u1).read(ctx)
+				return inner.read(ctx)
 
 		def write(self, ctx, v, inner=None):
-			assert inner is None
+			assert inner is not None
 			if v is None:
 				k.u4.write(ctx, 0)
 			else:
-				(k.later("sepith", k.u4)@k.list(7)@k.u1).write(ctx, v)
+				inner.write(ctx, v)
 
 		def __repr__(self):
 			return "battle.sepith"
@@ -107,7 +106,84 @@ class battle:
 			return "battle.setups"
 	setups = setups()
 
-	inner = "battle.inner"|k.later("battle", k.u2)@k.struct(
+	class now(k.element):
+		def read(self, ctx, nil_ok=False, inner=None):
+			assert inner is None
+			assert nil_ok
+			return k.NIL
+
+		def write(self, ctx, v, inner=None):
+			assert inner is None
+
+			def find_battles(code):
+				for op in code:
+					if op.name == "BATTLE" and not op.args[0][0]:
+						yield op.args[0][1]
+					if op.name == "IF":
+						for _, body in op.args[0]:
+							yield from find_battles(body)
+					if op.name == "WHILE":
+						yield from find_battles(op.args[1])
+					if op.name == "SWITCH":
+						for _, body in op.args[1].items():
+							yield from find_battles(body)
+			battles = [m["battle"] for m in v["monsters"]]
+			for func in v["code"]:
+				battles.extend(find_battles(func))
+
+			def write(struct, values):
+				vals = {}
+				for item in values:
+					r = repr(item)
+					if r not in vals:
+						vals[r] = ctx.tell()
+						struct.write(ctx, item)
+				return vals
+
+			ctx.scope["_battles"] = {
+				"atRoll": write(battle._atRoll, [s["atRoll"] for b in battles for _, s in b["setups"]]),
+				"sepith": write(battle._sepith, [b["sepith"] for b in battles if b["sepith"] is not None]),
+				"layout": write(battle._layout, [s[k] for b in battles for _, s in b["setups"] for k in ["position", "position2"]]),
+				"battle": write(battle.struct, battles),
+			}
+
+		def __repr__(self):
+			return "battle.now"
+	now = now()
+
+	class later(k.later):
+		def write(self, ctx, v, inner=None):
+			assert inner is not None
+			ctx.later(ctx.tell(), self._pos, lambda: ctx.scope["_battles"][self._key][repr(v)])
+			ctx.write(bytes(self._pos.size()))
+
+		def __repr__(self):
+			return f"battle.later({self._key!r}, {self._pos!r})"
+
+	_atRoll = k.struct(
+		_.none@k.u1,
+		_.hp10@k.u1,
+		_.hp50@k.u1,
+		_.ep10@k.u1,
+		_.ep50@k.u1,
+		_.cp10@k.u1,
+		_.cp50@k.u1,
+		_.sepith_up@k.u1,
+		_.critical@k.u1,
+		_.vanish@k.u1,
+		_.death@k.u1,
+		_.guard@k.u1,
+		_.rush@k.u1, # Is this and teamrush swapped?
+		_.arts_guard@k.u1,
+		_.teamrush@k.u1,
+		_.unknown@k.u1,
+	)
+
+	_layout = k.list(8)@k.tuple(k.u1, k.u1, k.u2)
+
+	_sepith = k.list(7)@k.u1
+
+	struct = "battle.struct"|k.struct(
 		_.flags@k.u2,
 		_.level@k.u2,
 		_.unk@k.u1,
@@ -117,31 +193,14 @@ class battle:
 		_.moveSpeed@k.u2,
 		_.unk2@k.u2,
 		_.battlefield@k.later("string", k.u4)@insn.zstr,
-		_.sepith@sepith,
+		_.sepith@sepith@later("sepith", k.u4)@_sepith,
 		_.setups@setups@k.struct(
 			_.enemies@k.list(8)@monsterref,
-			_.position@k.later("battleLayout", k.u2)@k.list(8)@k.tuple(k.u1, k.u1, k.u2),
-			_.position2@k.later("battleLayout", k.u2)@k.list(8)@k.tuple(k.u1, k.u1, k.u2),
+			_.position@later("layout", k.u2)@_layout,
+			_.position2@later("layout", k.u2)@_layout,
 			_.bgm@k.u2,
 			_.bgm2@k.u2,
-			_.atRoll@k.later("atRoll", k.u4)@k.struct(
-				_.none@k.u1,
-				_.hp10@k.u1,
-				_.hp50@k.u1,
-				_.ep10@k.u1,
-				_.ep50@k.u1,
-				_.cp10@k.u1,
-				_.cp50@k.u1,
-				_.sepith_up@k.u1,
-				_.critical@k.u1,
-				_.vanish@k.u1,
-				_.death@k.u1,
-				_.guard@k.u1,
-				_.rush@k.u1, # Is this and teamrush swapped?
-				_.arts_guard@k.u1,
-				_.teamrush@k.u1,
-				_.unknown@k.u1,
-			),
+			_.atRoll@later("atRoll", k.u4)@_atRoll,
 		),
 	)
 
@@ -156,7 +215,7 @@ class battle:
 
 		standard_battle = k.tuple(
 			False,
-			k.lazy(lambda: battle.inner),
+			k.lazy(lambda: battle.later("battle", k.u2)@battle.struct),
 			k.bytes(13),
 		)
 
@@ -275,7 +334,7 @@ scenaStruct = k.struct(
 		_.pos@insn.POS,
 		_.angle@k.u2,
 		_.unk1@k.u2,
-		_.battle@battle.inner,
+		_.battle@battle.later("battle", k.u2)@battle.struct,
 		_.flag@k.u2,
 		_.chcpIdx@k.u2,
 		0xFFFF@k.u2,
@@ -321,13 +380,7 @@ scenaStruct = k.struct(
 	k.nowC("npc"),
 	k.nowC("monster"),
 
-
-	# This is not the same order as in the original files (those have AT rolls
-	# first), but writing that order would complicate things significantly.
-	k.now("battle"),
-	k.now("sepith"),
-	k.now("battleLayout"),
-	k.now("atRoll"),
+	battle.now,
 
 	k.now("anim"),
 	k.now("functable"),

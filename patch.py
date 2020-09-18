@@ -593,13 +593,6 @@ def __main__(vitapath, pcpath, outpath):
 	patch_quests(ctx)
 	patch_misc(ctx)
 
-	for name, script in ctx.vita_scripts.items():
-		with (Path("scr/vita")/name).with_suffix(".py").open("wt") as f:
-			dump.dump(f, script, "diff")
-	for name, script in ctx.pc_scripts.items():
-		with (Path("scr/pc")/name).with_suffix(".py").open("wt") as f:
-			dump.dump(f, script, "diff")
-
 	with (outpath/"text/t_quest._dt").open("wb") as f:
 		kouzou.write(quest.questStruct, f, ctx.pc_quests)
 

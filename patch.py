@@ -256,6 +256,8 @@ def patch_quests(ctx):
 		pc.code[5].insert(-5, vita.code[5][-6])
 		copy_condition(vita, pc, 6, "@IF", [Insn('FLAG', 1040), Insn('END')], 0)
 		copy_clause(vita, pc, 32, "@IF", 0, 0)
+		get_(pc.code[32], "@IF", 0, 0, 1, "@IF", None, "@MENU").args[4] = \
+			get_(pc.code[32], "@IF", 0, 2, 1, "@MENU").args[4]
 		pc.code[64].insert(4, vita.code[64][4])
 
 	with ctx.get("t1520") as (vita, pc):
@@ -285,6 +287,10 @@ def patch_quests(ctx):
 		pc.npcs.append(vita.npcs[41])
 		pc.npcs.append(vita.npcs[42])
 		copy_clause(vita, pc, 1, "@IF:-1", 0, 3)
+		with ctx.get("t1520") as (vita2, pc2):
+			for npc in pc.npcs:
+				if not getattr(npc.name, "translated", False):
+					npc.name = [npc2.name for npc1, npc2 in zip(vita2.npcs, pc2.npcs) if npc1.name == npc.name]
 
 	with ctx.get("t1540_1") as (vita, pc):
 		pc.includes = vita.includes

@@ -42,10 +42,14 @@ class Context:
 	def copy(self, name):
 		assert not (self.pcpath / name).with_suffix(".bin").exists()
 		self.pc_scripts[name] = self._get_vita(name)
+		self.do_translate(name)
 
 	@contextmanager
 	def get(self, name):
 		yield self._get_vita(name), self._get_pc(name)
+		self.do_translate(name)
+
+	def do_translate(self, name):
 		if self.is_geofront:
 			self.pc_scripts[name] = do_transform(
 				self.pc_scripts[name],

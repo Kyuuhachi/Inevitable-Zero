@@ -69,6 +69,7 @@ class battle:
 		def read(self, ctx, nil_ok=False, inner=None):
 			assert inner is not None
 			if k.lookahead.read(ctx, False, k.u4) == 0:
+				k.u4.read(ctx)
 				return None
 			else:
 				return inner.read(ctx)

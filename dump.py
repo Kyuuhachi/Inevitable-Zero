@@ -12,7 +12,7 @@ class CustomRepr:
 	def __repr__(self): return self.repr
 
 def dump(f, data, mode):
-	f.write("if 0: from . import Insn\n")
+	f.write("if 0: from . import Insn, Expr, Text, Translate, Char, Flag, Function\n")
 	f.write("data = ")
 	pprint(f, {**data, "code": CustomRepr(f"[None]*{len(data['code'])}")}, mode)
 	f.write("\n")
@@ -46,6 +46,29 @@ def pprint(f, data, mode, indent=0):
 		f.write("...")
 		return
 
+	if isinstance(data, insn.Expr):
+		indent = None
+
+	if isinstance(data, insn.Text) and indent is not None:
+		f.write(type(data).__qualname__)
+		f.write("(")
+		for line in data.replace("{wait}", "\r").replace("{page}", "\f").splitlines(keepends=True):
+			f.write("\n" + "\t"*(indent+1))
+			f.write(repr(line.replace("\r", "{wait}").replace("\f", "{page}")))
+		f.write("\n" + "\t"*indent)
+		f.write(")")
+		return
+
+	for cls in [kouzou.dotdict, bool, int, float, str, dict, tuple, list]:
+		if isinstance(data, cls):
+			if type(data) is not cls:
+				f.write(type(data).__qualname__)
+				f.write("(")
+				pprint(f, cls(data), mode, indent)
+				f.write(")")
+				return
+			break
+
 	if isinstance(data, dict):
 		f.write("{")
 		for (k, v), ind in commas(f, data.items(), indent):
@@ -60,6 +83,15 @@ def pprint(f, data, mode, indent=0):
 		for v, ind in commas(f, data, indent):
 			pprint(f, v, mode, ind)
 		f.write("]")
+		return
+
+	if isinstance(data, tuple):
+		f.write("(")
+		for v, _ in commas(f, data, None):
+			pprint(f, v, mode, indent)
+		if len(data) == 1:
+			f.write(",")
+		f.write(")")
 		return
 
 	if isinstance(data, insn.Insn) and data.name == "IF":
@@ -93,31 +125,16 @@ def pprint(f, data, mode, indent=0):
 
 	if isinstance(data, insn.Insn):
 		f.write(f"Insn({data.name!r}")
-		prevText = False
 		for arg in data.args:
-			f.write(",")
-			if isinstance(arg, insn.Text) and mode == "verbose" and indent is not None:
-				for line in arg.splitlines(keepends=True):
-					f.write("\n" + "\t"*(indent+1))
-					f.write(repr(line))
-				prevText = True
-			else:
-				if prevText:
-					f.write("\n" + "\t"*(indent+1))
-				else:
-					f.write(" ")
-				pprint(f, arg, mode, None)
-				prevText = False
+			f.write(", ")
+			pprint(f, arg, mode, indent)
 
-		if prevText:
-			f.write("\n" + "\t"*indent)
 		f.write(")")
 		return
 
 	f.write(repr(data))
 
 argp = argparse.ArgumentParser()
-argp.add_argument("-v", "--verbose", dest="dump_mode", action="store_const", const="verbose")
 argp.add_argument("-d", "--diff", dest="dump_mode", action="store_const", const="diff")
 argp.add_argument("-m", "--mode", choices=["jp", "geofront", "vita"], required=True)
 argp.add_argument("inpath", type=Path)

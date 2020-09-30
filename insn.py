@@ -9,6 +9,15 @@ zstr = "zstr"|k.enc("cp932")@k.zbytes()
 class Translate(str): pass
 ZSTR = "ZSTR"|k.iso(Translate, str)@zstr
 
+class Flag(int): pass
+FLAG = "FLAG"|k.iso(Flag, int)@k.u2
+
+class Char(int): pass
+CHAR = "CHAR"|k.iso(Char, int)@k.u2
+
+class Function(tuple): pass
+FUNCTION = "FUNCTION"|k.iso(Function, tuple)@k.tuple(k.u1, k.u1)
+
 class Text(Translate): pass
 class TEXT(k.element):
 	# Apparently '＂' can be encoded as both EE FC and FA 57, which makes it not
@@ -58,14 +67,7 @@ class TEXT(k.element):
 
 	def __repr__(self):
 		return "TEXT"
-
 TEXT = TEXT()
-
-class Char(int): pass
-CHAR = "CHAR"|k.iso(Char, int)@k.u2
-
-class Function(tuple): pass
-FUNCTION = "FUNCTION"|k.iso(Function, tuple)@k.tuple(k.u1, k.u1)
 
 class ADDR(k.element):
 	def read(self, ctx, nil_ok=False, inner=None):
@@ -250,6 +252,7 @@ class script(k.element):
 		return "script"
 script = script()
 
+class Expr(list): pass
 
 expr_ops = [
 	insn("CONST", k.i4),
@@ -286,14 +289,14 @@ expr_ops = [
 
 	insn("EXEC", script.single),
 	insn("BIT_NOT"), # ~
-	insn("FLAG", k.u2),
+	insn("FLAG", FLAG),
 	insn("VAR", k.u2),
 	insn("ATTR", k.u1),
 	insn("CHAR_ATTR", CHAR, k.u1),
 	insn("RAND"),
 	insn("0x23", k.u1),
 ]
-expr = "expr"|k.while_(lambda a: a != Insn("END"))@choice(expr_ops)
+expr = "expr"|k.iso(Expr, list)@k.while_(lambda a: a != Insn("END"))@choice(expr_ops)
 
 insns_zero_pc = [
 	None,

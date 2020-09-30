@@ -179,10 +179,6 @@ class battle:
 		_.unknown@k.u1,
 	)
 
-	_layout = k.list(8)@k.tuple(k.u1, k.u1, k.u2)
-
-	_sepith = k.list(7)@k.u1
-
 	struct = "battle.struct"|k.struct(
 		_.flags@k.u2,
 		_.level@k.u2,
@@ -193,11 +189,13 @@ class battle:
 		_.moveSpeed@k.u2,
 		_.unk2@k.u2,
 		_.battlefield@k.later("string", k.u4)@insn.zstr,
-		_.sepith@sepith@later("sepith", k.u4)@_sepith,
+		_.sepith@sepith@later("sepith", k.u4)@k.iso(tuple, list)@k.list(7)@k.u1,
 		_.setups@setups@k.struct(
-			_.enemies@k.list(8)@monsterref,
-			_.position@later("layout", k.u2)@_layout,
-			_.position2@later("layout", k.u2)@_layout,
+			_.enemies@k.iso(lambda a: list(zip(*a)), lambda b: list(zip(*b)))@k.tuple(
+				k.list(8)@monsterref,
+				later("layout", k.u2)@k.list(8)@k.tuple(k.u1, k.u1, k.u2),
+				later("layout", k.u2)@k.list(8)@k.tuple(k.u1, k.u1, k.u2),
+			),
 			_.bgm@k.u2,
 			_.bgm2@k.u2,
 			_.atRoll@later("atRoll", k.u4)@_atRoll,

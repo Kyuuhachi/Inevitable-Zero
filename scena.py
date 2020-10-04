@@ -204,18 +204,25 @@ class battle:
 	)
 
 	class insn(k.element):
-		npc_battle = (-1@k.i4) >> k.tuple(
+		npc_battle = k.tuple(
 			True,
-			k.bytes(5),
-			k.list(4)@monsterref,
-			k.list(4)@monsterref,
-			k.bytes(20)
+			(-1@k.i4) >>
+			k.u2, # special mode
+			k.bytes(3), # Always 20 30 00 if special mode is nonzero
+			k.iso(tuple, list)@k.list(4)@monsterref,
+			k.iso(tuple, list)@k.list(4)@monsterref,
+			bytes(16)@k.bytes(16) >>
+			k.u2, k.u2,
 		)
 
 		standard_battle = k.tuple(
 			False,
-			k.lazy(lambda: battle.later("battle", k.u2)@battle.struct),
-			k.bytes(13),
+			k.iso(lambda a:..., None)@k.lazy(lambda: battle.later("battle", k.u2)@battle.struct),
+			0@k.u2 >>
+			k.u2, # special mode
+			k.bytes(3), # Always 20 30 00 if special mode is nonzero
+			k.u2, k.u2
+			<< 255@k.u2,
 		)
 
 		def read(self, ctx, nil_ok=False, inner=None):

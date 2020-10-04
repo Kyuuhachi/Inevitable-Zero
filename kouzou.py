@@ -36,8 +36,10 @@ class element:
 			return alias(other, self)
 		return NotImplemented
 
+	def __rshift__(self, other): return _after(self, other)
 	def __rrshift__(self, other): return _after(other, self)
 	def __lshift__(self, other): return _before(self, other)
+	def __rlshift__(self, other): return _before(other, self)
 
 	def read(self, ctx, nil_ok=False, inner=None):
 		raise NotImplementedError(self)

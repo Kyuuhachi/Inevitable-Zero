@@ -141,12 +141,16 @@ class battle:
 						struct.write(ctx, item)
 				return vals
 
-			ctx.root["_battles"] = {
-				"atRoll": write(battle._atRoll, [s["atRoll"] for b in battles for _, s in b["setups"]]),
-				"sepith": write(battle._sepith, [b["sepith"] for b in battles if b["sepith"] is not None]),
-				"layout": write(battle._layout, [s[k] for b in battles for _, s in b["setups"] for k in ["position", "position2"]]),
-				"battle": write(battle.struct, battles),
-			}
+			ctx.root["_battles"] = {}
+			ctx.root["_battles"]["atRoll"] = write(battle._atRoll, [s["atRoll"] for b in battles for _, s in b["setups"]])
+			ctx.root["_battles"]["sepith"] = write(battle._sepith, [b["sepith"] for b in battles if b["sepith"] is not None])
+			ctx.root["_battles"]["layout"] = write(battle._layout, [
+				tuple(en[k] for en in s["enemies"])
+				for b in battles
+				for _, s in b["setups"]
+				for k in [1, 2]
+			])
+			ctx.root["_battles"]["battle"] = write(battle.struct, battles)
 
 		def __repr__(self):
 			return "battle.now"
@@ -174,11 +178,14 @@ class battle:
 		_.vanish@k.u1,
 		_.death@k.u1,
 		_.guard@k.u1,
-		_.rush@k.u1, # Is this and teamrush swapped?
+		_.rush@k.u1,
 		_.arts_guard@k.u1,
 		_.teamrush@k.u1,
 		_.unknown@k.u1,
 	)
+
+	_layout = k.list(8)@k.tuple(k.u1, k.u1, k.u2)
+	_sepith = sepith@later("sepith", k.u4)@k.iso(tuple, list)@k.list(7)@k.u1
 
 	struct = "battle.struct"|k.struct(
 		_.flags@k.u2,
@@ -190,12 +197,12 @@ class battle:
 		_.moveSpeed@k.u2,
 		_.unk2@k.u2,
 		_.battlefield@k.later("string", k.u4)@insn.zstr,
-		_.sepith@sepith@later("sepith", k.u4)@k.iso(tuple, list)@k.list(7)@k.u1,
+		_.sepith@_sepith,
 		_.setups@setups@k.struct(
 			_.enemies@k.iso(lambda a: list(zip(*a)), lambda b: list(zip(*b)))@k.tuple(
 				k.list(8)@monsterref,
-				later("layout", k.u2)@k.list(8)@k.tuple(k.u1, k.u1, k.u2),
-				later("layout", k.u2)@k.list(8)@k.tuple(k.u1, k.u1, k.u2),
+				later("layout", k.u2)@_layout,
+				later("layout", k.u2)@_layout,
 			),
 			_.bgm@k.u2,
 			_.bgm2@k.u2,
@@ -217,7 +224,7 @@ class battle:
 
 		standard_battle = k.tuple(
 			False,
-			k.iso(lambda a:..., None)@k.lazy(lambda: battle.later("battle", k.u2)@battle.struct),
+			k.lazy(lambda: battle.later("battle", k.u2)@battle.struct),
 			0@k.u2 >>
 			k.u2, # special mode
 			k.bytes(3), # Always 20 30 00 if special mode is nonzero

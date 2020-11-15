@@ -20,7 +20,7 @@ class BaseTranslator:
 				line2, nsub = DIALOGUE_RE.subn(lambda m: m[2]+self._translate(m[1]+m[3])+m[4], line)
 				assert nsub == 1
 				lines.append(line2)
-			return "\f".join(lines)
+			return "{page}".join(lines)
 		return self._translate(string) # Other such as npc names or MENU_CUSTOM items
 
 	def _translate(self, string):

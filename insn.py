@@ -508,9 +508,9 @@ insns_zero_pc = [
 	None,
 	insn("0xAD", k.bytes(2)),
 	None,
-	insn("0xAF", k.bytes(1)),
+	insn("OPEN_SHOP", k.u1),
 
-	insn("0xB0", k.bytes(2)),
+	insn("RECIPE", k.u2),
 	insn("0xB1", k.bytes(1)),
 	None,
 	None,

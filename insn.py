@@ -24,7 +24,7 @@ class TEXT(k.element):
 	# roundtrippable. That character exists in a single string, so it's not
 	# worth caring about.
 
-	FORMAT_RE = re.compile(r"\{(\w+)(?: (\d+))?\}|([\n])")
+	FORMAT_RE = re.compile(r"\{(\w+)(?: (\d+))?\}|(\n)")
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is None
 
@@ -33,8 +33,8 @@ class TEXT(k.element):
 		while ch := read(1)[0]:
 			if 0: pass
 			elif ch == 0x01: buffer.extend(b"\n") # line
-			elif ch == 0x02: buffer.extend(b"{wait}") # wait
-			elif ch == 0x03: buffer.extend(b"{page}") # page
+			elif ch == 0x02: buffer.extend(b"{wait}")
+			elif ch == 0x03: buffer.extend(b"{page}")
 			elif ch == 0x05: buffer.extend(b"{0x05}")
 			elif ch == 0x06: buffer.extend(b"{0x06}")
 			elif ch == 0x07: buffer.extend(b"{color %d}" % k.u1.read(ctx))

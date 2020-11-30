@@ -12,18 +12,31 @@ from insn import Insn
 import translate
 
 class Context:
-	def __init__(self, vitapath, pcpath, is_geofront=None):
+	def __init__(self, vitapath, pcpath, outpath, is_geofront=None):
 		if is_geofront is None:
 			is_geofront = pcpath.name == "data_en"
+		self.is_geofront = is_geofront
+
 		self.vitapath = vitapath
 		self.vita_scripts = {}
 		with (vitapath/"text/t_quest._dt").open("rb") as f:
 			self.vita_quests = kouzou.read(quest.questStruct, f)
+
 		self.pcpath = pcpath
 		self.pc_scripts = {}
 		with (pcpath/"text/t_quest._dt").open("rb") as f:
 			self.pc_quests = kouzou.read(quest.questStruct, f)
-		self.is_geofront = is_geofront
+
+		self.outpath = outpath
+
+	def save(self):
+		with (self.outpath/"text/t_quest._dt").open("wb") as f:
+			kouzou.write(quest.questStruct, f, self.pc_quests)
+
+		for name, script in self.pc_scripts.items():
+			with (self.outpath/"scena"/name).with_suffix(".bin").open("wb") as f:
+				params = { "_insns": insn.insn_zero_pc }
+				kouzou.write(scena.scenaStruct, f, script, params)
 
 	def _get_vita(self, name):
 		if name not in self.vita_scripts:
@@ -587,20 +600,13 @@ def __main__(vitapath, pcpath, outpath):
 	(outpath/"scena").mkdir()
 	(outpath/"text").mkdir()
 
-	ctx = Context(vitapath, pcpath)
+	ctx = Context(vitapath, pcpath, outpath)
 
 	patch_furniture_minigames(ctx)
 	patch_quests(ctx)
 	patch_misc(ctx)
 
-	with (outpath/"text/t_quest._dt").open("wb") as f:
-		kouzou.write(quest.questStruct, f, ctx.pc_quests)
-
-	for name, script in ctx.pc_scripts.items():
-		with (outpath/"scena"/name).with_suffix(".bin").open("wb") as f:
-			params = { "_insns": insn.insn_zero_pc }
-			kouzou.write(scena.scenaStruct, f, script, params)
-
+	ctx.save()
 
 if __name__ == "__main__":
 	__main__(**argp.parse_args().__dict__)

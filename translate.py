@@ -1,6 +1,8 @@
 import re
 from pathlib import Path
 
+# I don't want to have things like positioning (#P) and faces (#F) in the
+# translation file, so this filters them out
 DIALOGUE_RE = re.compile(r"^((?:\{[^}]+\}|#\d+[S])*)((?:#\d+[ABFPVWZ])*)(.*?)(\{wait\})$", re.DOTALL)
 PATH = Path("text")
 

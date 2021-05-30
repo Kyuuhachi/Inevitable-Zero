@@ -29,7 +29,7 @@ only*. The translation is a work in progress.
 	Start of chapter 4.
 	</details>
 
-It also contains a small number of other text patches:
+It also contains a small number of other patches:
 
 * Some exclamations from Fran when she calls
 	<details>

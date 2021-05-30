@@ -39,10 +39,6 @@ It also contains a small number of other text patches:
 	<details><summary>Details (minor spoiler)</summary>
 	When discussing the D∴G Cult, Sergei writes down how it is spelled.
 	</details>
-* A few dialogue lines were split in two in Vita
-	<details>
-	(Not sure when this happens)
-	</details>
 * One dialogue line used the wrong voiceline in Geofront (TODO has this been fixed?)
 	<details>
 	(Not sure when this happens)

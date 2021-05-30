@@ -485,7 +485,7 @@ insns_zero_pc = [
 	insn("0x9A", CHAR, k.bytes(2), k.u4, k.u4, k.bytes(1)),
 	insn("0x9B", k.bytes(1), CHAR, k.bytes(11)),
 	insn("0x9C", k.bytes(22)),
-	insn("0x9D", CHAR, k.u4, k.u4, k.u4, k.u4, k.u4),
+	insn("0x9D", CHAR, k.i4, k.i4, k.i4, k.u4, k.u4),
 	insn("0x9E", CHAR, k.i4, k.i4, k.i4, k.i4, k.bytes(2)),
 	insn("0x9F", choice({
 		0: insn("0", CHAR),

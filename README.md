@@ -31,9 +31,9 @@ only*. The translation is a work in progress.
 
 It also contains a small number of other text patches:
 
-* In a few places, greetings from Fran were missing
+* Some exclamations from Fran when she calls
 	<details>
-	(Not sure when this happens)
+	When asking the gang to find Colin, and after exploring the Moon Temple.
 	</details>
 * One rather important line during a discussion with Sergei, which solves a minor plot hole
 	<details><summary>Details (minor spoiler)</summary>

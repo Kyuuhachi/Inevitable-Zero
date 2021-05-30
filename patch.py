@@ -443,7 +443,8 @@ def patch_misc(ctx): # {{{1
 		line1, line2 = split(p[start], "{page}")
 		p[start:end] = [line1, *v[start+1:end-1], line2]
 
-	# Fran saying "Ah, Lloyd!"
+	# Fran saying "Ah, Lloyd!" when calling; asking the gang to find Colin,
+	# and after exploring the Moon Temple
 	pos = miscTranslator.pos
 	for script, func in ("c011c", 39), ("c011c", 40), ("r2050", 17):
 		miscTranslator.pos = pos

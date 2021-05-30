@@ -416,16 +416,18 @@ def quest56(ctx): # {{{1 Search for the Oversleeping Doctor
 		}, include=0)
 		copy_clause(vita, pc, 0, "@IF", 0, -1)
 
-def quest57(ctx): # {{{1
+def quest57(ctx): # {{{1 Guest Lecturer for Sunday School (Continued)
 	tr = translate.translator("quest57")
 	ctx.copy_quest(57, tr)
 
+	# Inside Cathedral
 	with ctx.get("t4010") as (vita, pc):
 		pc.includes = vita.includes
+		# Couta, Eugot, Boy, Boy, Girl
 		for func in 21, 22, 24, 28, 29:
 			copy_condition(vita, pc, func, -4)
-		copy_clause(vita, pc, 25, "@IF:-1", 0, 0)
-		copy_clause(vita, pc, 11, "@IF", [Insn('FLAG', 1536), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 25, "@IF:-1", 0, 0) # Girl
+		copy_clause(vita, pc, 11, "@IF", [Insn('FLAG', 1536), Insn('END')], "@IF", 0, 0) # Marble
 
 	ctx.copy("t4010_1", tr)
 

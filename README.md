@@ -36,7 +36,7 @@ It also contains a small number of other text patches:
 	(Not sure when this happens)
 	</details>
 * One rather important line during a discussion with Sergei, which solves a minor plot hole
-	<details>
+	<details><summary>Details (minor spoiler)</summary>
 	When discussing the D∴G Cult, Sergei writes down how it is spelled.
 	</details>
 * A few dialogue lines were split in two in Vita
@@ -54,7 +54,7 @@ It also contains a small number of other text patches:
 
 ## TODO
 
-[] Fill out details in readme
-[] Comment the patch better
-[] Make it work on versions post 1.1
-[] Finish translations
+- [ ] Fill out details in readme
+- [ ] Comment the patch better
+- [ ] Make it work on versions post 1.1
+- [ ] Finish translations

@@ -600,9 +600,9 @@ argp.add_argument("vitapath", type=Path, help="Path to the Vita data. This shoul
 argp.add_argument("pcpath", type=Path, help="Path to the PC data. This should likely be named either \"data\" or \"data_en\"")
 argp.add_argument("outpath", type=Path, help="Directory to place the patched files into. This should be merged into the data directory.")
 argp.add_argument("--minigame", action="store_true", help="Patches in dialogue for certain furniture in the headquarters. The minigames are not implemented, so it is simply a fade to black.")
-argp.add_argument("--no-misc", action="store_false", help="Include only the quests, and not the miscellaneous minor patches")
+argp.add_argument("--no-misc", dest="misc", action="store_false", help="Include only the quests, and not the miscellaneous minor patches")
 argp.add_argument("--dump", dest="dumpdir", type=Path, help="Directory to place scenario dumps in, for all scenarios affected by the patch. Will be emptied.")
-def __main__(vitapath, pcpath, outpath, minigame, no_misc, dumpdir):
+def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir):
 	if not vitapath.is_dir():
 		raise ValueError("vitapath must be a directory")
 	if not pcpath.is_dir():
@@ -626,7 +626,7 @@ def __main__(vitapath, pcpath, outpath, minigame, no_misc, dumpdir):
 	quest57(ctx)
 	quest58(ctx)
 
-	if not no_misc:
+	if misc:
 		patch_misc(ctx)
 
 	ctx.save()

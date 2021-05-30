@@ -11,7 +11,7 @@ import dump
 from insn import Insn
 import translate
 
-class Context:
+class Context: # {{{1
 	def __init__(self, vitapath, pcpath, outpath, is_geofront=None):
 		if is_geofront is None:
 			is_geofront = pcpath.name == "data_en"
@@ -89,7 +89,7 @@ class Context:
 		}
 
 
-def patch_furniture_minigames(ctx):
+def patch_furniture_minigames(ctx): # {{{1
 	# There are minigames on some room furniture in the Vita version, let's
 	# import that. Since the minigames don't exist on PC, it doesn't quite work.
 	tr = translate.translator("furniture_minigames")
@@ -109,7 +109,7 @@ def patch_furniture_minigames(ctx):
 				assert vita_[23].name == "IF"
 				pc_.insert(23, vita_[23])
 
-def patch_quests(ctx):
+def patch_quests(ctx): # {{{1
 	for file, func in [
 			("c0110", 3),
 			("c011c", 8),
@@ -117,7 +117,7 @@ def patch_quests(ctx):
 		with ctx.get(file) as (vita, pc):
 			vita_, pc_ = get(vita, pc, "code", func, "@WHILE", 1, "@SWITCH", 1)
 			pc_[0] = vita_[0]
-	
+
 	# 54, 57
 	with ctx.get("c0110") as (vita, pc):
 		vita_, pc_ = vita.code[46], pc.code[46]
@@ -137,7 +137,7 @@ def patch_quests(ctx):
 	quest57(ctx)
 	quest58(ctx)
 
-def quest54(ctx):
+def quest54(ctx): # {{{1
 	tr = translate.translator("quest54")
 	ctx.copy_quest(54, tr)
 
@@ -165,7 +165,7 @@ def quest54(ctx):
 
 	ctx.copy("t0520_1", tr)
 
-def quest55(ctx):
+def quest55(ctx): # {{{1
 	tr = translate.translator("quest55")
 	ctx.copy_quest(55, tr)
 
@@ -226,7 +226,7 @@ def quest55(ctx):
 	with ctx.get("t105b") as (vita, pc):
 		pc.code[14].insert(-4, vita.code[14][-5])
 
-def quest56(ctx):
+def quest56(ctx): # {{{1
 	tr = translate.translator("quest56")
 	ctx.copy_quest(56, tr)
 
@@ -356,7 +356,7 @@ def quest56(ctx):
 		}, include=0)
 		copy_clause(vita, pc, 0, "@IF", 0, -1)
 
-def quest57(ctx):
+def quest57(ctx): # {{{1
 	tr = translate.translator("quest57")
 	ctx.copy_quest(57, tr)
 
@@ -369,7 +369,7 @@ def quest57(ctx):
 
 	ctx.copy("t4010_1", tr)
 
-def quest58(ctx):
+def quest58(ctx): # {{{1
 	tr = translate.translator("quest58")
 	ctx.copy_quest(58, tr)
 
@@ -412,6 +412,7 @@ def quest58(ctx):
 		if data != data2:
 			(ctx.outpath/"text/t_ittxt._dt").write_bytes(data2)
 
+# }}}1
 
 # m0000, m0001, m0002, m0010, m0100, m0110, m0111, m0112, m3002, m3099, r2050, r2070, c1400, c140b
 # contain minor, probably aesthetic, changes
@@ -419,7 +420,7 @@ def quest58(ctx):
 # e0111 (EFF_LOAD typo) and e3000 (bgm in Lechter's singing)
 # are slightly more important
 
-def patch_misc(ctx):
+def patch_misc(ctx): # {{{1
 	def split(insn, at, *, formatA=lambda a: a, formatB=lambda b: b, names=None):
 		if names is None:
 			names = (insn.name, insn.name)
@@ -477,6 +478,7 @@ def patch_misc(ctx):
 			idx = next(~i for i, a in enumerate(pc.code[41][::-1]) if a.name == "TEXT_TALK")
 			pc.code[41][idx].args[1] = pc.code[41][idx].args[1].replace("#3300058V", "#3300107V")
 
+# {{{1 Utils
 def get(vita, pc, *path):
 	return (get_(vita, *path), get_(pc, *path))
 
@@ -593,6 +595,7 @@ def do_transform(obj, tr):
 		obj.update(xs)
 		return obj
 	return obj
+# }}}1
 
 argp = argparse.ArgumentParser()
 argp.add_argument("vitapath", type=Path, help="Path to the Vita data. This should likely be named \"data\"")

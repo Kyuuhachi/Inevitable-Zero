@@ -135,10 +135,10 @@ def pprint(f, data, mode, indent=0):
 	f.write(repr(data))
 
 argp = argparse.ArgumentParser()
-argp.add_argument("-d", "--diff", dest="dump_mode", action="store_const", const="diff")
-argp.add_argument("-m", "--mode", choices=["jp", "geofront", "vita"], required=True)
-argp.add_argument("inpath", type=Path)
-argp.add_argument("outpath", type=Path)
+argp.add_argument("-d", "--diff", dest="dump_mode", action="store_const", const="diff", help="Exclude all translatable strings, to get more useful diffs")
+argp.add_argument("-m", "--mode", choices=["jp", "geofront", "vita"], required=True, help="Which game to decompile")
+argp.add_argument("inpath", type=Path, help="Path to scenario directory. This should almost certainly be named \"scena\"")
+argp.add_argument("outpath", type=Path, help="Directory to place decompiled scripts in. Will be cleared.")
 def __main__(dump_mode, mode, inpath, outpath):
 	if not inpath.is_dir():
 		raise ValueError("inpath must be a directory")

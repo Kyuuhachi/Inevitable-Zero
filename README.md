@@ -59,7 +59,5 @@ Geofront, though of course this reverts some of their changes.
 
 ## TODO
 
-- [ ] Fill out details in readme
-- [ ] Comment the patch better
 - [ ] Make it work on versions post 1.1
 - [ ] Finish translations

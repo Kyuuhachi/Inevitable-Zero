@@ -109,7 +109,8 @@ def patch_furniture_minigames(ctx): # {{{1
 				assert vita_[23].name == "IF"
 				pc_.insert(23, vita_[23])
 
-def patch_quests(ctx): # {{{1
+def patch_timing(ctx): # {{{1 Main infrastructure: starting and failing the quests
+	# Add to quest lists
 	for file, func in [
 			("c0110", 3),
 			("c011c", 8),
@@ -117,6 +118,8 @@ def patch_quests(ctx): # {{{1
 		with ctx.get(file) as (vita, pc):
 			vita_, pc_ = get(vita, pc, "code", func, "@WHILE", 1, "@SWITCH", 1)
 			pc_[0] = vita_[0]
+
+	# Failure (I think)
 
 	# 54, 57
 	with ctx.get("c0110") as (vita, pc):
@@ -131,11 +134,9 @@ def patch_quests(ctx): # {{{1
 		copy_clause(vita, pc, 49, pc.code[49].index(Insn('ITEM_REMOVE', 805, 1))+8)
 		copy_clause(vita, pc, 49, pc.code[49].index(Insn('ITEM_REMOVE', 805, 1))+9)
 
-	quest54(ctx)
-	quest55(ctx)
-	quest56(ctx)
-	quest57(ctx)
-	quest58(ctx)
+	# 55
+	with ctx.get("t105b") as (vita, pc):
+		pc.code[14].insert(-4, vita.code[14][-5])
 
 def quest54(ctx): # {{{1
 	tr = translate.translator("quest54")
@@ -222,9 +223,6 @@ def quest55(ctx): # {{{1
 		for flag in 1312, 1317, 1318:
 			copy_clause(vita, pc, 10, "@IF", [Insn('FLAG', flag), Insn('END')], 0)
 			copy_condition(vita, pc, 10, "@IF", [Insn('FLAG', flag), Insn('END')], 1)
-
-	with ctx.get("t105b") as (vita, pc):
-		pc.code[14].insert(-4, vita.code[14][-5])
 
 def quest56(ctx): # {{{1
 	tr = translate.translator("quest56")
@@ -620,7 +618,14 @@ def __main__(vitapath, pcpath, outpath, minigame, no_misc, dumpdir):
 
 	if minigame:
 		patch_furniture_minigames(ctx)
-	patch_quests(ctx)
+
+	patch_timing(ctx)
+	quest54(ctx)
+	quest55(ctx)
+	quest56(ctx)
+	quest57(ctx)
+	quest58(ctx)
+
 	if not no_misc:
 		patch_misc(ctx)
 

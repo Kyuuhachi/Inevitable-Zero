@@ -431,30 +431,32 @@ def quest57(ctx): # {{{1 Guest Lecturer for Sunday School (Continued)
 
 	ctx.copy("t4010_1", tr)
 
-def quest58(ctx): # {{{1
+def quest58(ctx): # {{{1 Ultimate Bread Showdown!
 	tr = translate.translator("quest58")
 	ctx.copy_quest(58, tr)
 
+	# West Street during festival?
 	with ctx.get("c020c") as (vita, pc):
 		pc.includes = vita.includes
-		copy_clause(vita, pc, 9, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", 0, 0)
+		copy_clause(vita, pc, 9, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", 0, 0) # Bennet
 
+	# Bakery interior
 	with ctx.get("c0210") as (vita, pc):
 		pc.includes = vita.includes
 		copy_clause(vita, pc, 2, 0)
 		copy_clause(vita, pc, 2, -2)
-		copy_clause(vita, pc, 5, "@IF:0", 0, 0)
-		copy_condition(vita, pc, 5, "@IF:2", 0, 0, 1, "@IF", None, "@WHILE", 1, "@IF:1", 0, -1, 1, 1)
-		copy_clause(vita, pc, 9, "@IF", 0, 0)
-		copy_clause(vita, pc, 9, "@IF", 0, 1)
-		copy_clause(vita, pc, 11, "@IF:1", 0, 0)
+		copy_clause(vita, pc, 5, "@IF:0", 0, 0) # Oscar
+		copy_condition(vita, pc, 5, "@IF:2", 0, 0, 1, "@IF", None, "@WHILE", 1, "@IF:1", 0, -1, 1, 1) # -''-
+		copy_clause(vita, pc, 9, "@IF", 0, 0) # Morges, when not shopping
+		copy_clause(vita, pc, 9, "@IF", 0, 1) # -''-
+		copy_clause(vita, pc, 11, "@IF:1", 0, 0) # Bennet
 
 	ctx.copy("c0210_1", tr)
 
+	# Set flag 1107. Not sure what that does
 	with ctx.get("e3010") as (vita, pc):
 		copy_clause(vita, pc, 2, pc.code[2].index(Insn('ITEM_REMOVE', 846, 1))+1)
 		copy_clause(vita, pc, 2, pc.code[2].index(Insn('ITEM_REMOVE', 846, 1))+2)
-
 	with ctx.get("r0000") as (vita, pc):
 		copy_clause(vita, pc, 1, 0)
 	with ctx.get("r1000") as (vita, pc):
@@ -464,6 +466,7 @@ def quest58(ctx): # {{{1
 	with ctx.get("r2000") as (vita, pc):
 		copy_clause(vita, pc, 0, 0)
 
+	# Rename Luscious Orange → Zesty Orange
 	if ctx.is_geofront:
 		# This is an ugly way to do it, but it's much easier than doing it "properly"
 		frm = "Luscious Orange\0".encode("cp932")

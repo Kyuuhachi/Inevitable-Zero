@@ -600,7 +600,8 @@ argp.add_argument("pcpath", type=Path, help="Path to the PC data. This should li
 argp.add_argument("outpath", type=Path, help="Directory to place the patched files into. This should be merged into the data directory.")
 argp.add_argument("--minigame", action="store_true", help="Patches in dialogue for certain furniture in the headquarters. The minigames are not implemented, so it is simply a fade to black.")
 argp.add_argument("--no-misc", action="store_false", help="Include only the quests, and not the miscellaneous minor patches")
-def __main__(vitapath, pcpath, outpath, minigame, no_misc):
+argp.add_argument("--dump", dest="dumpdir", type=Path, help="Directory to place scenario dumps in, for all scenarios affected by the patch. Will be emptied.")
+def __main__(vitapath, pcpath, outpath, minigame, no_misc, dumpdir):
 	if not vitapath.is_dir():
 		raise ValueError("vitapath must be a directory")
 	if not pcpath.is_dir():
@@ -608,7 +609,7 @@ def __main__(vitapath, pcpath, outpath, minigame, no_misc):
 
 	if outpath.exists():
 		shutil.rmtree(outpath)
-	outpath.mkdir(parents=True, exist_ok=True)
+	outpath.mkdir(parents=True)
 	(outpath/"scena").mkdir()
 	(outpath/"text").mkdir()
 
@@ -621,6 +622,15 @@ def __main__(vitapath, pcpath, outpath, minigame, no_misc):
 		patch_misc(ctx)
 
 	ctx.save()
+
+	if dumpdir is not None:
+		if dumpdir.exists():
+			shutil.rmtree(dumpdir)
+		dumpdir.mkdir(parents=True)
+
+		for name, script in ctx.pc_scripts.items():
+			with (dumpdir/name).with_suffix(".py").open("wt") as f:
+				dump.dump(f, script, "verbose")
 
 if __name__ == "__main__":
 	__main__(**argp.parse_args().__dict__)

@@ -1,6 +1,7 @@
 {color 5}セルゲイはメモに文字と記号を書き記した。{color 0}
-	{color 5}セルゲイはメモに文字と記号を書き記した。{color 0}
+	{color 5}Sergei jotted down a few letters
+	and symbols in the notebook.{color 0}
 
 {color 5}あ、ロイドさん。
-	{color 5}あ、ロイドさん。
+	{color 5}Ah, Lloyd.
 

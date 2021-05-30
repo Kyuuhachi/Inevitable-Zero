@@ -402,6 +402,16 @@ def quest58(ctx):
 	with ctx.get("r2000") as (vita, pc):
 		copy_clause(vita, pc, 0, 0)
 
+	if ctx.is_geofront:
+		# This is an ugly way to do it, but it's much easier than doing it "properly"
+		frm = "Luscious Orange\0".encode("cp932")
+		to = "Zesty Orange\0".encode("cp932")
+		assert len(frm) >= len(to)
+		data = (ctx.pcpath/"text/t_ittxt._dt").read_bytes()
+		data2 = data.replace(frm, to.ljust(len(frm), b"\0"))
+		if data != data2:
+			(ctx.outpath/"text/t_ittxt._dt").write_bytes(data2)
+
 
 # m0000, m0001, m0002, m0010, m0100, m0110, m0111, m0112, m3002, m3099, r2050, r2070, c1400, c140b
 # contain minor, probably aesthetic, changes

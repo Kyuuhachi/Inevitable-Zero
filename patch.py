@@ -171,10 +171,11 @@ def quest54(ctx): # {{{1 Clerk’s Customer Service Guidance
 
 	ctx.copy("t0520_1", tr)
 
-def quest55(ctx): # {{{1
+def quest55(ctx): # {{{1 Search for a Certain Person
 	tr = translate.translator("quest55")
 	ctx.copy_quest(55, tr)
 
+	# Mishelam, first area
 	with ctx.get("t1000") as (vita, pc):
 		pc.includes = vita.includes
 		pc.chcp = vita.chcp
@@ -184,27 +185,32 @@ def quest55(ctx): # {{{1
 		vita = transform_npcs(vita, {
 			13: copy(pc.npcs, vita.npcs[13]),
 		})
-		copy_clause(vita, pc, 1, 1)
 
+		copy_clause(vita, pc, 1, 1) # Add Tourist
+
+	# Mishelam, second area area
 	with ctx.get("t1010") as (vita, pc):
 		pc.includes = vita.includes
 		pc.chcp = vita.chcp
 		vita = transform_npcs(vita, {
-			2: copy_func(pc.npcs, vita.npcs[2]),
+			2: copy(pc.npcs, vita.npcs[2]),
 		})
-		# XXX Cabilan and Lughman don't have flag 0x0080 in Vita
-		pc.code[4][-3:-1] = vita.code[4][-2:-1]
 
+		# XXX Cabilan and Lughman don't have flag 0x0080 in Vita
+		pc.code[4][-3:-1] = vita.code[4][-2:-1] # Add Mishy
+
+	# Mishelam, third area
 	with ctx.get("t1020") as (vita, pc):
 		pc.includes = vita.includes
 		vita = transform_funcs(vita, {
-			13: copy_func(pc.code, vita.code[13]),
-			3: copy_func(pc.code, vita.code[3]),
-		}, include=0)
-		vita = transform_npcs(vita, {
-			6: copy_func(pc.npcs, vita.npcs[6]),
+			13: copy(pc.code, vita.code[13]),
+			3: copy(pc.code, vita.code[3]),
 		})
-		copy_clause(vita, pc, 3, -2)
+		vita = transform_npcs(vita, {
+			6: copy(pc.npcs, vita.npcs[6]),
+		})
+
+		copy_clause(vita, pc, 3, -2) # Add Girl
 
 	with ctx.get("t1030") as (vita, pc):
 		pc.includes = vita.includes
@@ -212,19 +218,22 @@ def quest55(ctx): # {{{1
 			4: extract_func(pc, 3, "@IF", [Insn('FLAG', 1312), Insn('END')]),
 			5: extract_func(pc, 3, "@IF", [Insn('FLAG', 1318), Insn('END')]),
 		}, include=0)
-		copy_clause(vita, pc, 1, "@IF:0", [Insn('FLAG', 1318), Insn('END')], 0)
-		copy_condition(vita, pc, 1, "@IF:0", [Insn('FLAG', 1312), Insn('END')], 2)
-		copy_clause(vita, pc, 1, -2)
-		copy_clause(vita, pc, 3, "@IF", 0, 0)
-		copy_clause(vita, pc, 5, "@IF", 0, 0)
+
+		copy_clause(vita, pc, 1, "@IF:0", [Insn('FLAG', 1318), Insn('END')], 0) # Add Sunita
+		copy_condition(vita, pc, 1, "@IF:0", [Insn('FLAG', 1312), Insn('END')], 2) # -''-
+		copy_clause(vita, pc, 1, -2) # Event when entering (?)
+		copy_clause(vita, pc, 3, "@IF", 0, 0) # Talking to Clerk
+		copy_clause(vita, pc, 5, "@IF", 0, 0) # Talking to Mishy
 
 	ctx.copy("t1030_1", tr)
 
+	# Mishelam, sixth area
 	with ctx.get("t1050") as (vita, pc):
 		pc.includes = vita.includes
 		vita = transform_funcs(vita, {
-			12: copy_func(pc.code, vita.code[12]),
+			12: copy(pc.code, vita.code[12]),
 		}, include=0)
+		# Talking to Citrus
 		for flag in 1312, 1317, 1318:
 			copy_clause(vita, pc, 10, "@IF", [Insn('FLAG', flag), Insn('END')], 0)
 			copy_condition(vita, pc, 10, "@IF", [Insn('FLAG', flag), Insn('END')], 1)

@@ -151,26 +151,23 @@ def quest54(ctx): # {{{1 Clerk’s Customer Service Guidance
 	with ctx.get("t0520") as (vita, pc):
 		pc.includes = vita.includes
 
-		# Noma
 		p1 = [ 5,
 			"@IF", None,
 			"@WHILE", 1,
 			"@IF:1", [Insn('VAR', 0), Insn('CONST', 0), Insn('EQ'), Insn('END')],
 		]
+		p2 = [6]
 		vita = transform_funcs(vita, {
 			6:  extract_func(pc, *p1, "@IF", [Insn('FLAG', 1536), Insn('END')]),
 			7:  extract_func(pc, *p1, "@IF", [Insn('FLAG', 1544), Insn('END')]),
 			8:  extract_func(pc, *p1, "@IF", [Insn('FLAG', 1547), Insn('END')]),
-		})
-		copy_clause(vita, pc, *p1, "@IF", 0, 0)
-
-		# Luka
-		p2 = [6]
-		vita = transform_funcs(vita, {
 			10: extract_func(pc, *p2, "@IF", [Insn('FLAG', 1536), Insn('END')]),
 			11: extract_func(pc, *p2, "@IF", [Insn('FLAG', 1544), Insn('END')]),
 			12: extract_func(pc, *p2, "@IF", [Insn('FLAG', 1547), Insn('END')]),
 		})
+
+		copy_clause(vita, pc, *p1, "@IF", 0, 0) # Noma
+		copy_clause(vita, pc, *p2, "@IF", 0, 0) # Luka
 
 	ctx.copy("t0520_1", tr)
 

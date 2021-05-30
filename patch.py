@@ -520,9 +520,16 @@ def patch_misc(ctx): # {{{1
 			startV = next(i+1 for i, a in enumerate(vita.code[func]) if a.name == "TEXT_SET_NAME")
 			pc.code[func][startP:startP] = vita.code[func][startV:startV+2]
 
-	if ctx.is_geofront:
-		with ctx.get("c110c") as (vita, pc):
-			# This voice line is misplaced
+	# This voice line is misplaced. Not sure if fixed.
+	with ctx.get("c110c") as (vita, pc):
+		idx = next(i for i, a in enumerate(pc.code[41]) if a.name == "FORK_FUNC")
+		pc.code[41][idx:idx] = vita.code[41][idx:idx+5]
+		pc.code[41][idx+1], pc.code[41][idx+7] = split(pc.code[41][idx+7], "#600W",
+			formatA=lambda a:a.rstrip()+"{wait}",
+			formatB=lambda b:"{color 0}"+ (b.replace("#20W", "#20W#3300058V") if ctx.is_geofront else b),
+		)
+
+		if ctx.is_geofront:
 			idx = next(~i for i, a in enumerate(pc.code[41][::-1]) if a.name == "TEXT_TALK")
 			pc.code[41][idx].args[1] = pc.code[41][idx].args[1].replace("#3300058V", "#3300107V")
 

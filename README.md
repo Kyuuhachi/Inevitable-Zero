@@ -47,7 +47,8 @@ It also contains a small number of other patches:
 
 ## Usage
 
-`python patch.py --help`
+`python patch.py --help`  
+`python dump.py --help`
 
 
 ## Compatibility

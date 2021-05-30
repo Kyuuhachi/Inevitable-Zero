@@ -595,10 +595,12 @@ def do_transform(obj, tr):
 	return obj
 
 argp = argparse.ArgumentParser()
-argp.add_argument("vitapath", type=Path)
-argp.add_argument("pcpath", type=Path)
-argp.add_argument("outpath", type=Path)
-def __main__(vitapath, pcpath, outpath):
+argp.add_argument("vitapath", type=Path, help="Path to the Vita data. This should likely be named \"data\"")
+argp.add_argument("pcpath", type=Path, help="Path to the PC data. This should likely be named either \"data\" or \"data_en\"")
+argp.add_argument("outpath", type=Path, help="Directory to place the patched files into. This should be merged into the data directory.")
+argp.add_argument("--minigame", action="store_true", help="Patches in dialogue for certain furniture in the headquarters. The minigames are not implemented, so it is simply a fade to black.")
+argp.add_argument("--no-misc", action="store_false", help="Include only the quests, and not the miscellaneous minor patches")
+def __main__(vitapath, pcpath, outpath, minigame, no_misc):
 	if not vitapath.is_dir():
 		raise ValueError("vitapath must be a directory")
 	if not pcpath.is_dir():
@@ -612,9 +614,11 @@ def __main__(vitapath, pcpath, outpath):
 
 	ctx = Context(vitapath, pcpath, outpath)
 
-	patch_furniture_minigames(ctx)
+	if minigame:
+		patch_furniture_minigames(ctx)
 	patch_quests(ctx)
-	patch_misc(ctx)
+	if not no_misc:
+		patch_misc(ctx)
 
 	ctx.save()
 

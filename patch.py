@@ -138,31 +138,39 @@ def patch_timing(ctx): # {{{1 Main infrastructure: starting and failing the ques
 	with ctx.get("t105b") as (vita, pc):
 		pc.code[14].insert(-4, vita.code[14][-5])
 
-def quest54(ctx): # {{{1
+def quest54(ctx): # {{{1 Clerk’s Customer Service Guidance
 	tr = translate.translator("quest54")
 	ctx.copy_quest(54, tr)
 
+	# Mainz Mining Village, talking to Carlos
 	with ctx.get("t0500") as (vita, pc):
 		pc.includes = vita.includes
 		copy_clause(vita, pc, 13, "@IF", 0, 0)
 
+	# Der Ziegel Inn
 	with ctx.get("t0520") as (vita, pc):
 		pc.includes = vita.includes
-		path1 = [
+
+		# Noma
+		p1 = [ 5,
 			"@IF", None,
 			"@WHILE", 1,
 			"@IF:1", [Insn('VAR', 0), Insn('CONST', 0), Insn('EQ'), Insn('END')],
 		]
 		vita = transform_funcs(vita, {
-			6:  extract_func(pc, 5, *path1, "@IF", [Insn('FLAG', 1536), Insn('END')]),
-			7:  extract_func(pc, 5, *path1, "@IF", [Insn('FLAG', 1544), Insn('END')]),
-			8:  extract_func(pc, 5, *path1, "@IF", [Insn('FLAG', 1547), Insn('END')]),
-			10: extract_func(pc, 6, "@IF", [Insn('FLAG', 1536), Insn('END')]),
-			11: extract_func(pc, 6, "@IF", [Insn('FLAG', 1544), Insn('END')]),
-			12: extract_func(pc, 6, "@IF", [Insn('FLAG', 1547), Insn('END')]),
-		}, include=0)
-		copy_clause(vita, pc, 5, *path1, "@IF", 0, 0)
-		copy_clause(vita, pc, 6, "@IF", 0, 0)
+			6:  extract_func(pc, *p1, "@IF", [Insn('FLAG', 1536), Insn('END')]),
+			7:  extract_func(pc, *p1, "@IF", [Insn('FLAG', 1544), Insn('END')]),
+			8:  extract_func(pc, *p1, "@IF", [Insn('FLAG', 1547), Insn('END')]),
+		})
+		copy_clause(vita, pc, *p1, "@IF", 0, 0)
+
+		# Luka
+		p2 = [6]
+		vita = transform_funcs(vita, {
+			10: extract_func(pc, *p2, "@IF", [Insn('FLAG', 1536), Insn('END')]),
+			11: extract_func(pc, *p2, "@IF", [Insn('FLAG', 1544), Insn('END')]),
+			12: extract_func(pc, *p2, "@IF", [Insn('FLAG', 1547), Insn('END')]),
+		})
 
 	ctx.copy("t0520_1", tr)
 
@@ -185,7 +193,7 @@ def quest55(ctx): # {{{1
 		pc.includes = vita.includes
 		pc.chcp = vita.chcp
 		vita = transform_npcs(vita, {
-			2: copy(pc.npcs, vita.npcs[2]),
+			2: copy_func(pc.npcs, vita.npcs[2]),
 		})
 		# XXX Cabilan and Lughman don't have flag 0x0080 in Vita
 		pc.code[4][-3:-1] = vita.code[4][-2:-1]
@@ -193,11 +201,11 @@ def quest55(ctx): # {{{1
 	with ctx.get("t1020") as (vita, pc):
 		pc.includes = vita.includes
 		vita = transform_funcs(vita, {
-			13: copy(pc.code, vita.code[13]),
-			3: copy(pc.code, vita.code[3]),
+			13: copy_func(pc.code, vita.code[13]),
+			3: copy_func(pc.code, vita.code[3]),
 		}, include=0)
 		vita = transform_npcs(vita, {
-			6: copy(pc.npcs, vita.npcs[6]),
+			6: copy_func(pc.npcs, vita.npcs[6]),
 		})
 		copy_clause(vita, pc, 3, -2)
 
@@ -218,7 +226,7 @@ def quest55(ctx): # {{{1
 	with ctx.get("t1050") as (vita, pc):
 		pc.includes = vita.includes
 		vita = transform_funcs(vita, {
-			12: copy(pc.code, vita.code[12]),
+			12: copy_func(pc.code, vita.code[12]),
 		}, include=0)
 		for flag in 1312, 1317, 1318:
 			copy_clause(vita, pc, 10, "@IF", [Insn('FLAG', flag), Insn('END')], 0)
@@ -510,6 +518,12 @@ def copy_condition(vita, pc, *path):
 	]
 
 def extract_func(pc, *path, include=0):
+	"""
+	Sometimes Vita adds new branches that lead to the same dialogue as existing
+	ones, in which case this dialogue is usually extracted to a function.
+
+	When used together with transform_funcs, this function handles that case.
+	"""
 	n = len(pc.code)
 	wh = get_(pc, "code", *path)
 	pc.code.append(wh + [Insn('RETURN')])
@@ -522,6 +536,16 @@ def copy(objects, obj):
 	return n
 
 def transform_funcs(script, tr, include=0):
+	"""
+	In some cases functions are added, and not necessarily at the end. This
+	means that function indices are sometimes different between PC and Vita.
+
+	This function moves the relevant functions to the end of the Vita script and
+	remaps indices to match, so that the scripts can be copied from Vita into PC.
+
+	The reason the Vita scripts are remapped instead of the PC ones is to
+	minimize diffs in the PC version.
+	"""
 	script = do_transform(script, { "func": {
 		(include, k): (include, v)
 		for k, v in to_permutation(tr).items()
@@ -530,6 +554,9 @@ def transform_funcs(script, tr, include=0):
 	return script
 
 def transform_npcs(script, tr):
+	"""
+	Similar to transform_funcs, but concerning NPCs.
+	"""
 	script = do_transform(script, {"npc": {
 		k+8: v+8
 		for k, v in to_permutation(tr).items()

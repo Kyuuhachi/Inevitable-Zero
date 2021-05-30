@@ -1,8 +1,9 @@
+## {{{1 Quest log
 究極のパン対決！
-	究極のパン対決！
+	Ultimate Bread Showdown!
 
 モルジュ
-	モルジュ
+	Morges
 
 　ベーカリーカフェ《モルジュ》では
 　この度、二人のパン職人による
@@ -22,35 +23,31 @@
 　詳しい話は、西通りの
 　ベーカリーカフェ《モルジュ》の
 　店主モルジュまで。
-	　ベーカリーカフェ《モルジュ》では
-	　この度、二人のパン職人による
-	　対決を行うことになった。
-	　勝負の方法は簡単。
+	　Morges' Bakery is to host a showdown
+	　between two bakers. The rules are simple.
 	　
-	　『どちらが美味いパンを
-	　　作ることができるか』
-	　いわば、究極のパン対決ってわけだな。
+	　"Who can make the most delicious bread?"
+	　An Ultimate Bread Showdown, so to speak.
 	　
-	　言うまでもないことだが、
-	　究極のパンを作るためには、
-	　究極の材料が必要だ。
+	　It goes without saying, but in order to make
+	　the ultimate bread, they will of course need
+	　the ultimate ingredients.
 	　
-	　そこで、
-	　その究極の材料集めを依頼したい。
-	　詳しい話は、西通りの
-	　ベーカリーカフェ《モルジュ》の
-	　店主モルジュまで。
+	　Thus, I would like for you to collect said
+	　ultimate ingredients. For details, talk to
+	　Morges, the owner of Morges' Bakery at
+	　West Street.
 
 ★モルジュさんから話を聞いた。　　　　
 　オスカーとベネットの二人に　　　　　
 　それぞれ自由にパンを作らせて、　　　
 　職人としての腕を競わせるらしく、　　
 　その材料集めをしてほしいようだ。　　
-	★モルジュさんから話を聞いた。　　　　
-	　オスカーとベネットの二人に　　　　　
-	　それぞれ自由にパンを作らせて、　　　
-	　職人としての腕を競わせるらしく、　　
-	　その材料集めをしてほしいようだ。　　
+	★Listened to Morges' explanation.
+	　Oscar and Bennet will be given liberty to
+	　make one bread each to compare their skill
+	　as bakers, and we are to collect the
+	　ingredients they need.
 
 ★パン対決の材料集めを引き受けた。　　
 　数が多いけど頑張って集めよう。　　　
@@ -62,659 +59,664 @@
 　・『魔獣の魚肉』を３つ　　　　　　　
 　・『魔獣の卵』を５つ　　　　　　　　
 　・『エーゼル』を３匹　　　　　　　　
-	★パン対決の材料集めを引き受けた。　　
-	　数が多いけど頑張って集めよう。　　　
-	　【オスカー】　　　　　　　　　　　　
-	　・『魔獣の獣肉』を５つ　　　　　　　
-	　・『魔獣のゼラチン』を３つ　　　　　
-	　・『カサギン』を３匹　　　　　　　　
-	　【ベネット】　　　　　　　　　　　　
-	　・『魔獣の魚肉』を３つ　　　　　　　
-	　・『魔獣の卵』を５つ　　　　　　　　
-	　・『エーゼル』を３匹　　　　　　　　
+	★Received the list of ingredients for the
+	　showdown. It's a lot, but we'll try our best
+	　to collect it.
+	　[Oscar]
+	　・Beast Flesh x5
+	　・Clear Gelatin x3
+	　・Kasagin x3
+	　[Bennet]
+	　・Fish Fillet x3
+	　・Monster Egg x5
+	　・Azelfish x3
 
 ★オスカーはパン対決の材料選びに　　　
 　満足していない様子だ。　　　　　　　
 　『情熱』を加えたいということだが……
-	★オスカーはパン対決の材料選びに　　　
-	　満足していない様子だ。　　　　　　　
-	　『情熱』を加えたいということだが……
+	★Oscar isn't satisfied with the selection of
+	　ingredients for the bread showdown. He says
+	　he needs more zest.
 
 ★ベネットは新作パンのアイデアに　　　
 　夢中のようだ。　　　　　　　　　　　
 　食べた人が感動、『号泣』してしまう　
 　ほどのパンを作りたいようだが……　　
-	★ベネットは新作パンのアイデアに　　　
-	　夢中のようだ。　　　　　　　　　　　
-	　食べた人が感動、『号泣』してしまう　
-	　ほどのパンを作りたいようだが……　　
+	★Bennet is brainstorming for her new bread.
+	　Seems she wants to make a bread that is
+	　emotional enough to make the eater cry.
 
 ★集まった材料をモルジュさんに渡した。
 　支援要請はこれで完了だけど、　　　　
 　結果が気になるので、　　　　　　　　
 　日を改めてベーカリーカフェ　　　　　
 　《モルジュ》へ様子を見に行こう。　　
-	★集まった材料をモルジュさんに渡した。
-	　支援要請はこれで完了だけど、　　　　
-	　結果が気になるので、　　　　　　　　
-	　日を改めてベーカリーカフェ　　　　　
-	　《モルジュ》へ様子を見に行こう。　　
+	★Delivered the ingredients to Morges.
+	　The Support Request is officially completed,
+	　but I'm curious about the outcome. We should
+	　come back and check at Morges' Bakery later.
 
 ★オスカーに『隠し味』の　　　　　　　
 　差し入れをした。　　　　　　　　　　
-	★オスカーに『隠し味』の　　　　　　　
-	　差し入れをした。　　　　　　　　　　
+	★Added a "secret flavor" for Oscar.
 
 ★ベネットに『隠し味』の　　　　　　　
 　差し入れをした。　　　　　　　　　　
-	★ベネットに『隠し味』の　　　　　　　
-	　差し入れをした。　　　　　　　　　　
+	★Added a "secret flavor" for Bennet.
 
 ★オスカーとベネットに『隠し味』の　　
 　差し入れをした。　　　　　　　　　　
-	★オスカーとベネットに『隠し味』の　　
-	　差し入れをした。　　　　　　　　　　
+	★Added "secret flavors" for Oscar and Bennet.
 
 ★そろそろ、究極のパン対決の結果が　　
 　出ているはず……ベーカリーカフェ　　
 　《モルジュ》へ行ってみよう。　　　　
-	★そろそろ、究極のパン対決の結果が　　
-	　出ているはず……ベーカリーカフェ　　
-	　《モルジュ》へ行ってみよう。　　　　
+	★The results of the Ultimate Bread Showdown
+	　should be announced soon. Let's go to
+	　Morges' Bakery and check.
 
 ★パン対決の結果は、　　　　　　　　　
 　オスカーの勝利だった。　　　　　　　
-	★パン対決の結果は、　　　　　　　　　
-	　オスカーの勝利だった。　　　　　　　
+	★Oscar won the showdown.
 
 ★パン対決の結果は、　　　　　　　　　
 　ベネットの勝利だった。　　　　　　　
-	★パン対決の結果は、　　　　　　　　　
-	　ベネットの勝利だった。　　　　　　　
+	★Bennet won the showdown.
 
 ★パン対決の結果は、引き分けだった。　
-	★パン対決の結果は、引き分けだった。　
+	★The showdown ended in a tie.
 
 ★差し入れの『隠し味』が　　　　　　　
 　勝敗を分けたようだ。　　　　　　　　
 　ちょっと不公平だったかな。　　　　　
-	★差し入れの『隠し味』が　　　　　　　
-	　勝敗を分けたようだ。　　　　　　　　
-	　ちょっと不公平だったかな。　　　　　
+	★It seems the "secret flavor" turned
+	　the tables. Maybe it was a bit unfair.
 
 ★差し入れの『隠し味』を間違えたのが　
 　勝敗に影響したかもしれない。　　　　
 　悪いことをしてしまったな。　　　　　
-	★差し入れの『隠し味』を間違えたのが　
-	　勝敗に影響したかもしれない。　　　　
-	　悪いことをしてしまったな。　　　　　
+	★We got the wrong "secret flavor",
+	　which may have affected the outcome.
+	　Maybe we shouldn't have meddled.
 
 ★パン対決の結果を聞き逃してしまった。
 　もし次があったら、　　　　　　　　　
 　もっと早く行かないとな。　　　　　　
-	★パン対決の結果を聞き逃してしまった。
-	　もし次があったら、　　　　　　　　　
-	　もっと早く行かないとな。　　　　　　
+	★We missed hearing the announcement of
+	　the results. If there's another
+	　competition, we should be more punctual.
 
+## c0210_1 {{{1
+## [5] Talking to Morges {{{2
+## if haven't started {{{3
+## if didn't talk before {{{4
+## M:
 よう、この前は
 お手柄だったそうじゃないか。
 うちの常連さんが話してたぜ。
-	よう、この前は
-	お手柄だったそうじゃないか。
-	うちの常連さんが話してたぜ。
+	You guys did a great job
+	the other day. Heard about
+	it from a customer.
 
 活躍が認められて、警察犬も
 あてがってもらえたんだろ？
-	活躍が認められて、警察犬も
-	あてがってもらえたんだろ？
+	It really put you in the public eye,
+	and you got a police dog to boot.
 
+## L:
 え、はぁ、まぁ……（警察犬って、
 　ツァイトのことだよな……）
-	え、はぁ、まぁ……（警察犬って、
-	　ツァイトのことだよな……）
+	Er, well... (By police dog,
+	I guess he means Zeit...)
 
 ところで、依頼を見て来たのですが……
 何でも、究極のパンを作るとか。
-	ところで、依頼を見て来たのですが……
-	何でも、究極のパンを作るとか。
+	Anyway, we came regarding the
+	Support Request. Something about
+	ultimate bread?
 
+## M:
 ああ。依頼にも書いたが
 ウチのベネットが
 やたらオスカーを意識しててな。
-	ああ。依頼にも書いたが
-	ウチのベネットが
-	やたらオスカーを意識しててな。
+	Right. As I wrote in the request,
+	Bennet has been a bit overly
+	conscious of Oscar lately.
 
 どうやら、パン職人として
 絶対に負けたくないらしい。
-	どうやら、パン職人として
-	絶対に負けたくないらしい。
+	She doesn't want to be outdone
+	as a baker, no matter what.
 
+## R:
 ははっ。負けず嫌いの
 お嬢ちゃんって感じだったよな。
-	ははっ。負けず嫌いの
-	お嬢ちゃんって感じだったよな。
+	Haha, she did strike me as the kind
+	of lil' lady who hates to lose.
 
+## M:
 オスカーへのライバル心が、
 いささか過剰すぎるような気も
 するんだが……
-	オスカーへのライバル心が、
-	いささか過剰すぎるような気も
-	するんだが……
+	Her rivalry toward Oscar is
+	almost legendary, but that's
+	not necessarily a bad thing.
 
 向上心があるのは、悪いことじゃねえ。
 そこで一度、徹底的に
 競わせてみることにしたんだ。
-	向上心があるのは、悪いことじゃねえ。
-	そこで一度、徹底的に
-	競わせてみることにしたんだ。
+	She does have a drive to improve, after all.
+	So I thought I'd let her test her mettle
+	once in a while.
 
+## E:
 なるほど……
 それで、材料集めを私たちにと
 いうわけですね。
-	なるほど……
-	それで、材料集めを私たちにと
-	いうわけですね。
+	I see. And you want us to
+	collect the ingredients for them.
 
+## M:
 ああ。パン職人の仕事は、
 あくまでうまいパンを焼くことだ。
 魔獣を退治することじゃないからな。
-	ああ。パン職人の仕事は、
-	あくまでうまいパンを焼くことだ。
-	魔獣を退治することじゃないからな。
+	Aye. They're damn good at
+	baking, but hunting monsters
+	ain't their forte.
 
 それで、どうだ？
 依頼、受けてくれるか？
-	それで、どうだ？
-	依頼、受けてくれるか？
+	Whaddya say? Will you
+	help us out?
 
+## else {{{4
+## M:
 お、どうした？
 気が変わって
 依頼を受けてくれる気になったか？
-	お、どうした？
-	気が変わって
-	依頼を受けてくれる気になったか？
+	Hey, what's up? Are you gonna
+	help out with the request after all?
+## }}}4
 
 【引き受ける】
-	【引き受ける】
-
+	[Accept]
 【やめる】
-	【やめる】
+	[Decline]
 
+## if declined {{{4
+## L:
 すみません。
 今、別件で捜査を抱えていて……
-	すみません。
-	今、別件で捜査を抱えていて……
+	I'm sorry, but we're dealing
+	with a different case right now...
 
+## M:
 そうか。
 ま、警察の仕事も大変だろうし、
 無理にとは言わないさ。
-	そうか。
-	ま、警察の仕事も大変だろうし、
-	無理にとは言わないさ。
+	I see. You've sure got your
+	work cut out for you.
 
 もし気が変わって
 依頼を受ける気になったら、
 また声をかけてくれよ。
-	もし気が変わって
-	依頼を受ける気になったら、
-	また声をかけてくれよ。
+	If you change your mind,
+	give me a holler.
 
+## else {{{4
+## M:
 よし、決まりだな。
 じゃあ、詳しい話を
 させてもらうぜ。
-	よし、決まりだな。
-	じゃあ、詳しい話を
-	させてもらうぜ。
+	It's a deal then. Well,
+	lemme tell you the details.
 
 #5Sおーい、オスカー、ベネット！
 ちょっと来い！#3S
-	#5Sおーい、オスカー、ベネット！
-	ちょっと来い！#3S
+	#5SOi, Oscar, Bennet!
+	C'mere here for a bit!#3S
 
+## O:
 お、ロイド。
 材料集め、引きうけてくれるのか？
-	お、ロイド。
-	材料集め、引きうけてくれるのか？
+	Oh, Lloyd. So you're gonna help
+	us get those ingredients?
 
+## L:
 ああ。ちょうど手も空いてるし、
 究極のパンってのにも
 興味あるからね。
-	ああ。ちょうど手も空いてるし、
-	究極のパンってのにも
-	興味あるからね。
+	Yeah. We don't have much going on
+	at the moment, and I'm kinda curious
+	about this ultimate bread business.
 
+## T:
 各地を回って材料を集める……
 わたしたち向きの仕事では
 ありますから。
-	各地を回って材料を集める……
-	わたしたち向きの仕事では
-	ありますから。
+	Traveling all over and collecting
+	ingredients is certainly within our
+	capabilities.
 
+## O:
 そう言ってくれて助かるぜ。
 ちょうど俺も、新作パンのアイデアが
 出たところだったんだ。
-	そう言ってくれて助かるぜ。
-	ちょうど俺も、新作パンのアイデアが
-	出たところだったんだ。
+	Thanks for saying that.
+	I've got some ideas for new
+	bread I want to try out, too.
 
 ちょっと手に入りにくい材料もあって、
 困ってたんだよな。
-	ちょっと手に入りにくい材料もあって、
-	困ってたんだよな。
+	Some of the ingredients are hard to get hold
+	of, so we were having a bit of trouble.
 
+## B:
 ついにこの日が来たわね……
-	ついにこの日が来たわね……
+	The day has finally come...
 
 オスカー、どっちが
 パン職人として上か、
 これでハッキリさせてあげるわ……！
-	オスカー、どっちが
-	パン職人として上か、
-	これでハッキリさせてあげるわ……！
+	Oscar! Let's find out once and for all
+	who's the better baker!
 
+## O:
 お。ノリノリだな、ベネット。
 お互い頑張ろうぜ！
-	お。ノリノリだな、ベネット。
-	お互い頑張ろうぜ！
+	You sure are spirited.
+	Let's both do our best, yeah?
 
+## R:
 （オスカー君、
 　ライバル視されてることに
 　気がついてないみたいだな……）
-	（オスカー君、
-	　ライバル視されてることに
-	　気がついてないみたいだな……）
+	(Oscar sure doesn't seem to care much
+	about this supposed rivalry of theirs...)
 
+## T:
 （はい。さすがはロイドさんの友達と
 　いった感じですね）
-	（はい。さすがはロイドさんの友達と
-	　いった感じですね）
+	(Indeed. It's no surpise that one like
+	him would become Lloyd's friend.)
 
+## L:
 ん？　俺がどうかした？
-	ん？　俺がどうかした？
+	Hm? Did you say something?
 
+## E:
 ううん、何でもないの。
-	ううん、何でもないの。
+	No, nothing at all.
 
 それより、集めたい材料について、
 詳しい話を聞かせてください。
-	それより、集めたい材料について、
-	詳しい話を聞かせてください。
+	Could you tell us what ingredients
+	you're looking for?
 
+## O:
 ああ、そうだったな。
 俺が集めてほしいものは……
-	ああ、そうだったな。
-	俺が集めてほしいものは……
+	Oh right. This is what I need...
+## Call [15] for some reason
 
+## B:
 私が集めて欲しいものは……
-	私が集めて欲しいものは……
+	I'd like for you to get me...
+## Call [16]
 
+## E:
 なるほど。
 待ってて、捜査手帳に
 記入するから。
-	なるほど。
-	待ってて、捜査手帳に
-	記入するから。
+	Understood. Please give me a minute
+	to write it down.
 
+## M:
 なにせ二人分の材料だ。
 集めるのは骨が折れるだろうが……
-	なにせ二人分の材料だ。
-	集めるのは骨が折れるだろうが……
+	Gonna be tough to gather all that. It's
+	to be enough for two people after all.
 
 フェアな対決のためには、
 二人とも、満足のいく素材を
 集めなきゃならない。
-	フェアな対決のためには、
-	二人とも、満足のいく素材を
-	集めなきゃならない。
+	To ensure a fair competition, they both need
+	the highest-quality ingredients possible.
 
 手間だとは思うが、
 ひとつよろしく頼む。
-	手間だとは思うが、
-	ひとつよろしく頼む。
+	I know it's quite a handful,
+	but please help us with this.
 
+## T:
 これは……責任重大ですね。
-	これは……責任重大ですね。
+	This is quite a heavy responsibility.
 
+## O:
 仕事とはいえ、面倒なこと
 頼んじまってすまないな、ロイド。
-	仕事とはいえ、面倒なこと
-	頼んじまってすまないな、ロイド。
+	I'm sorry to have to ask you for such a
+	tedious favor, Lloyd.
 
+## L:
 気にするなよ。
 仕事として受けた以上、
 最善を尽くすつもりさ。
-	気にするなよ。
-	仕事として受けた以上、
-	最善を尽くすつもりさ。
+	Don't worry about it. We accepted
+	the job, so we'll do our best.
 
+## O:
 そう言ってくれるとありがたいぜ。
 よろしく頼んだ、ロイド！
-	そう言ってくれるとありがたいぜ。
-	よろしく頼んだ、ロイド！
+	Yeah, thanks. I'll leave it to you!
 
+## System:
 {color 2}クエスト【究極のパン対決！】{color 0}を開始した！
-	{color 2}クエスト【究極のパン対決！】{color 0}を開始した！
+	Quest {color 2}[Ultimate Bread Showdown!]{color 0} started!
 
+## E:
 それじゃ、材料集めを
 はじめましょうか。
-	それじゃ、材料集めを
-	はじめましょうか。
+	Well then, shall we go and
+	get those ingredients?
 
+## L:
 ああ、そうだな。
-	ああ、そうだな。
+	Yeah, let's.
 
+## elif haven't given goods {{{3
+## if sufficient ingredients {{{4
+## M:
 お、どうだいロイド。
 頼んでたものは
 集まりそうかい？
-	お、どうだいロイド。
-	頼んでたものは
-	集まりそうかい？
+	How's it, Lloyd? Looks like you've collected
+	the items they wanted.
 
 【集めた材料を渡す】
-	【集めた材料を渡す】
-
+	[Give ingredients]
 【やめておく】
-	【やめておく】
+	[Don't]
 
+## if rejected {{{5
 まだ集まってないのか？
+## M:
 それじゃ、集まったら
 また声をかけてくれよな！
-	まだ集まってないのか？
-	それじゃ、集まったら
-	また声をかけてくれよな！
+	Oh, you haven't? Well, give me a holler
+	when you've collected them.
 
+## else {{{5
+## call [18]
+## L:
 （そうだ……
 　頼まれた材料以外に、
 　差し入れしておこうかな）
-	（そうだ……
-	　頼まれた材料以外に、
-	　差し入れしておこうかな）
+	(Oh yeah... Aside from the items
+	they requested, maybe I should
+	add something extra.)
 
+## for n in range(2) {{{6
+## if n == 0 {{{7
 （よし、オスカーには……）
-	（よし、オスカーには……）
-
+	(Right, for Oscar...)
+## else {{{7
 （あと、ベネットには……）
-	（あと、ベネットには……）
+	(And for Bennet...)
+## }}}7
 
 【差し入れを渡す】
-	【差し入れを渡す】
-
+	[Add something extra]
 【渡さない】
-	【渡さない】
+	[Don't]
 
+## if yes
 {color 5}差し入れする食材を選んで下さい
-	{color 5}差し入れする食材を選んで下さい
+	{color 5}Choose an ingredient to give.
 
 純白白米
-	純白白米
-
+	White Rice
 五彩味噌
-	五彩味噌
-
+	Five-Colored Miso
 灼熱火酒
-	灼熱火酒
-
+	Scorching Wine
 ロイヤルリーフ
-	ロイヤルリーフ
-
+	Royal Leaf
 フレッシュハーブ
-	フレッシュハーブ
-
+	Fresh Herb
 ブラックペッパー
-	ブラックペッパー
-
+	Black Pepper
 レッドペッパー
-	レッドペッパー
-
+	Red Pepper
 セサミオイル
-	セサミオイル
-
+	Sesame Oil
 ハニーシロップ
-	ハニーシロップ
-
+	Honey Syrup
 粗挽き岩塩
-	粗挽き岩塩
-
+	Kibbled Salt
 挽きたて小麦粉
-	挽きたて小麦粉
-
+	Milled Flour
 新鮮ミルク
-	新鮮ミルク
-
+	Fresh Milk
 できたてチーズ
-	できたてチーズ
-
+	Sharp Cheese
 とれたて卵
-	とれたて卵
-
+	Fresh Egg
 情熱オレンジ
-	情熱オレンジ
-
+	Zesty Orange
 完熟リンゴ
-	完熟リンゴ
-
+	Ripe Apple
 七彩豆
-	七彩豆
-
+	Seven-Colored Beans
 王様ポテト
-	王様ポテト
-
+	King Potato
 号泣オニオン
-	号泣オニオン
-
+	Crying Onion
 天晴ニンジン
-	天晴ニンジン
-
+	Brilliant Carrot
 にがトマト
-	にがトマト
-
+	Acerbic Tomato
 霜降りヒレ肉
-	霜降りヒレ肉
-
+	Marbled Steak
 プリプリ白身
-	プリプリ白身
-
+	Tender Whitefish
 やめる
-	やめる
+	Cancel
 
 （何も渡さなくていいか……）
-	（何も渡さなくていいか……）
+	(Maybe I shouldn't add anything...)
 
 {item 308}{color 0}を差し入れした。
-	{item 308}{color 0}を差し入れした。
-
+	Added {item 308}{color 0}.
 {item 309}{color 0}を差し入れした。
-	{item 309}{color 0}を差し入れした。
-
+	Added {item 309}{color 0}.
 {item 310}{color 0}を差し入れした。
-	{item 310}{color 0}を差し入れした。
-
+	Added {item 310}{color 0}.
 {item 311}{color 0}を差し入れした。
-	{item 311}{color 0}を差し入れした。
-
+	Added {item 311}{color 0}.
 {item 312}{color 0}を差し入れした。
-	{item 312}{color 0}を差し入れした。
-
+	Added {item 312}{color 0}.
 {item 313}{color 0}を差し入れした。
-	{item 313}{color 0}を差し入れした。
-
+	Added {item 313}{color 0}.
 {item 314}{color 0}を差し入れした。
-	{item 314}{color 0}を差し入れした。
-
+	Added {item 314}{color 0}.
 {item 315}{color 0}を差し入れした。
-	{item 315}{color 0}を差し入れした。
-
+	Added {item 315}{color 0}.
 {item 316}{color 0}を差し入れした。
-	{item 316}{color 0}を差し入れした。
-
+	Added {item 316}{color 0}.
 {item 317}{color 0}を差し入れした。
-	{item 317}{color 0}を差し入れした。
-
+	Added {item 317}{color 0}.
 {item 318}{color 0}を差し入れした。
-	{item 318}{color 0}を差し入れした。
-
+	Added {item 318}{color 0}.
 {item 319}{color 0}を差し入れした。
-	{item 319}{color 0}を差し入れした。
-
+	Added {item 319}{color 0}.
 {item 320}{color 0}を差し入れした。
-	{item 320}{color 0}を差し入れした。
-
+	Added {item 320}{color 0}.
 {item 321}{color 0}を差し入れした。
-	{item 321}{color 0}を差し入れした。
-
+	Added {item 321}{color 0}.
 {item 322}{color 0}を差し入れした。
-	{item 322}{color 0}を差し入れした。
-
+	Added {item 322}{color 0}.
 {item 323}{color 0}を差し入れした。
-	{item 323}{color 0}を差し入れした。
-
+	Added {item 323}{color 0}.
 {item 324}{color 0}を差し入れした。
-	{item 324}{color 0}を差し入れした。
-
+	Added {item 324}{color 0}.
 {item 325}{color 0}を差し入れした。
-	{item 325}{color 0}を差し入れした。
-
+	Added {item 325}{color 0}.
 {item 326}{color 0}を差し入れした。
-	{item 326}{color 0}を差し入れした。
-
+	Added {item 326}{color 0}.
 {item 327}{color 0}を差し入れした。
-	{item 327}{color 0}を差し入れした。
-
+	Added {item 327}{color 0}.
 {item 328}{color 0}を差し入れした。
-	{item 328}{color 0}を差し入れした。
-
+	Added {item 328}{color 0}.
 {item 329}{color 0}を差し入れした。
-	{item 329}{color 0}を差し入れした。
-
+	Added {item 329}{color 0}.
 {item 330}{color 0}を差し入れした。
-	{item 330}{color 0}を差し入れした。
+	Added {item 330}{color 0}.
 
 （何も渡さなくていいか……）
-	（何も渡さなくていいか……）
+	(Maybe I shouldn't add anything...)
+## }}}6
 
+## L:
 これが、依頼された
 材料になります。
-	これが、依頼された
-	材料になります。
+	Here are the items you requested.
 
 ふむふむ……うん、確かに！
-	ふむふむ……うん、確かに！
+	Hmmhmm... Aye, checks out.
 
+## if gave any extras {{{6
+## M:
 ……おや？　頼んでない材料も
 混じってるみたいだが……？
-	……おや？　頼んでない材料も
-	混じってるみたいだが……？
+	Hm? Looks like there are
+	some items in there that
+	we didn't ask for...?
 
+## L:
 ああ、それは……差し入れ、
 みたいなものです。
-	ああ、それは……差し入れ、
-	みたいなものです。
+	Oh, that's... You can think of
+	it as a present, of sorts.
 
 よかったら、使ってくれと
 伝えておいてください。
-	よかったら、使ってくれと
-	伝えておいてください。
+	If you don't mind, please tell
+	them to use these if they want.
 
+## M:
 ふーむ……。
 ま、わかったぜ。
 受け取っとこう。
-	ふーむ……。
-	ま、わかったぜ。
-	受け取っとこう。
+	Hmm... Well, sure.
+	I'll take 'em.
+## }}}6
 
+## M:
 これは近日売り出すあいつらの新作パンだ。
 よかったら受けとってくれ。
-	これは近日売り出すあいつらの新作パンだ。
-	よかったら受けとってくれ。
+	These are some breads they've
+	created, to be put on the market
+	soon. Please accept 'em.
 
 {item 531}{color 0}４個を受け取った。
-	{item 531}{color 0}４個を受け取った。
+	Received {item 531}{color 0} x4.
 
 {item 534}{color 0}４個を受け取った。
-	{item 534}{color 0}４個を受け取った。
+	Received {item 534}{color 0} x4.
 
+## if don't know recipe for Thick Espresso {{{6
+## M:
 そうだ。
 お前らこんなコーヒー知ってるか？
 ついでにこいつも覚えていけよ。
-	そうだ。
-	お前らこんなコーヒー知ってるか？
-	ついでにこいつも覚えていけよ。
+	Oh yeah, do you guys know this blend?
+	I'll teach you the recipe while I'm at it.
 
 {item 467}{color 0}のレシピを教えてもらった。
-	{item 467}{color 0}のレシピを教えてもらった。
+	Received the recipe for {item 467}{color 0}.
 
 {item 467}{color 0}のレシピを覚えた。
-	{item 467}{color 0}のレシピを覚えた。
+	Learned the recipe for {item 467}{color 0}.
+## }}}6
 
+## L:
 ありがとうございます。
-	ありがとうございます。
+	Thank you very much.
 
+## M:
 今回の対決は、
 あいつらにとっても
 いい経験になるはずだ。
-	今回の対決は、
-	あいつらにとっても
-	いい経験になるはずだ。
+	This showdown oughta be
+	a good experience for
+	the two of them.
 
 新作パンが完成すりゃ、
 客足も伸びるだろうしな。
 感謝するぜ。
-	新作パンが完成すりゃ、
-	客足も伸びるだろうしな。
-	感謝するぜ。
+	The new breads they've created'll
+	bring in plenty of customers.
+	So thanks for that, too.
 
 {color 2}クエスト【究極のパン対決！】{color 0}を達成した！
-	{color 2}クエスト【究極のパン対決！】{color 0}を達成した！
+	Quest {color 2}[Ultimate Bread Showdown!]{color 0} completed!
 
+## else (insufficient ingredients) {{{4
+## M:
 依頼の品、数もそれなりに多いし、
 集めるのは大変だろうが……
-	依頼の品、数もそれなりに多いし、
-	集めるのは大変だろうが……
+	They sure asked for a lot of items.
+	Collecting them'll be tough, but...
 
 オスカーもベネットも、
 楽しみに待ってる。
 すまないが、よろしく頼んだぜ。
-	オスカーもベネットも、
-	楽しみに待ってる。
-	すまないが、よろしく頼んだぜ。
+	Oscar and Bennet are both looking
+	forward to this. We're counting on you.
 
+## elif first talk {{{3
+## M:
 オスカーもベネットも、
 新作パンの開発を
 はじめたみたいだ。
-	オスカーもベネットも、
-	新作パンの開発を
-	はじめたみたいだ。
+	Both of them have started working
+	on their breads.
 
 勝敗は、売れ行きで決めることにした。
 どっちが勝つか、俺も楽しみだぜ。
-	勝敗は、売れ行きで決めることにした。
-	どっちが勝つか、俺も楽しみだぜ。
+	The victor of the showdown will be
+	decided by the sales numbers. I look
+	forward to seeing the results.
 
+## else {{{3
+## M:
 今回の対決は、
 あいつらにとっても
 いい経験になるはずだ。
-	今回の対決は、
-	あいつらにとっても
-	いい経験になるはずだ。
+	This showdown oughta be
+	a good experience for
+	the two of them.
 
 あいつらの新作パン勝負の結果、
 ぜひ聞きに来てくれよな！
-	あいつらの新作パン勝負の結果、
-	ぜひ聞きに来てくれよな！
+	Do come by later to hear the
+	results of the bread contest.
 
+## [6] Talking to Morges after results announcement {{{2
 今回の対決は、
 あいつらにとっても
 いい経験になったはずだ。
-	今回の対決は、
-	あいつらにとっても
-	いい経験になったはずだ。
+	This showdown oughta be
+	a good experience for
+	the two of them.
 
 ついでに、客足もかなり伸びたしな。
 いやあ、感謝するぜ！
-	ついでに、客足もかなり伸びたしな。
-	いやあ、感謝するぜ！
+	We've gotten plenty of new customers,
+	too. So thanks for that!
 
+## [9] Results announcement {{{2
 お、ロイド、
 ちょうどいいところに来たな。
 	お、ロイド、
@@ -736,6 +738,7 @@
 ああ。勝負は……
 	ああ。勝負は……
 
+## Draw {{{3
 #5S引き分けだ。#3S
 	#5S引き分けだ。#3S
 
@@ -766,6 +769,7 @@
 	敵を褒めるなんて、
 	どうかしてるんじゃない？
 
+## Oscar wins {{{3
 #5Sオスカーの勝ちだ。#3S
 	#5Sオスカーの勝ちだ。#3S
 
@@ -814,6 +818,7 @@
 	ベネットの新作、
 	よくできてると思うぜ。
 
+## Bennet wins
 #5Sベネットの勝ちだ。#3S
 	#5Sベネットの勝ちだ。#3S
 
@@ -864,6 +869,7 @@
 	あの、『{item 326}』が
 	なかったら、正直、
 	勝ててなかったと思う……
+## }}}3
 
 ははっ。これからも
 お互い頑張っていこうぜ。
@@ -885,193 +891,213 @@
 	　お似合いのふたり
 	　って感じですね）
 
+## [10] Talking to Oscar {{{2
+## if haven't started {{{3
+## O:
 よう、ロイド。
 ウチの店から依頼を出したんだが、
 見てくれたか？
-	よう、ロイド。
-	ウチの店から依頼を出したんだが、
-	見てくれたか？
+	Yo, Lloyd. We sent in a
+	Support Request, did you see it?
 
+## L:
 ああ。何でも究極のパンを
 作るとか……
-	ああ。何でも究極のパンを
-	作るとか……
+	Yeah. You're going to make an
+	ultimate bread or something...?
 
+## O:
 そうなんだ。
 俺は対決とか勝ち負けとか
 あまり興味はないんだけどさ……
-	そうなんだ。
-	俺は対決とか勝ち負けとか
-	あまり興味はないんだけどさ……
+	Exactly. To be honest, I don't
+	really care about showdowns
+	or whatever...
 
 どうもベネットは、
 今回の勝負に乗り気みたいでさ。
-	どうもベネットは、
-	今回の勝負に乗り気みたいでさ。
+	Seems Bennet is really
+	hyped about it though.
 
 けど、究極のパンを
 作るってのは面白い。
 職人としちゃ、腕が鳴るよ。
-	けど、究極のパンを
-	作るってのは面白い。
-	職人としちゃ、腕が鳴るよ。
+	But making the ultimate bread?
+	As a baker, I can hardly contain
+	my excitement.
 
 そんなわけで、依頼受けてくれたら
 嬉しいんだけどな。
-	そんなわけで、依頼受けてくれたら
-	嬉しいんだけどな。
+	So I hope you accept the Support Request.
 
 ま、詳しい話は
 奥にいる親方に聞いてくれよ。
-	ま、詳しい話は
-	奥にいる親方に聞いてくれよ。
+	Well, you should ask the boss for
+	the details. He's in the back.
 
+## elif haven't given goods {{{3
+## O:
 おう、ロイド。
 材料集めは順調か？
-	おう、ロイド。
-	材料集めは順調か？
+	Sup, Lloyd. How's the
+	ingredient collection goin'?
 
+## else {{{3
+## O:
 ロイドたちのおかげで、
 いい新作パンが開発できそうだ。
 職人としちゃ、腕が鳴るよ。
-	ロイドたちのおかげで、
-	いい新作パンが開発できそうだ。
-	職人としちゃ、腕が鳴るよ。
+	Thanks to you guys, I'll be able to
+	make a great new bread. As a baker,
+	I can hardly contain my excitement.
 
+## [11] Talking to Oscar, 2 {{{2
+## if haven't started {{{3
 依頼、受けてくれると
 嬉しいんだけどな。
-	依頼、受けてくれると
-	嬉しいんだけどな。
+	I'd be glad if accepted the Support Request.
 
 ま、詳しい話は
 奥にいる親方に聞いてくれよ。
-	ま、詳しい話は
-	奥にいる親方に聞いてくれよ。
+	Well, you should ask the boss for
+	the details. He's in the back.
 
+## elif haven't given goods {{{3
+## if insufficient ingredients {{{4
 パン職人としちゃ、
 新作パンを作るのは
 気合いが入る仕事なんだ。
-	パン職人としちゃ、
-	新作パンを作るのは
-	気合いが入る仕事なんだ。
+	As a baker, I put a lot of effort
+	into creating new bread.
 
 ……なんだけど、今回の新作パン、
 もうひとつ
 パンチが足りない気がしててさ。
-	……なんだけど、今回の新作パン、
-	もうひとつ
-	パンチが足りない気がしててさ。
+	But this time, my ordinary level
+	won't cut it. It needs some more oomph.
 
 なんかこう、『情熱』が
 ガツンと加わるといいんだが……
-	なんかこう、『情熱』が
-	ガツンと加わるといいんだが……
+	Y'know, gotta throw in some
+	more zest somehow...
 
 おっと、これは俺の問題だな。
 ロイド達は材料集めの方、
 よろしく頼む！
-	おっと、これは俺の問題だな。
-	ロイド達は材料集めの方、
-	よろしく頼む！
+	Oh, but that's my problem. You guys
+	are already helping a lot by gathering
+	the ingredients.
 
+## elif first talk {{{4
+## O:
 お、ロイド。
 食材集めの方、どうなった？
-	お、ロイド。
-	食材集めの方、どうなった？
+	Yo, Lloyd. How goes the
+	ingredient gathering?
 
+## L:
 ああ。
 言われていたものは揃えたよ。
-	ああ。
-	言われていたものは揃えたよ。
+	We've got everything you asked for.
 
+## O:
 おっ、さすがロイドだな。
 仕事が早い！
-	おっ、さすがロイドだな。
-	仕事が早い！
+	That was really fast. I guess
+	that's Lloyd for you.
 
 これで、新作パンの開発に
 取り掛かれるぜ。
-	これで、新作パンの開発に
-	取り掛かれるぜ。
+	Now we can get to work
+	on our bread.
 
 サンキュー、ロイド！
 やっぱりお前は頼りになるよ。
-	サンキュー、ロイド！
-	やっぱりお前は頼りになるよ。
+	Thanks, Lloyd! I knew I
+	could count on you.
 
+## L:
 そんな、大したことないって。
 それよりも、新作パン
 楽しみにしてるからな。
-	そんな、大したことないって。
-	それよりも、新作パン
-	楽しみにしてるからな。
+	Oh, it's no big deal. More
+	importantly, I'm looking forward
+	to tasting the bread.
 
+## O:
 あ、そうだ。忘れるところだったぜ。
 材料は、奥にいる親方に渡してくれ。
-	あ、そうだ。忘れるところだったぜ。
-	材料は、奥にいる親方に渡してくれ。
+	Oh yeah, I almost forgot. You
+	should give the materials to
+	the boss, in the back.
 
 依頼の報酬も
 親方からもらえるはずだ。
-	依頼の報酬も
-	親方からもらえるはずだ。
+	He'll give you your pay.
 
 …………。
-	…………。
+	... ... ...
 
+## else {{{4
+## O:
 材料は、奥にいる親方に渡してくれ。
 依頼の報酬もらえるはずだ。
-	材料は、奥にいる親方に渡してくれ。
-	依頼の報酬もらえるはずだ。
+	Give the ingredients to the boss in the
+	back room. He'll give you your pay.
 
 …………。
-	…………。
+	... ... ...
 
+## L:
 ……？
 どうかしたのか？
-	……？
-	どうかしたのか？
+	Something up?
 
+## O:
 ああ、せっかく材料を用意してくれたのに
 こんなことを言うと申し訳ないんだが……
-	ああ、せっかく材料を用意してくれたのに
-	こんなことを言うと申し訳ないんだが……
+	Well, it'd be rude to ask after
+	you've taken your time to collect
+	all this, but...
 
 今回の新作パン、もうひとつ
 パンチが足りない気がしててさ。
-	今回の新作パン、もうひとつ
-	パンチが足りない気がしててさ。
+	This time, my ordinary level won't
+	cut it. It needs some more oomph.
 
 なんかこう、『情熱』が
 ガツンと加わるといいんだが……
-	なんかこう、『情熱』が
-	ガツンと加わるといいんだが……
+	Y'know, gotta throw in some
+	more zest somehow...
 
 う～ん、ちょっと漠然としすぎてるよな。
 悪い、気にしないでくれ！
-	う～ん、ちょっと漠然としすぎてるよな。
-	悪い、気にしないでくれ！
+	Hmm, that's a bit vague I guess.
+	Sorry, nevermind.
 
+## elif first talk {{{3
 さっそく、新作パンの開発に
 取りかからせてもらうよ。
-	さっそく、新作パンの開発に
-	取りかからせてもらうよ。
+	I'll get right to work.
 
 焼き上がり、楽しみにしててくれよな！
-	焼き上がり、楽しみにしててくれよな！
+	Look forward to the results!
 
+## else {{{3
 ベネットの奴、
 さっそく新作パンの開発に
 取りかかったみたいだ。
-	ベネットの奴、
-	さっそく新作パンの開発に
-	取りかかったみたいだ。
+	Looks like Bennet's gotten
+	started on her bread.
 
 どんなパンができるか、
 俺も楽しみだぜ。
-	どんなパンができるか、
-	俺も楽しみだぜ。
+	I'm looking forward to
+	seeing what kind of
+	bread she makes.
 
+## [12] Talking to Oscar after results announcement {{{2
+## if Oscar won {{{3
 新作パンのおかげで、
 客足もかなり伸びたんだ。
 感謝するぜ、ロイド。
@@ -1093,6 +1119,7 @@
 	客が増えれば
 	それでいいと思うんだけどなあ。
 
+## else {{{3
 新作パンのおかげで、
 客足もかなり伸びたんだ。
 ありがとな。
@@ -1105,138 +1132,151 @@
 	ベネットの奴も、
 	ロイドに感謝してたぜ。
 
+## [13] Talking to Bennet {{{2
+## if haven't started {{{3
+## B:
 私の見たところ、
 私とオスカーの腕は互角……
-	私の見たところ、
-	私とオスカーの腕は互角……
+	As far as I can tell,
+	Oscar and I are evenly matched...
 
 だからこそ……今度の対決で、
 どっちが上か、はっきりさせる！
-	だからこそ……今度の対決で、
-	どっちが上か、はっきりさせる！
+	We'll find out once and for all
+	who's better in this showdown!
 
+## elif haven't given goods {{{3
+## if insufficient ingredients {{{4
+## if first talk {{{5
+## B:
 ブツブツ……食べた人が
 感動できるような……
 涙……？　『号泣』……？
-	ブツブツ……食べた人が
-	感動できるような……
-	涙……？　『号泣』……？
+	Mumble mumble... Something
+	emotional... Tears...? Crying...?
 
 ……あっ、ご、ごめんなさい。
 新作パンのアイデアを
 練っていたところだったの。
-	……あっ、ご、ごめんなさい。
-	新作パンのアイデアを
-	練っていたところだったの。
+	...Oh, s-sorry! I was just
+	brainstorming ideas for my bread.
 
+## else {{{5
+## B:
 今考えてる新作なら、
 きっとオスカーよりも
 美味しいパンが作れるはず……
-	今考えてる新作なら、
-	きっとオスカーよりも
-	美味しいパンが作れるはず……
+	If I do this, my bread will blow
+	Oscar's out of the water...
 
 ……そのためには、どうしても
 あの材料が必要なの。
 オスカーには、負けたくないから……！
-	……そのためには、どうしても
-	あの材料が必要なの。
-	オスカーには、負けたくないから……！
+	...But for that, I really need
+	that one ingredient... I won't lose
+	to Oscar, no matter what!
 
+## R:
 気合い入ってるなぁ……
-	気合い入ってるなぁ……
+	She's really into this...
 
+## elif first talk {{{4
+## B:
 ブツブツ……
 何か、何かが足りないのよ、う～ん……
-	ブツブツ……
-	何か、何かが足りないのよ、う～ん……
+	Mumble mumble... Not enough... This
+	isn't enough... Hmm...
 
 あ、あら、あなたたち……
 食材集めの方、進んでる？
-	あ、あら、あなたたち……
-	食材集めの方、進んでる？
+	Oh my, you guys. Are
+	you making progress
+	with the ingredients?
 
+## L:
 ああ。
 言われていたものは揃えたよ。
-	ああ。
-	言われていたものは揃えたよ。
+	Yes, we've got it all here.
 
+## B:
 そ、そう！
 思ったより早かったわね！
-	そ、そう！
-	思ったより早かったわね！
+	R-really? That was faster
+	than I expected.
 
 材料は、工房にいる父さんに
 渡してくれればいいから。
-	材料は、工房にいる父さんに
-	渡してくれればいいから。
+	You should give the materials
+	to my father in the workshop.
 
 …………。
-	…………。
+	... ... ...
 
+## else {{{4
 ブツブツ……食べた人が
 感動できるような……
 涙……？　『号泣』……？
-	ブツブツ……食べた人が
-	感動できるような……
-	涙……？　『号泣』……？
+	Mumble mumble... Something
+	emotional... Tears...? Crying...?
 
 ……あっ、ご、ごめんなさい。
 新作パンのアイデアを
 練っていたところだったの。
-	……あっ、ご、ごめんなさい。
-	新作パンのアイデアを
-	練っていたところだったの。
+	...Oh, s-sorry! I was just
+	brainstorming ideas for my bread.
 
 材料は、
 工房にいる父さんに渡してね。
-	材料は、
-	工房にいる父さんに渡してね。
+	Please give the materials
+	to my father in the workshop.
 
 そ、それから、その……
 手伝ってくれて、ありがとう。
-	そ、それから、その……
-	手伝ってくれて、ありがとう。
+	A-and, um... thanks for
+	helping us out with this.
+	It means a lot to me.
 
+## elif first talk {{{3
 オスカーは、
 どうやら新作パンの開発を
 はじめたみたい。
-	オスカーは、
-	どうやら新作パンの開発を
-	はじめたみたい。
+	Looks like Oscar has started
+	on his bread.
 
 私も、負けてられないわ。
 ぜったいあいつに勝ってみせる……！
-	私も、負けてられないわ。
-	ぜったいあいつに勝ってみせる……！
+	I can't afford to lose either. I'm
+	gonna beat that guy for sure...!
 
 …………。
-	…………。
+	... ... ...
 
 ……あ、ありがとう、ロイドさん。
 それにみなさんも。
-	……あ、ありがとう、ロイドさん。
-	それにみなさんも。
+	...Thank you, Lloyd, and
+	everyone else too.
 
 ……き、期待しててね。
 いいパンを作るから。
-	……き、期待しててね。
-	いいパンを作るから。
+	...Do look forward to it, okay?
+	Because I'm gonna make a great bread.
 
+## else {{{3
 今考えてる新作が完成したら、
 今度こそオスカーに勝てるはず。
 ふふ……楽しみだわ。
-	今考えてる新作が完成したら、
-	今度こそオスカーに勝てるはず。
-	ふふ……楽しみだわ。
+	When I'm finished with this,
+	I'm gonna beat Oscar for sure.
+	Heehee, I can't wait.
 
 ……あ、あなたたちには
 感謝してるわ。
 ……ありがとう。
-	……あ、あなたたちには
-	感謝してるわ。
-	……ありがとう。
+	...I'm grateful to you guys.
+	Thank you.
 
+## [14] Talking to Bennet after results announcement {{{2
+## if Bennet won {{{3
 ふふ……ついにあのオスカーに
 勝つことができた！
 	ふふ……ついにあのオスカーに
@@ -1249,6 +1289,7 @@
 	おめでとう、だなんて……
 	……調子、狂うじゃない……
 
+## elif it's a draw {{{3
 まさか引き分けだなんて……
 今度こそ決着をつけるはずだったのに！
 	まさか引き分けだなんて……
@@ -1261,6 +1302,7 @@
 	次の対決までにもっともっと腕を磨いて、
 	絶ーっ対ぎゃふんと言わせてやるんだから！
 
+## else {{{3
 く、悔しい！
 また負けた……！
 	く、悔しい！
@@ -1276,26 +1318,28 @@
 	そのうち、絶対リベンジ
 	してやるわ……！
 
+## [15] {{{2
 {item 300}　　　×５
 {item 306}　×３
 {item 357}　　　　×３だな！
-	{item 300}　　　×５
-	{item 306}　×３
-	{item 357}　　　　×３だな！
+	{item 300}   x5,       ## Beast Flesh
+	{item 306} x3,         ## Clear Gelatin
+	{item 357}         x3! ## Kasagin
 
+## [16] {{{2
 {item 301}　　　×３
 {item 303}　　　　×５
 {item 356}　　　　×３よ！
-	{item 301}　　　×３
-	{item 303}　　　　×５
-	{item 356}　　　　×３よ！
+	{item 301}      x3,    ## Fish Fillet
+	{item 303} x5,         ## Monster Egg
+	{item 356}         x3! ## Azelfish
 
+## [18] {{{2
 {color 5}ロイドは二人のパン対決の材料を手渡した。
 {item 300}　　×５　{item 301}　　×３
 {item 306}×３　{item 303}　　　×５
 {item 357}　　　×３　{item 356}　　　×３
-	{color 5}ロイドは二人のパン対決の材料を手渡した。
-	{item 300}　　×５　{item 301}　　×３
-	{item 306}×３　{item 303}　　　×５
-	{item 357}　　　×３　{item 356}　　　×３
-
+	{color 5}Lloyd handed over the ultimate ingredients.
+	{item 300}   x5  {item 301}     x3
+	{item 306} x3  {item 303} x5
+	{item 357}         x3  {item 356}        x3

@@ -1,8 +1,9 @@
+## {{{1 Quest log
 寝坊医者の捜索願い
-	寝坊医者の捜索願い
+	Search for the Oversleeping Doctor
 
 マーサ師長
-	マーサ師長
+	Head Nurse Martha
 
 　寝坊で有名なうちのアーシュラ主任が、
 　昼を過ぎても出勤してこないんだよ。　
@@ -22,24 +23,23 @@
 　詳しくは、聖ウルスラ医科大学２階の　
 　ナースステーションにいる　　　　　　
 　師長マーサまでお願いするよ。　　　　
-	　寝坊で有名なうちのアーシュラ主任が、
-	　昼を過ぎても出勤してこないんだよ。　
+	　Our Chief Ursuline is infamous for
+	　sleeping in late, but it's past noon
+	　and she still hasn't reported in.
 	　
-	　いつも彼女を起こしているマローネに、
-	　寮を見に行ってもらったんだけど、　　
-	　部屋の中には誰も居なかった。　　　　
+	　Malone, who usually wakes her up, checked
+	　in the dorms, but there was nobody in her
+	　room.
 	　
-	　主任は遅刻ばかりしているけど、　　　
-	　今まで無断欠勤だけは　　　　　　　　
-	　したことがないんだ。　　　　　　　　
-	　最近は何か悩んでいる様子だったって　
-	　話も聞くし……　　　　　　　　　　　
+	　The chief is always late, but she always
+	　shows up, sooner or later. I've been hearing
+	　rumors that she's been troubled about
+	　something lately...
 	　
-	　とにかく、万が一……ってこともある。
-	　主任を探してくれないかい？　　　　　
-	　詳しくは、聖ウルスラ医科大学２階の　
-	　ナースステーションにいる　　　　　　
-	　師長マーサまでお願いするよ。　　　　
+	　主任を探してくれないかい？
+	　詳しくは、聖ウルスラ医科大学２階の
+	　ナースステーションにいる
+	　師長マーサまでお願いするよ。
 
 ★遅刻が日常茶飯事のアーシュラ主任が、
 　どこにも見当たらないという。　　　　
@@ -208,186 +208,197 @@
 	★無事、アーシュラ主任を保護した。　　
 	　長い旅路だった……　　　　　　　　　
 
+## {{{1
+## [?] Talking to Martha {{{2
+## if first time {{{3
+## M:
 まったく……
 アーシュラ主任にも
 困ったもんだねぇ。
-	まったく……
-	アーシュラ主任にも
-	困ったもんだねぇ。
+	Jeez... Now the chief's
+	causing trouble too.
 
 何も、こんな忙しい時に
 失踪しなくても
 いいじゃないか……
-	何も、こんな忙しい時に
-	失踪しなくても
-	いいじゃないか……
+	Why did she have to play hooky
+	when we're this busy...
 
+## L:
 あの、すいません。
 依頼を受けて、警察から
 来た者ですが……
-	あの、すいません。
-	依頼を受けて、警察から
-	来た者ですが……
+	Excuse me. We're with the
+	Crossbell Police Department.
 
+## M:
 おや……もう来て
 くれたのかい？
-	おや……もう来て
-	くれたのかい？
+	Oh? You're here already?
 
 主任も、これくらい
 腰が軽ければよかったのにねぇ。
-	主任も、これくらい
-	腰が軽ければよかったのにねぇ。
+	If only the chief was that diligent.
 
+## L:
 ええと、そのアーシュラ主任が
 失踪したということですが。
-	ええと、そのアーシュラ主任が
-	失踪したということですが。
+	So, this Chief Ursuline has gone missing.
 
+## E:
 詳しい話を、聞かせて
 いただけますか？
-	詳しい話を、聞かせて
-	いただけますか？
+	Would you mind telling us the details?
 
+## M:
 そうなんだよ。
 ただの遅刻なら毎日のことだし
 何も問題なかったんだけど……
-	そうなんだよ。
-	ただの遅刻なら毎日のことだし
-	何も問題なかったんだけど……
+	Yes. If it was just that she was late
+	like always it wouldn't be a problem...
 
+## R:
 毎日遅刻ってのは、
 それはそれで問題だと
 思うがな……
-	毎日遅刻ってのは、
-	それはそれで問題だと
-	思うがな……
+	Being late every day is bad enough on its own, I'd think.
 
+## T:
 ランディさんがそれを言っても、
 説得力が。
-	ランディさんがそれを言っても、
-	説得力が。
+	That's not very convincing
+	coming from you, Randy.
 
 それで、マローネが
 寮まで様子を見に
 行ったんだけど……
-	それで、マローネが
-	寮まで様子を見に
-	行ったんだけど……
+	But when Malone went to check on
+	her in the dormitory...
 
+## L:
 そこに、
 アーシュラ主任の姿はなかった
 わけですね。
-	そこに、
-	アーシュラ主任の姿はなかった
-	わけですね。
+	Chief Ursuline wasn't there.
 
+## M:
 そういうこと。
 今日は往診の予定もないし、
 外に出る理由もないはずなのよ。
-	そういうこと。
-	今日は往診の予定もないし、
-	外に出る理由もないはずなのよ。
+	Indeed. There aren't any house visits
+	planned for today, so she shouldn't
+	have had any reason to go out.
 
 病院内のどこを探しても
 いないってのは奇妙だろう？
-	病院内のどこを探しても
-	いないってのは奇妙だろう？
+	We've looked everywhere in the hospital,
+	but she's nowhere to be found.
+	Strange, huh?
 
+## E:
 何か、書き置きみたいなものは
 ありませんでしたか？
-	何か、書き置きみたいなものは
-	ありませんでしたか？
+	She didn't leave a note behind or anything?
 
+## M:
 いやぁ、特になかったね。
 ただ……
-	いやぁ、特になかったね。
-	ただ……
+	No, nothing that stood out. But...
 
 少し前から、主任が
 思い悩んでいた姿を見たって
 看護師もいるね。
-	少し前から、主任が
-	思い悩んでいた姿を見たって
-	看護師もいるね。
+	One of the nurses thought
+	she looked a bit troubled
+	a little while ago.
 
+## L:
 つまり、何らかのトラブルを
 抱えていた可能性もあると？
-	つまり、何らかのトラブルを
-	抱えていた可能性もあると？
+	So you're saying she might have
+	gotten caught up in some kind of
+	trouble?
 
+## M:
 そこまではわからないよ。
 少なくともあたしには、
 そんな風には見えなかったからね。
-	そこまではわからないよ。
-	少なくともあたしには、
-	そんな風には見えなかったからね。
+	I don't know about that.
+	At least I didn't notice
+	anything like that.
 
 ただ、そういうことも
 あるかもしれない。
-	ただ、そういうことも
-	あるかもしれない。
+	But it's possible, I suppose.
 
 とにかく、もし事件に
 巻きこまれてたら大変だし、
 何とか主任を捜してくれないかね？
-	とにかく、もし事件に
-	巻きこまれてたら大変だし、
-	何とか主任を捜してくれないかね？
+	Anyway, it would be bad if something did
+	happen to her, so could you help us
+	search for her?
 
+## else {{{3
+## M:
 おや、特務ナントカの
 連中じゃないか。
-	おや、特務ナントカの
-	連中じゃないか。
+	Oh, it's the Special Support Something people.
 
 気が変わって、ウチの主任捜しを
 手伝ってくれる気になったのかい？
-	気が変わって、ウチの主任捜しを
-	手伝ってくれる気になったのかい？
+	Did you decide to join in
+	on our search for the chief?
+### }}}3
 
 【引き受ける】
-	【引き受ける】
+	[Accept]
 
 【やめる】
-	【やめる】
+	[Decline]
 
+## if accepted {{{3
+## L:
 ええ。状況はわかりました。
 依頼、お引き受けします。
-	ええ。状況はわかりました。
-	依頼、お引き受けします。
+	I understand the situation.
+	We'll accept the Support Request.
 
+## M:
 そうかい、助かるよ。
 じゃ、すまないけど。
 よろしく頼むよ。
-	そうかい、助かるよ。
-	じゃ、すまないけど。
-	よろしく頼むよ。
+	Thanks. We appreciate all
+	the help we can get.
 
 {color 2}クエスト【寝坊医者の捜索願い】{color 0}を開始した！
-	{color 2}クエスト【寝坊医者の捜索願い】{color 0}を開始した！
+	Quest {color 2}[Search for the Oversleeping Doctor]{color 0} started!
 
+## else {{{3
+## L:
 すみません。
 事情はわかりましたが、
 別件で捜査を抱えていまして。
-	すみません。
-	事情はわかりましたが、
-	別件で捜査を抱えていまして。
+	I apologize. I understand the
+	circumstances, but we're already
+	busy with another case.
 
+## M:
 そうかい。
 だったら仕方ないね。
-	そうかい。
-	だったら仕方ないね。
+	Oh, I see. Nothing I
+	can do about that.
 
 ま、主任の方は、あたしたちで
 探してみるよ。
-	ま、主任の方は、あたしたちで
-	探してみるよ。
+	I guess we'll keep searching.
 
 もしかしたら、病院の外まで
 散歩に出てるだけかもしれないしね。
-	もしかしたら、病院の外まで
-	散歩に出てるだけかもしれないしね。
+	Who knows, maybe she's just
+	taking a walk outside the hospital.
 
+
+## {{{2
 そうそう。ここの看護師や、
 医師たちに話を聞いてみると
 いいかもね。

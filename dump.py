@@ -12,7 +12,7 @@ class CustomRepr:
 	def __repr__(self): return self.repr
 
 def dump(f, data, mode):
-	f.write("if 0: from . import Insn, Expr, Text, Translate, Char, Flag, Function\n")
+	f.write("if 0: from . import Insn, Expr, Text, Translate, Char, Flag, Function, Color, Party, ResId\n")
 	f.write("data = ")
 	pprint(f, {**data, "code": CustomRepr(f"[None]*{len(data['code'])}")}, mode)
 	f.write("\n")
@@ -62,10 +62,13 @@ def pprint(f, data, mode, indent=0):
 	for cls in [kouzou.dotdict, bool, int, float, str, dict, tuple, list]:
 		if isinstance(data, cls):
 			if type(data) is not cls:
-				f.write(type(data).__qualname__)
-				f.write("(")
-				pprint(f, cls(data), mode, indent)
-				f.write(")")
+				if type(data).__repr__ is cls.__repr__:
+					f.write(type(data).__qualname__)
+					f.write("(")
+					pprint(f, cls(data), mode, indent)
+					f.write(")")
+				else:
+					f.write(repr(data))
 				return
 			break
 

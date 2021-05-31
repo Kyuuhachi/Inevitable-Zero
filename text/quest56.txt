@@ -37,32 +37,32 @@
 	　something lately...
 	　
 	　Anyway, just in case... you know. Could you
-	　help search for our wayward chief? For details,
-	　ask for Head Nurse Martha at the Nurse Station,
-	　Saint Ursula Medical Hospital second floor.
+	　help search for our wayward Chief? For
+	　details, ask for Head Nurse Martha at the
+	　Nurse Station, Saint Ursula Medical Hospital,
+	　second floor.
 
 ★遅刻が日常茶飯事のアーシュラ主任が、
 　どこにも見当たらないという。　　　　
 　「思い悩んでいる様子だった」　　　　
 　との目撃証言もあるというが……　　　
-	★遅刻が日常茶飯事のアーシュラ主任が、
-	　どこにも見当たらないという。　　　　
-	　「思い悩んでいる様子だった」　　　　
-	　との目撃証言もあるというが……　　　
+	★Being late is an everyday occurrence for
+	　Chief Ursuline, but today she hasn't been
+	　seen at all. Apparently, witnesses say
+	　that she's been looking troubled about
+	　something.
 
 ★捜索依頼を引き受けた。　　　　　　　
 　目撃者がいないか、　　　　　　　　　
 　病院内を聞き込みしてみよう。　　　　
-	★捜索依頼を引き受けた。　　　　　　　
-	　目撃者がいないか、　　　　　　　　　
-	　病院内を聞き込みしてみよう。　　　　
+	★Accepted the Support Request. Let's ask
+	　around the hospital for witnesses.
 
 ★マーサ師長の話では、　　　　　　　　
 　主任の失踪に最初に気づいたのは　　　
 　マローネさんだという。　　　　　　　
-	★マーサ師長の話では、　　　　　　　　
-	　主任の失踪に最初に気づいたのは　　　
-	　マローネさんだという。　　　　　　　
+	★According to Martha, the first to notice
+	　the disappearance was Marone.
 
 ★マローネさんの話では、　　　　　　　
 　自分が起こす前に主任が起きることは　
@@ -95,9 +95,9 @@
 ★フィリアさんは、主任が資料本を　　　
 　探しに出かけたのではと言う。　　　　
 　本当だろうか……？　　　　　　　　　
-	★フィリアさんは、主任が資料本を　　　
-	　探しに出かけたのではと言う。　　　　
-	　本当だろうか……？　　　　　　　　　
+	★Philia thinks she's out searching
+	　for research materials. Could
+	　that be true?
 
 ★シロンさんは、主任が失踪したことを　
 　知らなかったようだ。　　　　　　　　
@@ -111,16 +111,15 @@
 ★メイファさんは、主任が　　　　　　　
 　朝寝坊したいがために失踪したのでは　
 　ないかという。　　　　　　　　　　　
-	★メイファさんは、主任が　　　　　　　
-	　朝寝坊したいがために失踪したのでは　
-	　ないかという。　　　　　　　　　　　
+	★Meifa thinks she might have gone
+	　somewhere else to sleep better.
 
 ★セシル姉の話だと、主任はここ数日　　
 　ふさぎ込んでいたようだ。　　　　　　
 　研究の進捗が思わしくなかったとか。　
-	★セシル姉の話だと、主任はここ数日　　
-	　ふさぎ込んでいたようだ。　　　　　　
-	　研究の進捗が思わしくなかったとか。　
+	★Cecile says that she has been
+	　looking unhappy, perhaps that her
+	　research is unsatisfactory.
 
 ★セラさんは朝７時から受付にいたが、　
 　主任の姿は見ていないという。　　　　
@@ -215,7 +214,7 @@
 まったく……
 アーシュラ主任にも
 困ったもんだねぇ。
-	Jeez... Now the chief's
+	Jeez... Now the Chief's
 	causing trouble too.
 
 何も、こんな忙しい時に
@@ -238,7 +237,7 @@
 
 主任も、これくらい
 腰が軽ければよかったのにねぇ。
-	If only the chief was that diligent.
+	If only the Chief was that diligent.
 
 ## L:
 ええと、そのアーシュラ主任が
@@ -349,8 +348,7 @@
 気が変わって、ウチの主任捜しを
 手伝ってくれる気になったのかい？
 	Did you decide to join in
-	on our search for the chief?
-### }}}3
+	on our search for the Chief?
 
 ## [1] (cont.) {{{2
 【引き受ける】
@@ -456,7 +454,7 @@
 知ってるかもしれないねぇ……
 	Maybe she knows something.
 
-## [4] {{{2
+## [4...] {{{2
 アーシュラ主任は、
 本当に毎日、寝坊するんです
 	アーシュラ主任は、
@@ -690,157 +688,168 @@
 うふっ、よかったです～。
 	うふっ、よかったです～。
 
+## [9] Talking to Meifa {{{2
+## First time {{{3
+## M:
 わたし、個人的には
 主任は病院にはいないって
 思うんだけど。
-	わたし、個人的には
-	主任は病院にはいないって
-	思うんだけど。
+	Personally, I don't think
+	the Chief is at the hospital.
 
+## L:
 それは、どうしてですか？
-	それは、どうしてですか？
+	Why is that?
 
+## M:
 ほら、院内じゃゆっくり
 朝寝坊もできないでしょ？
-	ほら、院内じゃゆっくり
-	朝寝坊もできないでしょ？
+	See, you can't sleep in inside
+	the hospital itself, you know?
 
 最近、特にゲイリー教授が
 ガミガミうるさいらしいから。
-	最近、特にゲイリー教授が
-	ガミガミうるさいらしいから。
+	Professor Gary in particular
+	has been nagging a lot lately.
 
 ゆっくり朝寝坊できる場所にでも
 行ったんじゃないかしら？
-	ゆっくり朝寝坊できる場所にでも
-	行ったんじゃないかしら？
+	Maybe she just went somewhere
+	where she could sleep better?
 
+## T:
 失踪した、もしくは何か
 事件に巻きこまれた可能性も
 あると思いますが。
-	失踪した、もしくは何か
-	事件に巻きこまれた可能性も
-	あると思いますが。
+	There is also a possibility
+	that she might have run away
+	or gotten involved in something.
 
+## M:
 そうかなぁ……たしかに
 主任はボーッとしてるから、
 誘拐はしやすそうだけど。
-	そうかなぁ……たしかに
-	主任はボーッとしてるから、
-	誘拐はしやすそうだけど。
+	Hmm... She does space out a lot,
+	so kidnapping her wouldn't be too hard.
 
 でも、主任を誘拐しても……ねえ？
 それに、失踪するような
 繊細な人でもないし。
-	でも、主任を誘拐しても……ねえ？
-	それに、失踪するような
-	繊細な人でもないし。
+	But, once they've kidnapped her... then what?
+	And she's not the kind of person who'd
+	run away like that.
 
+## L:
 まあ、事件じゃないに
 越したことはないけど……
-	まあ、事件じゃないに
-	越したことはないけど……
+	Well, it's for the best if nothing
+	has happened to her.
 
+## Talking again {{{3
 わたし、主任は
 事件に巻きこまれたわけじゃ
 ないと思うな。
-	わたし、主任は
-	事件に巻きこまれたわけじゃ
-	ないと思うな。
+	Personally, I don't think anything
+	has happened to the Chief.
 
 ゆっくり朝寝坊できる場所にでも
 いるんじゃないかしら？
-	ゆっくり朝寝坊できる場所にでも
-	いるんじゃないかしら？
+	Maybe she just went somewhere
+	where she could sleep better?
 
 ## [10] Talking to Cecile {{{2
+## First time {{{3
+## C:
 あっ、ロイド！
 アーシュラ主任の捜索、
 受けてくれたのね？
-	あっ、ロイド！
-	アーシュラ主任の捜索、
-	受けてくれたのね？
+	Ah, Lloyd! You took on
+	the investigation into
+	Chief Ursuline?
 
+## L:
 うん、そうなんだ。
 まだ何もわかってないけど。
-	うん、そうなんだ。
-	まだ何もわかってないけど。
+	Yeah, but we haven't found anything yet.
 
+## C:
 そう……心配ね。
-	そう……心配ね。
+	I see... I'm a bit worried.
 
+## R:
 セシルさん、
 何か知ってることがあれば、
 教えてもらえないっスかね？
-	セシルさん、
-	何か知ってることがあれば、
-	教えてもらえないっスかね？
+	Cecile, if you have any ideas,
+	would you tell us?
 
+## C:
 そうね。
 最近の主任は、少し
 悩んでるようにも見えたかも。
-	そうね。
-	最近の主任は、少し
-	悩んでるようにも見えたかも。
+	Of course. Recently, she's looked
+	concerned about something.
 
+## L:
 悩んで……？
-	悩んで……？
+	Concerned...?
 
+## C:
 いつもノンビリしてる主任が、
 ここ数日は、ふさぎ込んでる
 ようにも見えたわ。
-	いつもノンビリしてる主任が、
-	ここ数日は、ふさぎ込んでる
-	ようにも見えたわ。
+	She's always so carefree, but she's
+	looked dispirited for a few days.
 
 主任のお仕事は
 医療機器の研究なんだけど、
 思うように進んでいないらしくて。
-	主任のお仕事は
-	医療機器の研究なんだけど、
-	思うように進んでいないらしくて。
+	Her job is to research medical equipment,
+	but it seems it's not going as she'd hoped.
 
 ゲイリー教授からも、
 早くレポートを提出しろと、
 言われていたみたいだし。
-	ゲイリー教授からも、
-	早くレポートを提出しろと、
-	言われていたみたいだし。
+	I hear Professor Gary has been telling
+	her to hurry up and send in a report, too.
 
+## E:
 思うように研究が進まなくて、
 それを苦に失踪した……
-	思うように研究が進まなくて、
-	それを苦に失踪した……
+	Dismayed that her research isn't
+	going well, she runs away...
 
 というセンも
 考えられるってことかしら。
-	というセンも
-	考えられるってことかしら。
+	That's one possible explanation, perhaps.
 
+## L:
 今の段階ではわからないけど……
 可能性のひとつとしては、
 考えられるかもしれない。
-	今の段階ではわからないけど……
-	可能性のひとつとしては、
-	考えられるかもしれない。
+	We can't say for sure at this point,
+	but it's one possibility to consider.
 
+## E:
 そうね。捜査を続けましょうか。
-	そうね。捜査を続けましょうか。
+	Right. Shall we continue the investigation?
 
+## Second time {{{3
+## C:
 アーシュラ主任、心配だわ……
 どうして失踪なんか
 したのかしら……
-	アーシュラ主任、心配だわ……
-	どうして失踪なんか
-	したのかしら……
+	I'm worried about the Chief...
+	Why did she run away...?
 
+## L:
 まだ、失踪と
 決まったわけじゃないよ、
 セシル姉……
-	まだ、失踪と
-	決まったわけじゃないよ、
-	セシル姉……
+	We don't know for sure yet that
+	she did run away, Cecile.
 
+## ... {{{2
 ここは、研究所か……
 部外者は入らない方が良さそうだな。
 別の場所を捜してみよう。
@@ -1842,6 +1851,9 @@
 	は、はひっ！
 	以後気をつけます！
 
+## t1540_1 {{{1
+## [50] Talking to Philia {{{2
+## (Unknown circumstances) {{{3
 やっぱり、わたしの思った
 通りでした。
 	やっぱり、わたしの思った
@@ -1852,101 +1864,106 @@
 	主任は、本探しの旅に
 	出ていたんですね～。
 
+## First time {{{3
+## Ph:
 あっ、ロイドさん。
 アーシュラ主任、
 もう見つかりましたか？
-	あっ、ロイドさん。
-	アーシュラ主任、
-	もう見つかりましたか？
+	Ah, Lloyd! Have you found
+	the Chief yet?
 
+## L:
 いえ、まだです。
 それで、
 情報を集めてるんですが……
-	いえ、まだです。
-	それで、
-	情報を集めてるんですが……
+	No, not yet. We're looking
+	for information right now.
 
+## R:
 何か、知ってることがあれば
 教えてくれないスか？
-	何か、知ってることがあれば
-	教えてくれないスか？
+	If there's anything you know,
+	can you tell us?
 
+## Ph:
 そうですね～。
 知ってること、知ってること……
-	そうですね～。
-	知ってること、知ってること……
+	Hmm~. Anything I know,
+	anything I know...
 
 あっ、そうだ！
-	あっ、そうだ！
+	Oh, I know!
 
+## L:
 何か知ってるんですか！？
-	何か知ってるんですか！？
+	Do you know something?
 
+## Ph:
 ええ。この前主任、
 こんなことを言ってました。
-	ええ。この前主任、
-	こんなことを言ってました。
+	Yup. She told me earlier:
 
 この病院には、最新機器は
 色々入ってくるけれど、
 本や資料の数がとても少ない……
-	この病院には、最新機器は
-	色々入ってくるけれど、
-	本や資料の数がとても少ない……
+	"There's a lot of the latest equipment here,
+	but there are hardly any books or research materials...
 
 調べものをしたくても、
 これじゃ全然研究が
 進まないーって。
-	調べものをしたくても、
-	これじゃ全然研究が
-	進まないーって。
+	"I wanted to do some research, but couldn't
+	make any progress at all."
+	That's what she said.
 
 だから、主任はきっと、
 本を探す旅に
 出たんじゃないんですかね？
-	だから、主任はきっと、
-	本を探す旅に
-	出たんじゃないんですかね？
+	So surely she's on a journey to
+	find books, don't you think?
 
+## T:
 ……とりあえず、本件とは
 あまり関係なさそうでは
 ありますが。
-	……とりあえず、本件とは
-	あまり関係なさそうでは
-	ありますが。
+	That doesn't seem to be
+	related to this case.
 
+## E:
 うーん、そうかも。
 あくまで可能性は、
 あるかもしれないけどね。
-	うーん、そうかも。
-	あくまで可能性は、
-	あるかもしれないけどね。
+	I'm not sure. It could
+	still be relevant.
 
+## L:
 ……本か。
-	……本か。
+	Books, huh?
 
+## E:
 ロイド、どうかした？
-	ロイド、どうかした？
+	Anything on your mind, Lloyd?
 
+## L:
 いや、何でもない。
 聞きこみを続けようか。
-	いや、何でもない。
-	聞きこみを続けようか。
+	No, it's nothing. Let's continue
+	the investigation.
 
+## Second time {{{3
 主任、病院内に所蔵されてる
 本の数が少ないーって
 嘆いてましたよ～。
-	主任、病院内に所蔵されてる
-	本の数が少ないーって
-	嘆いてましたよ～。
+	The Chief was complaining that there
+	weren't enough books at the hospital.
 
 だから、主任はきっと、
 本を探す旅に
 出たんじゃないんですかね？
-	だから、主任はきっと、
-	本を探す旅に
-	出たんじゃないんですかね？
+	So surely she's on a journey to
+	find books, don't you think?
 
+## {{{2
 というわけで、
 無事、アーシュラ主任を
 保護しました。

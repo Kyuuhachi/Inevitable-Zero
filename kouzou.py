@@ -17,9 +17,20 @@ NIL = NIL()
 
 
 class dotdict(dict):
-	__getattr__ = dict.__getitem__
-	__setattr__ = dict.__setitem__
-	__delattr__ = dict.__delitem__
+	def __getattr__(self, key):
+		try:
+			return self[key]
+		except KeyError:
+			raise AttributeError(key)
+
+	def __setattr__(self, key, value):
+		self[key] = value
+
+	def __delattr__(self, key):
+		try:
+			del self[key]
+		except KeyError:
+			raise AttributeError(key)
 
 
 class element:

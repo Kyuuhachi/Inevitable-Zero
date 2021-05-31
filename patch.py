@@ -2,6 +2,7 @@ import shutil
 from pathlib import Path
 import argparse
 from contextlib import contextmanager
+import pickle
 
 import kouzou
 import scena
@@ -12,7 +13,7 @@ from insn import Insn
 import translate
 
 class Context: # {{{1
-	def __init__(self, vitapath, pcpath, outpath, is_geofront=None):
+	def __init__(self, vitapath, pcpath, outpath, cachepath, is_geofront=None):
 		if is_geofront is None:
 			is_geofront = pcpath.name == "data_en"
 		self.is_geofront = is_geofront
@@ -28,6 +29,7 @@ class Context: # {{{1
 			self.pc_quests = kouzou.read(quest.questStruct, f)
 
 		self.outpath = outpath
+		self.cachepath = cachepath
 
 	def save(self):
 		with (self.outpath/"text/t_quest._dt").open("wb") as f:
@@ -38,23 +40,39 @@ class Context: # {{{1
 				params = { "_insns": insn.insn_zero_pc }
 				kouzou.write(scena.scenaStruct, f, script, params)
 
+	def _load(self, name, params, *, vita, transform):
+		path = self.vitapath if vita else self.pcpath
+		path = (path/"scena"/name).with_suffix(".bin")
+
+		if self.cachepath:
+			cachepath = self.cachepath/(name+"-v" if vita else name)
+			p = pickle.dumps(Path(insn.__file__).stat())
+			try:
+				p2, sc = pickle.loads(cachepath.read_bytes())
+				assert p2 == p
+				return sc
+			except Exception:
+				with path.open("rb") as f:
+					sc = kouzou.read(scena.scenaStruct, f, params)
+					sc = do_transform(sc, transform)
+				cachepath.write_bytes(pickle.dumps((p, sc)))
+				return sc
+
+		with path.open("rb") as f:
+			return kouzou.read(scena.scenaStruct, f, params)
+
 	def _get_vita(self, name):
 		if name not in self.vita_scripts:
-			with (self.vitapath/"scena"/name).with_suffix(".bin").open("rb") as f:
-				params = { "_insns": insn.insn_zero_vita }
-				self.vita_scripts[name] = kouzou.read(scena.scenaStruct, f, params)
+			params = { "_insns": insn.insn_zero_vita }
+			self.vita_scripts[name] = self._load(name, params, vita=True, transform=None)
 		return self.vita_scripts[name]
 
 	def _get_pc(self, name):
 		if name not in self.pc_scripts:
-			with (self.pcpath/"scena"/name).with_suffix(".bin").open("rb") as f:
-				params = { "_insns": insn.insn_zero_pc }
-				if self.is_geofront and name in scena.geofront_tweaks:
-					params["_geofront_tweaks"] = scena.geofront_tweaks[name]
-				self.pc_scripts[name] = do_transform(
-					kouzou.read(scena.scenaStruct, f, params),
-					{ "translate": True },
-				)
+			params = { "_insns": insn.insn_zero_pc }
+			if self.is_geofront and name in scena.geofront_tweaks:
+				params["_geofront_tweaks"] = scena.geofront_tweaks[name]
+			self.pc_scripts[name] = self._load(name, params, vita=False, transform={ "translate": True })
 		return self.pc_scripts[name]
 
 	def copy(self, name, translation=None):
@@ -644,6 +662,7 @@ def permute(tr, xs):
 	return xs
 
 def do_transform(obj, tr):
+	if not tr: return obj
 	if isinstance(obj, insn.Translate) and not getattr(obj, "translated", False):
 		if isinstance(tr.get("translate"), translate.BaseTranslator):
 			obj = type(obj)(tr["translate"].translate(obj))
@@ -677,8 +696,9 @@ argp.add_argument("pcpath", type=Path, help="Path to the PC data. This should li
 argp.add_argument("outpath", type=Path, help="Directory to place the patched files into. This should be merged into the data directory.")
 argp.add_argument("--minigame", action="store_true", help="Patches in dialogue for certain furniture in the headquarters. The minigames are not implemented, so it is simply a fade to black.")
 argp.add_argument("--no-misc", dest="misc", action="store_false", help="Include only the quests, and not the miscellaneous minor patches")
-argp.add_argument("--dump", dest="dumpdir", type=Path, help="Directory to place scenario dumps in, for all scenarios affected by the patch. Will be emptied.")
-def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir):
+argp.add_argument("-d", "--dump", dest="dumpdir", type=Path, help="Directory to place scenario dumps in, for all scenarios affected by the patch. Will be emptied.")
+argp.add_argument("-c", "--cache", dest="cachedir", type=Path, help="Directory to cache the parsed scenario files in, for performance.")
+def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir, cachedir):
 	if not vitapath.is_dir():
 		raise ValueError("vitapath must be a directory")
 	if not pcpath.is_dir():
@@ -690,7 +710,10 @@ def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir):
 	(outpath/"scena").mkdir()
 	(outpath/"text").mkdir()
 
-	ctx = Context(vitapath, pcpath, outpath)
+	if cachedir is not None and not cachedir.exists():
+		cachedir.mkdir(parents=True)
+
+	ctx = Context(vitapath, pcpath, outpath, cachedir)
 
 	if minigame:
 		patch_furniture_minigames(ctx)

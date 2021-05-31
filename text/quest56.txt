@@ -1,4 +1,4 @@
-## {{{1 Quest log
+## Quest log {{{1
 寝坊医者の捜索願い
 	Search for the Oversleeping Doctor
 
@@ -27,7 +27,7 @@
 	　sleeping in late, but it's past noon
 	　and she still hasn't reported in.
 	　
-	　Malone, who usually wakes her up, checked
+	　Marone, who usually wakes her up, checked
 	　in the dorms, but there was nobody in her
 	　room.
 	　
@@ -36,10 +36,10 @@
 	　rumors that she's been troubled about
 	　something lately...
 	　
-	　主任を探してくれないかい？
-	　詳しくは、聖ウルスラ医科大学２階の
-	　ナースステーションにいる
-	　師長マーサまでお願いするよ。
+	　Anyway, just in case... you know. Could you
+	　help search for our wayward chief? For details,
+	　ask for Head Nurse Martha at the Nurse Station,
+	　Saint Ursula Medical Hospital second floor.
 
 ★遅刻が日常茶飯事のアーシュラ主任が、
 　どこにも見当たらないという。　　　　
@@ -208,8 +208,8 @@
 	★無事、アーシュラ主任を保護した。　　
 	　長い旅路だった……　　　　　　　　　
 
-## {{{1
-## [?] Talking to Martha {{{2
+## t1500_1 Main content {{{1
+## [0] Talking to Martha {{{2
 ## if first time {{{3
 ## M:
 まったく……
@@ -243,7 +243,8 @@
 ## L:
 ええと、そのアーシュラ主任が
 失踪したということですが。
-	So, this Chief Ursuline has gone missing.
+	So, I heard your Chief Ursuline
+	has gone missing.
 
 ## E:
 詳しい話を、聞かせて
@@ -254,14 +255,15 @@
 そうなんだよ。
 ただの遅刻なら毎日のことだし
 何も問題なかったんだけど……
-	Yes. If it was just that she was late
+	Of course. If it was just that she was late
 	like always it wouldn't be a problem...
 
 ## R:
 毎日遅刻ってのは、
 それはそれで問題だと
 思うがな……
-	Being late every day is bad enough on its own, I'd think.
+	Being late every day is bad
+	enough on its own, I'd think.
 
 ## T:
 ランディさんがそれを言っても、
@@ -272,7 +274,7 @@
 それで、マローネが
 寮まで様子を見に
 行ったんだけど……
-	But when Malone went to check on
+	But when Marone went to check on
 	her in the dormitory...
 
 ## L:
@@ -292,13 +294,14 @@
 病院内のどこを探しても
 いないってのは奇妙だろう？
 	We've looked everywhere in the hospital,
-	but she's nowhere to be found.
-	Strange, huh?
+	but she's nowhere to be found. Strange,
+	huh?
 
 ## E:
 何か、書き置きみたいなものは
 ありませんでしたか？
-	She didn't leave a note behind or anything?
+	She didn't leave a note
+	behind or anything?
 
 ## M:
 いやぁ、特になかったね。
@@ -308,9 +311,8 @@
 少し前から、主任が
 思い悩んでいた姿を見たって
 看護師もいるね。
-	One of the nurses thought
-	she looked a bit troubled
-	a little while ago.
+	One of the nurses said she looked
+	a bit troubled a little while ago.
 
 ## L:
 つまり、何らかのトラブルを
@@ -323,9 +325,8 @@
 そこまではわからないよ。
 少なくともあたしには、
 そんな風には見えなかったからね。
-	I don't know about that.
-	At least I didn't notice
-	anything like that.
+	I don't know about that. I didn't notice
+	anything, for what it's worth.
 
 ただ、そういうことも
 あるかもしれない。
@@ -334,7 +335,7 @@
 とにかく、もし事件に
 巻きこまれてたら大変だし、
 何とか主任を捜してくれないかね？
-	Anyway, it would be bad if something did
+	Still, it would be bad if something did
 	happen to her, so could you help us
 	search for her?
 
@@ -342,7 +343,8 @@
 ## M:
 おや、特務ナントカの
 連中じゃないか。
-	Oh, it's the Special Support Something people.
+	Oh, it's the Special Support
+	Something people.
 
 気が変わって、ウチの主任捜しを
 手伝ってくれる気になったのかい？
@@ -350,6 +352,7 @@
 	on our search for the chief?
 ### }}}3
 
+## [1] (cont.) {{{2
 【引き受ける】
 	[Accept]
 
@@ -385,72 +388,75 @@
 ## M:
 そうかい。
 だったら仕方ないね。
-	Oh, I see. Nothing I
-	can do about that.
+	Oh, I see. I guess that can't be helped.
 
 ま、主任の方は、あたしたちで
 探してみるよ。
-	I guess we'll keep searching.
+	I suppose we'll have to keep looking
+	on our own.
 
 もしかしたら、病院の外まで
 散歩に出てるだけかもしれないしね。
 	Who knows, maybe she's just
 	taking a walk outside the hospital.
 
-
-## {{{2
+## after accepting {{{3
+## M:
 そうそう。ここの看護師や、
 医師たちに話を聞いてみると
 いいかもね。
-	そうそう。ここの看護師や、
-	医師たちに話を聞いてみると
-	いいかもね。
+	Maybe you could start by
+	talking to the other nurses
+	and doctors here.
 
 あたしが知らないことも、
 もしかしたら知ってる人が
 いるかもしれないし。
-	あたしが知らないことも、
-	もしかしたら知ってる人が
-	いるかもしれないし。
+	There may be someone who knows
+	some details I don't.
 
+## L:
 わかりました。
-	わかりました。
+	Understood.
 
 じゃあみんな、まずは
 聞きこみからはじめよう。
-	じゃあみんな、まずは
-	聞きこみからはじめよう。
+	Right everybody, let's
+	start by asking any witnesses.
 
+## R:
 了解。捜査の基本だな。
-	了解。捜査の基本だな。
+	Got it. The basics of any
+	investigation.
 
+## [3] Talking to Martha again {{{2
+## First time {{{3
 最初に主任の失踪に
 気がついたのは
 マローネだよ。
-	最初に主任の失踪に
-	気がついたのは
-	マローネだよ。
+	The first to notice that
+	the Chief was missing was Marone.
 
 毎日寝坊する主任を
 起こすのが、あの子の日課なんだ
-	毎日寝坊する主任を
-	起こすのが、あの子の日課なんだ
+	The Chief always oversleeps, so
+	Marone wakes her up every day.
 
 もしかしたら、あの子が何か
 知ってるかもしれないねぇ……
-	もしかしたら、あの子が何か
-	知ってるかもしれないねぇ……
+	Maybe she knows something.
 
+## Again {{{3
 毎日寝坊する主任を
 起こすのが、あの子の日課なんだ
-	毎日寝坊する主任を
-	起こすのが、あの子の日課なんだ
+	The Chief always oversleeps, so
+	Marone wakes her up every day.
 
 もしかしたら、あの子が何か
 知ってるかもしれないねぇ……
-	もしかしたら、あの子が何か
-	知ってるかもしれないねぇ……
+	Maybe she knows something.
 
+## [4] {{{2
 アーシュラ主任は、
 本当に毎日、寝坊するんです
 	アーシュラ主任は、
@@ -747,6 +753,7 @@
 	ゆっくり朝寝坊できる場所にでも
 	いるんじゃないかしら？
 
+## [10] Talking to Cecile {{{2
 あっ、ロイド！
 アーシュラ主任の捜索、
 受けてくれたのね？

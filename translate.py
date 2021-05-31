@@ -10,6 +10,7 @@ class BaseTranslator:
 	def __init__(self):
 		self.pos = 0
 		self.lines = []
+		self.lastExpect = object()
 
 	def translate(self, string):
 		if not string.strip():
@@ -27,15 +28,26 @@ class BaseTranslator:
 
 	def _translate(self, string):
 		a, b = self.lines[self.pos]
-		self.pos += 1
-		assert a == string, (a, string)
-		return b
+		if a == string:
+			self.pos += 1
+			return b
+		else:
+			if a is not self.lastExpect:
+				print(f"Expected {a!r}")
+				self.lastExpect = a
+			print(string)
+			print("\n".join("\t"+x for x in string.splitlines()))
+			print()
+			return string
+
+	def __repr__(self):
+		return f"{type(self).__name__}({self.pos} out of {len(self.lines)})"
 
 
 class translator(BaseTranslator):
 	def __init__(self, name):
 		super().__init__()
-		self.lines = self.load((PATH / name).with_suffix(".txt").read_text())
+		self.lines = self.load((PATH / name).with_suffix(".txt").read_text()) + [(None, None)]
 
 	@staticmethod
 	def load(text):
@@ -53,8 +65,9 @@ class translator(BaseTranslator):
 		return [("\n".join(a), "\n".join(b)) for a, b in lines]
 
 class null_translator(BaseTranslator):
-	def _translate(self, string):
-		raise ValueError("This shouldn't have anything to translate")
+	def __init__(self):
+		super().__init__()
+		self.lines = [(None, None)]
 
 class dump_translator(BaseTranslator):
 	def __init__(self, name):

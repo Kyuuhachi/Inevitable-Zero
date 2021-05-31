@@ -77,6 +77,7 @@ class Context: # {{{1
 
 	def copy(self, name, translation=None):
 		assert not (self.pcpath/name).with_suffix(".bin").exists()
+		assert name not in self.pc_scripts
 		self.pc_scripts[name] = self._get_vita(name)
 		self._do_translate(name, translation)
 
@@ -194,7 +195,7 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 	ctx.copy_quest(55, tr)
 
 	# Mishelam, first area
-	with ctx.get("t1000") as (vita, pc):
+	with ctx.get("t1000", tr) as (vita, pc):
 		pc.includes = vita.includes
 		pc.chcp = vita.chcp
 		vita = transform_funcs(vita, {
@@ -207,7 +208,7 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 		copy_clause(vita, pc, 1, 1) # Add Tourist
 
 	# Mishelam, second area area
-	with ctx.get("t1010") as (vita, pc):
+	with ctx.get("t1010", tr) as (vita, pc):
 		pc.includes = vita.includes
 		pc.chcp = vita.chcp
 		vita = transform_npcs(vita, {
@@ -218,7 +219,7 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 		pc.code[4][-3:-1] = vita.code[4][-2:-1] # Add Mishy
 
 	# Mishelam, third area
-	with ctx.get("t1020") as (vita, pc):
+	with ctx.get("t1020", tr) as (vita, pc):
 		pc.includes = vita.includes
 		vita = transform_funcs(vita, {
 			13: copy(pc.code, vita.code[13]),
@@ -260,97 +261,22 @@ def quest56(ctx): # {{{1 Search for the Oversleeping Doctor
 	tr = translate.translator("quest56")
 	ctx.copy_quest(56, tr)
 
-	# Station Street
-	with ctx.get("c0000") as (vita, pc):
-		pc.includes = vita.includes
-		vita = transform_funcs(vita, {
-			55: copy(pc.code, vita.code[55]),
-			60: copy(pc.code, vita.code[60]),
-		}, include=0)
-		# Talking to Lyd
-		copy_condition(vita, pc, 6, "@IF", [Insn('FLAG', 1055), Insn('END')], 0)
-		copy_clause(vita, pc, 6, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-
-	## I don't think this has any effect
-	# with ctx.get("c0100") as (vita, pc):
-	# 	pc.includes = vita.includes
-
-	# Central Square
-	with ctx.get("c0100_1") as (vita, pc):
-		# Talking to Kate
-		copy_clause(vita, pc, 8, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 8, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-
-	# Administrative District
-	with ctx.get("c1100") as (vita, pc):
-		pc.includes = vita.includes
-		# Talking to Chroma
-		copy_clause(vita, pc, 5, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_condition(vita, pc, 5, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1040), Insn('END')], 0)
-
-	# Library
-	with ctx.get("c1130") as (vita, pc):
-		# This script is very different in the Geofront version, due to realphabetization
-		pc.includes = vita.includes
-		pc.chcp = vita.chcp
-		vita = transform_funcs(vita, {
-			2: copy(pc.code, vita.code[2]),
-			56: copy(pc.code, vita.code[56]),
-		}, include=0)
-		# Add Ursuline
-		vita = transform_npcs(vita, {
-			11: copy(pc.npcs, vita.npcs[11]),
-		})
-		copy_clause(vita, pc, 2, "@IF:0", [Insn('FLAG', 1055), Insn('END')], -1)
-		copy_clause(vita, pc, 2, "@IF:0", [Insn('FLAG', 1040), Insn('END')], -1)
-		copy_clause(vita, pc, 3, 0)
-		# Talking to Miles
-		copy_clause(vita, pc, 14, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 14, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-
-	# Harbor District
-	with ctx.get("c1200") as (vita, pc):
-		pc.includes = vita.includes
-		vita = transform_funcs(vita, {
-			59: copy(pc.code, vita.code[59]),
-			60: copy(pc.code, vita.code[60]),
-		}, include=0)
-		# Talking to Cunha
-		copy_clause(vita, pc, 12, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 12, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-		# Talking to Ozelle
-		copy_clause(vita, pc, 13, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 13, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-		# Talking to Quine
-		copy_condition(vita, pc, 16, "@IF:0", [Insn('FLAG', 1055), Insn('END')], 0)
-		copy_condition(vita, pc, 16, "@IF:0", [Insn('FLAG', 1040), Insn('END')], 0)
-
-	# Trinity
-	with ctx.get("c1410") as (vita, pc):
-		pc.includes = vita.includes
-		# Talk to Wazy
-		copy_clause(vita, pc, 6, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 6, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-		# Talk to Azel
-		copy_clause(vita, pc, 34, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
-		copy_clause(vita, pc, 34, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
-
 	# St. Ursula Medical College
 	with ctx.get("t1500") as (vita, pc):
 		pc.includes = vita.includes
 		pc.triggers.append(vita.triggers[5])
 
-		# # Entering
-		# vita_, pc_ = get(vita, pc, "code", 4, "@IF:1", [Insn('FLAG', 1040), Insn('END')])
-		# pc_[1:1] = vita_[1:2]
+		# Entering
+		vita_, pc_ = get(vita, pc, "code", 4, "@IF:1", [Insn('FLAG', 1040), Insn('END')])
+		pc_[1:1] = vita_[1:2]
 
-		# # Trying to leave
-		# pc.code[5].insert(6, vita.code[5][9]) # This is way too fragile
-		# pc.code[5].insert(12, vita.code[5][15])
-		# pc.code[5].insert(-5, vita.code[5][-6])
+		# Trying to leave
+		pc.code[5].insert(6, vita.code[5][9]) # This is way too fragile
+		pc.code[5].insert(12, vita.code[5][15])
+		pc.code[5].insert(-5, vita.code[5][-6])
 
-		# # Talking to Tony
-		# copy_condition(vita, pc, 6, "@IF", [Insn('FLAG', 1040), Insn('END')], 0)
+		# Talking to Tony
+		copy_condition(vita, pc, 6, "@IF", [Insn('FLAG', 1040), Insn('END')], 0)
 
 		# Bus stop
 		copy_clause(vita, pc, 32, "@IF", 0, 0)
@@ -384,29 +310,20 @@ def quest56(ctx): # {{{1 Search for the Oversleeping Doctor
 			80: copy(pc.code, vita.code[80]),
 			81: copy(pc.code, vita.code[81]),
 		})
-		copy_clause(vita, pc, 1, "@IF", None, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0) # Talking to Sara
+		copy_clause(vita, pc, 1, "@IF", None, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0) # Talking to Philia
 		copy_clause(vita, pc, 3, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0) # Talking to Clark
 		copy_clause(vita, pc, 10, -4, [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0) # Talking to Gary
 		copy_condition(vita, pc, 13, "@IF", [Insn('FLAG', 1040), Insn('END')], 0) # Talking to Chaleur
 		copy_clause(vita, pc, 17, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0) # Talking to Ursuline
 
 	# Nurse station
-	with ctx.get("t1540") as (vita, pc):
+	with ctx.get("t1540", tr) as (vita, pc):
 		pc.includes = vita.includes
 		vita = transform_npcs(vita, {
 			41: copy(pc.npcs, vita.npcs[41]),
 			42: copy(pc.npcs, vita.npcs[42]),
 		})
 		copy_clause(vita, pc, 1, "@IF:-1", 0, 3)
-
-		# Copy the names of Ursuline and Gary
-		with ctx.get("t1530") as (vita2, pc2):
-			for npc in pc.npcs[-2:]:
-				[npc.name] = {
-					npc2.name
-					for npc1, npc2 in zip(vita2.npcs, pc2.npcs)
-					if npc1.name == npc.name
-				}
 
 	# -''-
 	with ctx.get("t1540_1", tr) as (vita, pc):
@@ -428,11 +345,86 @@ def quest56(ctx): # {{{1 Search for the Oversleeping Doctor
 		copy_clause(vita, pc, 14, "@IF", 0, 1) # Outside Research Ward
 
 	# Bus
-	with ctx.get("e0010") as (vita, pc):
+	with ctx.get("e0010", tr) as (vita, pc):
 		vita = transform_funcs(vita, {
 			19: copy(pc.code, vita.code[19]),
 		}, include=0)
 		copy_clause(vita, pc, 0, "@IF", 0, -1)
+
+	# Station Street
+	with ctx.get("c0000", tr) as (vita, pc):
+		pc.includes = vita.includes
+		vita = transform_funcs(vita, {
+			55: copy(pc.code, vita.code[55]),
+			60: copy(pc.code, vita.code[60]),
+		}, include=0)
+		# Talking to Lyd
+		copy_condition(vita, pc, 6, "@IF", [Insn('FLAG', 1055), Insn('END')], 0)
+		copy_clause(vita, pc, 6, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
+
+	## I don't think this has any effect
+	# with ctx.get("c0100") as (vita, pc):
+	# 	pc.includes = vita.includes
+
+	# Central Square
+	with ctx.get("c0100_1") as (vita, pc):
+		# Talking to Kate
+		copy_clause(vita, pc, 8, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 8, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
+
+	# Administrative District
+	with ctx.get("c1100") as (vita, pc):
+		pc.includes = vita.includes
+		# Talking to Chroma
+		copy_clause(vita, pc, 5, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_condition(vita, pc, 5, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1040), Insn('END')], 0)
+
+	# Library
+	with ctx.get("c1130", tr) as (vita, pc):
+		# This script is very different in the Geofront version, due to realphabetization
+		pc.includes = vita.includes
+		pc.chcp = vita.chcp
+		vita = transform_funcs(vita, {
+			2: copy(pc.code, vita.code[2]),
+			56: copy(pc.code, vita.code[56]),
+		}, include=0)
+		# Add Ursuline
+		vita = transform_npcs(vita, {
+			11: copy(pc.npcs, vita.npcs[11]),
+		})
+		copy_clause(vita, pc, 2, "@IF:0", [Insn('FLAG', 1055), Insn('END')], -1)
+		copy_clause(vita, pc, 2, "@IF:0", [Insn('FLAG', 1040), Insn('END')], -1)
+		copy_clause(vita, pc, 3, 0)
+		# Talking to Miles
+		copy_clause(vita, pc, 14, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 14, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
+
+	# Harbor District
+	with ctx.get("c1200", tr) as (vita, pc):
+		pc.includes = vita.includes
+		vita = transform_funcs(vita, {
+			59: copy(pc.code, vita.code[59]),
+			60: copy(pc.code, vita.code[60]),
+		}, include=0)
+		# Talking to Cunha
+		copy_clause(vita, pc, 12, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 12, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
+		# Talking to Ozelle
+		copy_clause(vita, pc, 13, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 13, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
+		# Talking to Quine
+		copy_condition(vita, pc, 16, "@IF:0", [Insn('FLAG', 1055), Insn('END')], 0)
+		copy_condition(vita, pc, 16, "@IF:0", [Insn('FLAG', 1040), Insn('END')], 0)
+
+	# Trinity
+	with ctx.get("c1410") as (vita, pc):
+		pc.includes = vita.includes
+		# Talk to Wazy
+		copy_clause(vita, pc, 6, "@IF:1", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 6, "@IF:1", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
+		# Talk to Azel
+		copy_clause(vita, pc, 34, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
+		copy_clause(vita, pc, 34, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
 
 def quest57(ctx): # {{{1 Guest Lecturer for Sunday School (Continued)
 	tr = translate.translator("quest57")
@@ -666,8 +658,7 @@ def do_transform(obj, tr):
 	if isinstance(obj, insn.Translate) and not getattr(obj, "translated", False):
 		if isinstance(tr.get("translate"), translate.BaseTranslator):
 			obj = type(obj)(tr["translate"].translate(obj))
-		obj.translated = True
-		return obj
+			obj.translated = True
 
 	if isinstance(obj, Insn):
 		obj.args = do_transform(obj.args, tr)
@@ -716,21 +707,31 @@ def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir, cachedir):
 	ctx = Context(vitapath, pcpath, outpath, cachedir)
 
 	if minigame:
+		print("furniture_minigames")
 		patch_furniture_minigames(ctx)
 
+	print("timing")
 	patch_timing(ctx)
+	print("quest54")
 	quest54(ctx)
+	print("quest55")
 	quest55(ctx)
+	print("quest56")
 	quest56(ctx)
+	print("quest57")
 	quest57(ctx)
+	print("quest58")
 	quest58(ctx)
 
 	if misc:
+		print("misc")
 		patch_misc(ctx)
 
+	print("save")
 	ctx.save()
 
 	if dumpdir is not None:
+		print("dump")
 		if dumpdir.exists():
 			shutil.rmtree(dumpdir)
 		dumpdir.mkdir(parents=True)

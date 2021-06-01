@@ -27,7 +27,7 @@
 	　sleeping in late, but it's past noon
 	　and she still hasn't reported in.
 	　
-	　Marone, who usually wakes her up, checked
+	　Marone, who always wakes her up, checked
 	　in the dorms, but there was nobody in her
 	　room.
 	　
@@ -67,30 +67,29 @@
 ★マローネさんの話では、　　　　　　　
 　自分が起こす前に主任が起きることは　
 　ありえないと言うが……　　　　　　　
-	★マローネさんの話では、　　　　　　　
-	　自分が起こす前に主任が起きることは　
-	　ありえないと言うが……　　　　　　　
+	★Marone says that it's impossible for
+	　Ursuline to have woken up before her.
 
 ★シャルールさんの話では、主任は毎日　
 　ゲイリー教授に怒られていたようだ。　
 　姿を消してしまった原因だろうか？　　
-	★シャルールさんの話では、主任は毎日　
-	　ゲイリー教授に怒られていたようだ。　
-	　姿を消してしまった原因だろうか？　　
+	★Chaleur says that she's been getting
+	　scolded by Professor Gary on a
+	　daily basis. Maybe she got fed up?
 
 ★ゲイリー教授は困っているものの、　　
 　あまり心配はしていないようだ。　　　
-	★ゲイリー教授は困っているものの、　　
-	　あまり心配はしていないようだ。　　　
+	★Professor Gary was annoyed, but
+	　did not seem particularly worried.
 
 ★グェンさんは、主任から　　　　　　　
 　「この病院にいても解決しない」　　　
 　という悩みの話を聞いたという。　　　
 　やはり病院にはいないのだろうか？　　
-	★グェンさんは、主任から　　　　　　　
-	　「この病院にいても解決しない」　　　
-	　という悩みの話を聞いたという。　　　
-	　やはり病院にはいないのだろうか？　　
+	★Gwen said she had mentioned some
+	　problem that can't be solved at
+	　the hospital. Is she really not
+	　at the hospital?
 
 ★フィリアさんは、主任が資料本を　　　
 　探しに出かけたのではと言う。　　　　
@@ -103,10 +102,9 @@
 　知らなかったようだ。　　　　　　　　
 　知って安心するのは、　　　　　　　　
 　何か違うような気がするけど……　　　
-	★シロンさんは、主任が失踪したことを　
-	　知らなかったようだ。　　　　　　　　
-	　知って安心するのは、　　　　　　　　
-	　何か違うような気がするけど……　　　
+	★Chiron didn't know she had
+	　disappeared. She seemed relieved
+	　to know, strangely enough.
 
 ★メイファさんは、主任が　　　　　　　
 　朝寝坊したいがために失踪したのでは　
@@ -124,23 +122,23 @@
 ★セラさんは朝７時から受付にいたが、　
 　主任の姿は見ていないという。　　　　
 　もしもその前に通ったとすると……　　
-	★セラさんは朝７時から受付にいたが、　
-	　主任の姿は見ていないという。　　　　
-	　もしもその前に通ったとすると……　　
+	★Sera has been manning the reception
+	　since 7 o'clock, and not seen
+	　Ursuline. Maybe she passed through
+	　before that...
 
 ★やはり、主任は病院から出たと見て　　
 　間違いないようだ。　　　　　　　　　
 　警備の人が目撃していないだろうか？　
-	★やはり、主任は病院から出たと見て　　
-	　間違いないようだ。　　　　　　　　　
-	　警備の人が目撃していないだろうか？　
+	★It seems that she's not inside
+	　after all. Maybe the guard's seen
+	　something?
 
 ★主任がバスに乗るのを警備員が　　　　
 　目撃していた！　　　　　　　　　　　
 　クロスベルに急ごう。　　　　　　　　
-	★主任がバスに乗るのを警備員が　　　　
-	　目撃していた！　　　　　　　　　　　
-	　クロスベルに急ごう。　　　　　　　　
+	★The guard saw Ursuline getting on
+	　the bus! Let's head to the city.
 
 ★誰か主任を見ていないか、　　　　　　
 　クロスベルの各方面で聞き込みしよう。
@@ -454,239 +452,253 @@
 知ってるかもしれないねぇ……
 	Maybe she knows something.
 
-## [4...] {{{2
+## [4] Talking to Marone {{{2
+## First time {{{3
+## M:
 アーシュラ主任は、
 本当に毎日、寝坊するんです
-	アーシュラ主任は、
-	本当に毎日、寝坊するんです
+	Chief Ursuline really oversleeps
+	every single day.
 
 だから、毎日起こしに行くのが
 わたしの仕事なんです。
-	だから、毎日起こしに行くのが
-	わたしの仕事なんです。
+	So it's my job to wake her up
+	every day.
 
 だから、断言しちゃいます。
 あのアーシュラ主任が早起きする
 なんて、絶対にあり得ません！
-	だから、断言しちゃいます。
-	あのアーシュラ主任が早起きする
-	なんて、絶対にあり得ません！
+	So I can firmly state that
+	there's no way she could have
+	woken up early!
 
 間違いありません。
 主任はきっと、事件かなんかに
 巻きこまれたんですよ！
-	間違いありません。
-	主任はきっと、事件かなんかに
-	巻きこまれたんですよ！
+	There's no doubt. She must
+	have gotten into an accident
+	or something!
 
+## L:
 事件かなんかって……
-	事件かなんかって……
+	An accident or something...?
 
+## Again {{{3
+## M:
 あのアーシュラ主任が
 早起きするなんて、
 絶対に考えられません！
-	あのアーシュラ主任が
-	早起きするなんて、
-	絶対に考えられません！
+	That Ursuline, there's no
+	way she could have woken up
+	early!
 
 間違いありません。
 主任はきっと、事件かなんかに
 巻きこまれたんですよ！
-	間違いありません。
-	主任はきっと、事件かなんかに
-	巻きこまれたんですよ！
+	There's no doubt. She must
+	have gotten into an accident
+	or something!
 
+## [5] Talking to Chaleur {{{2
+## First time {{{3
+## Ch:
 アーシュラ先輩、
 どこに行っちゃったんだろう……
-	アーシュラ先輩、
-	どこに行っちゃったんだろう……
+	Chief Ursuline, where did you go... ## Not sure how to translate senpai...
 
 もしかして、ゲイリー教授に
 毎日クドクド怒られて、
 嫌気が差したのかな……
-	もしかして、ゲイリー教授に
-	毎日クドクド怒られて、
-	嫌気が差したのかな……
+	Maybe she got sick of getting scolded
+	by Professor Gary day after day...?
 
+## T:
 そんなに毎日、
 怒られていたんですか？
-	そんなに毎日、
-	怒られていたんですか？
+	Did she really get scolded so much?
 
+## Ch:
 ああ。いつまでも
 学生気分でいるんじゃない！
 ってね。
-	ああ。いつまでも
-	学生気分でいるんじゃない！
-	ってね。
+	Yeah. "You can't stay a student
+	forever," things like that.
 
 先輩もひょうひょうとした
 人だから、怒られても
 ケロッとしてたけれど……
-	先輩もひょうひょうとした
-	人だから、怒られても
-	ケロッとしてたけれど……
+	She's rather aloof, so the reprimands
+	just go in one ear and out the other...
 
 もしかしたら、内心
 傷ついていたのかもしれないな。
-	もしかしたら、内心
-	傷ついていたのかもしれないな。
+	But maybe she did take offense inwardly.
 
+## Again {{{3
 アーシュラ先輩、
 ゲイリー教授に怒られて、
 研究に嫌気が差したのかもしれない。
-	アーシュラ先輩、
-	ゲイリー教授に怒られて、
-	研究に嫌気が差したのかもしれない。
+	Maybe she got sick of her research
+	after getting scolded by Professor Gary.
 
 先輩もひょうひょうとした
 人だから、怒られても
 ケロッとしてたけれど……
-	先輩もひょうひょうとした
-	人だから、怒られても
-	ケロッとしてたけれど……
+	She's rather aloof, so the reprimands
+	just go in one ear and out the other...
 
 もしかしたら、内心
 傷ついていたのかもしれないな。
-	もしかしたら、内心
-	傷ついていたのかもしれないな。
+	But maybe she did take offense inwardly.
 
+## [6] Talking to Gary {{{2
+## First time {{{3
+## G:
 まったく、アーシュラ君には
 困ったものだよ。
-	まったく、アーシュラ君には
-	困ったものだよ。
+	Good grief, that Chief is just trouble.
 
 何も、こんなに忙しい時期に
 失踪しなくてもいいじゃないか。
-	何も、こんなに忙しい時期に
-	失踪しなくてもいいじゃないか。
+	If only she didn't choose such
+	a busy time to disappear.
 
+## L:
 いえ、もし事件だとしたら、
 巻きこまれたくて巻きこまれた
 わけではないと思いますが……
-	いえ、もし事件だとしたら、
-	巻きこまれたくて巻きこまれた
-	わけではないと思いますが……
+	Even if she got into an accident,
+	I don't think she would do it on purpose.
 
+## Again {{{3
 主任になってそれなりに
 長いはずなのに、未だに
 学生気分が抜けていない。
-	主任になってそれなりに
-	長いはずなのに、未だに
-	学生気分が抜けていない。
+	She's been the chief for quite
+	some time now, but she's still
+	as rambunctious as any student.
 
 まったく、アーシュラ君には
 困ったものだよ。
-	まったく、アーシュラ君には
-	困ったものだよ。
+	Good grief, that Chief is just trouble.
 
+## [7] Talking to Gwen {{{2
+## First time {{{3
+## G:
 アーシュラ主任……
 そういえば、悩みがあるって
 言ってたような気がするわ。
-	アーシュラ主任……
-	そういえば、悩みがあるって
-	言ってたような気がするわ。
+	Chief Ursuline... Now that you
+	mention it, she said she was
+	troubled by something.
 
+## L:
 悩み、ですか？
-	悩み、ですか？
+	Troubled?
 
+## E:
 どんな悩みか、わかりますか？
-	どんな悩みか、わかりますか？
+	Do you know what sort of trouble?
 
+## G:
 さあ、そこまでは……
-	さあ、そこまでは……
+	Well, only a bit.
 
 ただ、この病院にいても
 解決しない悩みだーって、
 言ってたかな。
-	ただ、この病院にいても
-	解決しない悩みだーって、
-	言ってたかな。
+	She said it's a problem that
+	can't be solved at the hospital.
 
+## T:
 もしかしたら、今回の失踪事件に
 関係あるかもしれませんね。
-	もしかしたら、今回の失踪事件に
-	関係あるかもしれませんね。
+	This may be related to the case.
 
+## Again {{{3
 アーシュラ主任、
 悩みがあるって
 言ってたような気がするの。
-	アーシュラ主任、
-	悩みがあるって
-	言ってたような気がするの。
+	I think she said she was
+	troubled by something.
 
 それがどんな悩みかまでは、
 知らないけどね。
-	それがどんな悩みかまでは、
-	知らないけどね。
+	But I don't know what sort of problem.
 
+## [8] Talking to Chiron {{{2
+## First time {{{3
+## Ch:
 あ、ロイドさん、大変です！
 アーシュラ主任の姿が、
 どこにも見当たらないんです～！
-	あ、ロイドさん、大変です！
-	アーシュラ主任の姿が、
-	どこにも見当たらないんです～！
+	Lloyd, we've got a problem!
+	Nobody's seen hide nor hair of
+	Chief Ursuline!
 
 主任、また寝坊したって
 本当なんでしょうかぁ！？
-	主任、また寝坊したって
-	本当なんでしょうかぁ！？
+	Is it true that she's
+	oversleeping again!?
 
+## L:
 い、いやぁ、どうだろう。
 ていうかそれ、驚く所？
-	い、いやぁ、どうだろう。
-	ていうかそれ、驚く所？
+	W-well, we don't know.
+	Wait, is that surprising?
 
+## Ch:
 あれ、ホントだ。
 主任が寝坊なんて、
 いつものことですよね～。
-	あれ、ホントだ。
-	主任が寝坊なんて、
-	いつものことですよね～。
+	Huh, that's true. The chief
+	is always oversleeping, isn't she~?
 
 あれれ、だったら事件って何？
 みんなが騒いでたけど。
-	あれれ、だったら事件って何？
-	みんなが騒いでたけど。
+	But wait, then what's the problem?
+	Why is everyone panicking?
 
+## R:
 今朝から、アーシュラ主任の姿が
 どこにもないから捜してくれって
 依頼を受けたんだ。
-	今朝から、アーシュラ主任の姿が
-	どこにもないから捜してくれって
-	依頼を受けたんだ。
+	Nobody's seen her this morning,
+	so we got a Support Request to
+	look for her.
 
+## T:
 失踪、もしくは事件に
 巻きこまれた可能性もあるかと。
-	失踪、もしくは事件に
-	巻きこまれた可能性もあるかと。
+	It is possible that she has ran away,
+	or gotten involved in an accident.
 
+## Ch:
 ああー、なるほど！
 そういうことだったんですね！
-	ああー、なるほど！
-	そういうことだったんですね！
+	Oh, I see! So that's what's
+	going on!
 
 朝から、みんなが
 大騒ぎしてた理由が、
 やっとわかりました～！
-	朝から、みんなが
-	大騒ぎしてた理由が、
-	やっとわかりました～！
+	I finally understand what everyone's
+	been making such a fuss about~!
 
+## R:
 シロンちゃんて
 もしかして……天然？
-	シロンちゃんて
-	もしかして……天然？
+	Chiron, are you... an airhead?
 
+## Again {{{3
 朝から、みんなが
 大騒ぎしてた理由が、
 やっとわかりました～！
-	朝から、みんなが
-	大騒ぎしてた理由が、
-	やっとわかりました～！
+	I finally understand what everyone's
+	been making such a fuss about~!
 
 うふっ、よかったです～。
-	うふっ、よかったです～。
+	Ufu, I'm so glad~.
 
 ## [9] Talking to Meifa {{{2
 ## First time {{{3
@@ -745,7 +757,7 @@
 	Well, it's for the best if nothing
 	has happened to her.
 
-## Talking again {{{3
+## Again {{{3
 わたし、主任は
 事件に巻きこまれたわけじゃ
 ないと思うな。
@@ -834,7 +846,7 @@
 そうね。捜査を続けましょうか。
 	Right. Shall we continue the investigation?
 
-## Second time {{{3
+## Again {{{3
 ## C:
 アーシュラ主任、心配だわ……
 どうして失踪なんか
@@ -849,148 +861,165 @@
 	We don't know for sure yet that
 	she did run away, Cecile.
 
-## ... {{{2
+## [11] Research Ward {{{2
 ここは、研究所か……
 部外者は入らない方が良さそうだな。
 別の場所を捜してみよう。
-	ここは、研究所か……
-	部外者は入らない方が良さそうだな。
-	別の場所を捜してみよう。
+	This is the Research Ward, huh...
+	We'd best not intrude. Let's search
+	somewhere else.
 
+## [12] Leaving, or bus stop {{{2
+## Trying to leave on foot {{{3
+## L:
 徒歩で戻っていたら見失ってしまう。
 バスを使おう。
-	徒歩で戻っていたら見失ってしまう。
-	バスを使おう。
+	We'll lose sight of her if we go on
+	foot. Let's take the bus.
 
+## Trying to leave before talking to the guard {{{3
+## T:
 警備の人に話を聞きましょう。
 外へ出たのなら目撃しているはずです。
-	警備の人に話を聞きましょう。
-	外へ出たのなら目撃しているはずです。
+	Let's ask the guard. If she went outside,
+	he ought to have seen her.
 
+## Trying to leave before talking to everyone {{{3
+## L:
 まだ、聞きこみが不十分だな。
 もう少し、みんなの話を
 聞いてみようか。
-	まだ、聞きこみが不十分だな。
-	もう少し、みんなの話を
-	聞いてみようか。
+	We're not done with the investigation
+	yet. Let's ask around some more first.
 
+## [13] Leaving the building {{{2
+## L:
 うーん。主任の姿は、
 院内には見当たらないな。
-	うーん。主任の姿は、
-	院内には見当たらないな。
+	No luck. Nobody's seen her.
 
+## R:
 やっぱ、もう院内には
 いないってことかね？
-	やっぱ、もう院内には
-	いないってことかね？
+	Seems she's not inside, then.
 
+## L:
 その可能性が高いな。
 問題は、どこにいるのかだけど。
-	その可能性が高いな。
-	問題は、どこにいるのかだけど。
+	Most likely. The problem is,
+	where is she?
 
 そうだ、警備の人なら……！
-	そうだ、警備の人なら……！
+	Oh yeah, the guard!
 
+## T:
 院の警備は２４時間体制です。
 門を警備している人なら、
 何か知ってるかも……
-	院の警備は２４時間体制です。
-	門を警備している人なら、
-	何か知ってるかも……
+	The institution is guarded around the clock.
+	Perhaps the guard at the gate might know something.
 
+## L:
 よし、話を聞きに行ってみよう。
-	よし、話を聞きに行ってみよう。
+	Right, let's go ask.
 
+## [14] Talking to the guard {{{2
+## First time {{{3
+## G:
 おや、特務支援課の人たち。
 血相変えて、どうしたんだい？
-	おや、特務支援課の人たち。
-	血相変えて、どうしたんだい？
+	Oh, the Special Support Section.
+	Your faces look red, do you need
+	something?
 
+## L:
 ええ、実は……
-	ええ、実は……
+	Yeah, thing is...
 
+## G:
 ああ。アーシュラ主任なら、
 今朝方、出てったぜ。
-	ああ。アーシュラ主任なら、
-	今朝方、出てったぜ。
+	I see. If it's Chief Ursuline you're
+	looking for, she did leave this morning.
 
+## E:
 やっぱり……！
-	やっぱり……！
+	I knew it!
 
+## R:
 それで、どこに行ったかわかるかい？
-	それで、どこに行ったかわかるかい？
+	So, do you know where she went?
 
+## G:
 始発のバスに乗っていたよ。
 ただ……
-	始発のバスに乗っていたよ。
-	ただ……
+	She left with the first bus.
 
 何やら考え事をしてたみたいで、
 挨拶しても返事は
 してもらえなかったけどね。
-	何やら考え事をしてたみたいで、
-	挨拶しても返事は
-	してもらえなかったけどね。
+	But she looked really lost in thought,
+	and didn't even return my greeting.
 
+## L:
 なるほど……
 ありがとうございました。
-	なるほど……
-	ありがとうございました。
+	I see... Thank you very much.
 
 やっぱり、アーシュラ主任は
 バスに乗ったことは
 間違いなさそうだ。
-	やっぱり、アーシュラ主任は
-	バスに乗ったことは
-	間違いなさそうだ。
+	Seems there's no doubt that
+	she took the bus.
 
+## E:
 すると……行き先は、
 クロスベル市街ってことかしら。
-	すると……行き先は、
-	クロスベル市街ってことかしら。
+	And in doing so, her destination must
+	have been Crossbell City.
 
+## L:
 おそらくね。
 とにかく俺たちも、
 一度クロスベルに戻ろう。
-	おそらくね。
-	とにかく俺たちも、
-	一度クロスベルに戻ろう。
+	Most likely, yeah. Anyway,
+	we should return to the city too.
 
+## Again {{{3
+## G:
 アーシュラ主任なら、
 たしかに始発のバスに
 乗っていったよ。
-	アーシュラ主任なら、
-	たしかに始発のバスに
-	乗っていったよ。
+	The Chief left on the first bus of the day.
 
 行き先は、まあクロスベルで
 間違いないと思うけどな。
-	行き先は、まあクロスベルで
-	間違いないと思うけどな。
+	Her destination must have been
+	Crossbell City, I think.
 
 ところで、何かあったのかい？
 今日はずいぶんと、
 院内が騒がしいみたいだけど。
-	ところで、何かあったのかい？
-	今日はずいぶんと、
-	院内が騒がしいみたいだけど。
+	Did something happen? I've heard
+	a lot of ruckus from the hospital
+	today.
 
+## R:
 ノンキな警備員だなぁ……
-	ノンキな警備員だなぁ……
+	Pretty easygoing for a guard, huh...
 
+## Third time {{{3
 アーシュラ主任なら、
 たしかに始発のバスに
 乗っていったよ。
-	アーシュラ主任なら、
-	たしかに始発のバスに
-	乗っていったよ。
+	The Chief left on the first bus of the day.
 
 行き先は、まあクロスベルで
 間違いないと思うけどな。
-	行き先は、まあクロスベルで
-	間違いないと思うけどな。
+	Her destination must have been
+	Crossbell City, I think.
 
+## {{{2
 白衣を着たお医者さん……？
 そういえば、朝の巡回の時に
 見かけたわ。
@@ -1703,102 +1732,103 @@
 	セシルさんの優しい笑顔……
 	まるで天使みたいだ。
 
+## t1530_1 {{{1
+## [79] Taking to Sera {{{2
+## First time {{{3
+## S:
 あっ、ロイドさん！
 アーシュラ主任の行方は、
 わかりました？
-	あっ、ロイドさん！
-	アーシュラ主任の行方は、
-	わかりました？
+	Ah, Lloyd! Any clue to
+	the Chief's whereabouts?
 
+## L:
 いえ、まだです。
 とりあえずは院内を
 捜索しているんですが……
-	いえ、まだです。
-	とりあえずは院内を
-	捜索しているんですが……
+	No, not yet. We're currently
+	investigating inside the hospital.
 
 そうだ、今朝、
 主任がここを通ったりとか、
 しませんでしたか？
-	そうだ、今朝、
-	主任がここを通ったりとか、
-	しませんでしたか？
+	Oh yeah, did she pass
+	through here this morning?
 
+## S:
 いえ、見てないです。
 少なくとも、わたしがここに
 来てからは。
-	いえ、見てないです。
-	少なくとも、わたしがここに
-	来てからは。
+	No, not that I saw. So not
+	since I got here, at least.
 
 もっとも、わたしが
 ここにいたのは、
 朝７時以降からですけど。
-	もっとも、わたしが
-	ここにいたのは、
-	朝７時以降からですけど。
+	Although I've been here
+	since seven o'clock.
 
+## L:
 つまり、７時以前のことは
 わからないということですか？
-	つまり、７時以前のことは
-	わからないということですか？
+	So you don't know what
+	happened here before seven?
 
+## S:
 はい。クラーク事務長もわたしも
 出勤してくるのは
 朝７時からですから。
-	はい。クラーク事務長もわたしも
-	出勤してくるのは
-	朝７時からですから。
+	Yes. Clark and I check in
+	at seven in the morning.
 
+## R:
 じゃあ、７時以前に
 主任がここを通ったとしても、
 それを見た人はいないってことか。
-	じゃあ、７時以前に
-	主任がここを通ったとしても、
-	それを見た人はいないってことか。
+	So if she passed here before
+	seven nobody would know.
 
+## S:
 でも、それはないと思います。
 だって、主任が７時前に
 起きるなんて……
-	でも、それはないと思います。
-	だって、主任が７時前に
-	起きるなんて……
+	But I don't think that's likely.
+	Her waking up before seven is...
 
 #5S絶 対 に あ り 得 ま せ ん ！#3S
-	#5S絶 対 に あ り 得 ま せ ん ！#3S
+	#5SI M P O S S I B L E !#3S
 
+## E:
 筋金入りのねぼすけ……ってこと
 かしら……
-	筋金入りのねぼすけ……ってこと
-	かしら……
+	A hardcore sleepyhead, I take it.
 
+## Again {{{3
 わたしたちがここに立つのは、
 朝７時からです。
-	わたしたちがここに立つのは、
-	朝７時からです。
+	We've been standing here since
+	seven o'clock.
 
 だから、それ以前に
 主任がここを通っても
 わたしたちにはわかりませんが……
-	だから、それ以前に
-	主任がここを通っても
-	わたしたちにはわかりませんが……
+	So we wouldn't know if she passed
+	by here before that.
 
 あの主任が、７時前に起きるなんて、
 絶対にあり得ないと思います！
-	あの主任が、７時前に起きるなんて、
-	絶対にあり得ないと思います！
+	But there's no way she'd wake up before seven!
 
+## Talking to Clark {{{2
 アーシュラ主任、
 心配ですね……
-	アーシュラ主任、
-	心配ですね……
+	I'm worried about the Chief.
 
 何とか、早く主任を
 見つけてあげてください！
-	何とか、早く主任を
-	見つけてあげてください！
+	Please, find her quickly!
 
+## {{{2
 以後気をつける……か。
 まるで、魔法のような
 言葉じゃないか。
@@ -1859,7 +1889,6 @@
 	Professor Gary
 
 ## t1540_1 -''- {{{1
-
 ## [50] Talking to Philia {{{2
 ## (Unknown circumstances) {{{3
 やっぱり、わたしの思った
@@ -1914,8 +1943,9 @@
 この病院には、最新機器は
 色々入ってくるけれど、
 本や資料の数がとても少ない……
-	"There's a lot of the latest equipment here,
-	but there are hardly any books or research materials...
+	"There's a lot of modern equipment
+	here, but there are hardly any books
+	or research materials...
 
 調べものをしたくても、
 これじゃ全然研究が
@@ -1935,7 +1965,8 @@
 あまり関係なさそうでは
 ありますが。
 	That doesn't seem to be
-	related to this case.
+	of much relevance to
+	this case.
 
 ## E:
 うーん、そうかも。
@@ -1958,7 +1989,7 @@
 	No, it's nothing. Let's continue
 	the investigation.
 
-## Second time {{{3
+## Again {{{3
 主任、病院内に所蔵されてる
 本の数が少ないーって
 嘆いてましたよ～。
@@ -2132,7 +2163,7 @@
 	とにかく、任務完了だ。
 	帰るとしようか。
 
-## e0010 {{{2
+## e0010 On the bus {{{1
 さて、クロスベルに着いたら、
 いなくなった主任の捜索が
 本格的に始まるわけだが……
@@ -2193,7 +2224,7 @@
 	了解。それじゃ、
 	張り切って行きますか！
 
-## c0000 {{{2
+## c0000 {{{1
 あの、すみません。
 俺たち、クロスベル警察
 特務支援課の者ですが……
@@ -2261,7 +2292,7 @@
 	記憶には残ってる。
 	間違いないよ。
 
-## c1130 {{{2
+## c1130 {{{1
 アーシュラ主任
 	アーシュラ主任
 
@@ -2300,7 +2331,7 @@
 ここには、来てないんじゃないかな？
 	ここには、来てないんじゃないかな？
 
-## c1200 {{{2
+## c1200 {{{1
 白衣の医者と、
 青い服を着た少年？
 うむ、たしかに見たのう。

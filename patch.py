@@ -362,11 +362,9 @@ def quest56(ctx): # {{{1 Search for the Oversleeping Doctor
 		copy_condition(vita, pc, 6, "@IF", [Insn('FLAG', 1055), Insn('END')], 0)
 		copy_clause(vita, pc, 6, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0)
 
-	## I don't think this has any effect
-	# with ctx.get("c0100") as (vita, pc):
-	# 	pc.includes = vita.includes
-
 	# Central Square
+	with ctx.get("c0100") as (vita, pc):
+		pc.includes = vita.includes
 	with ctx.get("c0100_1") as (vita, pc):
 		# Talking to Kate
 		copy_clause(vita, pc, 8, "@IF", [Insn('FLAG', 1055), Insn('END')], "@IF", 0, 0)
@@ -656,9 +654,13 @@ def permute(tr, xs):
 def do_transform(obj, tr):
 	if not tr: return obj
 	if isinstance(obj, insn.Translate) and not getattr(obj, "translated", False):
-		if isinstance(tr.get("translate"), translate.BaseTranslator):
-			obj = type(obj)(tr["translate"].translate(obj))
+		tl = tr.get("translate")
+		if tl is True:
 			obj.translated = True
+		elif isinstance(tl, translate.BaseTranslator):
+			obj = type(obj)(tl.translate(obj))
+			obj.translated = True
+		return obj
 
 	if isinstance(obj, Insn):
 		obj.args = do_transform(obj.args, tr)

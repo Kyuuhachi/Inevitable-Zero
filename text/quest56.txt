@@ -203,7 +203,7 @@
 
 ★無事、アーシュラ主任を保護した。　　
 　長い旅路だった……　　　　　　　　　
-	★We have safely secured　Ursuline.
+	★We have safely secured Ursuline.
 	　It's been a long journey...
 
 ## t1500_1 Main content {{{1

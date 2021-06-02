@@ -40,7 +40,7 @@ class TEXT(k.element):
 	# roundtrippable. That character exists in a single string, so it's not
 	# worth caring about.
 
-	FORMAT_RE = re.compile(r"\{(\w+)(?: (\d+))?\}|(\n)")
+	FORMAT_RE = re.compile(r"\{\s*(\w+)(?:\s+(\d+))?\s*\}|(\n)")
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is None
 

@@ -47,13 +47,14 @@ class BaseTranslator:
 class translator(BaseTranslator):
 	def __init__(self, name):
 		super().__init__()
-		self.lines = self.load((PATH / name).with_suffix(".txt").read_text()) + [(None, None)]
+		self.lines = self.load((PATH / name).with_suffix(".txt").read_text())
+		self.lines.append((None, None))
 
 	@staticmethod
 	def load(text):
 		lines = []
 		for p in text.splitlines():
-			p = p.split("##")[0].rstrip(" ")
+			p = p.split("##")[0].rstrip(" \t")
 			if not p: continue
 			if p.startswith("\t"):
 				lines[-1][1].append(p[1:])

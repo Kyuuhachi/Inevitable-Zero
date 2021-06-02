@@ -28,6 +28,10 @@ Start of chapter 4.
 Start of chapter 4.
 </details>
 
+I haven't figured out if it's possible to change the detective rank milestones,
+so since this mod adds a total of 14 extra DP, those are somewhat easier to
+reach.
+
 It also contains a small number of other patches:
 
 <details><summary>Some exclamations from Fran when she calls</summary>

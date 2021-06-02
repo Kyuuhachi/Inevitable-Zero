@@ -9,10 +9,14 @@ In chapter 2, first day, after returning from Armorica Village.
 
 The result is announced in chapter 3, second day.
 
-For this one I also rename «Luscious Orange» to «Zesty Orange», because I couldn't find any other way to get the translation to make sense.
+For this one I also rename «Luscious Orange» to «Zesty Orange», because
+I couldn't find any other way to get the translation to make sense.
 </details>
 <details><summary>Search for the Oversleeping Doctor</summary>
 Chapter 2, second day.
+
+After talking to Azel, he disappears until you leave and come back. I don't know
+if this is how it works in the Vita version or if it's a bug in this patch.
 </details>
 <details><summary>Search for a Certain Person</summary>
 Chapter 3, fifth day.
@@ -29,7 +33,7 @@ It also contains a small number of other patches:
 <details><summary>Some exclamations from Fran when she calls</summary>
 When asking the gang to find Colin, and after exploring the Moon Temple.
 </details>
-<details><summary>One rather important line during a discussion with Sergei, which solves a minor plot hole (spoilers!)</summary>
+<details><summary>One small line during a discussion with Sergei, which solves a minor plot hole (spoilers!)</summary>
 When discussing the D∴G Cult, Sergei writes down how it is spelled.
 </details>
 <details><summary>A small bugfix in Geofront's patch (which might have been fixed in recent versions)</summary>

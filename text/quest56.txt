@@ -142,68 +142,69 @@
 
 ★誰か主任を見ていないか、　　　　　　
 　クロスベルの各方面で聞き込みしよう。
-	★誰か主任を見ていないか、　　　　　　
-	　クロスベルの各方面で聞き込みしよう。
+	★Let's check each district in the
+	　city if anyone's seen her.
 
 ★主任はバスを降りた後、　　　　　　　
 　中央広場へ向かったようだ。　　　　　
-	★主任はバスを降りた後、　　　　　　　
-	　中央広場へ向かったようだ。　　　　　
+	★After getting off the bus, she
+	　went toward Central Square.
 
 ★ケイト先輩が朝方に、中央通りから　　
 　行政区へ向かう白衣の人物を　　　　　
 　目撃したという。　　　　　　　　　　
-	★ケイト先輩が朝方に、中央通りから　　
-	　行政区へ向かう白衣の人物を　　　　　
-	　目撃したという。　　　　　　　　　　
+	★Kate saw a person in a lab coat
+	　walking from Central Square towards
+	　the Administrative District.
 
 ★主任はお腹をすかせていたようだ。　　
 　港湾区の屋台へ行ってみよう。　　　　
-	★主任はお腹をすかせていたようだ。　　
-	　港湾区の屋台へ行ってみよう。　　　　
+	★Seems she was hungry and went to
+	　the Harbor District.
 
 ★主任が港湾区の屋台で飲食したことは　
 　確かなようだ。　　　　　　　　　　　
 　近くに目撃者がいないか探してみよう。
-	★主任が港湾区の屋台で飲食したことは　
-	　確かなようだ。　　　　　　　　　　　
-	　近くに目撃者がいないか探してみよう。
+	★She found a meal in the Harbor
+	　District. Let's talk to the people
+	　nearby.
 
 ★主任は青い服を着た不良少年に　　　　
 　埠頭の方へ連れて行かれたという。　　
 　『テスタメンツ』か……？　　　　　　
-	★主任は青い服を着た不良少年に　　　　
-	　埠頭の方へ連れて行かれたという。　　
-	　『テスタメンツ』か……？　　　　　　
+	★She met up with a delinquent in blue
+	　and followed him to the pier.
+	　The Testaments, perhaps?
 
 ★白衣の人物は青い服の少年に　　　　　
 　薬のようなものを渡していたようだ。　
 　まさか、何かの取り引きを……？　　　
-	★白衣の人物は青い服の少年に　　　　　
-	　薬のようなものを渡していたようだ。　
-	　まさか、何かの取り引きを……？　　　
+	★She gave something that looked like
+	　a chemical to the delinquent.
+	　It can't be a drug deal, can it?
 
 ★ワジの話では、主任と話していたのは　
 　アゼルだという。話を聞いてみよう。　
-	★ワジの話では、主任と話していたのは　
-	　アゼルだという。話を聞いてみよう。　
+	★Wazy suggests we talk to the
+	　Testament known as Azel.
 
 ★青い服の少年・アゼルが　　　　　　　
 　受け取った薬はただの頭痛薬だった。　
 　図書館へ行った主任を追いかけよう。　
-	★青い服の少年・アゼルが　　　　　　　
-	　受け取った薬はただの頭痛薬だった。　
-	　図書館へ行った主任を追いかけよう。　
+	★The delinquent in blue, Azel, says
+	　that the "chemical" was just a
+	　painkiller. Apparently Ursuline
+	　went to the library afterwards.
 
 ★アーシュラ主任は図書館にいた！　　　
 　すぐに彼女を探そう！　　　　　　　　
-	★アーシュラ主任は図書館にいた！　　　
-	　すぐに彼女を探そう！　　　　　　　　
+	★She is at the library! Let's
+	　find her.
 
 ★無事、アーシュラ主任を保護した。　　
 　長い旅路だった……　　　　　　　　　
-	★無事、アーシュラ主任を保護した。　　
-	　長い旅路だった……　　　　　　　　　
+	★We have safely secured　Ursuline.
+	　It's been a long journey...
 
 ## t1500_1 Main content {{{1
 ## [0] Talking to Martha {{{2
@@ -369,6 +370,7 @@
 	Thanks. We appreciate all
 	the help we can get.
 
+## System:
 {color 2}クエスト【寝坊医者の捜索願い】{color 0}を開始した！
 	Quest {color 2}[Search for the Oversleeping Doctor]{color 0} started!
 
@@ -874,8 +876,9 @@
 ## L:
 徒歩で戻っていたら見失ってしまう。
 バスを使おう。
-	We'll lose sight of her if we go on
-	foot. Let's take the bus.
+	She'll have gone somewhere else by
+	the time we arrive on foot. Let's
+	take the bus instead.
 
 ## Trying to leave before talking to the guard {{{3
 ## T:
@@ -1019,718 +1022,775 @@
 	Her destination must have been
 	Crossbell City, I think.
 
-## {{{2
+## [16] Talking to Kate (Central Square) {{{2
 白衣を着たお医者さん……？
 そういえば、朝の巡回の時に
 見かけたわ。
-	白衣を着たお医者さん……？
-	そういえば、朝の巡回の時に
-	見かけたわ。
+	A doctor wearing a lab coat...? Now
+	that you mention it, I did see a person
+	like that during my morning rounds.
 
 たしか、行政区の方へ
 歩いていったと思うけど。
-	たしか、行政区の方へ
-	歩いていったと思うけど。
+	If I remember correctly, she was walking
+	toward the Administrative District.
 
+## [17] Talking to Chroma (Administrative District) {{{2
+## First time {{{3
+## Ch:
 いらっしゃい！
 美味しいジュースはいかがですか？
-	いらっしゃい！
-	美味しいジュースはいかがですか？
+	Welcome! Are you in the
+	mood for some delicious juice?
 
+## L:
 あの、ちょっと聞きたいのですが、
 この辺で、白衣を着たお医者さんを
 見かけませんでしたか？
-	あの、ちょっと聞きたいのですが、
-	この辺で、白衣を着たお医者さんを
-	見かけませんでしたか？
+	Excuse me, but if I may ask a
+	question? Did you see a doctor
+	wearing a lab coat in this area?
 
+## Ch:
 白衣の……？
 ああ、そういえば。
-	白衣の……？
-	ああ、そういえば。
+	A lab coat? Now that you mention it...
 
 今朝いちばんのお客さんが、
 たしかそんな人でした。
-	今朝いちばんのお客さんが、
-	たしかそんな人でした。
+	The first customer this morning was
+	indeed wearing a lab coat.
 
 何でも、図書館に用があった
 らしいのですが、何分
 時間が早すぎて……
-	何でも、図書館に用があった
-	らしいのですが、何分
-	時間が早すぎて……
+	It seemed like she had some business
+	at the library, but she was too early.
 
 まだ、開館していなかったんです。
 それで、腹ごしらえを
 したいと、この屋台に来て。
-	まだ、開館していなかったんです。
-	それで、腹ごしらえを
-	したいと、この屋台に来て。
+	The library wasn't open yet,
+	so she came to my stall for
+	something to eat.
 
+## E:
 あら。でも、ここで売ってるのは
 ジュースですよね？
-	あら。でも、ここで売ってるのは
-	ジュースですよね？
+	Wait a minute. Don't you
+	only sell juice here?
 
+## Ch:
 ええ。だから、
 ガッカリしてましたよ。
 おなか減ってたのに～って。
-	ええ。だから、
-	ガッカリしてましたよ。
-	おなか減ってたのに～って。
+	Indeed, she did seem quite
+	disappointed. "But I'm hungry~."
 
 だから、港湾区に
 食べ物の屋台が出てますよって
 教えてあげたんです。
-	だから、港湾区に
-	食べ物の屋台が出てますよって
-	教えてあげたんです。
+	So I told here there are food
+	stalls at the Harbor District.
 
 その後、フラフラと
 港湾区の方へ歩いて行きましたよ。
-	その後、フラフラと
-	港湾区の方へ歩いて行きましたよ。
+	Then she unsteadily set off
+	in that direction.
 
+## L:
 なるほど。
 ありがとうございました。
-	なるほど。
-	ありがとうございました。
+	I see. Thank you very much.
 
+## R:
 主任は、どうやら港湾区に
 行ったみたいだな。
 俺たちも行くか！
-	主任は、どうやら港湾区に
-	行ったみたいだな。
-	俺たちも行くか！
+	Seems she went to the Harbor
+	District. Should we follow her?
 
+## L:
 妙だな……
-	妙だな……
+	That's strange...
 
 アーシュラ主任は、
 図書館に用があって来たって
 ことか？
-	アーシュラ主任は、
-	図書館に用があって来たって
-	ことか？
+	She had business at the library?
 
+## E:
 言われてみれば……
 アーシュラ主任の目的地は、
 図書館ってこと？
-	言われてみれば……
-	アーシュラ主任の目的地は、
-	図書館ってこと？
+	Now that you mention it...
+	Her destination was the library
+	all along?
 
+## L:
 そうかもしれない。
-	そうかもしれない。
+	It seems so.
 
 けど、とりあえずは
 港湾区へ向かったみたいだ。
 俺たちも行ってみよう！
-	けど、とりあえずは
-	港湾区へ向かったみたいだ。
-	俺たちも行ってみよう！
+	But for now, she went to the
+	Harbor District. As Randy
+	said, let's follow her!
 
+## Again {{{3
 白衣を着た人なら、
 たしかに見ました。
-	白衣を着た人なら、
-	たしかに見ました。
+	Yes, I did have a
+	customer in a lab coat.
 
 食べ物の屋台を探して、
 港湾区に行ったと思います。
-	食べ物の屋台を探して、
-	港湾区に行ったと思います。
+	I think she went to the
+	Harbor District to find
+	something to eat.
 
+## [19] Talking to Ozelle (Harbor District) {{{2
+## First time {{{3
+## O:
 今日の麺はひと味違うぞ！
 太めにもかかわらず
 しなやかにツユの中を泳ぐ麺……
-	今日の麺はひと味違うぞ！
-	太めにもかかわらず
-	しなやかにツユの中を泳ぐ麺……
+	## Copied directly from Geofront's
+	Today's noodles will defy your expectations!
+	They're plump, but they've got good elasticity
+	and swim through the broth nicely.
 
+## L:
 あ、あの。
 実は、人を捜してるんですが。
-	あ、あの。
-	実は、人を捜してるんですが。
+	Excuse me. Actually, we're looking for someone.
 
+## O:
 白衣を着た女医さんか。
 たしかに、
 ウチの麺を食べていったよ。
-	白衣を着た女医さんか。
-	たしかに、
-	ウチの麺を食べていったよ。
+	A doctor in a lab coat? Yeah,
+	she bought some of my noodles.
 
 よほど腹が減ってたみたいでな。
 そこのベンチで、
 うまそうに麺をすすってたよ。
-	よほど腹が減ってたみたいでな。
-	そこのベンチで、
-	うまそうに麺をすすってたよ。
+	Looked really hungry, she did.
+	Sat on that bench over there to eat.
 
 その後のことは……知らないな。
 何しろ、次の注文が入って、
 必死に麺をゆでてたからな。
-	その後のことは……知らないな。
-	何しろ、次の注文が入って、
-	必死に麺をゆでてたからな。
+	After that... I don't know, sorry.
+	I was giving my all making noodles
+	for the next customer.
 
+## L:
 そうですか。
 ありがとうございました
-	そうですか。
-	ありがとうございました
+	I see. Thank you very much.
 
+## Again {{{3
 白衣を着た女医さんか。
 たしかに、
 ウチの麺を食べていったよ。
-	白衣を着た女医さんか。
-	たしかに、
-	ウチの麺を食べていったよ。
+	A doctor in a lab coat? Yeah,
+	she bought some of my noodles.
 
 腹が減ってたみたいだな。
 そこのベンチで、
 無心に麺をすすってたよ。
-	腹が減ってたみたいだな。
-	そこのベンチで、
-	無心に麺をすすってたよ。
+	Looked really hungry, she did.
+	Sat on that bench over there to eat.
+	## No idea how to get that 無心 to sound natural
 
 その後のことは……知らないな。
 何しろ、次の注文が入って、
 必死に麺をゆでてたからな。
-	その後のことは……知らないな。
-	何しろ、次の注文が入って、
-	必死に麺をゆでてたからな。
+	After that... I don't know, sorry.
+	I was giving my all making noodles
+	for the next customer.
 
+## [20] Talking to Cunha (Harbor District) {{{2
+## First time {{{3
+## C:
 白衣の人？
 ああ、たしかに見かけたわ。
-	白衣の人？
-	ああ、たしかに見かけたわ。
+	A person in a lab coat? Yeah,
+	I saw a person like that.
 
 そこのベンチで、何かを
 食べてたわね。
-	そこのベンチで、何かを
-	食べてたわね。
+	She was sitting on that bench,
+	eating something.
 
 食べ終わった後で、
 不良少年みたいな子が現れて、
 何か話している様子だったわ。
-	食べ終わった後で、
-	不良少年みたいな子が現れて、
-	何か話している様子だったわ。
+	After she finished eating, one
+	of those delinquent kids showed up
+	and said something to her.
 
 たしかその少年は、
 青い服を着てたかしら。
-	たしかその少年は、
-	青い服を着てたかしら。
+	I think he were wearing blue.
 
+## E:
 えっ……
-	えっ……
+	Eh...
 
+## T:
 青い服の不良……
 テスタメンツのことでしょうか？
-	青い服の不良……
-	テスタメンツのことでしょうか？
+	A delinquent in blue... She must
+	be talking about the Testaments.
 
+## R:
 その可能性が高くなってきたな。
 にしても、なんで連中が
 からんでくるんだ？
-	その可能性が高くなってきたな。
-	にしても、なんで連中が
-	からんでくるんだ？
+	Must be. But what kind of
+	business would she have with
+	that kind of people?
 
+## E:
 もしかして、テスタメンツと
 何らかのトラブルを抱えていた
 可能性も……
-	もしかして、テスタメンツと
-	何らかのトラブルを抱えていた
-	可能性も……
+	It's possible that the Testaments
+	are having some kind of trouble.
 
+## L:
 それで、その後白衣の人は
 どうしました？
-	それで、その後白衣の人は
-	どうしました？
+	What did this person do afterwards?
 
+## C:
 私も気になって、彼らを
 見ていたの。
 そしたら……
-	私も気になって、彼らを
-	見ていたの。
-	そしたら……
+	I got curious too, so I
+	watched them for a while.
 
 ここは人目がつくからって、
 埠頭の方に歩いて行ったわ。
-	ここは人目がつくからって、
-	埠頭の方に歩いて行ったわ。
+	They went toward the pier,
+	saying something about here
+	being too public.
 
+## R:
 おいおい……
-	おいおい……
+	Now isn't that something.
 
+## E:
 何だか、本当に事件の
 匂いがしてきたわね。
-	何だか、本当に事件の
-	匂いがしてきたわね。
+	Sounds like there really
+	is something going on.
 
 どうする、ロイド？
 埠頭で聞きこみをしてみる？
-	どうする、ロイド？
-	埠頭で聞きこみをしてみる？
+	What should we do, Lloyd?
+	Talk to people at the pier?
 
+## T:
 あるいは、直接
 テスタメンツのアジトへ
 乗りこむのもアリかと。
-	あるいは、直接
-	テスタメンツのアジトへ
-	乗りこむのもアリかと。
+	Alternatively, we could go
+	directly to the Testaments' hideout.
 
+## R:
 埠頭か……
 重りでもつけられて、
 海に沈められてなきゃいいが……
-	埠頭か……
-	重りでもつけられて、
-	海に沈められてなきゃいいが……
+	The pier... I hope he didn't
+	put her in cement.
 
+## L:
 マフィアじゃないんだ、
 さすがにそこまでは……
-	マフィアじゃないんだ、
-	さすがにそこまでは……
+	They're not Revache, they
+	wouldn't do that.
 
 とにかく、聞きこみを続けよう。
-	とにかく、聞きこみを続けよう。
+	Anyway, let's continue asking around.
 
+## Again {{{3
 白衣の人？
 ああ、たしかに見かけたわ。
-	白衣の人？
-	ああ、たしかに見かけたわ。
+	A person in a lab coat? Yeah,
+	I saw a person like that.
 
 そこのベンチで、何かを
 食べてたわね。
-	そこのベンチで、何かを
-	食べてたわね。
+	She was sitting on that bench,
+	eating something.
 
 食べ終わった後で、
 不良少年みたいな子が現れて、
 埠頭の方に連れていかれたわ。
-	食べ終わった後で、
-	不良少年みたいな子が現れて、
-	埠頭の方に連れていかれたわ。
+	After she finished eating, one
+	of those delinquent kids showed up,
+	and they went to the pier.
 
 その後のことは知らないけど、
 あれはただごとじゃない雰囲気
 だったわね……
-	その後のことは知らないけど、
-	あれはただごとじゃない雰囲気
-	だったわね……
+	I don't know what happened after that, but
+	it didn't feel like something insignificant.
 
+## [21] Talking to Wazy (Trinity) {{{2
+## First time {{{3
+## W:
 どうしたんだい？
 ボクに何か用？
-	どうしたんだい？
-	ボクに何か用？
+	Oh, you guys. Got any
+	business, or just here
+	for a chat?
 
+## L:
 ああ、ちょっとね。
 思いきって、単刀直入に聞く。
 実は……
-	ああ、ちょっとね。
-	思いきって、単刀直入に聞く。
-	実は……
+	We're here on business.
+	I'll be straight to the point.
 
+## W:
 あはははっ。それでわざわざ、
 こんなところにまで
 来たってわけか。
-	あはははっ。それでわざわざ、
-	こんなところにまで
-	来たってわけか。
+	Hahaha, you even went out
+	of your way to come here
+	of all places.
 
+## L:
 ああ。何か知ってることがあれば、
 教えてほしい。
-	ああ。何か知ってることがあれば、
-	教えてほしい。
+	Well, that's how it is. If
+	you know anything, we'd be
+	glad to hear.
 
+## W:
 白衣の人物と会っていたのは、
 おそらくウチのメンバーだろうね。
-	白衣の人物と会っていたのは、
-	おそらくウチのメンバーだろうね。
+	The one who met with our friend
+	in white was most likely one
+	of my fellow Testaments.
 
 カウンターの向こうで働いている
 アゼルがそうさ。
 話を聞いてみるといい。
-	カウンターの向こうで働いている
-	アゼルがそうさ。
-	話を聞いてみるといい。
+	You should try talking to Azel,
+	at the counter. You might find
+	it enlightening.
 
 君たちが期待している答えは、
 聞けないかもしれないけどね。
-	君たちが期待している答えは、
-	聞けないかもしれないけどね。
+	But I'm afraid you're unlikely
+	to find the answers you seek.
 
+## L:
 どういうことだ？
-	どういうことだ？
+	What do you mean?
 
+## W:
 テスタメンツでは、
 そういったクスリの使用は
 御法度なのさ。
-	テスタメンツでは、
-	そういったクスリの使用は
-	御法度なのさ。
+	To us Testaments, using
+	that sort of drugs is
+	strictly prohibited.
 
 得することなんて、
 何もないからね。
-	得することなんて、
-	何もないからね。
+	There's nothing to gain from
+	those, you know.
 
 ま、詳しい話は、
 カウンターの向こうにいる
 アゼルに聞くといいよ。
-	ま、詳しい話は、
-	カウンターの向こうにいる
-	アゼルに聞くといいよ。
+	Again, you might find a
+	talk with Azel enlightening.
 
+## Again {{{3
 テスタメンツでは、
 そういったクスリの使用は
 御法度なのさ。
-	テスタメンツでは、
-	そういったクスリの使用は
-	御法度なのさ。
+	To us Testaments, using
+	that sort of drugs is
+	strictly prohibited.
 
 得することなんて、
 何もないからね。
-	得することなんて、
-	何もないからね。
+	There's nothing to gain from
+	those, you know.
 
 ま、詳しい話は、
 カウンターの向こうにいる
 アゼルに聞くといいよ。
-	ま、詳しい話は、
-	カウンターの向こうにいる
-	アゼルに聞くといいよ。
+	Again, you might find a
+	talk with Azel enlightening.
 
+## [22] Talking to Azel (Trinity) {{{2
+## First time {{{3
+## A:
 な、何だよ。
 警察官が、俺に何か用！？
-	な、何だよ。
-	警察官が、俺に何か用！？
+	W- what? Do you police dogs
+	have any business here?
 
+## L:
 ああ、実は……
-	ああ、実は……
+	Thing is...
 
+## A:
 ああ。たしかに朝、
 埠頭でアーシュラさんに
 会ってたのは俺さ。
-	ああ。たしかに朝、
-	埠頭でアーシュラさんに
-	会ってたのは俺さ。
+	Oh. Yeah, I did meet with
+	Ursuline at the pier.
 
+## E:
 その、何かを受けとった
 らしいけど。
-	その、何かを受けとった
-	らしいけど。
+	I heard you got something from her.
 
+## A:
 そんなことまで
 知ってるのかよ……
-	そんなことまで
-	知ってるのかよ……
+	You even found out that much...
 
 ……実は、痛み止めを、
 もらってたんだ。
-	……実は、痛み止めを、
-	もらってたんだ。
+	Actually, it's a painkiller.
 
+## L:
 い、痛み止め？
-	い、痛み止め？
+	A painkiller?
 
+## A:
 ああ。ケガは治ったんだけど、
 どうにも偏頭痛が
 止まらなくてさ。
-	ああ。ケガは治ったんだけど、
-	どうにも偏頭痛が
-	止まらなくてさ。
+	Yeah. My injuries have healed,
+	but the migraine just won't stop.
 
 入院中にちょっと相談したら、
 薬を処方してくれたんだ。
-	入院中にちょっと相談したら、
-	薬を処方してくれたんだ。
+	While I was hospitalized, I
+	was prescribed this medicine.
 
 俺、ミラないからいいって
 言ったんだけど、これくらいなら
 サービスするって
-	俺、ミラないからいいって
-	言ったんだけど、これくらいなら
-	サービスするって
+	I told them I don't have any mira,
+	but to think that she'd go this far...
 
 ミラも払わずに、薬だけもらうのは
 悪いなとは思ったんだけどさ。
-	ミラも払わずに、薬だけもらうのは
-	悪いなとは思ったんだけどさ。
+	I felt bad about getting
+	the medicine without even
+	paying for it, you know.
 
+## E:
 そうだったの……
-	そうだったの……
+	So that's what was going on.
 
+## T:
 どうやら、主任が街の不良少年に
 いけないクスリを卸しているという
 センは消えたようですが……
-	どうやら、主任が街の不良少年に
-	いけないクスリを卸しているという
-	センは消えたようですが……
+	It seems that our hypothesis of her
+	selling illegal drugs to delinquents
+	has been disproven.
 
+## R:
 じゃあ、主任は何しに
 クロスベルに来たんだ？
-	じゃあ、主任は何しに
-	クロスベルに来たんだ？
+	Then what did she come to Crossbell
+	for?
 
+## A:
 何だ、あんたら、
 アーシュラさんを捜してるのか？
-	何だ、あんたら、
-	アーシュラさんを捜してるのか？
+	What, you guys are looking for
+	Ursuline?
 
 あの人だったら、
 図書館に行くって言ってたぜ。
-	あの人だったら、
-	図書館に行くって言ってたぜ。
+	She said she was heading to the library.
 
+## L:
 図書館！？
-	図書館！？
+	The library!?
 
+## A:
 ああ。何でも、調べものを
 したいって言ってたな。
-	ああ。何でも、調べものを
-	したいって言ってたな。
+	Yeah. Apparently she wanted to
+	look something up.
 
+## E:
 なるほど……
 話は、簡単だったってことね。
-	なるほど……
-	話は、簡単だったってことね。
+	I see... An easy enough explanation.
 
+## L:
 そうみたいだ。{wait}
-#0000Fよし、図書館へ行ってみようか。
-	そうみたいだ。{wait}
-	#0000Fよし、図書館へ行ってみようか。
+#0000Fよし、図書館へ行ってみようか。 ## This line looks a little buggy, but it's fine
+	Seems so.{wait}
+	#0000FRight, let's head to the library.
 
+## T:
 はい……何だかわたしたち、
 クロスベル市内を
 かけずり回ってますね。
-	はい……何だかわたしたち、
-	クロスベル市内を
-	かけずり回ってますね。
+	Yes... It seems we've been
+	led on a fool's errand through
+	the whole city.
 
+## Again (need to leave and come back first) {{{3
 アーシュラさんだったら、
 図書館に行くって言ってたぜ。
-	アーシュラさんだったら、
-	図書館に行くって言ってたぜ。
+	If you're looking for Ursuline, she
+	said she was heading for the library.
 
 何でも、調べものをしたいって
 言ってたな。
-	何でも、調べものをしたいって
-	言ってたな。
+	Apparently she wanted to look
+	something up.
 
+## [23] Talking to Ursuline (Library) {{{2
+## U:
 んかー……
 もう、ゲイリー教授……
 そんなに怒らないで……
-	んかー……
-	もう、ゲイリー教授……
-	そんなに怒らないで……
+	Mmm... Hey, Gary...
+	Don't get so mad...
 
 くおー……すぴー……
-	くおー……すぴー……
+	Zzz...
 
+## T:
 幸せそうに眠ってますね……
-	幸せそうに眠ってますね……
+	She looks quite relaxed.
 
+## R:
 ったく、人の苦労も知らないで。
 おーい、主任！
 起きてくれー！
-	ったく、人の苦労も知らないで。
-	おーい、主任！
-	起きてくれー！
+	She doesn't even know what
+	a pain she's bein'.
+	Oi, Chief! Wake up!
 
+## U:
 んかっ！
 はひっ、ゲイリー教授！？
 寝てません、寝てませんよっ！
-	んかっ！
-	はひっ、ゲイリー教授！？
-	寝てません、寝てませんよっ！
+	Wh- Yesh, Professor Gary!?
+	I'm not sleeping, I'm not sleeping!
 
 ……あれ？　夢？
-	……あれ？　夢？
+	Hm? A dream?
 
 ん、あなた方は……
-	ん、あなた方は……
+	And you are...?
 
 特務支援課の者です。
 行方不明のアーシュラ主任の
 捜索任務で、ここに来ました。
-	特務支援課の者です。
-	行方不明のアーシュラ主任の
-	捜索任務で、ここに来ました。
+	Special Support Section. We
+	have been tasked to solve
+	the disappearance of one
+	Chief Ursuline.
 
+## U:
 ええっ！？
 私が行方不明！？
-	ええっ！？
-	私が行方不明！？
+	What!? I've disappeared?
 
+## E:
 勤務日の朝に、いきなり
 姿が見えなくなれば、
 誰だって失踪したと思いますよ。
-	勤務日の朝に、いきなり
-	姿が見えなくなれば、
-	誰だって失踪したと思いますよ。
+	Nobody's seen a trace of you this
+	whole morning. It's a reasonable
+	conclusion, I'd say.
 
+## U:
 はははっ。そんなバカな。
 私、今日は休みで……
-	はははっ。そんなバカな。
-	私、今日は休みで……
+	Haha, that's ridiculous. I've
+	got the day off today.
 
 あれ？　よくよく考えたら、
 休日は明日だったような……
-	あれ？　よくよく考えたら、
-	休日は明日だったような……
+	Hmm? If I think really really
+	hard, maybe it was tomorrow...?
 
 #5Sしまったぁ！#3S
 休日、１日間違えてた！
-	#5Sしまったぁ！#3S
-	休日、１日間違えてた！
+	#5SOh dear!#3S
+	I was one day off for my day off!
 
+## T:
 状況を理解していただけたようで、
 何よりです。
-	状況を理解していただけたようで、
-	何よりです。
+	I'm glad to hear that you
+	understand the situation.
 
+## U:
 あはは……
 すみません、うっかりしてました。
-	あはは……
-	すみません、うっかりしてました。
+	Ahaha... Sorry, my bad.
 
 一刻も早く、図書館で
 調べものをしたかったから、
 勘違いしちゃったみたいです。
-	一刻も早く、図書館で
-	調べものをしたかったから、
-	勘違いしちゃったみたいです。
+	I just wanted to pop by the
+	library for a second, but
+	it seems I caused a huge
+	misunderstanding.
 
 ほら、病院には本が少なくて。
 調べものができなくて、
 困ってたんです。
-	ほら、病院には本が少なくて。
-	調べものができなくて、
-	困ってたんです。
+	You know, there are barely any books
+	at the hospital, it's hard to do
+	any research.
 
 だから、次の休日は、
 図書館にこもって本を読もうと
 思っていたんですよねぇ。
-	だから、次の休日は、
-	図書館にこもって本を読もうと
-	思っていたんですよねぇ。
+	So I thought I'd spend my
+	next day off reading at the
+	library.
 
+## R:
 はぁ、結局、フィリアちゃんの
 推理が当たってたってわけか。
-	はぁ、結局、フィリアちゃんの
-	推理が当たってたってわけか。
+	Seems Philia hit the nail
+	right on the head.
 
+## E:
 本探しの旅、だったわね。
 まさか、あれが本当に
 当たるとは……
-	本探しの旅、だったわね。
-	まさか、あれが本当に
-	当たるとは……
+	A journey to find books,
+	indeed. I can't believe
+	that's what it was.
 
+## L:
 とにかく、病院では
 みんなが心配してます。
-	とにかく、病院では
-	みんなが心配してます。
+	Anyway, the people at the
+	hospital are worried about you.
 
 俺たちと一緒に、
 病院に戻りましょう。
-	俺たちと一緒に、
-	病院に戻りましょう。
+	How about we go back
+	to the hospital together?
 
+## U:
 あはは、そうですね。
 ……ところで私、
 怒られると思います？
-	あはは、そうですね。
-	……ところで私、
-	怒られると思います？
+	Ahaha, let's do that.
+	...Do you think they'll
+	be angry at me?
 
+## T:
 知りません。
 ただ、その覚悟は
 しておいた方がいいかと。
-	知りません。
-	ただ、その覚悟は
-	しておいた方がいいかと。
+	I do not know. But you
+	should be prepared for
+	that eventuality.
 
+## U:
 あはは……はあぁ……
 とほほ、ゲイリー教授のお小言、
 長いんですよねぇ……
-	あはは……はあぁ……
-	とほほ、ゲイリー教授のお小言、
-	長いんですよねぇ……
+	Ahaha...ha... I'm going
+	to be subjected to one of
+	Gary's lectures, aren't I?
 
+## [24] Talking to Martha, post-quest {{{2
 とにかく、あんたたちのおかげで
 助かったよ。
 ありがとうね。
-	とにかく、あんたたちのおかげで
-	助かったよ。
-	ありがとうね。
+	You guys did us a huge favor.
+	Thank you.
 
+## [25] Talking to Marone, post-quest {{{2
 主任はきっと、事件かなんかに
 巻きこまれたって
 思ったんですけど……
-	主任はきっと、事件かなんかに
-	巻きこまれたって
-	思ったんですけど……
+	I thought for sure that she had
+	gotten into an accident or
+	something.
 
 どうやら、私の勘違いだった
 みたいですね。
-	どうやら、私の勘違いだった
-	みたいですね。
+	But it seems I was wrong.
 
+## [26] Talking to Chaleur, post-quest {{{2
+## This guy apparently didn't hear.
 アーシュラ先輩、
 どこに行ってたんだろう。
-	アーシュラ先輩、
-	どこに行ってたんだろう。
+	I wonder where Chief Ursuline went.
 
 もしかして、ゲイリー教授に
 毎日クドクド怒られて、
 本当に嫌気が差したとか……
-	もしかして、ゲイリー教授に
-	毎日クドクド怒られて、
-	本当に嫌気が差したとか……
+	Maybe she got really sick of getting
+	scolded by Professor Gary every day...?
 
+## [27] Talking to Gwen, post-quest {{{2
 ほんと、主任は人騒がせ
 なんだから。
-	ほんと、主任は人騒がせ
-	なんだから。
+	The Chief is a really
+	troublesome person.
 
 でも、今回はさすがに、
 ゲイリー教授に、こってりと
 絞られるんじゃないかしら。
-	でも、今回はさすがに、
-	ゲイリー教授に、こってりと
-	絞られるんじゃないかしら。
+	Professor Gary must be really
+	chewing her out today.
 
+## [28] Talking to Chiron, post-quest {{{2
 とにかく、主任が見つかって
 よかったです～。
-	とにかく、主任が見つかって
-	よかったです～。
+	I'm glad the Chief was
+	found at last~.
 
 けど、看護師のみんなも、
 それほど心配してたわけじゃ
 ないんですけどね、うふっ。
-	けど、看護師のみんなも、
-	それほど心配してたわけじゃ
-	ないんですけどね、うふっ。
+	But was there really any
+	reason to be so worried?
 
+## [29] Talking to Meifa, post-quest {{{2
 主任のドジっぷりは、
 シロンよりも上かも
 しれないわね……
-	主任のドジっぷりは、
-	シロンよりも上かも
-	しれないわね……
+	The Chief may be even more of a klutz
+	than Chiron...
 
+## [30] Talking to Cecile, post-quest {{{2
+## C:
 とにかく、アーシュラ主任が
 無事でよかったわ……
-	とにかく、アーシュラ主任が
-	無事でよかったわ……
+	I'm glad the Chief was
+	unhurt...
 
+## R:
 セシルさんの優しい笑顔……
 まるで天使みたいだ。
-	セシルさんの優しい笑顔……
-	まるで天使みたいだ。
+	Cecile's gentle smile...
+	Just like an angel.
 
 ## t1530_1 {{{1
 ## [79] Taking to Sera {{{2
@@ -1819,7 +1879,7 @@
 絶対にあり得ないと思います！
 	But there's no way she'd wake up before seven!
 
-## Talking to Clark {{{2
+## [80] Talking to Clark {{{2
 アーシュラ主任、
 心配ですね……
 	I'm worried about the Chief.
@@ -1828,58 +1888,60 @@
 見つけてあげてください！
 	Please, find her quickly!
 
-## {{{2
+## [81] Talking to Gary and Ursuline, post-quest {{{2
+## G:
 以後気をつける……か。
 まるで、魔法のような
 言葉じゃないか。
-	以後気をつける……か。
-	まるで、魔法のような
-	言葉じゃないか。
+	I see, you'll be more careful next time.
+	Those aren't magic words, you know.
 
 思えば君は、学生時代から
 その言葉を繰り返してきた。
-	思えば君は、学生時代から
-	その言葉を繰り返してきた。
+	Come to think of it, you've said that
+	ever since you were a student.
 
 しかし、不思議だな。
 君の生活態度が改まったことは
 ないし、この先その気配もない。
-	しかし、不思議だな。
-	君の生活態度が改まったことは
-	ないし、この先その気配もない。
+	But strangely enough, your attitude
+	and work ethic hasn't changed one bit.
+	I worry for your future.
 
 まったく、感心してしまうよ。
-	まったく、感心してしまうよ。
+	It's almost impressive.
 
+## U:
 す、すみませ～ん……
 ついうっかりしてたんです。
-	す、すみませ～ん……
-	ついうっかりしてたんです。
+	I'm sorry... I was careless.
 
 今度という今度は、
 さすがに反省しました。
-	今度という今度は、
-	さすがに反省しました。
+	I'll reflect on it this time, really!
 
+## G:
 その言葉も、何度も聞いたよ。
 ……ふぅ、君は学生時代から
 全く変わらんな。
-	その言葉も、何度も聞いたよ。
-	……ふぅ、君は学生時代から
-	全く変わらんな。
+	I've heard that many times as well.
+	You really haven't changed since then,
+	have you?
 
+## Starts from here second time {{{3
+## U:
 （うぅ……こうなるとゲイリー教授は
 なかなか逃がしてくれません……）
-	（うぅ……こうなるとゲイリー教授は
-	なかなか逃がしてくれません……）
+	(Ugh... At this rate he'll never let me get away...)
 
+## G:
 #4S……聞いているのかね、アーシュラ君！#3s
-	#4S……聞いているのかね、アーシュラ君！#3s
+	#4SAre you listening, Ursuline?#3S
 
+## U:
 は、はひっ！
 以後気をつけます！
-	は、はひっ！
-	以後気をつけます！
+	Y-yesh! I'll be more careful next time!
 
 ## t1540 Hospital interior {{{1
 アーシュラ主任
@@ -1890,16 +1952,16 @@
 
 ## t1540_1 -''- {{{1
 ## [50] Talking to Philia {{{2
-## (Unknown circumstances) {{{3
+## Post-quest {{{3
 やっぱり、わたしの思った
 通りでした。
-	やっぱり、わたしの思った
-	通りでした。
+	It was exactly as I thought,
+	wasn't it?
 
 主任は、本探しの旅に
 出ていたんですね～。
-	主任は、本探しの旅に
-	出ていたんですね～。
+	The Chief was on a
+	journey to find books~.
 
 ## First time {{{3
 ## Ph:
@@ -2002,421 +2064,460 @@
 	So surely she's on a journey to
 	find books, don't you think?
 
-## {{{2
+## [51] After finding Ursuline {{{2
+## L:
 というわけで、
 無事、アーシュラ主任を
 保護しました。
-	というわけで、
-	無事、アーシュラ主任を
-	保護しました。
+	...and then we were finally
+	able to find her.
 
+## Ursuline:
 あ、えーと。
 ただいま戻りました、けど……
-	あ、えーと。
-	ただいま戻りました、けど……
+	Umm... I'm back...?
 
+## Cecile:
 もう、アーシュラ主任……！
 みんな心配してたんですよ……！
-	もう、アーシュラ主任……！
-	みんな心配してたんですよ……！
+	Oh, Chief... Everyone's
+	been so worried!
 
 でも、主任が無事でよかった。
-	でも、主任が無事でよかった。
+	But I'm glad you're okay.
 
+## U:
 セシルさん……
 優しいなぁ。
-	セシルさん……
-	優しいなぁ。
+	Cecile... You're too kind.
 
+## Gary:
 ヘラヘラ笑う前に、
 何か言うことはないのかね、
 アーシュラ君？
-	ヘラヘラ笑う前に、
-	何か言うことはないのかね、
-	アーシュラ君？
+	Isn't there anything you
+	should say before laughing
+	this whole thing off, Ursuline?
 
+## U:
 や、やだなぁ、ゲイリー教授。
 そんなに怖い顔しないでくださいよ。
-	や、やだなぁ、ゲイリー教授。
-	そんなに怖い顔しないでくださいよ。
+	Oh no, Professor Gary. Don't
+	make such a scary face.
 
 教え子が無事に帰ってきたんですから
 もっとこう、再会を喜ぶとか、
 感動の涙を流すとか……
-	教え子が無事に帰ってきたんですから
-	もっとこう、再会を喜ぶとか、
-	感動の涙を流すとか……
+	One should be overjoyed at a student's
+	safe return, maybe even to the point
+	of tears.
 
+## G:
 ふむ……
 君の言うことはもっともだ。
-	ふむ……
-	君の言うことはもっともだ。
+	Hm. It is as you say.
 
 しかし、どうしてだろう。
 君の顔を見ても、感動の涙が
 湧いてくる気配は一向にない。
-	しかし、どうしてだろう。
-	君の顔を見ても、感動の涙が
-	湧いてくる気配は一向にない。
+	But why is is that when I look
+	at your face, I feel not the
+	faintest hint of joy?
 
 湧いてくるのは、君への怒りと
 それに続く言葉だけなのだよ。
-	湧いてくるのは、君への怒りと
-	それに続く言葉だけなのだよ。
+	The only thing that comes to mind is
+	my anger towards you, and the words
+	that must follow.
 
+## U:
 な、なるほど……
-	な、なるほど……
+	I... see...
 
+## G:
 さて。今回君は、
 病院内を巻きこむ大騒動を
 引き起こしてしまったわけだが……
-	さて。今回君は、
-	病院内を巻きこむ大騒動を
-	引き起こしてしまったわけだが……
+	Now then. You've dragged everyone
+	in the institution into a huge
+	pandemonium.
 
 この帳尻は、はたして
 どうすれば合うと思うかね？
-	この帳尻は、はたして
-	どうすれば合うと思うかね？
+	How do you think this
+	can be reconciled?
 
+## U:
 えーと、それはその……
 い、以後気をつけます！
-	えーと、それはその……
-	い、以後気をつけます！
+	Err... That's... I'll
+	be more careful next time!
 
 以後では困るのだよ、アーシュラ君。
 何しろ今回は、警察が出動する
 騒ぎにまでなっているのだから。
-	以後では困るのだよ、アーシュラ君。
-	何しろ今回は、警察が出動する
-	騒ぎにまでなっているのだから。
+	Next time, you say. What about
+	this time, which caused a big enough
+	tumult to get the police involved?
 
+## U:
 そう言われましても……
-	そう言われましても……
+	Even if you say that...
 
+## G:
 ふむ。どうやら君とは、
 今後のことについて話し合う必要が
 ありそうだ。
-	ふむ。どうやら君とは、
-	今後のことについて話し合う必要が
-	ありそうだ。
+	Hm. It seems that the two of us
+	need to have a talk about the
+	future.
 
 場所を変えて話そうか。
 少し長くなるかもしれないが、何、
 我々が無駄にした時間ほどではないよ。
-	場所を変えて話そうか。
-	少し長くなるかもしれないが、何、
-	我々が無駄にした時間ほどではないよ。
+	Let's move to a more appropriate location.
+	I fear our talk may take some time.{wait}
+	But not as much time as you've wasted.
 
+## U:
 ひ、ひー！
-	ひ、ひー！
+	Eek!
 
+## Martha:
 ま、行方不明だった
 ウチのウッカリ主任が
 見つかってよかったよ。
-	ま、行方不明だった
-	ウチのウッカリ主任が
-	見つかってよかったよ。
+	Well, I'm glad our wayward ditz
+	of a Chief has been recovered
+	at last.
 
+## System:
 {color 2}クエスト【寝坊医者の捜索願い】{color 0}を達成した！
-	{color 2}クエスト【寝坊医者の捜索願い】{color 0}を達成した！
+	Quest {color 2}Search for the Oversleeping Doctor{color 0} completed!
 
+## M:
 世話になったね。
 これはお礼だよ。
 取っておいてちょうだい。
-	世話になったね。
-	これはお礼だよ。
-	取っておいてちょうだい。
+	Thank you for your help. Please
+	take this as thanks.
 
 {item 510}{color 0}４個を受け取った。
-	{item 510}{color 0}４個を受け取った。
+	Received {item 510}{color 0} x4。 ## Zeram Powder
 
+## L:
 ありがとうございます。
-	ありがとうございます。
+	Thank you very much.
 
+## M:
 さ、後はこっちの話さね。
 主任には、みんなに迷惑をかけた分、
 きっちり取り返してもらうとするよ。
-	さ、後はこっちの話さね。
-	主任には、みんなに迷惑をかけた分、
-	きっちり取り返してもらうとするよ。
+	She's caused us no end of trouble.
+	We'll work her to the bone to make
+	up for it.
 
+## T:
 自業自得とはいえ、
 少しだけ同情します。
-	自業自得とはいえ、
-	少しだけ同情します。
+	She'll reap what she has sown.
+	I feel a little sorry for her.
 
+## E:
 さすがに、ペナルティは
 避けられないでしょうね……
-	さすがに、ペナルティは
-	避けられないでしょうね……
+	After all, you can't avoid
+	the consequences.
 
+## R:
 白衣の天使たちに囲まれて、
 詰問されるなら、
 喜んで俺が代わるけどな。
-	白衣の天使たちに囲まれて、
-	詰問されるなら、
-	喜んで俺が代わるけどな。
+	Being surrounded and questioned by
+	angels wearing lab coats... I'd
+	gladly take her place.
 
+## L:
 とにかく、任務完了だ。
 帰るとしようか。
-	とにかく、任務完了だ。
-	帰るとしようか。
+	Anyway, we've finished this
+	Support Request. Shall we
+	head back?
 
 ## e0010 On the bus {{{1
+## R:
 さて、クロスベルに着いたら、
 いなくなった主任の捜索が
 本格的に始まるわけだが……
-	さて、クロスベルに着いたら、
-	いなくなった主任の捜索が
-	本格的に始まるわけだが……
+	If she's not there when we arrive,
+	we'll have to launch a full-scale
+	investigation...
 
 アテもなく捜すには、
 クロスベルはちょっとばかし、
 大きすぎる街だぜ。
-	アテもなく捜すには、
-	クロスベルはちょっとばかし、
-	大きすぎる街だぜ。
+	Crossbell's way too big to just
+	search aimlessly.
 
 どうするんだ、ロイド？
-	どうするんだ、ロイド？
+	How should we do this, Lloyd?
 
+## L:3
 地道に聞きこみをするしか
 ないだろうな。
-	地道に聞きこみをするしか
-	ないだろうな。
+	Do we have any choice? We'll
+	have to just ask around.
 
 人が多いってことは、
 それだけ目撃者がいる可能性も
 高いってことだから。
-	人が多いってことは、
-	それだけ目撃者がいる可能性も
-	高いってことだから。
+	There are a lot of people,
+	so chances are high that
+	someone's seen her.
 
+## E:
 警察官の基本ね。
 捜査は靴底をすり減らして
 やるものだ……ってね。
-	警察官の基本ね。
-	捜査は靴底をすり減らして
-	やるものだ……ってね。
+	A normal day for a police officer.
+	Just investigate until our soles
+	are worn down.
 
+## R:
 やれやれ。靴底が
 なくならないうちに
 見つかればいいけどな。
-	やれやれ。靴底が
-	なくならないうちに
-	見つかればいいけどな。
+	What a pain. Let's hope
+	we can find her with our
+	soles intact, yeah?
 
+## T:
 それで、どこから
 聞きこみを始めます？
-	それで、どこから
-	聞きこみを始めます？
+	That aside, where should we begin?
 
+## L:
 まずはバス停付近から始めよう。
 隣接する駅前通りなら、
 目撃証言があがるかもしれない。
-	まずはバス停付近から始めよう。
-	隣接する駅前通りなら、
-	目撃証言があがるかもしれない。
+	Let's start near the bus stop.
+	Station Street is right next to
+	it, so the number of witnesses
+	should be greatest there.
 
+## R:
 了解。それじゃ、
 張り切って行きますか！
-	了解。それじゃ、
-	張り切って行きますか！
+	Got it. Well, let's
+	hop to it, shall we?
 
-## c0000 {{{1
+## c0000 Station Street {{{1
+## [60] Talking to Lyd {{{2
+## Fist time {{{3
+## Ll:
 あの、すみません。
 俺たち、クロスベル警察
 特務支援課の者ですが……
-	あの、すみません。
-	俺たち、クロスベル警察
-	特務支援課の者ですが……
+	Excuse me. We're with the
+	Crossbell Police, Special
+	Support Section.
 
+## Ly:
 ああ。その人なら、
 たしかに今朝方見かけたよ。
-	ああ。その人なら、
-	たしかに今朝方見かけたよ。
+	Yeah, I might have seen
+	her this morning.
 
+## Ll:
 本当ですか！？
-	本当ですか！？
+	Really?
 
+## R:
 それで、そいつは
 どこに向かったんだ！？
-	それで、そいつは
-	どこに向かったんだ！？
+	Where was she heading?
 
+## Ly:
 ああ。
 なんだか眠そうな顔をして……
-	ああ。
-	なんだか眠そうな顔をして……
+	Well, she looked kinda tired...
 
 中央広場の方へ歩いて
 いったっけな。
-	中央広場の方へ歩いて
-	いったっけな。
+	She was heading toward the
+	Central Square.
 
 フラフラした足取りだったから、
 記憶には残ってる。
 間違いないよ。
-	フラフラした足取りだったから、
-	記憶には残ってる。
-	間違いないよ。
+	She was looking unsteady on her
+	feet, so it stuck with me.
 
+## Ll:
 そうですか。
 ありがとうございました。
-	そうですか。
-	ありがとうございました。
+	I see. Thank you
+	very much.
 
+## T:
 次は中央広場、ですね。
-	次は中央広場、ですね。
+	Next would be Central Square, then.
 
+## Ll:
 ああ。行ってみよう。
-	ああ。行ってみよう。
+	Yes, let's go.
 
+## Again {{{3
 白衣を着た医者っぽい人なら、
 たしかに今朝方見かけたよ。
-	白衣を着た医者っぽい人なら、
-	たしかに今朝方見かけたよ。
+	I did see a doctor-ish person
+	in a lab coat this morning.
 
 眠そうな顔をして、
 中央広場の方へ歩いて
 いったっけな。
-	眠そうな顔をして、
-	中央広場の方へ歩いて
-	いったっけな。
+	She was walking toward the Central
+	Square, looking dead tired.
 
 フラフラした足取りだったから、
 記憶には残ってる。
 間違いないよ。
-	フラフラした足取りだったから、
-	記憶には残ってる。
-	間違いないよ。
+	She was looking unsteady on her
+	feet, so it stuck with me.
 
-## c1130 {{{1
+## c1130 Library {{{1
 アーシュラ主任
-	アーシュラ主任
+	Chief Ursuline
 
+## [56] Talking to Miles {{{2
+## After talking to Azel {{{3
+## M:
 アーシュラさん？
 うん、彼女ならここにいるよ。
-	アーシュラさん？
-	うん、彼女ならここにいるよ。
+	Ursuline? Yeah, she's here.
 
 何でも、調べものをするって
 言ってたけど。
-	何でも、調べものをするって
-	言ってたけど。
+	She said she wanted to
+	look something up.
 
+## L:
 わかったよ。
 ありがとう、おじさん！
-	わかったよ。
-	ありがとう、おじさん！
+	I see. Thanks, Uncle!
 
 アーシュラさん？
 うん、彼女ならここにいるよ。
-	アーシュラさん？
-	うん、彼女ならここにいるよ。
+	Ursuline? Yeah, she's here.
 
 何でも、調べものをするって
 言ってたけど。
-	何でも、調べものをするって
-	言ってたけど。
+	She said she wanted to
+	look something up.
 
+## Before talking to Azel {{{3
 アーシュラさん？
 うーん、今日は姿を
 見ていないなぁ。
-	アーシュラさん？
-	うーん、今日は姿を
-	見ていないなぁ。
+	Ursuline? No, I haven't
+	seen her today.
 
 ここには、来てないんじゃないかな？
-	ここには、来てないんじゃないかな？
+	I don't think she's been here.
 
-## c1200 {{{1
+## c1200 Harbor District (why is this not in t1500_1?) {{{1
+## [21] Talking to Quine {{{2
+## Q:
 白衣の医者と、
 青い服を着た少年？
 うむ、たしかに見たのう。
-	白衣の医者と、
-	青い服を着た少年？
-	うむ、たしかに見たのう。
+	A doctor in a lab coat
+	and a youngster in blue?
+	Aye, they were here.
 
 こう、人目を避けるように、
 医者が少年に何かを
 渡しておったな。
-	こう、人目を避けるように、
-	医者が少年に何かを
-	渡しておったな。
+	They were trying to be being
+	discreet about it, but the doctor
+	gave something to the youngster.
 
 白い……薬のようなものに
 見えたがのう。
-	白い……薬のようなものに
-	見えたがのう。
+	It was white, and looked
+	like it might be some sort
+	of chemical.
 
+## T:
 薬って……もしかして、
 非合法なものでしょうか？
-	薬って……もしかして、
-	非合法なものでしょうか？
+	Chemical? You don't think
+	it's illegal drugs, do you?
 
+## R:
 医者っていう立場を利用すれば、
 たいがいのものは
 手に入ると思うが……
-	医者っていう立場を利用すれば、
-	たいがいのものは
-	手に入ると思うが……
+	Using her position as doctor,
+	she could easily get hold
+	of some strong stuff.
 
+## E:
 ちなみに、その後ふたりは
 どうしました？
-	ちなみに、その後ふたりは
-	どうしました？
+	By the way, where did
+	the two go afterwards?
 
+## Q:
 うん、一言二言挨拶して、
 それぞれ別の場所に
 去っていったな。
-	うん、一言二言挨拶して、
-	それぞれ別の場所に
-	去っていったな。
+	Well, after a few words of parting,
+	they each went their own way.
 
 どこに行ったかまでは、
 ワシは知らんのう。
-	どこに行ったかまでは、
-	ワシは知らんのう。
+	Where those ways led them,
+	I do not know.
 
+## T:
 アーシュラ主任の行方、
 途切れてしまいましたね……
-	アーシュラ主任の行方、
-	途切れてしまいましたね……
+	And like that, we've completely
+	lost the trail.
 
+## R:
 とりあえず、
 海に沈められたセンは
 なくなったみたいだがな。
-	とりあえず、
-	海に沈められたセンは
-	なくなったみたいだがな。
+	Seems she wasn't thrown in
+	at least.
 
+## E:
 これは……テスタメンツの子に
 直接話を聞いてみるしか
 ないかも。
-	これは……テスタメンツの子に
-	直接話を聞いてみるしか
-	ないかも。
+	How about we ask the Testaments
+	for a direct quote?
 
+## L:
 ああ。行ってみよう！
-	ああ。行ってみよう！
+	Sounds good. Let's go!
 
 白衣の医者と、
 青い服を着た少年？
 うむ、たしかに見たわい。
-	白衣の医者と、
-	青い服を着た少年？
-	うむ、たしかに見たわい。
+	A doctor in a lab coat
+	and a youngster in blue?
+	Aye, they were here.
 
 一言二言挨拶して、
 それぞれ別の場所に
 去っていったな。
-	一言二言挨拶して、
-	それぞれ別の場所に
-	去っていったな。
+	Well, after a few words of parting,
+	they each went their own way.
 
 どこに行ったかまでは、
 ワシは知らんのう。
-	どこに行ったかまでは、
-	ワシは知らんのう。
+	Where those ways took them,
+	I do not know.

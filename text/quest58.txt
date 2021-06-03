@@ -717,179 +717,190 @@
 	too. So thanks for that!
 
 ## [9] Results announcement {{{2
+## O:
 お、ロイド、
 ちょうどいいところに来たな。
-	お、ロイド、
-	ちょうどいいところに来たな。
+	Yo, Lloyd. Nice timing.
 
+## L:
 ん？　どうかしたのか？
-	ん？　どうかしたのか？
+	What's up?
 
+## M:
 ちょうど、究極のパン対決の
 勝敗が決まったところなんだ。
-	ちょうど、究極のパン対決の
-	勝敗が決まったところなんだ。
+	We're just about to announce the
+	victor of the Bread Showdown.
 
+## E:
 それで……。
 どちらが勝ったんですか？
-	それで……。
-	どちらが勝ったんですか？
+	So... Who did win?
 
+## M:
 ああ。勝負は……
-	ああ。勝負は……
+	The winner is...
 
 ## Draw {{{3
+## M:
 #5S引き分けだ。#3S
-	#5S引き分けだ。#3S
+	#5SNeither!#3S It's a draw.
 
 両方とも同じ数を出して、
 売り切れだった。
-	両方とも同じ数を出して、
-	売り切れだった。
+	They both sold equal amounts.
 
+## B:
 くやしい……！
-	くやしい……！
+	How vexing...
 
+## O:
 俺は、そうでもないかな。
 せいいっぱいやったし、
 悔いはないさ。
-	俺は、そうでもないかな。
-	せいいっぱいやったし、
-	悔いはないさ。
+	I don't think so. I did my
+	best, and that's what counts.
 
 それに、ベネットのパンも
 うまかったしな。
-	それに、ベネットのパンも
-	うまかったしな。
+	And your bread was delicious.
 
+## B:
 な、なによ……。
 敵を褒めるなんて、
 どうかしてるんじゃない？
-	な、なによ……。
-	敵を褒めるなんて、
-	どうかしてるんじゃない？
+	W-what are you talking about...
+	Why are you praising your enemy?
 
 ## Oscar wins {{{3
+## M:
 #5Sオスカーの勝ちだ。#3S
-	#5Sオスカーの勝ちだ。#3S
+	#5SOscar!#3S
 
+## O:
 はは。
 これもロイドたちのおかげさ。
 ありがとな。
-	はは。
-	これもロイドたちのおかげさ。
-	ありがとな。
+	Haha. All thanks to you guys.
+	Thanks, Lloyd.
 
 特に、差し入れの
 『{item 322}』が効いたよ。
 あれでアイデアが湧いたんだ。
-	特に、差し入れの
-	『{item 322}』が効いたよ。
-	あれでアイデアが湧いたんだ。
+	Especially that {item 322}.
+	I got a lot of inspiration from that.
 
+## B:
 く、悔しい……！
 今度こそ勝てるって
 思ったのに！
-	く、悔しい……！
-	今度こそ勝てるって
-	思ったのに！
+	How vexing... I thought
+	for sure I'd win this time!
 
+## O:
 何だよ、別にどっちが勝っても
 いいだろ。
-	何だよ、別にどっちが勝っても
-	いいだろ。
+	What, it's not like it matters
+	who won. It was just a
+	friendly competition.
 
 ベネットのパンだって、うまいぜ。
 新作が２つそろえば、
 客足だって増えるだろうしさ。
-	ベネットのパンだって、うまいぜ。
-	新作が２つそろえば、
-	客足だって増えるだろうしさ。
+	Your bread was really good too.
+	With two new breads we'll get a lot
+	of new customers.
 
+## B:
 な、何よ……
 それでなぐさめてるつもり？
-	な、何よ……
-	それでなぐさめてるつもり？
+	W-what, are you trying to
+	console me now?
 
+## O:
 ん？　別にそんなつもりじゃない。
 ベネットの新作、
 よくできてると思うぜ。
-	ん？　別にそんなつもりじゃない。
-	ベネットの新作、
-	よくできてると思うぜ。
+	Not at all. I think
+	you did a great job on
+	your bread, is all.
 
-## Bennet wins
+## Bennet wins {{{3
+## M:
 #5Sベネットの勝ちだ。#3S
-	#5Sベネットの勝ちだ。#3S
+	#5SBennet!#3S
 
 え……ホ、ホントに！？
 ……やった、やったー！
-	え……ホ、ホントに！？
-	……やった、やったー！
+	R-really!? Hooray,
+	I won, I won!
 
+## O:
 はは。おめでとう、ベネット。
-	はは。おめでとう、ベネット。
+	Haha. Congratulations, Bennet.
 
+## B:
 な、何よ……
 悔しがったりしないわけ？
-	な、何よ……
-	悔しがったりしないわけ？
+	What, aren't you lamenting
+	your loss?
 
+## O:
 ん？　いや別に。
 俺も、満足する新作を
 作れたからな。
-	ん？　いや別に。
-	俺も、満足する新作を
-	作れたからな。
+	Nah, not really. I'm
+	happy enough with my bread,
+	even if I didn't win.
 
 それに、ベネットのパン、
 たしかによくできてるよ。
 美味いし、気持ちがこもってるのもわかる。
-	それに、ベネットのパン、
-	たしかによくできてるよ。
-	美味いし、気持ちがこもってるのもわかる。
+	Besides, your bread was really
+	well done. It's great, and you
+	know it.
 
+## B:
 な、何よ……
 そんなに誉めたって、
 感謝なんか、しないわよ……
-	な、何よ……
-	そんなに誉めたって、
-	感謝なんか、しないわよ……
+	W-what? Don't think that
+	kind of praise will
+	make me happy!
 
 ……こ、今回勝てたのは
 ロイドさんたちが集めてくれた
 材料の良さもあるし……
-	……こ、今回勝てたのは
-	ロイドさんたちが集めてくれた
-	材料の良さもあるし……
+	...I only won because of the
+	ingredients those guys gave me
 
 あの、『{item 326}』が
 なかったら、正直、
 勝ててなかったと思う……
-	あの、『{item 326}』が
-	なかったら、正直、
-	勝ててなかったと思う……
+	I don't think I would have won if
+	I didn't have that {item 326},
 ## }}}3
 
+## O:
 ははっ。これからも
 お互い頑張っていこうぜ。
-	ははっ。これからも
-	お互い頑張っていこうぜ。
+	Haha, let's keep this up.
 
+## B:
 あ、あんたがそう言うなら、
 そうしてもいいけど……
-	あ、あんたがそう言うなら、
-	そうしてもいいけど……
+	W-well, if you insist...
 
+## E:
 （何だか……）
-	（何だか……）
+	(Somehow...)
 
+## T:
 （これはこれで、
 　お似合いのふたり
 　って感じですね）
-	（これはこれで、
-	　お似合いのふたり
-	　って感じですね）
+	(They feel like a perfect match
+	for each other.)
 
 ## [10] Talking to Oscar {{{2
 ## if haven't started {{{3
@@ -1101,36 +1112,35 @@
 新作パンのおかげで、
 客足もかなり伸びたんだ。
 感謝するぜ、ロイド。
-	新作パンのおかげで、
-	客足もかなり伸びたんだ。
-	感謝するぜ、ロイド。
+	Thanks to this new bread,
+	we've pulled in plenty
+	of new customers. Thanks,
+	Lloyd.
 
 ただ、ベネットの奴が
 すんげぇ悔しそうに
 してるんだよな……
-	ただ、ベネットの奴が
-	すんげぇ悔しそうに
-	してるんだよな……
+	But Bennet looked really
+	sad for losing...
 
 別にどっちが勝っても
 客が増えれば
 それでいいと思うんだけどなあ。
-	別にどっちが勝っても
-	客が増えれば
-	それでいいと思うんだけどなあ。
+	Me, I don't particularly mind.
+	As long as the customers are
+	happy, it's all good with me.
 
 ## else {{{3
 新作パンのおかげで、
 客足もかなり伸びたんだ。
 ありがとな。
-	新作パンのおかげで、
-	客足もかなり伸びたんだ。
-	ありがとな。
+	Thanks to this new bread,
+	we've pulled in plenty
+	of new customers.
 
 ベネットの奴も、
 ロイドに感謝してたぜ。
-	ベネットの奴も、
-	ロイドに感謝してたぜ。
+	I know Bennet is grateful, too.
 
 ## [13] Talking to Bennet {{{2
 ## if haven't started {{{3
@@ -1279,44 +1289,42 @@
 ## if Bennet won {{{3
 ふふ……ついにあのオスカーに
 勝つことができた！
-	ふふ……ついにあのオスカーに
-	勝つことができた！
+	Heehee, I've finally defeated
+	Oscar once and for all!
 
 ……けど、オスカーの奴、
 おめでとう、だなんて……
 ……調子、狂うじゃない……
-	……けど、オスカーの奴、
-	おめでとう、だなんて……
-	……調子、狂うじゃない……
+	But Oscar was just like,
+	"Congratulations!"
+	What's up with that?
 
 ## elif it's a draw {{{3
 まさか引き分けだなんて……
 今度こそ決着をつけるはずだったのに！
-	まさか引き分けだなんて……
-	今度こそ決着をつけるはずだったのに！
+	I can't believe it was a draw.
+	We were supposed to settle it
+	with this match!
 
 いいわ。
 次の対決までにもっともっと腕を磨いて、
 絶ーっ対ぎゃふんと言わせてやるんだから！
-	いいわ。
-	次の対決までにもっともっと腕を磨いて、
-	絶ーっ対ぎゃふんと言わせてやるんだから！
+	Oh well. I'll just practice and practice,
+	so I can leave him speechless next time.
 
 ## else {{{3
 く、悔しい！
 また負けた……！
-	く、悔しい！
-	また負けた……！
+	Ugh... I lost again...
 
 ……けど、負けたのは材料の差。
 腕なら、負けてないんだから！
-	……けど、負けたのは材料の差。
-	腕なら、負けてないんだから！
+	But that was only because of the ingredients!
+	I'm not losing in skill!
 
 そのうち、絶対リベンジ
 してやるわ……！
-	そのうち、絶対リベンジ
-	してやるわ……！
+	I'll have my revenge one of these days...
 
 ## [15] {{{2
 {item 300}　　　×５

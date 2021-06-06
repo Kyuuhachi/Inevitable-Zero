@@ -646,7 +646,7 @@
 ## L:
 い、いやぁ、どうだろう。
 ていうかそれ、驚く所？
-	W-well, we don't know.
+	W-Well, we don't know.
 	Wait, is that surprising?
 
 ## Ch:
@@ -1438,7 +1438,7 @@
 ## A:
 な、何だよ。
 警察官が、俺に何か用！？
-	W- what? Do you police dogs
+	Wh-What? Do you police dogs
 	have any business here?
 
 ## L:

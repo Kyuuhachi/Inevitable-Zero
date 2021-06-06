@@ -769,7 +769,7 @@
 な、なによ……。
 敵を褒めるなんて、
 どうかしてるんじゃない？
-	W-what are you talking about...
+	Wh-What are you talking about...
 	Why are you praising your enemy?
 
 ## Oscar wins {{{3
@@ -814,7 +814,7 @@
 ## B:
 な、何よ……
 それでなぐさめてるつもり？
-	W-what, are you trying to
+	Wh-What, are you trying to
 	console me now?
 
 ## O:
@@ -864,7 +864,7 @@
 な、何よ……
 そんなに誉めたって、
 感謝なんか、しないわよ……
-	W-what? Don't think that
+	Wh-What? Don't think that
 	kind of praise will
 	make me happy!
 
@@ -889,7 +889,7 @@
 ## B:
 あ、あんたがそう言うなら、
 そうしてもいいけど……
-	W-well, if you insist...
+	W-Well, if you insist...
 
 ## E:
 （何だか……）
@@ -1296,8 +1296,9 @@
 おめでとう、だなんて……
 ……調子、狂うじゃない……
 	But Oscar was just like,
-	"Congratulations!"
-	What's up with that?
+	"Congratulations!" Would
+	it hurt to be at least a
+	little disappointed?
 
 ## elif it's a draw {{{3
 まさか引き分けだなんて……

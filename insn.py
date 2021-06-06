@@ -19,6 +19,9 @@ CHAR1 = "CHAR1"|k.iso(Char, int)@k.u1
 class Party(int): pass
 PARTY = "PARTY"|k.iso(Party, int)@k.u1
 
+class Object(int): pass
+OBJECT = "OBJECT"|k.iso(Object, int)@k.u1
+
 class ResId(int):
 	"""
 	For resources that are loaded and unloaded. I don't know if IMG_* and EFF_*
@@ -450,13 +453,13 @@ insns_zero_pc = [
 	insn("0x6E", k.i4, k.u4),
 	insn("0x6F", k.bytes(1)),
 
-	insn("0x70", k.u1, k.bytes(2)),
-	insn("0x71", k.u1, k.bytes(2), k.u4, k.u4),
-	insn("OBJ_FLAG_SET", k.u1, k.u4),
-	insn("OBJ_FLAG_UNSET", k.u1, k.u4),
-	insn("0x74", k.bytes(3)),
+	insn("0x70", OBJECT, k.bytes(2)),
+	insn("0x71", OBJECT, k.bytes(2), k.u4, k.u4),
+	insn("OBJ_FLAG_SET", OBJECT, k.u4),
+	insn("OBJ_FLAG_UNSET", OBJECT, k.u4),
+	insn("0x74", OBJECT, k.u2),
 	None,
-	insn("OBJ_SET_FRAME", k.u1, zstr, choice({
+	insn("OBJ_SET_FRAME", OBJECT, zstr, choice({
 		0: insn("0", k.u4),
 		1: insn("1", k.u4),
 		2: insn("2", zstr),
@@ -504,7 +507,7 @@ insns_zero_pc = [
 	insn("CHAR_SET_POS", CHAR, POS, k.u2),
 
 	insn("0x90", CHAR, POS, k.bytes(2)),
-	insn("0x91", CHAR, k.u2, k.u2),
+	insn("CHAR_WATCH", CHAR, CHAR, k.u2),
 	insn("0x92", CHAR, k.i4, k.i4, k.u2),
 	insn("CHAR_ROTATE", CHAR, k.u2, k.u2),
 	insn("CHAR_IDLE", CHAR, k.tuple(k.i4, k.i4), k.tuple(k.i4, k.i4), k.u4),
@@ -515,7 +518,7 @@ insns_zero_pc = [
 	insn("0x99", CHAR, k.bytes(11)),
 	insn("0x9A", CHAR, k.bytes(2), k.u4, k.u4, k.bytes(1)),
 	insn("0x9B", k.bytes(1), CHAR, k.bytes(11)),
-	insn("0x9C", k.bytes(22)),
+	insn("0x9C", CHAR, k.bytes(20)),
 	insn("0x9D", CHAR, k.i4, k.i4, k.i4, k.u4, k.u4),
 	insn("0x9E", CHAR, k.i4, k.i4, k.i4, k.i4, k.bytes(2)),
 	insn("0x9F", choice({

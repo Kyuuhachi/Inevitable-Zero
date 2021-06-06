@@ -12,7 +12,7 @@ class CustomRepr:
 	def __repr__(self): return self.repr
 
 def dump(f, data, mode):
-	f.write("if 0: from . import Insn, Expr, Text, Translate, Char, Flag, Function, Color, Party, ResId\n")
+	f.write("if 0: from . import Insn, Expr, Text, Translate, Char, Flag, Function, Color, Party, ResId, Object\n")
 	f.write("data = ")
 	pprint(f, {**data, "code": CustomRepr(f"[None]*{len(data['code'])}")}, mode)
 	f.write("\n")

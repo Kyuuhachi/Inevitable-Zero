@@ -59,7 +59,9 @@ class Context: # {{{1
 				return sc
 
 		with path.open("rb") as f:
-			return kouzou.read(scena.scenaStruct, f, params)
+			sc = kouzou.read(scena.scenaStruct, f, params)
+			sc = do_transform(sc, transform)
+			return sc
 
 	def _get_vita(self, name):
 		if name not in self.vita_scripts:
@@ -80,6 +82,7 @@ class Context: # {{{1
 		assert name not in self.pc_scripts
 		self.pc_scripts[name] = self._get_vita(name)
 		self._do_translate(name, translation)
+		return self.pc_scripts[name]
 
 	@contextmanager
 	def get(self, name, translation=None):
@@ -194,7 +197,7 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 	tr = translate.translator("quest55")
 	ctx.copy_quest(55, tr)
 
-	# Mishelam, first area
+	# Mishelam, docks
 	with ctx.get("t1000", tr) as (vita, pc):
 		pc.includes = vita.includes
 		pc.chcp = vita.chcp
@@ -207,18 +210,18 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 
 		copy_clause(vita, pc, 1, 1) # Add Tourist
 
-	# Mishelam, second area area
+	# Mishelam, residental district
 	with ctx.get("t1010", tr) as (vita, pc):
 		pc.includes = vita.includes
 		pc.chcp = vita.chcp
-		vita = transform_npcs(vita, {
+		vita = transform_npcs(vita, t1010_map := {
 			2: copy(pc.npcs, vita.npcs[2]),
 		})
 
 		# XXX Cabilan and Lughman don't have flag 0x0080 in Vita
 		pc.code[4][-3:-1] = vita.code[4][-2:-1] # Add Mishy
 
-	# Mishelam, third area
+	# Mishelam, mall
 	with ctx.get("t1020", tr) as (vita, pc):
 		pc.includes = vita.includes
 		vita = transform_funcs(vita, {
@@ -231,6 +234,7 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 
 		copy_clause(vita, pc, 3, -2) # Add Girl
 
+	## Mishelam, Wonderland entrance
 	with ctx.get("t1030") as (vita, pc):
 		pc.includes = vita.includes
 		vita = transform_funcs(vita, {
@@ -244,9 +248,15 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 		copy_clause(vita, pc, 3, "@IF", 0, 0) # Talking to Clerk
 		copy_clause(vita, pc, 5, "@IF", 0, 0) # Talking to Mishy
 
-	ctx.copy("t1030_1", tr)
+	pc = ctx.copy("t1030_1", tr)
+	# These functions are called from t1010, which has its NPCs remapped
+	for fn in 11, 14, 15, 16, 17, 18:
+		pc.code[fn] = do_transform(pc.code[fn], {"npc": {
+			k+8: v+8
+			for k, v in to_permutation(t1010_map).items()
+		}})
 
-	# Mishelam, sixth area
+	# Mishelam, hotel
 	with ctx.get("t1050") as (vita, pc):
 		pc.includes = vita.includes
 		vita = transform_funcs(vita, {
@@ -653,14 +663,19 @@ def permute(tr, xs):
 
 def do_transform(obj, tr):
 	if not tr: return obj
-	if isinstance(obj, insn.Translate) and not getattr(obj, "translated", False):
+	if isinstance(obj, insn.Translate):
+		if getattr(obj, "translated", False):
+			return obj
 		tl = tr.get("translate")
-		if tl is True:
+		if tl is None:
+			return obj
+		elif tl is True:
 			obj.translated = True
+			return obj
 		elif isinstance(tl, translate.BaseTranslator):
 			obj = type(obj)(tl.translate(obj))
 			obj.translated = True
-		return obj
+			return str(obj)
 
 	if isinstance(obj, Insn):
 		obj.args = do_transform(obj.args, tr)

@@ -592,7 +592,7 @@ insns_zero_pc = [
 	insn("0xD1", k.bytes(3), zstr),
 	None,
 	insn("0xD3", CHAR, k.i4, k.i4, k.i4, k.u4),
-	insn("0xD4", k.u1, k.u1, k.u1, k.u1, k.u1),
+	insn("LOAD_CHCP", k.lazy(lambda: scena.chcp), k.u1),
 	insn("0xD5", k.u1),
 	insn("0xD6", k.bytes(2)),
 	insn("VITA_C7", k.bytes(2)),

@@ -1,8 +1,9 @@
+## Quest log {{{1
 とある人物の捜索
-	とある人物の捜索
+	Search for a Certain Person
 
 ミシュラム係員
-	ミシュラム係員
+	Mishelam clerk
 
 　とある人物を急ぎ探してください！　　
 　
@@ -11,33 +12,32 @@
 　
 　《ミシュラム》のテーマパークで　　　
 　待っています！　　　　　　　　　　　
-	　とある人物を急ぎ探してください！　　
+	　Please help us find a certain individual,
+	　quickly!
 	　
-	　子どもたちの夢を守るために、　　　　
-	　ぜひお力を貸してください！　　　　　
+	　Please lend us your aid in protecting the
+	　hopes and dreams of children everywhere!
 	　
-	　《ミシュラム》のテーマパークで　　　
-	　待っています！　　　　　　　　　　　
+	　I'll be waiting at Mishelam Wonderland.
 
 ★テーマパークの係員に事情を聞いた。　
 　ミシュラムのマスコットキャラ　　　　
 　《みっしぃ》の姿が見えないという。　
 　特にティオが、《みっしぃ》捜索に　　
 　意欲を見せているようだが……　　　　
-	★テーマパークの係員に事情を聞いた。　
-	　ミシュラムのマスコットキャラ　　　　
-	　《みっしぃ》の姿が見えないという。　
-	　特にティオが、《みっしぃ》捜索に　　
-	　意欲を見せているようだが……　　　　
+	★Got the details from the clerk.
+	　Mishelam's mascot, Mishy, has gone missing.
+	　Tio seems particularly eager to accept
+	　this support request.
 
 ★《みっしぃ》を秘密裏に探すことに　　
 　なった。遠くには行けないはずだが、　
 　船に乗ってしまった可能性もある。　　
 　まずは船着場で情報を集めよう。　　　
-	★《みっしぃ》を秘密裏に探すことに　　
-	　なった。遠くには行けないはずだが、　
-	　船に乗ってしまった可能性もある。　　
-	　まずは船着場で情報を集めよう。　　　
+	★We will secretly search for Mishy. He can't
+	　move very fast, but it is possible that
+	　he's managed to get on the boat. Let's
+	　start by asking at the docks.
 
 ★《みっしぃ》がブティックに　　　　　
 　向かったとの目撃情報を得た。　　　　
@@ -73,547 +73,628 @@
 	　ティオには、着ぐるみや中の人の話は　
 	　しないでおこう……　　　　　　　　　
 
+## t1030_1 {{{1
+
 観光客
-	観光客
+	Tourist
 
 みっしぃ
-	みっしぃ
+	Mishy
 
 女の子
-	女の子
+	Girl
 
+## [1] Talking to clerk, first time {{{2
+## C:
 ミシュラムの誇る
 テーマパークへようこそ。
 入場券はお持ちでしょうか？
-	ミシュラムの誇る
-	テーマパークへようこそ。
-	入場券はお持ちでしょうか？
+	Welcome to Mishelam Wonderland,
+	pride of Mishelam. Do you have
+	an entrance ticket?
 
+## L:
 あの、俺たち
 クロスベル警察・特務支援課の者です。
 支援要請を見て伺ったのですが……
-	あの、俺たち
-	クロスベル警察・特務支援課の者です。
-	支援要請を見て伺ったのですが……
+	We're with the CPD, Special Support Section.
+	I believe you submitted a support request.
 
+## C:
 おお！　お待ちしておりました！
 もう、本当にどうしたものかと
 途方にくれておりまして……！
-	おお！　お待ちしておりました！
-	もう、本当にどうしたものかと
-	途方にくれておりまして……！
+	I've been waiting for you! I'm
+	really at a loss as to what to do!
 
+## L:
 お、落ち着いてください。
 ……いったい、何があったんですか？
-	お、落ち着いてください。
-	……いったい、何があったんですか？
+	Please take a deep breath, and
+	tell us what is going on.
 
+## C:
 はい、あの……
 このことは、くれぐれも内密にして
 いただきたいのですが……
-	はい、あの……
-	このことは、くれぐれも内密にして
-	いただきたいのですが……
+	Yes, of course... I'd like for
+	this to stay strictly confidential,
+	if you don't mind.
 
 実は、みっしぃが、ですね。
-	実は、みっしぃが、ですね。
+	In truth, it is about Mishy.
 
+## L:
 みっしぃというと、このテーマパークの
 マスコットキャラですよね？
-	みっしぃというと、このテーマパークの
-	マスコットキャラですよね？
+	Mishy, that's the name of the
+	theme park's mascot, I believe?
 
+## T:
 まさか、みっしぃの身に何か……！？
-	まさか、みっしぃの身に何か……！？
+	Can it be that Mishy is...!?
 
+## C:
 ええ、実は……みっしぃが、
 いなくなってしまいまして。
-	ええ、実は……みっしぃが、
-	いなくなってしまいまして。
+	To be blunt, Mishy has...
+	disappeared.
 
+## L:
 いなくなった？
-	いなくなった？
+	Disappeared?
 
+## C:
 ちょっと目を離した隙に、
 どこかへと
 姿を消してしまったようなのです。
-	ちょっと目を離した隙に、
-	どこかへと
-	姿を消してしまったようなのです。
+	I turned my back for a moment,
+	and when I turned back he wasn't there.
 
+## T:
 まさか……誘拐でしょうか？
-	まさか……誘拐でしょうか？
+	Don't tell me he's been kidnapped?
 
 愛くるしいみっしぃを、
 自宅でも堪能したい……
 犯行の動機としては納得がいきます。
-	愛くるしいみっしぃを、
-	自宅でも堪能したい……
-	犯行の動機としては納得がいきます。
+	Because I can certainly understand
+	wanting to enjoy dear, sweet Mishy
+	at home.
 
+## R:
 （中の奴が
 　サボりたかっただけじゃねーのか？）
-	（中の奴が
-	　サボりたかっただけじゃねーのか？）
+	(Isn't the guy inside just taking a break?)
 
+## C:
 とにかく、速やかに、誰にも知られず
 探しだしていただきたいのです！
-	とにかく、速やかに、誰にも知られず
-	探しだしていただきたいのです！
+	Find him quickly, and
+	without letting anyone know!
 
 子どもたちの夢を守るために、
 ぜひお力を貸してください！
-	子どもたちの夢を守るために、
-	ぜひお力を貸してください！
+	Lend us your aid in protecting
+	the hopes and dreams of
+	children everywhere!
 
+## [2] Talking to clerk again {{{2
 誰にも知られず、極秘裏に
 みっしぃを
 連れ戻していただきたいのです！
-	誰にも知られず、極秘裏に
-	みっしぃを
-	連れ戻していただきたいのです！
+	Please bring Mishy back
+	with utmost haste and secrecy!
 
 子どもたちの夢を守るために、
 ぜひお力を貸してください！
-	子どもたちの夢を守るために、
-	ぜひお力を貸してください！
+	Lend us your aid in protecting
+	the hopes and dreams of
+	children everywhere!
 
+## [3] Yes/no prompt {{{2
 【引き受ける】
-	【引き受ける】
+	[Accept]
 
 【やめる】
-	【やめる】
+	[Refuse]
 
+## If refused {{{3
+## L:
 すみませんが……
 今すぐには引き受けられません。
-	すみませんが……
-	今すぐには引き受けられません。
+	I'm sorry, but we cannot
+	accept the support request
+	at this time.
 
+## T:
 そんな……！
-	そんな……！
+	Aww...
 
+## L:
 （なんで依頼主よりも
 　ショックを受けてるんだ……）
-	（なんで依頼主よりも
-	　ショックを受けてるんだ……）
+	(Why do you look more dejected
+	than the client...)
 
+## C:
 そうですか……。
 困りました、
 いったいどうすればいいのか……
-	そうですか……。
-	困りました、
-	いったいどうすればいいのか……
+	I see... What shall I do...
 
+## [4] Quest accepted {{{2
+## L:
 分かりました。
 確かに引き受けさせて
 いただきます。
-	分かりました。
-	確かに引き受けさせて
-	いただきます。
+	I understand. Sure,
+	we'll look for him.
 
+## C:
 ああ、ありがとうございます！
 感謝いたします！
-	ああ、ありがとうございます！
-	感謝いたします！
+	I cannot thank you enough!
 
+## T:
 当然のことをしたまでです。
 みっしぃのピンチを助けるのは
 クロスベル市民としての義務ですから。
-	当然のことをしたまでです。
-	みっしぃのピンチを助けるのは
-	クロスベル市民としての義務ですから。
+	It is only natural. If Mishy is
+	in danger, it is the sworn duty of
+	any Crossbellan to help him.
 
+## L:
 あはは……そ、そうかな？
-	あはは……そ、そうかな？
+	Ahaha... I'm sure it is.
 
 ええと、早速ですが、
 みっしぃが行きそうなところに
 心当たりはありませんか？
-	ええと、早速ですが、
-	みっしぃが行きそうなところに
-	心当たりはありませんか？
+	You wouldn't happen to have any
+	idea where he might have gone?
 
+## C:
 そうですね、みっしぃは着ぐる……
-	そうですね、みっしぃは着ぐる……
+	Let me think. Mishy is wearing...
 
 いやいや、間違えました
 みっしぃは猫なので
 さほど遠くには行けないはずです。
-	いやいや、間違えました
-	みっしぃは猫なので
-	さほど遠くには行けないはずです。
+	Scratch that, my bad. Mishy
+	is a cat, so he can't move
+	very fast.
 
+## L:
 ということは、このミシュラムの
 どこかにいると？
-	ということは、このミシュラムの
-	どこかにいると？
+	Do you think he's here at Mishelam?
 
+## C:
 あくまで推論です。
 とはいえ、船に乗って市街に行くのは
 なかなか困難ではないでしょうか。
-	あくまで推論です。
-	とはいえ、船に乗って市街に行くのは
-	なかなか困難ではないでしょうか。
+	This is just conjecture, but I do
+	not believe he could have gotten on
+	the boat to the mainland.
 
+## T:
 ですが、誘拐という線なら、
 船に乗ったことも考えられますね。
-	ですが、誘拐という線なら、
-	船に乗ったことも考えられますね。
+	But if we consider kidnapping,
+	taking him on the boat would
+	be possible.
 
 まずは、船着場に行って、
 話を聞くのがよいかと。
-	まずは、船着場に行って、
-	話を聞くのがよいかと。
+	We should start by asking people at the docks.
 
+## L:
 ああ、そうしよう。
-	ああ、そうしよう。
+	Sure, let's do that.
 
+## System:
 {color 2}クエスト【とある人物の捜索】{color 0}を開始した！
-	{color 2}クエスト【とある人物の捜索】{color 0}を開始した！
+	Quest {color 2}[Search for a Certain Person]{color 0} started!
 
+## C:
 一刻も早く、みっしぃを
 捜しだしてください！
-	一刻も早く、みっしぃを
-	捜しだしてください！
+	Please recover Mishy ASAP!
 
 子どもたちの夢を守るためにも
 よろしくお願いします！
-	子どもたちの夢を守るためにも
-	よろしくお願いします！
+	We are grateful for you aid in
+	protecting the hopes of dreams
+	of children!
 
+## [5] Talking to tourist at docks {{{2
+## To:
 みっしぃ？
 あぁ、あの猫の着ぐるみね。
-	みっしぃ？
-	あぁ、あの猫の着ぐるみね。
+	Mishy? Oh, that cat mascot.
 
 それなら、あちこち走り回ってから、
 ブティックの方に行ったけど、
 それがどうかしたの？
-	それなら、あちこち走り回ってから、
-	ブティックの方に行ったけど、
-	それがどうかしたの？
+	He ran all over the place, and
+	ended up at the boutique. I
+	wonder what that was about?
 
+## L:
 いや、なんでもないんです。
 教えてくれて、ありがとう。
-	いや、なんでもないんです。
-	教えてくれて、ありがとう。
+	I'm sure it wasn't anything important.
+	Thanks for telling us.
 
+## E:
 あちこち走り回っていた……
 どういうことかしら？
-	あちこち走り回っていた……
-	どういうことかしら？
+	Running all over the place? "I
+	wonder what that was about", indeed.
 
+## T:
 追っ手から逃げていた、
 と考えるのが妥当ではないかと。
-	追っ手から逃げていた、
-	と考えるのが妥当ではないかと。
+	Running from a pursuer, perhaps. That
+	seems reasonable.
 
+## R:
 追っ手って誰だよ？
-	追っ手って誰だよ？
+	And who would this pursuer be?
 
+## T:
 みっしぃを捕獲しようという、
 犯罪者に決まっています。
-	みっしぃを捕獲しようという、
-	犯罪者に決まっています。
+	The criminals trying to apprehend
+	him, of course.
 
 みっしぃを捕まえて、もふもふを
 独り占めしようとしてるんです。
-	みっしぃを捕まえて、もふもふを
-	独り占めしようとしてるんです。
+	Their aim is to capture Mishy and
+	monopolize his fluff.
 
+## R:
 …………。
-	…………。
+	...
 
+## L:
 ええと……とにかく、
 追いかけようか。
 ブティックの方に行ったみたいだし。
-	ええと……とにかく、
-	追いかけようか。
-	ブティックの方に行ったみたいだし。
+	Anyway, let's follow him. He went
+	to the boutique, by the sound of it.
 
+## [6] Talking to the tourist again {{{2
 猫の着ぐるみなら、
 フラフラと歩いて、
 ブティックの方に行ったけど？
-	猫の着ぐるみなら、
-	フラフラと歩いて、
-	ブティックの方に行ったけど？
+	The cat mascot went around everywhere,
+	then ended up at the boutique.
 
+## [7] Talking to girl outside boutique {{{2
+## G:
 え？　みっしぃ？
 うん、見たよ。
-	え？　みっしぃ？
-	うん、見たよ。
+	Mishy? Yep, I saw him.
 
 バタバター！　ってはしって、
 うわーっ！　ってさけんで、
 びゅーん！　っていなくなっちゃった。
-	バタバター！　ってはしって、
-	うわーっ！　ってさけんで、
-	びゅーん！　っていなくなっちゃった。
+	He was like pat-pat-pat, AAAAAAAHHH!,
+	fwoosh, and then he was gone.
 
+## L:
 バタバタに、
 うわーっに、
 びゅーん……？
-	バタバタに、
-	うわーっに、
-	びゅーん……？
+	Pat-pat-pat, AAAAH!, fwoosh...?
 
+## G:
 うん！
-	うん！
+	Yeah!
 
+## T:
 やはり、みっしぃの身に
 何か起こったに違いありません。
-	やはり、みっしぃの身に
-	何か起こったに違いありません。
+	It sounds like he did indeed
+	get in a pinch.
 
 追っ手から逃げるために、
 必死の形相で逃げている
 苦悶の表情が目に浮かびます。
-	追っ手から逃げるために、
-	必死の形相で逃げている
-	苦悶の表情が目に浮かびます。
+	I can see the anguished expression
+	on his face as he struggles to
+	escape his pursuers...
 
+## R:
 着ぐるみだから、
 表情は変わらないんじゃねーのか？
-	着ぐるみだから、
-	表情は変わらないんじゃねーのか？
+	It's a costume. He doesn't
+	have facial expressions.
 
+## T:
 ランディさんは、
 細かいことを気にしすぎです。
-	ランディさんは、
-	細かいことを気にしすぎです。
+	You worry too much about the
+	details, Randy.
 
 あの、それでみっしぃは
 どこに行きましたか？
-	あの、それでみっしぃは
-	どこに行きましたか？
+	Where did Mishy go after that?
 
+## G:
 えっとね、
-	えっとね、
+	Hmm...
 
 あっちにいった！
-	あっちにいった！
+	That way!
 
+## E:
 ホテルのほうね。
 どうもありがとう。
-	ホテルのほうね。
-	どうもありがとう。
+	That's the hotel. Thank you.
 
+## [8] Talking to the girl again {{{2
+## G:
 みっしぃはね、
 うわーっていいながら、
 あっちにいったよ！
-	みっしぃはね、
-	うわーっていいながら、
-	あっちにいったよ！
+	Mishy was like AAAAHH! and ran that way.
 
+## T:
 あちらは、ホテルの方角です。
 急ぎましょう、ロイドさん。
-	あちらは、ホテルの方角です。
-	急ぎましょう、ロイドさん。
+	That way is the hotel.
+	Let's hurry, Lloyd.
 
+## [9] Talking to Citrus, in hotel
+## C:
 みっしぃ……でございますか？
 はい、先程見かけました。
-	みっしぃ……でございますか？
-	はい、先程見かけました。
+	Mishy? Yes, he went by earlier.
 
 なにやらもの凄い勢いで
 廊下を駆け抜けていかれましたが……
-	なにやらもの凄い勢いで
-	廊下を駆け抜けていかれましたが……
+	He was running down the hallway at
+	an unfathomable speed.
 
+## R:
 く～っ、また間に合わなかったか。{wait}
 #0300Fんで、どっちに行った？
-	く～っ、また間に合わなかったか。{wait}
-	#0300Fんで、どっちに行った？
+	Missed him a gain...{wait}
+	#0300FSo, which way did he go?
 
+## C:
 はい、方角から察するに、
 住宅街の方ではないかと。
-	はい、方角から察するに、
-	住宅街の方ではないかと。
+	If I were to surmise, I'd say
+	he was moving toward the
+	residential district.
 
+## E:
 みっしぃですけど、
 どんな様子でしたか？
-	みっしぃですけど、
-	どんな様子でしたか？
+	Did you see how he was doing?
 
+## C:
 ダッシュをしながら
 面妖な踊りを踊っていました。
-	ダッシュをしながら
-	面妖な踊りを踊っていました。
+	He looked like he was doing a
+	strange dance as he was running.
 
+## L:
 踊り……？
-	踊り……？
+	A dance?
 
+## C:
 両手をバタバタと動かして、
 まるで何かを振り払うような、
 そんな踊りでした。
-	両手をバタバタと動かして、
-	まるで何かを振り払うような、
-	そんな踊りでした。
+	He was waving both hands every
+	which way, as if to swat something
+	away.
 
+## R:
 なんだそりゃ？
 ティオすけ、何か分かるか？
-	なんだそりゃ？
-	ティオすけ、何か分かるか？
+	Huh, how that's something.
+	Tio Tot, what do you think?
 
+## T:
 もしかして……
 何らかのアーツをかけられ、
 操られているのではないかと。
-	もしかして……
-	何らかのアーツをかけられ、
-	操られているのではないかと。
+	Perhaps... He was being controlled
+	by some sort of orbal art?
 
+## R:
 操る？　なんでだ？
-	操る？　なんでだ？
+	Controlled? What do you mean?
 
+## T:
 分かりません。ですが……
 何か恐ろしい犯罪の臭いがします。
-	分かりません。ですが……
-	何か恐ろしい犯罪の臭いがします。
+	I am unsure. However... This
+	has the makings of a terrible crime.
 
+## L:
 （なんだか、全然見当違いの方向で
 　盛り上がっている気がするんだけど……）
-	（なんだか、全然見当違いの方向で
-	　盛り上がっている気がするんだけど……）
+	(I feel like whatever she's barking up
+	isn't even a tree...)
 
+## C:
 ところで……どうしてテーマパークの
 マスコットが、当ホテルを
 全力でダッシュしているのでしょう？
-	ところで……どうしてテーマパークの
-	マスコットが、当ホテルを
-	全力でダッシュしているのでしょう？
+	By the way, why would the theme park's
+	mascot come sprinting through this fine establishment?
 
+## L:
 そ、それは、その……。
-	そ、それは、その……。
+	Err... That's...
 
+## T:
 う、運動不足だからです！
-	う、運動不足だからです！
+	Exercise!
 
+## C:
 運動不足……でございますか？
-	運動不足……でございますか？
+	I... see?
 
+## T:
 そうです。
 みっしぃは健康管理のため、
 適度な運動をしているのです！
-	そうです。
-	みっしぃは健康管理のため、
-	適度な運動をしているのです！
+	Indeed. For the sake of his
+	health, Mishy mus exercise
+	regularly.
 
+## C:
 少々納得しかねる
 理由ではございますが……
-	少々納得しかねる
-	理由ではございますが……
+	I find that explanation a bit
+	difficult to swallow...
 
 お客様がそう言われるのなら、
 そうなのでしょう。
-	お客様がそう言われるのなら、
-	そうなのでしょう。
+	But if our honored guests say so,
+	I'm sure you are right.
 
+## L:
 （ホッ……危なかった。）
-	（ホッ……危なかった。）
+	(Whew... That was a close one.)
 
+## [10] Talking to Citrus again {{{2
+## C:
 みっしぃでしたら、
 先程もの凄い勢いで
 廊下をダッシュしていきました。
-	みっしぃでしたら、
-	先程もの凄い勢いで
-	廊下をダッシュしていきました。
+	Mishy was running down the hallway
+	at an unfathomable speed.
 
 方角から察するに、
 住宅街の方へ向かったと思われます。
-	方角から察するに、
-	住宅街の方へ向かったと思われます。
+	If I were to surmise, I'd say
+	he was moving toward the
+	residential district.
 
+## T:
 危険な予感がします。
 住宅街へ急ぎましょう、ロイドさん。
-	危険な予感がします。
-	住宅街へ急ぎましょう、ロイドさん。
+	I fear for the worst. Let's
+	hurry to the residential district,
+	Lloyd.
 
+## [11] Entering residential district {{{2
+## T:
 ロイドさん、あそこです……！
-	ロイドさん、あそこです……！
+	Lloyd, over there!
 
+## M:
 {color 10}ひえぇ～～～～～～！！
-	{color 10}ひえぇ～～～～～～！！
+	{color 10}Eeek!!
 
+## E:
 なんだか、すごい勢いで
 走り回ってるわね……
-	なんだか、すごい勢いで
-	走り回ってるわね……
+	He's running in circles for all he's worth...
 
 鬼気迫るものがあるというか……
-	鬼気迫るものがあるというか……
+	Almost as if he's being chased by demons.
 
+## L:
 ランディ、
 ふたりがかりで止めよう。
-	ランディ、
-	ふたりがかりで止めよう。
+	Randy, let's work together to stop him.
 
 エリィとティオは危ないから、
 ここで待機しててくれ。
-	エリィとティオは危ないから、
-	ここで待機しててくれ。
+	Elie, Tio! It might be
+	dangerous, so wait here!
 
+## R:
 了解！
-	了解！
+	Roger!
 
+## E:
 わかったわ。
-	わかったわ。
+	Alright.
 
+## T:
 了解です……
-	了解です……
+	Roger...
 
+## The animations here look pretty weird, I don't know if that's my fault.
+
+## R:
 こら、動くな！
-	こら、動くな！
+	Hey, stop moving!
 
+## L:
 お願いだ、止まってくれ！
-	お願いだ、止まってくれ！
+	Please stand still!
 
+## M:
 {color 10}ひえぇ～～～～～～！！
 だ、誰か助けて～～！！
-	{color 10}ひえぇ～～～～～～！！
-	だ、誰か助けて～～！！
+	{color 10}Eeeek!! Someone,
+	save me!!!
 
+## T:
 …………
-	…………
+	...
 
+## E:
 ティオちゃん？
-	ティオちゃん？
+	Tio?
 
+## T:
 このままでは、埒があきません。
 私も突入して、捕まえます。
-	このままでは、埒があきません。
-	私も突入して、捕まえます。
+	They are getting nowhere like this.
+	I'll join in too.
 
+## E:
 だ、ダメよ！
 ロイドに、ここに待機って
 言われていたでしょう？
-	だ、ダメよ！
-	ロイドに、ここに待機って
-	言われていたでしょう？
+	You can't! Lloyd told
+	us to stay here.
 
+## T:
 ですが……！
-	ですが……！
+	But...
 
+## M:
 {color 10}どいてどいてどいて～！
-	{color 10}どいてどいてどいて～！
+	{color 10}Get out of my waaay~!
 
+## T:
 えっ？
-	えっ？
+	Huh?
 
 うわあっ！
-	うわあっ！
+	Augh!
 
+## M:
 {color 10}いた～っ！
-	{color 10}いた～っ！
+	{color 10}Owie!
 
+## L:
 ティオ！
-	ティオ！
+	Tio:
 
+## R:
 ティオすけ、無事か！？
-	ティオすけ、無事か！？
+	Tio Tot, you okay!?
 
+## T:
 きゅぅ～……
-	きゅぅ～……
+	Kyuu~...
 
+## R:
 気絶してやがる……。
 パッと見、ケガはしてないみてぇだが
 	気絶してやがる……。
@@ -847,23 +928,25 @@
 {color 2}クエスト【とある人物の捜索】{color 0}を達成した！
 	{color 2}クエスト【とある人物の捜索】{color 0}を達成した！
 
+## [19] Talking to clerk after accepting quest {{{2
 そうですね、みっしぃは着ぐるみ……
-	そうですね、みっしぃは着ぐるみ……
+	Let me think. Mishy is wearing a...
 
 いやいや、間違えました
 みっしぃは猫なので
 さほど遠くには行けないはずです。
-	いやいや、間違えました
-	みっしぃは猫なので
-	さほど遠くには行けないはずです。
+	Scratch that, my bad. Mishy
+	is a cat, so he can't move
+	very fast.
 
 あくまで推論ですが……。
 船に乗って市街に行くのは
 なかなか困難ではないでしょうか。
-	あくまで推論ですが……。
-	船に乗って市街に行くのは
-	なかなか困難ではないでしょうか。
+	This is just conjecture, but I do
+	not believe he could have gotten on
+	the boat to the mainland.
 
+## [?] {{{2
 ミシュラムの誇る
 テーマパークへようこそ。
 	ミシュラムの誇る

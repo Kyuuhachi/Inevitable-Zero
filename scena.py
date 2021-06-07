@@ -12,7 +12,7 @@ chcp_types = {
 def tochcp(n):
 	if n == 0:
 		return None
-	a, b = n >> 20, n & 0xFFFFFF
+	a, b = n >> 20, n & 0xFFFFF
 	return f"{chcp_types[a]}{b:05x}"
 
 def fromchcp(n):

@@ -28,7 +28,7 @@ class Context: # {{{1
 		with (pcpath/"text/t_quest._dt").open("rb") as f:
 			self.pc_quests = kouzou.read(quest.questStruct, f)
 
-		self.outpath = outpath
+		self.outpath = outpath/("data_en" if self.is_geofront else "data")
 		self.cachepath = cachepath
 
 	def save(self):
@@ -266,6 +266,12 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 		for flag in 1312, 1317, 1318:
 			copy_clause(vita, pc, 10, "@IF", [Insn('FLAG', flag), Insn('END')], 0)
 			copy_condition(vita, pc, 10, "@IF", [Insn('FLAG', flag), Insn('END')], 1)
+
+	# Copy dizzy Mishy sprite
+	name = "apl/ch50393.itc"
+	rawoutpath = ctx.outpath/"../data" # APL is not read from data_en/, so need to put it in data/ regardless of language
+	(rawoutpath/"apl").mkdir(parents=True, exist_ok=True)
+	(rawoutpath/name).write_bytes((ctx.vitapath/name).read_bytes())
 
 def quest56(ctx): # {{{1 Search for the Oversleeping Doctor
 	tr = translate.translator("quest56")
@@ -714,14 +720,14 @@ def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir, cachedir):
 
 	if outpath.exists():
 		shutil.rmtree(outpath)
-	outpath.mkdir(parents=True)
-	(outpath/"scena").mkdir()
-	(outpath/"text").mkdir()
 
 	if cachedir is not None and not cachedir.exists():
 		cachedir.mkdir(parents=True)
 
 	ctx = Context(vitapath, pcpath, outpath, cachedir)
+	ctx.outpath.mkdir(parents=True)
+	(ctx.outpath/"scena").mkdir()
+	(ctx.outpath/"text").mkdir()
 
 	if minigame:
 		print("furniture_minigames")

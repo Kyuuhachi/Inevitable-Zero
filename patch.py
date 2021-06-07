@@ -3,6 +3,7 @@ from pathlib import Path
 import argparse
 from contextlib import contextmanager
 import pickle
+from copy import deepcopy
 
 import kouzou
 import scena
@@ -244,17 +245,9 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 
 		copy_clause(vita, pc, 1, "@IF:0", [Insn('FLAG', 1318), Insn('END')], 0) # Add Sunita
 		copy_condition(vita, pc, 1, "@IF:0", [Insn('FLAG', 1312), Insn('END')], 2) # -''-
-		copy_clause(vita, pc, 1, -2) # Event when entering (?)
+		copy_clause(vita, pc, 1, -2) # Entering after finding Mishy
 		copy_clause(vita, pc, 3, "@IF", 0, 0) # Talking to Clerk
 		copy_clause(vita, pc, 5, "@IF", 0, 0) # Talking to Mishy
-
-	pc = ctx.copy("t1030_1", tr)
-	# These functions are called from t1010, which has its NPCs remapped
-	for fn in 11, 14, 15, 16, 17, 18:
-		pc.code[fn] = do_transform(pc.code[fn], {"npc": {
-			k+8: v+8
-			for k, v in to_permutation(t1010_map).items()
-		}})
 
 	# Mishelam, hotel
 	with ctx.get("t1050") as (vita, pc):
@@ -267,9 +260,21 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 			copy_clause(vita, pc, 10, "@IF", [Insn('FLAG', flag), Insn('END')], 0)
 			copy_condition(vita, pc, 10, "@IF", [Insn('FLAG', flag), Insn('END')], 1)
 
+	pc = ctx.copy("t1030_1", tr)
+	pc.code[18] = do_transform(pc.code[18], { "func": {
+		(1, k): (1, v)
+		for k, v in to_permutation({
+			# Function 16 uses character 10 in both t1010 and t1030, but here they
+			# are different. So let's add a copy.
+			16: copy(pc.code, deepcopy(pc.code[16])),
+		}).items()
+	} })
+	for fn in 11, 14, 15, 16, 17:
+		pc.code[fn] = do_transform(pc.code[fn], {"npc": { k+8: v+8 for k, v in to_permutation(t1010_map).items() }})
+
 	# Copy dizzy Mishy sprite
 	name = "apl/ch50393.itc"
-	rawoutpath = ctx.outpath/"../data" # APL is not read from data_en/, so need to put it in data/ regardless of language
+	rawoutpath = ctx.outpath/"../data" # apl/ is not read from data_en/, so need to put it in data/ regardless of language
 	(rawoutpath/"apl").mkdir(parents=True, exist_ok=True)
 	(rawoutpath/name).write_bytes((ctx.vitapath/name).read_bytes())
 

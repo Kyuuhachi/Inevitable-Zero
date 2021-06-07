@@ -2193,7 +2193,7 @@
 
 ## System:
 {color 2}クエスト【寝坊医者の捜索願い】{color 0}を達成した！
-	Quest {color 2}Search for the Oversleeping Doctor{color 0} completed!
+	Quest {color 2}[Search for the Oversleeping Doctor]{color 0} completed!
 
 ## M:
 世話になったね。

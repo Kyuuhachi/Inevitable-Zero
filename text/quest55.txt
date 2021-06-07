@@ -684,7 +684,7 @@
 
 ## L:
 ティオ！
-	Tio:
+	Tio!
 
 ## R:
 ティオすけ、無事か！？
@@ -697,238 +697,270 @@
 ## R:
 気絶してやがる……。
 パッと見、ケガはしてないみてぇだが
-	気絶してやがる……。
-	パッと見、ケガはしてないみてぇだが
+	She's just dazed, doesn't
+	look like she's hurt.
 
+## E:
 しばらく、そっとしておきましょう。
 ロイド、みっしぃの方を見てあげて
-	しばらく、そっとしておきましょう。
-	ロイド、みっしぃの方を見てあげて
+	Let's let her be for now. Lloyd,
+	could you take a look at Mishy?
 
+## L:
 そ、そうだった。
-	そ、そうだった。
+	Oh, right.
 
 大丈夫ですか？
 しっかりしてください！
-	大丈夫ですか？
-	しっかりしてください！
+	Are you alright?
+	Pull yourself together!
 
+## M:
 {color 10}う、う～～ん……
-	{color 10}う、う～～ん……
+	{color 10}Uh, hmmm...
 
 {color 10}ハッ！
 う、うわあ、助けてくれぇ！
-	{color 10}ハッ！
-	う、うわあ、助けてくれぇ！
+	{color 10}Ah! Woah,
+	woah, save me!
 
+## E:
 お、落ち着いて！
 私たちは、
 あなたを保護しようと……
-	お、落ち着いて！
-	私たちは、
-	あなたを保護しようと……
+	Please calm down! We'll
+	take care of you.
 
 {color 10}ハ、蜂が、蜂が中に！
 着ぐるみの中に入り込んだんだよ！
-	{color 10}ハ、蜂が、蜂が中に！
-	着ぐるみの中に入り込んだんだよ！
+	{color 10}The bees, the bees, the beeees!
+	They're inside me! They're inside
+	my suit!
 
+## R:
 ……蜂？
-	……蜂？
+	...Bees?
 
+## L:
 もしかして、みっしぃが
 逃げ回ってたのって……
-	もしかして、みっしぃが
-	逃げ回ってたのって……
+	So the reason Mishy was running
+	around like that...
 
+## E:
 蜂が着ぐるみの中に、
 入ったから……？
-	蜂が着ぐるみの中に、
-	入ったから……？
+	...was because there were bees
+	inside his costume?
 
+## M:
 {color 10}は、早く誰か助けて……！
-	{color 10}は、早く誰か助けて……！
+	{color 10}Someone! Anyone, save me!
 
 {color 10}……………あれ？
-	{color 10}……………あれ？
+	{color 10}...Huh?
 
+## R:
 おいおい、今度はなんだよ？
-	おいおい、今度はなんだよ？
+	What is it now?
 
+## M:
 {color 10}蜂の羽音が聞こえねぇ……
 さっきまで耳元でブンブン言ってたのに。
-	{color 10}蜂の羽音が聞こえねぇ……
-	さっきまで耳元でブンブン言ってたのに。
+	{color 10}I can't hear them anymore... They
+	were buzzing right in my face before.
 
+## R:
 なんだと？
 それじゃ蜂はいったい
 どこにいったんだ？
-	なんだと？
-	それじゃ蜂はいったい
-	どこにいったんだ？
+	Then where in Gehenna are they now?
 
+## L:
 多分だけど……
 さっき、ティオとぶつかった衝撃で、
 つぶれたんじゃないかな……中で。
-	多分だけど……
-	さっき、ティオとぶつかった衝撃で、
-	つぶれたんじゃないかな……中で。
+	Maybe they got swatted when he bumped into Tio?
+	In other words, still inside.
 
+## R:
 げっ！？
-	げっ！？
+	Ew.
 
+## M:
 {color 10}はぁ～～っ……
 助かったぜ！
-	{color 10}はぁ～～っ……
-	助かったぜ！
+	{color 10}Phew... I'm safe.
 
+## E:
 ええと……問題は解決したみたいだし、
 早く依頼主のところに連れていって
 あげた方がいいんじゃないかしら。
-	ええと……問題は解決したみたいだし、
-	早く依頼主のところに連れていって
-	あげた方がいいんじゃないかしら。
+	Well, it seems the problem has been
+	solved. Could you follow us back
+	to the theme park?
 
+## L:
 それもそうだな。
 ティオの目が覚めたら
 連れていこうか
-	それもそうだな。
-	ティオの目が覚めたら
-	連れていこうか
+	Seems like it. Let's
+	wait for Tio to wake up
+	first.
 
 {color 10}ティオ？　そこで倒れてる
 ちびっこい子のことかい？
-	{color 10}ティオ？　そこで倒れてる
-	ちびっこい子のことかい？
+	{color 10}Tio? Is that the
+	kid lying over there?
 
+## T:
 う、うぅ……
-	う、うぅ……
+	...
 
 ……あれ、ロイドさん？
 私は……
-	……あれ、ロイドさん？
-	私は……
+	Huh? Lloyd? I'm...
 
 そうだ！　みっしぃは！？
-	そうだ！　みっしぃは！？
+	Oh! What about Mishy?
 
 無事ですか！？
-	無事ですか！？
+	Is he unhurt?
 
+## L:
 あぁ、問題は解決したよ
-	あぁ、問題は解決したよ
+	Yeah, it seems the problem
+	has been resolved.
 
+## M:
 {color 10}みししっ☆
 へっちゃらへ～の、プー！
-	{color 10}みししっ☆
-	へっちゃらへ～の、プー！
+	{color 10}Mishishi~☆
+	No worries, phoo~!
 
 {color 10}これも、キミのおかげだヨ！
 ありがとねっ☆
-	{color 10}これも、キミのおかげだヨ！
-	ありがとねっ☆
+	{color 10}And that's all thanks to you!
+	Thanksies☆
 
+## T:
 みっしぃ……！
-	みっしぃ……！
+	Mishy...!
 
+## R:
 （恐ろしいほどの変わり身だな……。
 　声色まで変わってるじゃねぇか）
-	（恐ろしいほどの変わり身だな……。
-	　声色まで変わってるじゃねぇか）
+	(That's a total one-eighty... Even
+	the tone of his voice changed.)
 
+## L:
 （中の人も大変だな……）
-	（中の人も大変だな……）
+	(Must be a hard job.)
 
+## [18] Conditinuation of above, back at Wonderland {{{2
+## Clerk:
 いやあ、助かりました！
 なんとお礼を言ったらよいのか……
-	いやあ、助かりました！
-	なんとお礼を言ったらよいのか……
+	Whew, you've saved us!
+	How can I ever thank you?
 
 しかし、まさか蜂のせいで
 パニックになったとは……
-	しかし、まさか蜂のせいで
-	パニックになったとは……
+	But, to think that just some
+	bees were the cause of all this...
 
+## R:
 誘拐だのなんだのと、
 ずいぶん盛り上がってたのが、
 ウソみたいなオチだなぁ、ティオすけ？
-	誘拐だのなんだのと、
-	ずいぶん盛り上がってたのが、
-	ウソみたいなオチだなぁ、ティオすけ？
+	You were so excited about kidnapping
+	and whatnot, but that turned out to
+	be a lot of bull.
 
+## T:
 …………
-	…………
+	...
 
+## L:
 まあまあ、いいじゃないか。
 大事にならずに済んだんだし。
-	まあまあ、いいじゃないか。
-	大事にならずに済んだんだし。
+	That's fine, isn't it? All's
+	well that ends well.
 
+## C:
 おっしゃる通りです。
 何事もないなら、それが一番。
-	おっしゃる通りです。
-	何事もないなら、それが一番。
+	It is as you say. It turned
+	out okay, and that's what counts.
 
+## T:
 あの……
 みっしぃは今回のことで、
 怒られたりはしませんよね？
-	あの……
-	みっしぃは今回のことで、
-	怒られたりはしませんよね？
+	Um... You aren't angry
+	at Mishy, right?
 
+## C:
 今回のことは、不幸な事故。
 みっしぃの処分は、
 考えておりませんよ。
-	今回のことは、不幸な事故。
-	みっしぃの処分は、
-	考えておりませんよ。
+	This was just an unfortunate
+	accident. Nobody's going to
+	punish him for it.
 
+## T:
 ホッ……よかったです。
-	ホッ……よかったです。
+	Phew... That's a relief.
 
+## C:
 みなさん、本当にありがとうございました。
 これはお礼です。是非お納めください。
-	みなさん、本当にありがとうございました。
-	これはお礼です。是非お納めください。
+	Everyone, I cannot thank you enough.
+	Please take this as a token of our
+	gratitude.
 
+## System:
 {item 93}{color 0}を受け取った。
-	{item 93}{color 0}を受け取った。
+	Received {item 93}{color 0}. ## Mishy Plush Toy
 
+## L:
 ありがとうございます。
-	ありがとうございます。
+	Thank you very much.
 
 今回は依頼という形で
 お越し頂きましたが……
-	今回は依頼という形で
-	お越し頂きましたが……
+	This time you were here for work...
 
 次回はぜひ、当テーマパークに
 遊びにいらしてください。
-	次回はぜひ、当テーマパークに
-	遊びにいらしてください。
+	But please come back again to
+	experience Mishelam Wonderland
+	for real.
 
+## R:
 事件が解決したと思ったら、
 もう営業トークか。
 ははっ、現金だねぇ。
-	事件が解決したと思ったら、
-	もう営業トークか。
-	ははっ、現金だねぇ。
+	As soon as the case is solved, you
+	start talking business. A businessman
+	through and through.
 
+## C:
 これも仕事ですので、はい。
-	これも仕事ですので、はい。
+	This is my job, after all.
 
 みなさんが捜してくださった
 みっしぃ共々、歓迎いたしますよ。
-	みなさんが捜してくださった
-	みっしぃ共々、歓迎いたしますよ。
+	Me and Mishy will gladly welcome you.
 
+## T:
 ぜひ来たいです……！
-	ぜひ来たいです……！
+	I will certainly come on my next day off.
 
 {color 2}クエスト【とある人物の捜索】{color 0}を達成した！
-	{color 2}クエスト【とある人物の捜索】{color 0}を達成した！
+	Quest {color 2}[Search for a Certain Person]{color 0} completed!
 
-## [19] Talking to clerk after accepting quest {{{2
+## [19] Talking to the clerk after accepting quest {{{2
 そうですね、みっしぃは着ぐるみ……
 	Let me think. Mishy is wearing a...
 
@@ -946,65 +978,69 @@
 	not believe he could have gotten on
 	the boat to the mainland.
 
-## [?] {{{2
+## [20] Talking to the clerk after quest {{{2
 ミシュラムの誇る
 テーマパークへようこそ。
-	ミシュラムの誇る
-	テーマパークへようこそ。
+	Welcome to Mishelam Wonderland,
+	pride of Mishelam.
 
 おお、これはこれは。
 本日はプライベートでの
 ご来場でしょうか？
-	おお、これはこれは。
-	本日はプライベートでの
-	ご来場でしょうか？
+	Ah, it's you guys. Are you
+	on a private visit today?
 
 当テーマパークは、
 いつでも皆様のお越しを
 お待ちしておりますよ。
-	当テーマパークは、
-	いつでも皆様のお越しを
-	お待ちしておりますよ。
+	We at Mishelam Wonderland are
+	eagerly awaiting your visit.
 
+## [21] Talking to Mishy after quest {{{2
+## First time {{{3
+## M:
 {color 10}あっ、キミたちは！
 蜂から助けてくれた！
-	{color 10}あっ、キミたちは！
-	蜂から助けてくれた！
+	{color 10}Oh, it's my friends again!
+	You really saved me from those bees!
 
 {color 10}あの時はホントありがとネ！
 みししっ☆
-	{color 10}あの時はホントありがとネ！
-	みししっ☆
+	{color 10}Thanks again for that!
+	Mishishi☆
 
+## R:
 ……なんだろうな。
 この、礼を言われてるはずなのに
 イラッと来る感じは
-	……なんだろうな。
-	この、礼を言われてるはずなのに
-	イラッと来る感じは
+	...And there we go. Even though
+	he's supposed to saying thanks,
+	it's really getting on my nerves.
 
+## T:
 癒されこそすれ、イラッとなんて
 するはずがありません
-	癒されこそすれ、イラッとなんて
-	するはずがありません
+	Mishy's words are very soothing.
+	There is nothing to be upset about.
 
 ランディさんは心が荒んでるんです。
 《ミシュラム》でみっしぃに
 癒されるのを強くお勧めします
-	ランディさんは心が荒んでるんです。
-	《ミシュラム》でみっしぃに
-	癒されるのを強くお勧めします
+	I would recommend letting Mishy's
+	soothing words pry open your stone
+	cold heart, Randy.
 
+## M:
 {color 10}みししぃ☆
 いつでも、待ってるヨ！
-	{color 10}みししぃ☆
-	いつでも、待ってるヨ！
+	{color 10}Mishishi☆
+	I'll be waiting, anytime!
 
+## Again {{{3
 {color 10}こんにちは！
 ワンダーランドにようこそっ☆
-	{color 10}こんにちは！
-	ワンダーランドにようこそっ☆
+	{color 10}Hello! Welcome to wonderland☆
 
 {color 10}みししっ、楽しんでいってネ～！
-	{color 10}みししっ、楽しんでいってネ～！
+	{color 10}Mishishi, have fun~!
 

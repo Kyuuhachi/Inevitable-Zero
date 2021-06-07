@@ -515,7 +515,7 @@ insns_zero_pc = [
 	insn("0x96", CHAR, POS, k.u4, k.u1),
 	insn("0x97", CHAR, POS, k.u4, k.u1),
 	insn("0x98", CHAR, POS, k.u4, k.u1),
-	insn("0x99", CHAR, k.bytes(11)),
+	insn("CHAR_WALK_TO", CHAR, CHAR, k.u4, k.u4, k.u1),
 	insn("0x9A", CHAR, k.bytes(2), k.u4, k.u4, k.bytes(1)),
 	insn("0x9B", k.bytes(1), CHAR, k.bytes(11)),
 	insn("0x9C", CHAR, k.bytes(20)),

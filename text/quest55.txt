@@ -42,36 +42,34 @@
 ★《みっしぃ》がブティックに　　　　　
 　向かったとの目撃情報を得た。　　　　
 　あちこち走り回っていたらしい……　　
-	★《みっしぃ》がブティックに　　　　　
-	　向かったとの目撃情報を得た。　　　　
-	　あちこち走り回っていたらしい……　　
+	★Mishy was sighted near the boutique.
+	　Apparently he was running erratically.
 
 ★《みっしぃ》はホテルへ入ったようだ。
 　叫んでいたという証言から、彼の身に　
 　何かが起きていることは間違いない。　
 　急いだほうがよさそうだ。　　　　　　
-	★《みっしぃ》はホテルへ入ったようだ。
-	　叫んでいたという証言から、彼の身に　
-	　何かが起きていることは間違いない。　
-	　急いだほうがよさそうだ。　　　　　　
+	★Mishy entered the hotel. According to
+	　witnesses, he was screaming. It seems
+	　likely that something has happened to
+	　him.
 
 ★《みっしぃ》は面妖な踊りを　　　　　
 　踊りながら高級住宅街へ　　　　　　　
 　向かったらしい。　　　　　　　　　　
 　一体何が起こっているのだろう……？　
-	★《みっしぃ》は面妖な踊りを　　　　　
-	　踊りながら高級住宅街へ　　　　　　　
-	　向かったらしい。　　　　　　　　　　
-	　一体何が起こっているのだろう……？　
+	★Mishy was apparently dancing a strange
+	　dance as he headed toward the residential
+	　district. How mysterious.
 
 ★高級住宅街で《みっしぃ》を発見。　　
 　走り回っていたのは蜂のせいだった。　
 　ティオには、着ぐるみや中の人の話は　
 　しないでおこう……　　　　　　　　　
-	★高級住宅街で《みっしぃ》を発見。　　
-	　走り回っていたのは蜂のせいだった。　
-	　ティオには、着ぐるみや中の人の話は　
-	　しないでおこう……　　　　　　　　　
+	★Apprehended Mishy at the residential
+	　district. Apparently his erratic movements
+	　were caused by bees. Tio does not like
+	　talking about the person inside the suit.
 
 ## t1030_1 {{{1
 

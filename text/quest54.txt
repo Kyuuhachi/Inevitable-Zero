@@ -1,8 +1,9 @@
+## Quest log {{{1
 店員の接客指導
-	店員の接客指導
+	Clerk's Customer Service Guidance
 
 ノーマ
-	ノーマ
+	Noma
 
 　うちのウェイトレス、　　　　　　　　
 　器量はいいんだけど、　　　　　　　　
@@ -16,1022 +17,1026 @@
 　
 　マインツの　　　　　　　　　　　　　
 　《赤レンガ亭》まで来ておくれ！　　　
-	　うちのウェイトレス、　　　　　　　　
-	　器量はいいんだけど、　　　　　　　　
-	　愛想がないのが玉にキズでねぇ。　　　
+	　Our waitress is very capable, but she's surly and
+	　unapproachable.
 	　
-	　笑顔は超絶に可愛いってのに　　　　　
-	　もったいない。　　　　　　　　　　　
+	　Her smile is super cute, so it's a waste not to
+	　put that to good use.
 	　
-	　なんとか、　　　　　　　　　　　　　
-	　笑わせてやってもらえないかい？　　　
+	　Do you think you could make her smile somehow?
 	　
-	　マインツの　　　　　　　　　　　　　
-	　《赤レンガ亭》まで来ておくれ！　　　
+	　I'm waiting at Der Ziegel Inn in Mainz.
 
 ★《赤レンガ亭》のノーマさんは、　　　
 　ウェイトレスのリュッカさんに　　　　
 　笑顔で接客してほしいようだ。　　　　
 　一筋縄ではいかない気もするが……　　
-	★《赤レンガ亭》のノーマさんは、　　　
-	　ウェイトレスのリュッカさんに　　　　
-	　笑顔で接客してほしいようだ。　　　　
-	　一筋縄ではいかない気もするが……　　
+	★Noma at Der Ziegel Inn wants us to make
+	　their waitress, Luka, smile. Doesn't
+	　sound like the usual tricks will cut it...
 
 ★ノーマさんの依頼で、リュッカさんを　
 　笑顔にさせることになった。　　　　　
 　でも、どうしたら笑ってくれるだろう？
-	★ノーマさんの依頼で、リュッカさんを　
-	　笑顔にさせることになった。　　　　　
-	　でも、どうしたら笑ってくれるだろう？
+	★We will try to make Luka smile. But how?
 
 ★ランディによる　　　　　　　　　　　
 　「リュッカさん口説き作戦」は、　　　
 　予想通り失敗に終わった。　　　　　　
-	★ランディによる　　　　　　　　　　　
-	　「リュッカさん口説き作戦」は、　　　
-	　予想通り失敗に終わった。　　　　　　
+	★Randy's seduction plan was a grand failure,
+	　as expected.
 
 ★リュッカさんのことを、　　　　　　　
 　《赤レンガ亭》の常連に聞いてみよう。
-	★リュッカさんのことを、　　　　　　　
-	　《赤レンガ亭》の常連に聞いてみよう。
+	★Let's ask the regulars about Luka.
 
 ★《赤レンガ亭》の常連カルロスさんが、
 　リュッカさんは猫好き
 　という情報を教えてくれた。
-	★《赤レンガ亭》の常連カルロスさんが、
-	　リュッカさんは猫好き
-	　という情報を教えてくれた。
+	★Carlos, a regular at Der Ziegel, says Luka
+	　is fond of cats.
 
 ★リュッカさんが、　　　　　　　　　　
 　にゃんだふる装備に興味を示した。　　
 　ただし、　　　　　　　　　　　　　　
 　自分で身に着ける気はないようだ。　　
-	★リュッカさんが、　　　　　　　　　　
-	　にゃんだふる装備に興味を示した。　　
-	　ただし、　　　　　　　　　　　　　　
-	　自分で身に着ける気はないようだ。　　
+	★Luka showed interest in the Purrfect Set.
+	　She did not seem inclined to wear it
+	　herself, though.
 
 ★ティオの涙ぐましい努力（？）により、
 　リュッカさんを笑顔にできた！　　　　
-	★ティオの涙ぐましい努力（？）により、
-	　リュッカさんを笑顔にできた！　　　　
+	★Thanks to Tio's tremendous sacrifice (?)
+	　we were able to bring a smile to Ruka's
+	　face.
 
+## t0520_1 {{{1
+## [0] Talking to Noma {{{2
+## N:
 ああ、来た来た！
 もう、待ちくたびれたよ。
-	ああ、来た来た！
-	もう、待ちくたびれたよ。
+	Ah, you're here! I've
+	been waiting for a while.
 
+## L:
 す、すみません。
 それで、依頼の件なんですけど……
-	す、すみません。
-	それで、依頼の件なんですけど……
+	Apologies. So, about the request...
 
+## N:
 ああ、リュッカのことだね。
 ここで働いてるウェイトレスさ。
 あんたたちも、見たことあるだろ？
-	ああ、リュッカのことだね。
-	ここで働いてるウェイトレスさ。
-	あんたたちも、見たことあるだろ？
+	Ah, yes. It's about Luka, you see.
+	She's our waitress. Maybe you've
+	met her already?
 
 あの子、ブアイソでねぇ。
 ま、この店は常連さんばかりだから
 困ることはないんだけど……。
-	あの子、ブアイソでねぇ。
-	ま、この店は常連さんばかりだから
-	困ることはないんだけど……。
+	She's quite unsociable, that girl.
+	Well, all of our customers are
+	regulars, so they know her already,
+	but still..
 
 でもね、笑うと超絶可愛いんだよ。
 もったいないじゃないか。
-	でもね、笑うと超絶可愛いんだよ。
-	もったいないじゃないか。
+	She's super cute when she smiles, so
+	it'd really liven up the place if
+	she did it more often.
 
+## R:
 超絶可愛い……だって！？
-	超絶可愛い……だって！？
+	Super cute, you say?
 
+## N:
 ああ。あたしが男だったら、
 絶対惚れちまうね。
-	ああ。あたしが男だったら、
-	絶対惚れちまうね。
+	Yeah. If I was a boy I'd be smitten instantly.
 
+## R:
 #5Sマジか！
-	#5Sマジか！
+	#5SReally?
 
 #3S……ロイド、この仕事、
 引き受けるしかないようだぜ。
-	#3S……ロイド、この仕事、
-	引き受けるしかないようだぜ。
+	#3SLloyd, we gotta take this job.
+	There's no way we can bereave the world
+	of a cute girl's smile.
 
+## E:
 （可愛い女の子だと分かると
 　すぐこうなるんだから……）
-	（可愛い女の子だと分かると
-	　すぐこうなるんだから……）
+	(He always gets like this
+	when girls are involved...)
 
+## T:
 （ランディさん、現金です。）
-	（ランディさん、現金です。）
+	(I suspect that Randy is acting
+	purely out of self-interest.)
 
+## L:
 えっと……それで、具体的に俺たちに
 なにをして欲しいんですか？
-	えっと……それで、具体的に俺たちに
-	なにをして欲しいんですか？
+	Um... Is there anything specific
+	you want us to do?
 
+## N:
 簡単なことだよ。
 あの子を笑顔にさせてくれりゃいいのさ。
-	簡単なことだよ。
-	あの子を笑顔にさせてくれりゃいいのさ。
+	Simple. Just make that girl smile.
 
+## L:
 笑顔……ですか。
-	笑顔……ですか。
+	I... see.
 
+## E:
 話だけ聞くと
 簡単そうに聞こえるけど……
-	話だけ聞くと
-	簡単そうに聞こえるけど……
+	It doesn't sound so difficult
+	from this explanation, but...
 
+## N:
 あの子がもうちょっと
 笑顔で接客してくれりゃ
 店の売り上げも上がると思うんだよねぇ。
-	あの子がもうちょっと
-	笑顔で接客してくれりゃ
-	店の売り上げも上がると思うんだよねぇ。
+	If she were to smile a little more,
+	I'm sure our sales would skyrocket.
 
 ひとつ受けちゃくれないかい？
 うちの店の商売繁盛のためにも頼むよ。
-	ひとつ受けちゃくれないかい？
-	うちの店の商売繁盛のためにも頼むよ。
+	Will you help us? For the sake of the
+	store's prosperity.
 
+## [1] Accept prompt {{{2
 【引き受ける】
-	【引き受ける】
+	[Accept]
 
 【やめる】
-	【やめる】
+	[Refuse]
 
+## If refused {{{3
+## L:
 すみません、今は仕事が
 立て込んでまして……
-	すみません、今は仕事が
-	立て込んでまして……
+	I'm sorry, but we've got
+	our hands full at the moment.
 
+## N:
 なんだ、そうなのかい？
 なら、仕方ないけどさ……
-	なんだ、そうなのかい？
-	なら、仕方ないけどさ……
+	Oh, is that so? Well,
+	thanks for hearing me out.
 
 ヒマになったら、
 ひとつ受けておくれよ。
-	ヒマになったら、
-	ひとつ受けておくれよ。
+	If you get some free time,
+	please consider coming back.
 
+## [2] Quest accepted {{{2
+## L:
 分かりました。お引き受けします。
-	分かりました。お引き受けします。
+	Very well. We'll accept your request.
 
+## N:
 そうこなくっちゃね。
 うまくいったら、お礼はちゃんと
 させてもらうからさ。
-	そうこなくっちゃね。
-	うまくいったら、お礼はちゃんと
-	させてもらうからさ。
+	It's decided, then. Of course,
+	you will be appropriately rewarded.
 
+## R:
 よろしくたのむぜ、おばちゃん。
-	よろしくたのむぜ、おばちゃん。
+	We're in your hands, miss.
 
+## E:
 でも、どうやってその人を
 笑顔にさせるの？
-	でも、どうやってその人を
-	笑顔にさせるの？
+	But how can we make her smile?
 
+## R:
 そんなの楽勝だぜ。
-	そんなの楽勝だぜ。
+	Heh, easy.
 
+## L:
 なにかいいアイデアがあるのか？
 ランディ。
-	なにかいいアイデアがあるのか？
-	ランディ。
+	You've got an idea, Randy?
 
+## R:
 ああ！　俺がその子を口説いて、
 メロメロにさせる！
 どうだ、完璧な作戦だろ？
-	ああ！　俺がその子を口説いて、
-	メロメロにさせる！
-	どうだ、完璧な作戦だろ？
+	You bet I have! I'll woo her
+	and we'll fall madly in love!
+	Ain't that the perfect plan?
 
+## T:
 それはどうかと……
-	それはどうかと……
+	I'll refrain from pointing
+	out the numerous flaws in
+	this plan.
 
 古典的な手ではありますが、
 相手が喜ぶ贈り物をプレゼントする、
 というのはどうでしょう。
-	古典的な手ではありますが、
-	相手が喜ぶ贈り物をプレゼントする、
-	というのはどうでしょう。
+	It's a cliche strategy, but how
+	about giving her a present?
 
+## E:
 いいアイデアだと思うわ。
 好みの物を贈られて、
 うれしくない人はいないもの。
-	いいアイデアだと思うわ。
-	好みの物を贈られて、
-	うれしくない人はいないもの。
+	That's a good idea. Anyone
+	would be happy if they get
+	a gift they like.
 
+## R:
 俺が口説くのが
 手っ取り早いと思うんだがなぁ……
-	俺が口説くのが
-	手っ取り早いと思うんだがなぁ……
+	I think my wooing plan
+	sounds easier...
 
+## L:
 まぁ、いろいろ試してみよう。
-	まぁ、いろいろ試してみよう。
+	Well, let's give it a shot.
 
 {color 2}クエスト【店員の接客指導】{color 0}を開始した！
-	{color 2}クエスト【店員の接客指導】{color 0}を開始した！
+	Quest {color 2}[Clerk's Customer Service Guidance]{color 0} started!
 
+## [3] Talking to Luka {{{2
 ……いらっしゃい。
 注文ならカウンターね。
-	……いらっしゃい。
-	注文ならカウンターね。
+	...Welcome. Place your
+	orders at the counter.
 
 ……何よ、
 あたしになんか用なワケ？
-	……何よ、
-	あたしになんか用なワケ？
+	What, you got some
+	business with me?
 
 【アイテムを渡す】
-	【アイテムを渡す】
-
+	[Give an item] ## Goto [16]
 【口説く】
-	【口説く】
-
+	[Woo] ## Goto [7]
 【やめる】
-	【やめる】
+	[Quit] ## Goto [4]
 
+## [4] Quit {{{2
 用がないなら話しかけないでくれる？
-	用がないなら話しかけないでくれる？
+	If you have no business with me,
+	how about you leave me alone?
 
+## [5] After selecting an item {{{2
+## Ll:
 あの……これなんだけど。
-	あの……これなんだけど。
+	Um... This is for you.
 
+## Lu:
 ……なに、これ？
 あたし、こんなのもらっても、
 困るんだけど。
-	……なに、これ？
-	あたし、こんなのもらっても、
-	困るんだけど。
+	...The hell is this? I don't
+	even know what I'd do with it.
 
+## Ll:
 （これは効果がないみたいだな……）
-	（これは効果がないみたいだな……）
+	(Seems this was no good...)
 
+## [6] After selecting a fluffy item {{{2
+## Ll:
 あの……これなんだけど。
-	あの……これなんだけど。
+	Um... This is for you.
 
+## Lu:
 #5S……！#3S
-	#5S……！#3S
+	#5S...!#3S
 
 か、かわいい……
 はぁ……
-	か、かわいい……
-	はぁ……
+	C-Cute...
+	*deep breaths*
 
+## Ll:
 （おっ、いい感じだぞ！）
-	（おっ、いい感じだぞ！）
+	(Oh, this seems promising!)
 
+## Lu:
 ……な、なによ、これをあたしに
 つけろって言うつもり？
-	……な、なによ、これをあたしに
-	つけろって言うつもり？
+	...W-What, you're gonna
+	tell me to put that on?
 
+## Ll:
 えっ？　いや、
 プレゼントとして、どうかなって……
-	えっ？　いや、
-	プレゼントとして、どうかなって……
+	Eh? No, I wanted to give
+	it to you as a present...
 
+## Lu:
 ……フン。
 あたしがつけても、
 かわいくなんかないわよ。
-	……フン。
-	あたしがつけても、
-	かわいくなんかないわよ。
+	Hmph. If I wore it,
+	it wouldn't look
+	cute at all.
 
 あんたにくっついて歩いてる
 その女の子たちにでも、
 あげればいいじゃない。
-	あんたにくっついて歩いてる
-	その女の子たちにでも、
-	あげればいいじゃない。
+	Why don't you give it to
+	one of those girls you're
+	strutting around with?
 
+## Ll:
 （うーん、失敗か……
 　でも、脈はありそうだな。）
-	（うーん、失敗か……
-	　でも、脈はありそうだな。）
+	(A miss... But it seems like
+	we're on the right path.)
 
 （もしかして、この子……
 　自分でかわいい物を身につけたりするより、
 　人につけさせたい、とか……？）
-	（もしかして、この子……
-	　自分でかわいい物を身につけたりするより、
-	　人につけさせたい、とか……？）
+	(Maybe she'd prefer if someone else
+	wore them rather than herself?)
 
+## [7] Woo her {{{2
+## First attempt {{{3
+## R:
 おっ、そうこなくっちゃな！
-	おっ、そうこなくっちゃな！
+	Now that's what I'm talkin' about!
 
 ここはひとつ、お兄さんが
 華麗な口説きテクを
 見せてやらないとな。
-	ここはひとつ、お兄さんが
-	華麗な口説きテクを
-	見せてやらないとな。
+	All of you shall bear witness to
+	my brilliant seduction techniques.
 
+## Ll:
 ハハ……あまり期待しないでおくよ。
-	ハハ……あまり期待しないでおくよ。
+	Haha... I'll keep my expectations
+	at a minimum.
 
+## Lu:
 ……なんなの？
-	……なんなの？
+	...What do you want?
 
+## R:
 そこの麗しきお嬢さん。
 ちょっと仕事の手を止めて、
 俺とお話しませんか？
-	そこの麗しきお嬢さん。
-	ちょっと仕事の手を止めて、
-	俺とお話しませんか？
+	You there, beautiful lady.
+	How about you take a short
+	break and chat with me?
 
+## Lu:
 ……お断り。
-	……お断り。
+	...No thanks.
 
+## R:
 がくっ……。
 そ、そんなつれない……
 ちょっとだけでいいからさぁ。
-	がくっ……。
-	そ、そんなつれない……
-	ちょっとだけでいいからさぁ。
+	Guh... Such a cold reception...
+	Just for a minute, okay?
 
+## Lu:
 ふきふき……
 よし、これで
 テーブル拭きはオッケーね。
-	ふきふき……
-	よし、これで
-	テーブル拭きはオッケーね。
+	Wipe wipe... There,
+	table's all clean.
 
+## R:
 って、完璧無視されてる！
 あのー、もしもーし？
-	って、完璧無視されてる！
-	あのー、もしもーし？
+	I'm being completely ignored!
+	Helloooo? Anyone home?
 
+## Lu:
 ……あのさ。
-	……あのさ。
+	...Hey, you.
 
+## R:
 おおっ、ようやくこっちを
 振り向いてくれたね、お嬢さん！
 俺の話、聞いてくれる気になった？
-	おおっ、ようやくこっちを
-	振り向いてくれたね、お嬢さん！
-	俺の話、聞いてくれる気になった？
+	Ooh, you finally turned around,
+	beautiful! You wanted to to talk
+	to me after all, didn't you?
 
+## Lu:
 あんまりしつこいと、
 常連さんに頼んで、
 つまみ出してもらうわよ。
-	あんまりしつこいと、
-	常連さんに頼んで、
-	つまみ出してもらうわよ。
+	Shut up before I ask one of the
+	regulars to throw you out.
 
 うちの常連さん、鉱員が多いから、
 かな～り手荒く扱われると思うけど。
 どうする？　まだ話す？
-	うちの常連さん、鉱員が多いから、
-	かな～り手荒く扱われると思うけど。
-	どうする？　まだ話す？
+	A lot of our regulars are miners,
+	so they can be a bit rough at times.
+	So? Still wanna talk?
 
+## R:
 ………………………………
-	………………………………
+	.........
 
+## E:
 予想はしていたけど……
 完全に失敗ね。
-	予想はしていたけど……
-	完全に失敗ね。
+	As expected... A complete
+	and utter failure.
 
+## T:
 笑顔にさせるはずが、
 ものすごく怒っています……
 逆効果もいいところです。
-	笑顔にさせるはずが、
-	ものすごく怒っています……
-	逆効果もいいところです。
+	Rather than making her smile, he
+	just made her annoyed. I'd label
+	this attempt as counterproductive.
 
+## Further embarassments {{{3
+## R:
 一度や二度、振られたからといって
 くじけていては口説くことなどできない！
 ここは、リベンジを……
-	一度や二度、振られたからといって
-	くじけていては口説くことなどできない！
-	ここは、リベンジを……
+	Even if one is rejected once or twice,
+	one must not be disheartened!
+	I shall have my revenge!
 
+## Lu:
 なに、またナンパ？
 今度こそ、本当に鉱員たちに言って
 追い出してもらうしかないみたいね。
-	なに、またナンパ？
-	今度こそ、本当に鉱員たちに言って
-	追い出してもらうしかないみたいね。
+	What, more flirting? Seems I'll
+	have to get one of the miners to
+	ask you to leave.
 
+## R:
 いや、ウソっ、冗談です！
-	いや、ウソっ、冗談です！
+	No, no, I was just kidding!
 
+## [9] Talking to Luka while Tio is wearing a cat suit {{{2
+## Lu:
 あ、あなた……！
-	あ、あなた……！
+	You...!
 
+## T:
 ……わたし、ですか？
-	……わたし、ですか？
+	...Me?
 
+## Lu:
 そ、その装備はいったい……！
-	そ、その装備はいったい……！
+	Wh-What is that outfit?
 
+## T:
 ああ、これは
 『にゃんだふる装備』と言うものです。
-	ああ、これは
-	『にゃんだふる装備』と言うものです。
+	Oh, this is a "Purrfect Set".
 
+## Lu:
 にゃんだふる……！
-	にゃんだふる……！
+	Purrfect...
 
 か、か、かわいい……っ！
-	か、か、かわいい……っ！
+	It's so cute...!
 
+## Ll:
 （おおっ、かなりいい感じだぞ！）
-	（おおっ、かなりいい感じだぞ！）
+	(Ooh, this seems promising!)
 
+## R:
 （見ろよ、あの口元！
 　ぷるぷるしてるぜ。
 　笑うのも、時間の問題だな。）
-	（見ろよ、あの口元！
-	　ぷるぷるしてるぜ。
-	　笑うのも、時間の問題だな。）
+	(Look, her mouth is trembling.
+	She's about to burst into a huge
+	smile, it's just a matter of time.)
 
+## E:
 （でも……あとひと押しがないと、
 　難しそうね。）
-	（でも……あとひと押しがないと、
-	　難しそうね。）
+	(But... It seems she needs one more push.)
 
+## Lu:
 ……ね、ねぇ、
 お願いがあるんだけど……
 聞いてくれない？
-	……ね、ねぇ、
-	お願いがあるんだけど……
-	聞いてくれない？
+	...Hey, I have a request.
+	Will you hear me out?
 
+## T:
 お願い……？
-	お願い……？
+	A request?
 
+## Lu:
 その……
 『にゃにゃーん』って……
 ……言って……欲しいんだけど……
-	その……
-	『にゃにゃーん』って……
-	……言って……欲しいんだけど……
+	Could you... say "nya-nyan"?
+	Please?
 
+## T:
 ……え
-	……え
+	...?
 
+## Lu:
 いや、ウソ！　ごめん！　忘れて！！
-	いや、ウソ！　ごめん！　忘れて！！
+	Nevermind! Sorry, forget about it!
 
+## R:
 （ティオすけ、言え！　言ってやれ！）
-	（ティオすけ、言え！　言ってやれ！）
+	(Tio Tot, say it! Say it!)
 
+## T:
 （本気ですか……？）
-	（本気ですか……？）
+	(Really...?)
 
 （もうちょっとで、笑顔になりそうなんだ。
 　頼むよ、ティオ。）
-	（もうちょっとで、笑顔になりそうなんだ。
-	　頼むよ、ティオ。）
+	(She only needs one more push.
+	Please, Tio.)
 
+## T:
 ……はぁ、仕方ありませんね。
-	……はぁ、仕方ありませんね。
+	...Very well, if you insist.
 
 …………にゃ、
 にゃにゃーん…………
-	…………にゃ、
-	にゃにゃーん…………
+	...Nya...
+	Nya-nyan...
 
 …………はずかしい…………
-	…………はずかしい…………
+	...That was exceedingly embarrassing.
 
+## Lu:
 か……
-	か……
+	C-...
 
 #5Sかわいい──────っ！
-	#5Sかわいい──────っ！
+	#5SCUUUTE!!
 
 #3Sなんて……なんてかわいいの……！
 ああダメ、もう見てるだけで、
 顔がニヤけてきちゃう……！
-	#3Sなんて……なんてかわいいの……！
-	ああダメ、もう見てるだけで、
-	顔がニヤけてきちゃう……！
+	#3SHow... adorable! Oh no, just looking
+	at her makes my face break out in a grin...
 
+## R:
 おお───────っ！
-	おお───────っ！
+	Look!
 
+## E:
 笑ったわ！
-	笑ったわ！
+	That's a smile!
 
+## Ll:
 確かに……
 笑うと別人みたいに
 かわいく見える……
-	確かに……
-	笑うと別人みたいに
-	かわいく見える……
+	She really looks like a
+	completely different person
+	when she's smiling.
 
+## R:
 やったじゃねぇか、ティオすけ！
-	やったじゃねぇか、ティオすけ！
+	You did it, Tio Tot!
 
+## T:
 ……………………
-	……………………
+	...
 
+## Ll:
 ティオ、どうしたんだ？
-	ティオ、どうしたんだ？
+	Tio, you okay?
 
+## T:
 いえ……
-	いえ……
+	No...
 
 ……人を笑顔にさせるというのは、
 これほどまでに、精神的苦痛を
 ともなうものなのかと……
-	……人を笑顔にさせるというのは、
-	これほどまでに、精神的苦痛を
-	ともなうものなのかと……
+	To think that our quest for
+	a smile would be accompanied
+	with such mental anguish...
 
+## Noma:
 ね？　あの子の笑顔、
 超絶可愛かっただろう？
-	ね？　あの子の笑顔、
-	超絶可愛かっただろう？
+	Didn't I tell you? She's super
+	cute when she's smiling.
 
+## R:
 ああ、確かにな。
 ずっとあの笑顔を振りまいてたら、
 俺もここの常連になるために通うぜ。
-	ああ、確かにな。
-	ずっとあの笑顔を振りまいてたら、
-	俺もここの常連になるために通うぜ。
+	You weren't kidding. If she
+	wore that smile every day,
+	I'd be a regular here too.
 
+## N:
 やっぱりそう思うよねぇ。
-	やっぱりそう思うよねぇ。
+	I knew you'd agree.
 
 そうだ、そこのあんた。
 うちで働かないかい？
-	そうだ、そこのあんた。
-	うちで働かないかい？
+	Oh, you there. Won't you
+	work here at this shop?
 
 さっきのにゃんだふる装備とやらを着て
 立ってるだけでいいからさ。
-	さっきのにゃんだふる装備とやらを着て
-	立ってるだけでいいからさ。
+	You'd just have to stand around
+	wearing that Purrfect Set.
 
+## T:
 ……全力でお断りします。
-	……全力でお断りします。
+	I will most certainly not.
 
+## N:
 なんだい、つれないねぇ。
-	なんだい、つれないねぇ。
+	Come on, don't be like that.
 
+## L:
 あはは……。
-	あはは……。
+	Ahaha...
 
+## T:
 ま、仕方ないね。
 約束どおり笑わせてくれたしね。
-	ま、仕方ないね。
-	約束どおり笑わせてくれたしね。
+	Oh well. You did get her to
+	smile as promised.
 
 これはお礼だよ。
 受けとっておくれ。
-	これはお礼だよ。
-	受けとっておくれ。
+	Take this as my thanks.
 
 {item 466}{color 0}５個を受け取った。
-	{item 466}{color 0}５個を受け取った。
+	Received {item 466}{color 0} x5. ## Nightmare Killer
 
+## L:
 ありがとうございます。
-	ありがとうございます。
+	Thank you very much.
 
+## N:
 ……ねぇ、お嬢ちゃん、
 バイト代ははずむから、
 さっきの話……
-	……ねぇ、お嬢ちゃん、
-	バイト代ははずむから、
-	さっきの話……
+	Hey, miss. If you ever
+	happen to need a part-time
+	job, my offer still stands.
 
+## T:
 全身全霊で、お断りします。
-	全身全霊で、お断りします。
+	I wholeheartedly, categorically,
+	decidedly, and unequivocally refuse.
 
+## L:
 ア、アハハハ……
-	ア、アハハハ……
+	Ahahaha...
 
 {color 2}クエスト【店員の接客指導】{color 0}を達成した！
-	{color 2}クエスト【店員の接客指導】{color 0}を達成した！
+	Quest {color 2}[Clerk's Customer Service Guidance]{color 0} completed!
 
+## [10] Talking to Noma again {{{2
+## N:
 頼んだよ、あんたたち。
 リュッカの笑顔があれば、
 店の売り上げ倍増間違いなしなんだ。
-	頼んだよ、あんたたち。
-	リュッカの笑顔があれば、
-	店の売り上げ倍増間違いなしなんだ。
+	I'm counting on you guys. If
+	you can get her to smile, our
+	sales will rise exponentially. ## I'm sory for using that word like that.
 
+## L:
 はぁ……ところで、リュッカさんが
 好きなものとか、心当たりは
 ありませんか？
-	はぁ……ところで、リュッカさんが
-	好きなものとか、心当たりは
-	ありませんか？
+	By the way, do you happen to
+	know anything Luka likes?
 
+## N:
 好きなもの？　うーん……
 あんまりそういうのは
 話さない子だからねぇ……
-	好きなもの？　うーん……
-	あんまりそういうのは
-	話さない子だからねぇ……
+	Something she likes? Hmm...
+	I don't think she's mentioned
+	anything to me.
 
 うちの常連なら、
 何か知ってるかもしれないね。
-	うちの常連なら、
-	何か知ってるかもしれないね。
+	Maybe one of our regulars knows.
 
+## [11] Talking to Noma, after quest {{{2
 あんたたちも見ただろう？
 あのリュッカのとろけそうな笑顔！
-	あんたたちも見ただろう？
-	あのリュッカのとろけそうな笑顔！
+	Doesn't that smile totally
+	make you melt?
 
 いやぁ、
 なかなか珍しいものがおがめて、
 よかったよ。
-	いやぁ、
-	なかなか珍しいものがおがめて、
-	よかったよ。
+	I'm so glad I got to see
+	such a precious thing.
 
 ……ま、すぐさまいつもの
 ブアイソな表情に
 戻っちまったけどね。
-	……ま、すぐさまいつもの
-	ブアイソな表情に
-	戻っちまったけどね。
+	Well, she'll go back to her usual
+	grumpy self before long.
 
 なーんか、別の手を考えないと。
-	なーんか、別の手を考えないと。
+	I'll have to think of another method.
 
+## [12] Talking to Luka, after quest {{{2
+## First time {{{3
+## Lu:
 ったく、女将さんのイタズラに
 わざわざつきあうなんて……
 ケーサツって、そんなにヒマなわけ？
-	ったく、女将さんのイタズラに
-	わざわざつきあうなんて……
-	ケーサツって、そんなにヒマなわけ？
+	Geez, why did the boss pull that
+	kind of prank all of a sudden...
+	Do the police really have that
+	kind of time to spare?
 
+## Ll:
 いや、あれはあくまで
 依頼だったから……
-	いや、あれはあくまで
-	依頼だったから……
+	Well, it was a support request.
 
+## R:
 それに、あんたの笑顔、
 確かに超絶かわいかったぜ。
 普段から、もっと笑えばいいのによ。
-	それに、あんたの笑顔、
-	確かに超絶かわいかったぜ。
-	普段から、もっと笑えばいいのによ。
+	'Sides, it was totally worth it
+	to see that smile. You should show
+	it more often, y'know.
 
+## Lu:
 ……余計なお世話よ。
 ほら、夜の準備で忙しいの。
 話しかけないでくれる？
-	……余計なお世話よ。
-	ほら、夜の準備で忙しいの。
-	話しかけないでくれる？
+	...That's none of your business.
+	Look, I'm busy getting ready for
+	the night. Don't talk to me.
 
+## Again {{{3
 まったく……あんな
 にゃんだふるな装備を見せられたら、
 ニヤけるに決まってるじゃない……
-	まったく……あんな
-	にゃんだふるな装備を見せられたら、
-	ニヤけるに決まってるじゃない……
+	What a bother... With that an outfit
+	that purrfect, there's no way I can
+	keep my cool.
 
 …………にゃにゃーん……ふふっ……
-	…………にゃにゃーん……ふふっ……
+	Nya-nyan... Hehe...
 
+## [13] Talking to Carlos {{{2
 リュッカちゃんが喜びそうな
 プレゼントは何かだって？
 そうだなぁ……
-	リュッカちゃんが喜びそうな
-	プレゼントは何かだって？
-	そうだなぁ……
+	A present to make Miss Luka happy?
+	Let me think...
 
 あぁ、前に、猫の写真を
 食い入るように見つめてたなぁ。
-	あぁ、前に、猫の写真を
-	食い入るように見つめてたなぁ。
+	Oh! Earlier, I saw her staring
+	intently at a photo of a cat.
 
 猫に関連したグッズとか
 集めてるみたいだし、
 そういうのがいいんじゃないかな。
-	猫に関連したグッズとか
-	集めてるみたいだし、
-	そういうのがいいんじゃないかな。
+	She seems to collect cat-related
+	goods, so something along those lines
+	might be good.
 
+## [14] Talking to Noma after refusing {{{2
 おっ、あんたたち！
 ヒマになったのかい？
-	おっ、あんたたち！
-	ヒマになったのかい？
+	Ah, you again. Are you
+	free right now?
 
 いや、ヒマじゃなくてもいいけど、
 うちのウェイトレスのリュッカのこと、
 笑顔にさせてほしいんだ。
-	いや、ヒマじゃなくてもいいけど、
-	うちのウェイトレスのリュッカのこと、
-	笑顔にさせてほしいんだ。
+	No, even if you're not free!
+	Please make our Luka smile?
 
 あの子がもうちょっと
 笑顔で接客してくれりゃ
 店の売り上げも上がると思うんだよねぇ。
-	あの子がもうちょっと
-	笑顔で接客してくれりゃ
-	店の売り上げも上がると思うんだよねぇ。
+	If she were to smile a little more,
+	I'm sure our sales would skyrocket.
 
 ひとつ受けちゃくれないかい？
 うちの店の商売繁盛のためにも頼むよ。
-	ひとつ受けちゃくれないかい？
-	うちの店の商売繁盛のためにも頼むよ。
+	Will you help us? For the sake of the
+	store's prosperity.
 
+## [16] Give an item {{{2
+## If have no items {{{3
+## System:
 {color 5}何かプレゼントをと思ったが、
 渡せるものが何もなかった。
-	{color 5}何かプレゼントをと思ったが、
-	渡せるものが何もなかった。
+	{color 5}You have no items you can give away.
 
+## R:
 プレゼントなら、
 防具や靴、アクセサリが
 いいんじゃないかしら。
-	プレゼントなら、
-	防具や靴、アクセサリが
-	いいんじゃないかしら。
+	Wouldn't some armor or boots make
+	a good present? Or maybe an accessory.
 
+## Otherwise {{{3
 {color 5}リュッカに何をプレゼントしますか？
-	{color 5}リュッカに何をプレゼントしますか？
+	{color 5}Give what to Luka?
 
 アクセサリー
-	アクセサリー
-
+	Accessory
 防具
-	防具
-
+	Armor
 靴
-	靴
-
+	Boots
 やめる
-	やめる
+	Cancel
 
+## [17] Give accessory {{{2
 シルバーブローチ
-	シルバーブローチ
-
+	Silver Brooch
 コーラルリング
-	コーラルリング
-
+	Coral Ring
 マーヴルリング
-	マーヴルリング
-
+	Marble Ring
 ルミナスグラス
-	ルミナスグラス
-
+	Luminous Glasses
 クールネックレス
-	クールネックレス
-
+	Cool Necklace
 フレイムジッポー
-	フレイムジッポー
-
+	Lighter
 ミスティストール
-	ミスティストール
-
+	Mystic Stole
 ティンクルピアス
-	ティンクルピアス
-
+	Tinkle Earrings
 スティールリスト
-	スティールリスト
-
+	Steel Wrist
 フローラルボトル
-	フローラルボトル
-
+	Floral Bottle
 ホーリーチェイン
-	ホーリーチェイン
-
+	Holy Chain
 メーガドゥータ
-	メーガドゥータ
-
+	Meghaduta
 ルナーペンデュラム
-	ルナーペンデュラム
-
+	Lunar Pendulum
 サニーペンデュラム
-	サニーペンデュラム
-
+	Solar Pendulum
 スターペンデュラム
-	スターペンデュラム
-
+	Stellar Pendulum
 ロングバレル
-	ロングバレル
-
+	Long Barrel
 ブレイブワッペン
-	ブレイブワッペン
-
+	Bravery Badge
 スピリットバッジ
-	スピリットバッジ
-
+	Spirit Badge
 ジャスティスコイン
-	ジャスティスコイン
-
+	Justice Coin
 必勝ハチマキ
-	必勝ハチマキ
-
+	Gladiator Headband
 闘魂ベルト
-	闘魂ベルト
-
+	Gladiator Belt
 グラールロケット
-	グラールロケット
-
+	Grail Locket
 シルバーチェイン
-	シルバーチェイン
-
+	Silver Chain
 にゃんだふるテイル
-	にゃんだふるテイル
-
+	Purrfect Tail
 にゃんだふるイヤー
-	にゃんだふるイヤー
-
+	Purrfect Ears
 身代わりマペット
-	身代わりマペット
-
+	Proxy Puppet
 サイレンスブルー
-	サイレンスブルー
-
+	Still Blue
 パシオンルージュ
-	パシオンルージュ
-
+	Passionate Rouge
 エヴァーグリーン
-	エヴァーグリーン
-
+	Evergreen
 ディープオーカー
-	ディープオーカー
-
+	Deep Ocher
 麦わら帽子
-	麦わら帽子
-
+	Straw Hat
 安全ヘルメット
-	安全ヘルメット
-
+	Protective Helmet
 抗菌マスク
-	抗菌マスク
-
+	Antibacterial Mask
 みっしぃぐるみ
-	みっしぃぐるみ
-
+	Mishy Plush Toy
 ねこの貯金箱
-	ねこの貯金箱
-
+	Catty Bank
 カエルの貯金箱
-	カエルの貯金箱
-
+	Froggy Bank
 釣聖の紋章
-	釣聖の紋章
-
+	Divine Angler Emblem
 ホーリーロケット
-	ホーリーロケット
-
+	Holy Locket
 シズクのブローチ
-	シズクのブローチ
-
+	Shizuku's Brooch
 カラフル風車
-	カラフル風車
-
+	Colorful Pinwheel
 やめる
-	やめる
+	Cancel
 
+## [19] Give armor {{{2
 レザーベスト
-	レザーベスト
-
+	Leather Vest
 デニムジャケット
-	デニムジャケット
-
+	Denim Jacket
 サニーブラウス
-	サニーブラウス
-
+	Sunny Blouse
 レザージャケット
-	レザージャケット
-
+	Leather Jacket
 ルーンクロス
-	ルーンクロス
-
+	Rune Cloth
 ファイバーコート
-	ファイバーコート
-
+	Fiber Coat
 ソルジャースーツ
-	ソルジャースーツ
-
+	Soldier Suit
 防弾ジャケット
-	防弾ジャケット
-
+	Bulletproof Jacket
 ジェントルコート
-	ジェントルコート
-
+	Gentle Coat
 花柄ワンピース
-	花柄ワンピース
-
+	Floral Dress
 にゃんだふるコス
-	にゃんだふるコス
-
+	Purrfect Suit
 バトルジャケット
-	バトルジャケット
-
+	Battle Jacket
 武道着
-	武道着
-
+	Martial Arts Uniform
 リジッドレザー
-	リジッドレザー
-
+	Rigid Leather
 ブラックスーツ
-	ブラックスーツ
-
+	Black Suit
 パワードスーツ
-	パワードスーツ
-
+	Power Suit
 フルメタルコート
-	フルメタルコート
-
+	Full Metal Coat
 オリオンガード
-	オリオンガード
-
+	Orion Guard
 オーロラドレス
-	オーロラドレス
-
+	Aurora Dress
 オートクチュールＬ
-	オートクチュールＬ
-
+	Haute Couture L
 オートクチュールＥ
-	オートクチュールＥ
-
+	Haute Couture E
 オートクチュールＴ
-	オートクチュールＴ
-
+	Haute Couture T
 オートクチュールＲ
-	オートクチュールＲ
-
+	Haute Couture R
 やめる
-	やめる
+	Cancel
 
+## [21] Give boots {{{2
 レザーブーツ
-	レザーブーツ
-
+	Leather Boots
 ファインサンダル
-	ファインサンダル
-
+	Fine Sandals
 フラワーパンプス
-	フラワーパンプス
-
+	Flower Pumps
 グラスホッパー
-	グラスホッパー
-
+	Grasshoppers
 スプリンター
-	スプリンター
-
+	Sprinters
 エンジニアブーツ
-	エンジニアブーツ
-
+	Engineer Boots
 アイアンレギンス
-	アイアンレギンス
-
+	Iron Leggings
 ストレガーΣ
-	ストレガーΣ
-
+	Strega-Σ
 スタンプジャンパー
-	スタンプジャンパー
-
+	Stamp Jumpers
 ストライドヒール
-	ストライドヒール
-
+	Stride Heels
 にゃんだふるブーツ
-	にゃんだふるブーツ
-
+	Purrfect Boots
 バトルブーツ
-	バトルブーツ
-
+	Battle Boots
 鉄下駄
-	鉄下駄
-
+	Iron Clogs
 コンバットブーツ
-	コンバットブーツ
-
+	Combat Boots
 鉄板シューズ
-	鉄板シューズ
-
+	Iron Shoes
 ストレガーＰ
-	ストレガーＰ
-
+	Strega-P
 デュアルガーダー
-	デュアルガーダー
-
+	Dual Guarders
 アーレスグリーヴ
-	アーレスグリーヴ
-
+	Ares Greaves
 ハルモニアブーツ
-	ハルモニアブーツ
-
+	Harmonia Boots
 クラウドナイン
-	クラウドナイン
-
+	Cloud Nine
 セブンスヘヴン
-	セブンスヘヴン
-
+	Seventh Heaven
 やめる
-	やめる
-
+	Cancel

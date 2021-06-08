@@ -686,7 +686,7 @@ def do_transform(obj, tr):
 		elif isinstance(tl, translate.BaseTranslator):
 			obj = type(obj)(tl.translate(obj))
 			obj.translated = True
-			return str(obj)
+			return obj
 
 	if isinstance(obj, Insn):
 		obj.args = do_transform(obj.args, tr)

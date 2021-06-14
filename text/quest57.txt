@@ -1,8 +1,9 @@
+## Quest log {{{1
 続・日曜学校の特別講師
-	続・日曜学校の特別講師
+	Guest Lecturer for Sunday School (Continued)
 
 シスター・マーブル
-	シスター・マーブル
+	Sister Marble
 
 　先日は、日曜学校の講師をして頂き、　
 　ありがとうございました。　　　　　　
@@ -15,2470 +16,2597 @@
 　クロスベル大聖堂の　　　　　　　　　
 　シスター・マーブルより。　　　　　　
 　ご連絡をお待ちしております。　　　　
-	　先日は、日曜学校の講師をして頂き、　
-	　ありがとうございました。　　　　　　
-	　
-	　おかげさまで授業内容は子供たちに　　
-	　大好評で、ぜひ別のクラスの　　　　　
-	　子供たちにも講師をお願い　　　　　　
-	　できないかと思いご連絡いたしました。
-	　
-	　クロスベル大聖堂の　　　　　　　　　
-	　シスター・マーブルより。　　　　　　
-	　ご連絡をお待ちしております。　　　　
+	　Thank you very much for teaching the class
+	　the other day.
+
+	　The children really loved that lesson, so
+	　I thought to ask if you would mind teaching
+	　another class.
+
+	　You know where to find me, in the
+	　Crossbell Cathedral.
 
 ★まさか講師の話が再び来るなんて　　　
 　思いもよらなかったが、　　　　　　　
 　子供たちに警察の仕事を知ってもらう　
 　またとないチャンスだ。　　　　　　　
 　なんとか頑張ってみたい。　　　　　　
-	★まさか講師の話が再び来るなんて　　　
-	　思いもよらなかったが、　　　　　　　
-	　子供たちに警察の仕事を知ってもらう　
-	　またとないチャンスだ。　　　　　　　
-	　なんとか頑張ってみたい。　　　　　　
+	★I never thought I'd be asked to teach
+	　again, but this is a great opportunity
+	　to teach the children about what the
+	　police do, so I want to do my best.
 
 ★見事に授業をやり遂げた！　　　　　　
 　子供たちもより警察に興味を　　　　　
 　持ってくれたように思う。　　　　　　
-	★見事に授業をやり遂げた！　　　　　　
-	　子供たちもより警察に興味を　　　　　
-	　持ってくれたように思う。　　　　　　
+	★The lesson went flawlessly!
+	　The children looked interested, too.
 
 ★どうにか授業をやり遂げた。　　　　　
 　いくつか間違いはあったが、　　　　　
 　一応及第点と言ってもいいだろう。　　
-	★どうにか授業をやり遂げた。　　　　　
-	　いくつか間違いはあったが、　　　　　
-	　一応及第点と言ってもいいだろう。　　
+	★We hit a few snags on the way, but
+	　we got through the lesson. I think
+	　it's a passing grade at least.
 
 ★問題が多い授業だった。　　　　　　　
 　もう一度勉強しなおすべきだな。　　　
-	★問題が多い授業だった。　　　　　　　
-	　もう一度勉強しなおすべきだな。　　　
+	★There were a lot of questions during the
+	　lesson. I suppose we should have read
+	　up more.
 
 ★授業内容に問題がありすぎた。　　　　
 　勉強不足以前に、先生の選び方を　　　
 　もっと考えるべきだった……　　　　　
-	★授業内容に問題がありすぎた。　　　　
-	　勉強不足以前に、先生の選び方を　　　
-	　もっと考えるべきだった……　　　　　
+	★There were way too many questions about
+	　the course contents. Rather than studying
+	　more, we should have put more thought into
+	　who taught what.
 
+## t4010_1 {{{1
+## [0] Talking to Sister Marble {{{2
+## First time {{{3
+## M:
 あら、あなたたち……
 依頼を見て、来てくれたの？
-	あら、あなたたち……
-	依頼を見て、来てくれたの？
+	Hello, everyone. I assume
+	you saw my support request?
 
+## E:
 はい。また、日曜学校の
 特別講師というお話みたいですが。
-	はい。また、日曜学校の
-	特別講師というお話みたいですが。
+	Yes. You wanted us to hold
+	a guest lecture, I believe?
 
+## M:
 ええ。前回の授業のおかげで、
 生徒達が、警察の活動に
 興味を持ったみたいなの。
-	ええ。前回の授業のおかげで、
-	生徒達が、警察の活動に
-	興味を持ったみたいなの。
+	Yes. Thanks to your previous
+	lecture, the children have become
+	very interested about the police.
 
 ロイド先生の授業も
 好評だったみたいだし。
-	ロイド先生の授業も
-	好評だったみたいだし。
+	Having Lloyd as lecturer
+	was also well received.
 
 それで、
 ぜひまた授業をしてほしいって
 思ったの。
-	それで、
-	ぜひまた授業をしてほしいって
-	思ったの。
+	So I want you to hold a lecture for
+	East Street's children too.
 
+## L:
 警察の活動内容について、
 興味を持ってもらえるのは
 俺たちにとっても有り難いです。
-	警察の活動内容について、
-	興味を持ってもらえるのは
-	俺たちにとっても有り難いです。
+	We at the CPD also appreciate when
+	people are interested in what we do.
 
+## M:
 そう言ってもらえると助かるわ。
 どう？　日曜学校の講師、
 また引きうけてくれないかしら？
-	そう言ってもらえると助かるわ。
-	どう？　日曜学校の講師、
-	また引きうけてくれないかしら？
+	I'm glad to hear that. So what
+	do you say? Would you be amenable
+	to holding another lecture?
 
+## Talking again after rejecting {{{3
 あら。臨時講師の件……
 引き受けてくれる気に
 なったのかしら？
-	あら。臨時講師の件……
-	引き受けてくれる気に
-	なったのかしら？
+	Hello again. Have you
+	reconsidered taking on
+	the guest lecture?
+## }}}3
 
 【引き受ける】
-	【引き受ける】
+	[Accept]
 
 【やめる】
-	【やめる】
+	[Reject]
 
+## If rejected {{{3
+## L:
 すみません。
 今、別件で捜査を抱えていて……
-	すみません。
-	今、別件で捜査を抱えていて……
+	I'm sorry... We're already
+	caught up in another case.
 
+## M:
 そうだったの。
 お仕事があるなら、仕方ないわね。
-	そうだったの。
-	お仕事があるなら、仕方ないわね。
+	Oh, I see. If you've got work
+	to do, I can't blame you.
 
 もし、時間が取れるようだったら
 また声をかけてちょうだい。
-	もし、時間が取れるようだったら
-	また声をかけてちょうだい。
+	Please come back later if you
+	can find the time.
 
+## [1] Quest accepted {{{2
+## L:
 わかりました。
 子供たちが警察と防犯に
 興味を持ってくれるなら……
-	わかりました。
-	子供たちが警察と防犯に
-	興味を持ってくれるなら……
+	Of course. If the children
+	are interested in the police
+	and crime prevention...
 
 俺たちが、教壇に立つ意味も
 あると思いますし。
-	俺たちが、教壇に立つ意味も
-	あると思いますし。
+	It's our duty to help
+	foster that interest.
 
+## R:
 しっかしロイドも大変だなー。
 俺なんて、ガキんちょに教えるなんて
 考えただけで……
-	しっかしロイドも大変だなー。
-	俺なんて、ガキんちょに教えるなんて
-	考えただけで……
+	Lloyd sure has it tough.
+	Just thinking of standing
+	there teaching twerps...
 
 なんかこう、
 尻のあたりがムズムズと……
-	なんかこう、
-	尻のあたりがムズムズと……
+	It makes my butt itch.
 
+## T:
 ランディさん、下品です。
-	ランディさん、下品です。
+	Randy, language.
 
 ……とはいえ、私も子供は
 ちょっぴり苦手ですので、
 言いたいことは分かります。
-	……とはいえ、私も子供は
-	ちょっぴり苦手ですので、
-	言いたいことは分かります。
+	That said, I am not good
+	with children either, so I
+	cannot say you are wrong.
 
+## E:
 もう、ふたりとも。
 啓蒙活動も、警察の
 大切な仕事のひとつよ。
-	もう、ふたりとも。
-	啓蒙活動も、警察の
-	大切な仕事のひとつよ。
+	Stop it, you two.
+	Spreading awareness is also
+	important, you know.
 
+## L:
 エリィの言うとおりだと俺も思う。
 というわけで、全力で
 引き受けさせていただきます。
-	エリィの言うとおりだと俺も思う。
-	というわけで、全力で
-	引き受けさせていただきます。
+	That's what I think, too. We'll
+	do our best to fulfill your
+	expectations.
 
+## M:
 そう言ってもらえると、
 助かるわ。
-	そう言ってもらえると、
-	助かるわ。
+	I'm glad to hear that.
 
 じゃあ、お願いするわね
-	じゃあ、お願いするわね
+	I'll leave them in your hands, then.
 
+## System:
 {color 2}クエスト【続・日曜学校の特別講師】{color 0}を開始した！
-	{color 2}クエスト【続・日曜学校の特別講師】{color 0}を開始した！
+	Quest {color 2}Guest Lecturer for Sunday School (Continued){color 0} started!
 
+## L:
 さて、授業の内容だけど
 今回は、少し趣向を
 変えて行こうと思うんだ。
-	さて、授業の内容だけど
-	今回は、少し趣向を
-	変えて行こうと思うんだ。
+	I thought I'd change it up
+	a little compared to last time.
 
+## If picked Elie during intermission {{{3
+## T:
 前回は、
 どんな感じだったのでしょう……？
-	前回は、
-	どんな感じだったのでしょう……？
+	What was it like last time?
 
+## E:
 警察組織や、基本理念……
 そういうものを
 かみ砕いて説明したのよ。
-	警察組織や、基本理念……
-	そういうものを
-	かみ砕いて説明したのよ。
+	He explained the structure
+	and basic principles of the
+	police force, in simple terms.
 
 そうね……確かに、授業内容は
 前回と同じものをやるより
 変えた方がいいと思うけど……
-	そうね……確かに、授業内容は
-	前回と同じものをやるより
-	変えた方がいいと思うけど……
+	I agree that changing the contents
+	a bit would be better than just
+	repeating last time, but...
 
 ねぇロイド、
 具体的には、どうするつもりなの？
-	ねぇロイド、
-	具体的には、どうするつもりなの？
+	Lloyd, what exactly are you
+	planning?
 
+## If picked Tio {{{3
+## E:
 前回は、どんな内容のことを
 話したの？
-	前回は、どんな内容のことを
-	話したの？
+	What did you teach about last time?
 
+## T:
 はい。警察組織について、
 あれこれと、事例をあげて……
-	はい。警察組織について、
-	あれこれと、事例をあげて……
+	Some scattered bits of
+	information about the
+	organization of the force...
 
 いわゆるクイズ形式、
 というやつです。
-	いわゆるクイズ形式、
-	というやつです。
+	Followed by a question-and-answer
+	session.
 
 同じことを、二度やるのは、
 つまらないので、変えるのは
 賛成ですが……何をしましょう？
-	同じことを、二度やるのは、
-	つまらないので、変えるのは
-	賛成ですが……何をしましょう？
+	Rather than doing the same thing over
+	again, reorganizing the setup does
+	seem prudent. Do you have a plan?
 
+## If picked Randy {{{3
+## E:
 前回は、どんな内容のことを
 話したの？
-	前回は、どんな内容のことを
-	話したの？
+	What did he teach about last time?
 
+## R:
 いわゆる、警察ってやつについて、
 あれこれと、だな。
-	いわゆる、警察ってやつについて、
-	あれこれと、だな。
+	Just bits and pieces
+	'bout the police.
 
 組織がどうなってるとか、
 戦術オーブメントのこととか、
 ま、いろいろだ。
-	組織がどうなってるとか、
-	戦術オーブメントのこととか、
-	ま、いろいろだ。
+	How the force's organized, about
+	tactical orbments, that kinda stuff.
 
 内容を変えるのはいいけど、
 なんかいいアイデアでもあるのかよ、
 ロイド？
-	内容を変えるのはいいけど、
-	なんかいいアイデアでもあるのかよ、
-	ロイド？
+	Changing it up sounds good. Got
+	any good idea, Lloyd?
 
+## }}}3
+## L:
 ああ。警察の具体的な活動内容に
 触れていこうと思うんだ。
-	ああ。警察の具体的な活動内容に
-	触れていこうと思うんだ。
+	I want to go into the specific
+	activities of the police.
 
 たとえば、何らかの犯罪が
 実際に発生したとして……
-	たとえば、何らかの犯罪が
-	実際に発生したとして……
+	For example, we could pretend
+	that a real crime has happened...
 
 そこから、犯人逮捕までの
 プロセスを、わかりやすく
 解説するとかね。
-	そこから、犯人逮捕までの
-	プロセスを、わかりやすく
-	解説するとかね。
+	And explain the procedure of
+	apprehending the criminal.
 
+##E:
 なるほど。実践的にということね。
-	なるほど。実践的にということね。
+	I see. A hands-on demonstration,
+	so to speak.
 
+## T:
 同時に、子供たちの防犯意識を
 高めていこうという狙いですね。
-	同時に、子供たちの防犯意識を
-	高めていこうという狙いですね。
+	Which would at the same time raise
+	the children's awareness of crime
+	prevention. I assume that is your aim.
 
+## R:
 ん。いいんじゃねーか？
 ロイド先生は大変かも
 しれないけどな。
-	ん。いいんじゃねーか？
-	ロイド先生は大変かも
-	しれないけどな。
+	Sounds good to me.
+	Heh, it'll be tough
+	on the teacher, though.
 
+## L:
 それなんだけど……
-	それなんだけど……
+	Well, about that...
 
 今回はみんなにも
 講師役として参加してもらおうと
 思ってるんだ。
-	今回はみんなにも
-	講師役として参加してもらおうと
-	思ってるんだ。
+	This time, I was thinking
+	of having all of us take
+	on the teaching role.
 
+## E:
 えっ。私たちも……？
-	えっ。私たちも……？
+	You mean us too?
 
+## L:
 うん。教壇に立つことは
 いい経験になると思う。
-	うん。教壇に立つことは
-	いい経験になると思う。
+	Yeah, I think teaching
+	would be a good experience
+	for you.
 
+## T:
 講師役なんて、
 あまり自信ないですけど。
-	講師役なんて、
-	あまり自信ないですけど。
+	I am not confident I could
+	perform that role satisfactorily.
 
+## R:
 ふーむ。俺が教壇に立つ日が
 来るとはね……
-	ふーむ。俺が教壇に立つ日が
-	来るとはね……
+	Never thought I'd see the day
+	when I'd stand at the podium...
 
+## E:
 それで、どういう役割分担に
 するの？
-	それで、どういう役割分担に
-	するの？
+	So, how are we going to
+	divide the roles?
 
+## L:
 通報、初動、推理、逮捕。
 この４項目を、それぞれ
 担当してもらおうと思ってる。
-	通報、初動、推理、逮捕。
-	この４項目を、それぞれ
-	担当してもらおうと思ってる。
+	There's the report, first response,
+	deduction, and then the arrest.
 
 みんな、得意な分野を
 教えてくれないか？
-	みんな、得意な分野を
-	教えてくれないか？
+	How about we each pick our
+	favorite and teach about it?
 
+## E:
 そうね……。
 『初動』なら、教えられると思う。
 あとは『通報』とか……
-	そうね……。
-	『初動』なら、教えられると思う。
-	あとは『通報』とか……
+	Hmm... I could handle the first response,
+	I suppose. Or the reporting.
 
+## R:
 俺は、そうだなぁ。
 『推理』は苦手だし……。
 『通報』もうまく説明できるか……
-	俺は、そうだなぁ。
-	『推理』は苦手だし……。
-	『通報』もうまく説明できるか……
+	Lemme see... Deduction ain't my
+	forte, so maybe the reporting.
 
 そうだな、できれば
 『逮捕』担当がいいな。
-	そうだな、できれば
-	『逮捕』担当がいいな。
+	Oh yeah, the arrest sounds
+	right up my alley.
 
+## T:
 わたしは……。
 『通報』は教えられると思います。
-	わたしは……。
-	『通報』は教えられると思います。
+	I believe I would do best with
+	the reporting.
 
 あとは『推理』でしたら何とか……
-	あとは『推理』でしたら何とか……
+	But I would probably be able
+	to do decently with the
+	deduction as well.
 
+## L:
 わかった。
 じゃあ、話の流れでみんなを
 指名していくから、よろしく頼むよ。
-	わかった。
-	じゃあ、話の流れでみんなを
-	指名していくから、よろしく頼むよ。
+	Understood. I'll call you up when
+	it's your turn, so please be ready.
 
+## M:
 それじゃみなさん、
 そろそろ準備はいいかしら？
-	それじゃみなさん、
-	そろそろ準備はいいかしら？
+	Everyone, have you finished
+	your preparations?
 
+## L:
 わかりました。{wait}
 #0000Fそれじゃみんな、行こうか。
-	わかりました。{wait}
-	#0000Fそれじゃみんな、行こうか。
+	We have.{wait}
+	#0000FEveryone, let's get this
+	lecture started!
 
+## [2] The lecture {{{2
+## M:
 #5Sはーい、静かに。
 みんな、席について。
-	#5Sはーい、静かに。
-	みんな、席について。
+	#5SEveryone, settle down!
+	To your seats, please.
 
 さて。今日はまた、
 みなさんに警察について
 勉強してもらおうと思います。
-	さて。今日はまた、
-	みなさんに警察について
-	勉強してもらおうと思います。
+	Today, I'm going to have you
+	learn more about the police.
 
 先生は……お馴染みの人も
 いるかしら？
-	先生は……お馴染みの人も
-	いるかしら？
+	As for the teachers... Has
+	anyone met them before?
 
+## Couta:
 あれっ。警察の人？
-	あれっ。警察の人？
+	Wait, aren't they from the police?
 
+## Eugot:
 もしかして、お兄ちゃんたちが
 先生やってくれるの？
-	もしかして、お兄ちゃんたちが
-	先生やってくれるの？
+	Are you going to teach us?
 
+## L:
 ああ。よろしく頼むよ。
-	ああ。よろしく頼むよ。
+	That's right. Nice to meet you.
 
+## E:
 （これは……照れるわね。）
-	（これは……照れるわね。）
+	(This is... quite nerve-wracking.)
 
+## T:
 （はい……背中がムズムズします。）
-	（はい……背中がムズムズします。）
+	(Agreed... It makes my back itch.)
 
+## R:
 （子供達の視線を
 　正面から受けるってのは……
 　眩しいもんだな。）
-	（子供達の視線を
-	　正面から受けるってのは……
-	　眩しいもんだな。）
+	(Standing in front of this many children...
+	It's dazzling.)
 
+## M:
 今日は、ロイド先生のほかにも、
 先生が来てくれてます。
-	今日は、ロイド先生のほかにも、
-	先生が来てくれてます。
+	Aside from Professor Bannings, his
+	companions are also here to teach us.
 
 紹介しますね。
 エリィ先生、ティオ先生、
 ランディ先生です。
-	紹介しますね。
-	エリィ先生、ティオ先生、
-	ランディ先生です。
+	Allow me to introduce
+	Professors MacDowell,
+	Plato, and Orlando.
 
+## E:
 エリィです。
 みなさん、今日はよろしく
 お願いします。
-	エリィです。
-	みなさん、今日はよろしく
-	お願いします。
+	My name is Elie. It's nice to
+	meet you all.
 
+## T:
 ティオです。
 その……楽しく勉強しましょう。
-	ティオです。
-	その……楽しく勉強しましょう。
+	I'm Tio. Um... Let's have
+	fun studying.
 
+## R:
 ランディだ。
 今日１日、よろしく頼むぜ！
-	ランディだ。
-	今日１日、よろしく頼むぜ！
+	Yo, Randy's the name. Let's
+	get along, yeah?
 
+## Green boy
 あの可愛いお姉さん、
 ゼンゼン強そうに見えないなぁ。
 警察官じゃないみたい。
-	あの可愛いお姉さん、
-	ゼンゼン強そうに見えないなぁ。
-	警察官じゃないみたい。
+	That cute lady doesn't seem that strong.
+	She doesn't look like a police.
 
+## E:
 あはは……
 警察官じゃないみたいって、
 私のことかしら……
-	あはは……
-	警察官じゃないみたいって、
-	私のことかしら……
+	Ahaha... I don't look
+	like a police, you say?
 
+## Boy with hat
 ねーねー。
 あんなちっちゃいのに、
 先生なんてできるの？
-	ねーねー。
-	あんなちっちゃいのに、
-	先生なんてできるの？
+	How can that girl be a teacher?
+	She's so small.
 
+## T:
 ち、ちっちゃい……
-	ち、ちっちゃい……
+	Who are you calling small...
 
+## Red girl
 あの人、先生のくせに
 なんだか不良っぽいわ！
-	あの人、先生のくせに
-	なんだか不良っぽいわ！
+	That guy doesn't look like
+	a teacher at all! A
+	delinquent, more like.
 
+## R:
 ん？　俺たちの中に
 不良っぽいヤツなんて……
-	ん？　俺たちの中に
-	不良っぽいヤツなんて……
+	Hm? There's a delinquent
+	in our midst?
 
 #5S……俺か！
-	#5S……俺か！
+	#5S...Me?
 
+## M:
 はいはい、お静かに！
 今日は、警察のお仕事について、
 より詳しく教えてもらいます。
-	はいはい、お静かに！
-	今日は、警察のお仕事について、
-	より詳しく教えてもらいます。
+	That's enough, everyone!
+	These people will teach us
+	what it is that they do.
 
 みなさん、しっかり
 勉強するのですよ。
-	みなさん、しっかり
-	勉強するのですよ。
+	Please listen carefully
+	to what they have to say.
 
+## Children:
 子供たち
-	子供たち
-
+	Children
 {color 0}#5Sは～～い！
-	{color 0}#5Sは～～い！
+	{color 0}#5SOkaaaaaay!
 
+## M:
 それじゃあ、お願いしますね。
 ロイド先生㈱
-	それじゃあ、お願いしますね。
-	ロイド先生㈱
+	Well then, the floor is all yours,
+	Professor Bannings. ㈱ ## That's actually a ♥
 
+## L:
 あ、はい。
 わかりました。
-	あ、はい。
-	わかりました。
+	Leave it to me, Sister Marble.
 
 （うーん……
 　何度立っても、教壇の上って
 　緊張するなあ……）
-	（うーん……
-	　何度立っても、教壇の上って
-	　緊張するなあ……）
+	(The butterflies from last time
+	are back, I see...)
 
 コホン。
 それじゃ、さっそく授業を
 始めよう。
-	コホン。
-	それじゃ、さっそく授業を
-	始めよう。
+	Ahem. Class, ready to start?
 
+## System
 {color 5}　　　講義開始！
 ～警察の活動について～
-	{color 5}　　　講義開始！
-	～警察の活動について～
+	{color 5}　　Lecture start!
+	~About Police Activities~
 
 {color 5}※各項目に、最も適した先生を
 　選んで、特別授業を
 　成功に導け！
-	{color 5}※各項目に、最も適した先生を
-	　選んで、特別授業を
-	　成功に導け！
+	{color 5}※Choose the appropriate teacher and lead
+	　the lesson toward a shining success!
 
+## L:
 さて、今日は……
 警察の具体的な活動について、
 勉強しよう。
-	さて、今日は……
-	警察の具体的な活動について、
-	勉強しよう。
+	I thought I'd show you what exactly
+	it is we at the CPD do.
 
 この広いクロスベルから、
 悪い犯人を見つけだして、
 逮捕するまでの流れだ。
-	この広いクロスベルから、
-	悪い犯人を見つけだして、
-	逮捕するまでの流れだ。
+	More specifically, we'll go through
+	the process from a crime being noticed,
+	until the criminal is arrested.
 
+## Question 1 {{{3
 警察の活動は、『逮捕』だけが
 目立つかもしれないけど……
-	警察の活動は、『逮捕』だけが
-	目立つかもしれないけど……
+	When you think of the police, the
+	arrest is probably what you think of...
 
 そこに至るまでに
 様々な活動をしているんだ。
-	そこに至るまでに
-	様々な活動をしているんだ。
+	But there are many other steps
+	that need to be done before we
+	can get to that part.
 
 まず、『通報』だけど……
 これがどういうものか、
 解説していこう。
-	まず、『通報』だけど……
-	これがどういうものか、
-	解説していこう。
+	First is the reporting. Let's
+	take a look at what this is about.
 
 {color 5}犯人逮捕の第一歩！
 『通報』とは一体何か！？
 それを説明をするのは……{0x18}
-	{color 5}犯人逮捕の第一歩！
-	『通報』とは一体何か！？
-	それを説明をするのは……{0x18}
+	{color 5}The first step toward arresting
+	the criminal! Who should explain what
+	reporting is about?{0x18}
 
 【①エリィ先生】
-	【①エリィ先生】
-
+	[①Elie]
 【②ティオ先生】
-	【②ティオ先生】
-
+	[②Tio]
 【③ランディ先生】
-	【③ランディ先生】
-
+	[③Randy]
 【④ロイド先生】
-	【④ロイド先生】
+	[④Lloyd]
 
+## Elie (+3) {{{4
 エリィ先生にお願いしよう。
-	エリィ先生にお願いしよう。
+	Let's have Elie explain.
 
+## E:
 はい。『通報』というのは、事件……
 例えば、泥棒や交通事故を
 目撃した時に……
-	はい。『通報』というのは、事件……
-	例えば、泥棒や交通事故を
-	目撃した時に……
+	Okay. When someone notices a
+	problem, for example a burglar
+	or a traffic accident...
 
 私たち、警察へ知らせることを
 言います。
-	私たち、警察へ知らせることを
-	言います。
+	They send an alert to us, the CPD.
+	We call that the report.
 
 この『通報』を元に、
 私たちは捜査を開始するの。
-	この『通報』を元に、
-	私たちは捜査を開始するの。
+	From that report, we can begin
+	our investigations.
 
 もし、みんなが悪いことを
 している人を見かけたり、
 交通事故を見かけたら……
-	もし、みんなが悪いことを
-	している人を見かけたり、
-	交通事故を見かけたら……
+	If any of you see people
+	doing something bad, or a
+	traffic accident...
 
 すぐに、警察に通報してね。
-	すぐに、警察に通報してね。
+	Be sure to alert us ASAP, okay?
 
+## Children:
 子供たち
-	子供たち
-
+	Children
 {color 0}#5Sは～～い！
-	{color 0}#5Sは～～い！
+	{color 0}#5SOkaaaaaay!
 
+## E:
 （うん。ちゃんと説明
 　できたわね）
-	（うん。ちゃんと説明
-	　できたわね）
+	(I think I explained that nicely.)
 
+## Tio (+1) {{{4
 ティオ先生にお願いしよう。
-	ティオ先生にお願いしよう。
+	Let's have Tio explain.
 
+## T:
 わ、わかりました。
-	わ、わかりました。
+	U-Understood.
 
 ええと……『通報』というのは、
 犯罪行為や事故を警察機関へ
 報告することを言います。
-	ええと……『通報』というのは、
-	犯罪行為や事故を警察機関へ
-	報告することを言います。
+	Umm... The report is when someone
+	sees a crime or accident, and sends
+	an alert to the police organization.
 
 警察には導力ネットワークをはじめ、
 市民からの通報に迅速に対応する
 システムが組まれています。
-	警察には導力ネットワークをはじめ、
-	市民からの通報に迅速に対応する
-	システムが組まれています。
+	The police has a sophisticated system in
+	place to quickly respond to such reports from
+	citizens, including use of the orbal network.
 
 あと……警察本部にも２４時間体制で
 人員が配置され、
 通報に対応しています。
-	あと……警察本部にも２４時間体制で
-	人員が配置され、
-	通報に対応しています。
+	The CPD headquarters have staff in place
+	to be able to respond to reports at any
+	hour.
 
+## Boy with hat
 うーん……。
 何となく、わかったかなあ？
-	うーん……。
-	何となく、わかったかなあ？
+	Umm... I think kinda understand?
 
+## T:
 （もう少しかみ砕いて説明できれば
 　よかったです……）
-	（もう少しかみ砕いて説明できれば
-	　よかったです……）
+	(It seems that explanation went
+	a little above their heads.)
 
+## Randy {{{4
 ランディ先生にお願いしよう。
-	ランディ先生にお願いしよう。
+	Let's have Randy explain.
 
+## R:
 ちょ、いきなり俺かよ！？
-	ちょ、いきなり俺かよ！？
+	Wait, it's me right off the bat?
 
 えーと、つまりだな……
 『通報』ってのは、
 警察へのタレコミってことだ。
-	えーと、つまりだな……
-	『通報』ってのは、
-	警察へのタレコミってことだ。
+	Well, simply put, reporting
+	means tipping off the police.
 
+## Boy with hat.
 先生、タレコミって何？
-	先生、タレコミって何？
+	What does tipping off mean?
 
+## R:
 え！？
-	え！？
+	Huh?
 
 そりゃ、えーと……
 悪いことしてるヤツがいますよって
 警察に言うことだな。
-	そりゃ、えーと……
-	悪いことしてるヤツがいますよって
-	警察に言うことだな。
+	Uh, that's... Well, basically you
+	call headquarters and tell them
+	someone's doin' something bad.
 
 犯人がいないと、捜査ってのは
 始まらないんだ。
-	犯人がいないと、捜査ってのは
-	始まらないんだ。
+	If we don't know anything, we can't
+	launch an investigation, and then we
+	can't do anything about it.
 
 だから、怪しいヤツは
 とりあえず『通報』すれば……
-	だから、怪しいヤツは
-	とりあえず『通報』すれば……
+	So if you see someone suspicious,
+	you should report them.
 
 場合によっては、
 犯人をあぶり出せる……{wait}#0309Fかもしれない。
-	場合によっては、
-	犯人をあぶり出せる……{wait}#0309Fかもしれない。
+	Then maybe we can stop them.#80W..#20W{wait}
+	#0309FOr something like that.
 
 （……何か、とんでもないことを
 　口走ったような気がするぜ）
-	（……何か、とんでもないことを
-	　口走ったような気がするぜ）
+	(I feel like I just said something crazy.)
 
+## Lloyd {{{4
 これは、俺の方から説明しよう。
-	これは、俺の方から説明しよう。
+	I'll explain.
 
 通報というのは、犯罪、事件、事故等を
 目撃した際に、
 警察に届け出ることを言うんだ。
-	通報というのは、犯罪、事件、事故等を
-	目撃した際に、
-	警察に届け出ることを言うんだ。
+	Reporting means that if you see a crime
+	or an accident, you tell the CPD about it.
 
 クロスベルに住む人には、
 通報義務というものが存在して……
-	クロスベルに住む人には、
-	通報義務というものが存在して……
+	Residents in Crossbell State have
+	a duty to report anything suspicious.
 
 犯罪や事件を目撃した場合、
 速やかに通報しなければならない
-	犯罪や事件を目撃した場合、
-	速やかに通報しなければならない
+	So if you see a crime or an accident, you
+	have to report it as quickly as possible.
 
 その際、いつ、どこで、何があったか、
 犯人の特徴や逃走方面などの情報が
 重要になってくる。
-	その際、いつ、どこで、何があったか、
-	犯人の特徴や逃走方面などの情報が
-	重要になってくる。
+	It's important to report what, when, and where it
+	happened, and if possible any distinctive traits
+	of the perpetrator.
 
 それに加えて、詳しい被害状況、
 通報者の氏名、連絡先を
 報告することなんだ。
-	それに加えて、詳しい被害状況、
-	通報者の氏名、連絡先を
-	報告することなんだ。
+	You should also tell whether anyone's been hurt,
+	as well as your name and a contact address.
 
 わかったかい？
-	わかったかい？
+	Do you understand?
 
+## Green boy:
 よくわかんないー
-	よくわかんないー
+	I didn't understand a thing...
 
 （しまった。
 　細かく説明しすぎたかも……）
-	（しまった。
-	　細かく説明しすぎたかも……）
+	(Oops, maybe that was too detailed.)
+## }}}4
 
+## L:
 『通報』については、
 だいたいこんな感じかな。
-	『通報』については、
-	だいたいこんな感じかな。
+	That pretty much sums up
+	what the report is about.
 
+## Question 2 {{{3
 では次に、
 『どんな時に通報すべきか』
 ということだけど……
-	では次に、
-	『どんな時に通報すべきか』
-	ということだけど……
+	Now, you may be wondering,
+	what and when should I report?
 
 {color 5}どんなときに
 『通報』するべきか？
 それを教えるのは……{0x18}
-	{color 5}どんなときに
-	『通報』するべきか？
-	それを教えるのは……{0x18}
+	{color 5}Who should explain what
+	and when to report?{0x18}
 
 【①エリィ先生】
-	【①エリィ先生】
-
+	[①Elie]
 【②ティオ先生】
-	【②ティオ先生】
-
+	[②Tio]
 【③ランディ先生】
-	【③ランディ先生】
-
+	[③Randy]
 【④ロイド先生】
-	【④ロイド先生】
+	[④Lloyd]
 
+## Elie (+1) {{{4
 これは、エリィ先生に
 解説してもらおう。
-	これは、エリィ先生に
-	解説してもらおう。
+	Maybe Elie could explain this one?
 
+## E:
 わ、私？
-	わ、私？
+	M-Me?
 
 ……わかりました。んん、コホン。
-	……わかりました。んん、コホン。
+	...Well, alright. Ahem.
 
 普段、街中では、
 私たち警察官がパトロールを
 しています。
-	普段、街中では、
-	私たち警察官がパトロールを
-	しています。
+	Usually, we are patrolling
+	inside the city.
 
 けれど警察では、人員削減などで、
 充分な人手がありません。
-	けれど警察では、人員削減などで、
-	充分な人手がありません。
+	But we don't have enough staff to
+	be able to cover the entire city all
+	the time.
 
 また、警察の中でも、各課の
 パワーバランスが存在し、
 自由に動けない状況もあります。
-	また、警察の中でも、各課の
-	パワーバランスが存在し、
-	自由に動けない状況もあります。
+	There are also situations where the
+	power balance between the divisions
+	prevents us from moving freely.
 
 ですが、住民からの『通報』が
 あれば、警察官は速やかに
 現場に出ることができます。
-	ですが、住民からの『通報』が
-	あれば、警察官は速やかに
-	現場に出ることができます。
+	But if we have a report from the citizenry,
+	we can quickly be alerted to where the
+	issue is.
 
 このように、
 住民からの『通報』は
 とても重要なものなのです。
-	このように、
-	住民からの『通報』は
-	とても重要なものなのです。
+	So even though we try to patrol everywhere,
+	these reports are still very important.
 
 （間違ったことは言ってないと
 　思うけど……余計なことも
 　言っちゃったような気がする……）
-	（間違ったことは言ってないと
-	　思うけど……余計なことも
-	　言っちゃったような気がする……）
+	(I don't think I said anything incorrect,
+	but I feel like I said a bit too much.)
 
+## Tio (+3) {{{4
 これは、ティオ先生に
 解説してもらおう。
-	これは、ティオ先生に
-	解説してもらおう。
+	Maybe Tio could explain this one?
 
+## T:
 わかりました。
-	わかりました。
+	Very well.
 
 『通報』というのは、
 犯罪、事故等を見かけた時に
 それを警察に教えることです。
-	『通報』というのは、
-	犯罪、事故等を見かけた時に
-	それを警察に教えることです。
+	Submitting reports is essentially
+	a way to inform the CPD that a
+	crime or accident has happened.
 
 加えて、『何かヘンだな』
 と思った時も、警察に
 教えてください。
-	加えて、『何かヘンだな』
-	と思った時も、警察に
-	教えてください。
+	In addition, if you suspect that something
+	strange is happening, please submit a report
+	in that situation as well.
 
 すごい物音が聞こえた、
 どこかで大声でケンカしてる
 人たちがいる、等の場合です。
-	すごい物音が聞こえた、
-	どこかで大声でケンカしてる
-	人たちがいる、等の場合です。
+	If you hear strange sounds,
+	or see people fighting,
+	et cetera.
 
 通報が早ければ、
 事件や犯罪を、未然に防げるかも
 しれません。
-	通報が早ければ、
-	事件や犯罪を、未然に防げるかも
-	しれません。
+	If we receive a report promptly,
+	we might be able to avert the
+	crime altogether.
 
 わかりましたか？
-	わかりましたか？
+	Do you understand?
 
+## Children
 子供たち
-	子供たち
-
+	Children
 {color 0}#5Sは～～い！
-	{color 0}#5Sは～～い！
+	{color 0}#5SYeeees!
 
+## T:
 （どうやら無事に
 　大役を果たせたようです……）
-	（どうやら無事に
-	　大役を果たせたようです……）
+	(It seems I was able to
+	successfully impart this lesson.)
 
+## Randy {{{4
 これは、ランディ先生に
 解説してもらおう。
-	これは、ランディ先生に
-	解説してもらおう。
+	Maybe Randy could explain this one?
 
+## R:
 俺かよ！
 ……って、仕方ねぇなぁ……
-	俺かよ！
-	……って、仕方ねぇなぁ……
+	Me? Fine, if I have to...
 
 えー、そうだな……
 とりあえず、怪しいヤツは
 片っ端から通報すればいいと思うぜ。
-	えー、そうだな……
-	とりあえず、怪しいヤツは
-	片っ端から通報すればいいと思うぜ。
+	Lemme think... Well, I think you
+	should report anyone who looks
+	suspicious.
 
 悪いことをしてるヤツを
 見かけたら即通報、それっぽいヤツも
 とりあえず通報……
-	悪いことをしてるヤツを
-	見かけたら即通報、それっぽいヤツも
-	とりあえず通報……
+	And if you catch 'em in the act,
+	you should report that right away.
 
 挙動不審なヤツはやっぱり通報。
 その中に運良く悪者がいたら、
 捜査は次の段階に進むってわけだ。
-	挙動不審なヤツはやっぱり通報。
-	その中に運良く悪者がいたら、
-	捜査は次の段階に進むってわけだ。
+	So yeah, if you see someone shifty,
+	you should probably report them. If
+	we're lucky we might find the bad guy.
 
+## Red girl:
 じゃあ、ランディ先生は
 不良っぽいから、通報してもいい？
-	じゃあ、ランディ先生は
-	不良っぽいから、通報してもいい？
+	You look like a delinquent,
+	so should we report you?
 
+## R:
 え！？
 いや、それは勘弁してくれ……
-	え！？
-	いや、それは勘弁してくれ……
+	Huh? No, please don't do that...
 
+## Lloyd {{{4
 これは、俺が答えよう。
-	これは、俺が答えよう。
+	I'll answer this one.
 
 クロスベル市民には、通報義務と
 いうものがあるんだ。
-	クロスベル市民には、通報義務と
-	いうものがあるんだ。
+	The citizens of Crossbell have
+	a duty to report suspicious activity.
 
 これは、犯罪行為や事件、事故等を
 目撃した場合、速やかに
 警察に届け出るってことなんだ。
-	これは、犯罪行為や事件、事故等を
-	目撃した場合、速やかに
-	警察に届け出るってことなんだ。
+	That means that if you witness a
+	crime or an accident, you should
+	tell the CPD about it.
 
 例外もあるけど、基本的には
 『通報』がなければ、
 俺達警察は動くことができない。
-	例外もあるけど、基本的には
-	『通報』がなければ、
-	俺達警察は動くことができない。
+	There are exceptions, but basically,
+	if we don't get a report, we can't
+	do anything about it.
 
 だから、住民の協力が
 必要不可欠なんだ。
 わかったかい？
-	だから、住民の協力が
-	必要不可欠なんだ。
-	わかったかい？
+	Therefore cooperation with the citizenry
+	is absolutely vital. Understand?
 
+## Children:
 子供たち
-	子供たち
-
+	Children
 {color 0}#5S難しくて、
 よくわかりませんでしたー！
-	{color 0}#5S難しくて、
-	よくわかりませんでしたー！
+	{color 0}#5SWe didn't understand
+	a thing!
 
+## L:
 （くっ……。たしかに、
 　ちょっと難しい単語を
 　使ってしまった気がする……）
-	（くっ……。たしかに、
-	　ちょっと難しい単語を
-	　使ってしまった気がする……）
+	(Ugh... I suppose I did use
+	some difficult words.)
 
+## Question 3 {{{3
 さて、住民からの『通報』が
 あったら、次はいよいよ
 警察が捜査をはじめることになる。
-	さて、住民からの『通報』が
-	あったら、次はいよいよ
-	警察が捜査をはじめることになる。
+	So, after receiving a report, we
+	can start a preliminary inquiry.
 
 それが『初動』といって、
 捜査の中でも、重要な
 ポイントになってくるんだ。
-	それが『初動』といって、
-	捜査の中でも、重要な
-	ポイントになってくるんだ。
+	We call this the first response,
+	and it's an important part of
+	any investigation.
 
 『初動』というのは、つまり……
-	『初動』というのは、つまり……
+	The first response is essentially...
 
 {color 5}いよいよ実践！
 『初動』について、
 講義をするのは……{0x18}
-	{color 5}いよいよ実践！
-	『初動』について、
-	講義をするのは……{0x18}
+	{color 5}Time for action!
+	Who will discuss the first response?{0x18}
 
 【①エリィ先生】
-	【①エリィ先生】
-
+	[①Elie]
 【②ティオ先生】
-	【②ティオ先生】
-
+	[②Tio]
 【③ランディ先生】
-	【③ランディ先生】
-
+	[③Randy]
 【④ロイド先生】
-	【④ロイド先生】
+	[④Lloyd]
 
+## Elie (+3) {{{4
 これは、エリィ先生に
 解説してもらおう。
-	これは、エリィ先生に
-	解説してもらおう。
+	...Well, let's have Elie tell us.
 
+## E:
 わかったわ。
-	わかったわ。
+	Alright.
 
 『初動』というのは、
 事件が起きた場所で、
 最初に行う捜査のことです。
-	『初動』というのは、
-	事件が起きた場所で、
-	最初に行う捜査のことです。
+	The first response is a small
+	investigation at the scene of the crime.
 
 事件が起こったばかりの場所は、
 犯人の手がかりが
 多く残っています。
-	事件が起こったばかりの場所は、
-	犯人の手がかりが
-	多く残っています。
+	If the crime has just been committed,
+	there are often clues at the scene...
 
 犯人が残していった品物、
 あるいは足跡……
-	犯人が残していった品物、
-	あるいは足跡……
+	Such as forgotten belongings, or
+	footprints.
 
 そういった、証拠になるものを
 最初に抑えることができれば……
-	そういった、証拠になるものを
-	最初に抑えることができれば……
+	If we can find that sort of evidence...
 
 犯人逮捕への道が、
 ぐっと近くなるというわけです。
-	犯人逮捕への道が、
-	ぐっと近くなるというわけです。
+	That helps immensely for
+	identifying the culprit.
 
 （うん。ちゃんと説明
 　できたわね）
-	（うん。ちゃんと説明
-	　できたわね）
+	(That sounded like a good
+	explanation, I think.)
 
+## Tio {{{4
 これは、ティオ先生に
 解説してもらおう。
-	これは、ティオ先生に
-	解説してもらおう。
+	...Well, let's have Tio tell us.
 
+## T:
 わ、わかりました。
 何とかやってみます……！
-	わ、わかりました。
-	何とかやってみます……！
+	U-Understood. I'll do
+	what I can...
 
 初動捜査というのは、
 文字どおり
 最初の捜査の事を言います。
-	初動捜査というのは、
-	文字どおり
-	最初の捜査の事を言います。
+	The first response is exactly what
+	it sounds like, a small search
+	directly after receiving the report.
 
 事件が起こったばかりの場所は、
 犯人の手がかりが
 多く残っています。
-	事件が起こったばかりの場所は、
-	犯人の手がかりが
-	多く残っています。
+	If the crime has just been committed,
+	there may be traces of the culprit.
 
 ですが、その手がかりは
 時間と共に消えていくので、
 素早い対応が必要で……
-	ですが、その手がかりは
-	時間と共に消えていくので、
-	素早い対応が必要で……
+	But those traces disappear over time,
+	so they need to be discovered quickly.
 
+## Eugot:
 うーん。なんで手がかりが
 時間といっしょに
 消えちゃうんだろう……
-	うーん。なんで手がかりが
-	時間といっしょに
-	消えちゃうんだろう……
+	Why would traces
+	disappear over time...?
 
+## T:
 （……どうやら、うまく説明
 　できなかったようです……）
-	（……どうやら、うまく説明
-	　できなかったようです……）
+	(It seems I was not able to
+	explain as well as I had hoped.)
 
+## Randy (+1) {{{4
 これは、ランディ先生に
 解説してもらおうかな。
-	これは、ランディ先生に
-	解説してもらおうかな。
+	...Well, let's have Randy tell us.
 
+## R:
 お、俺かよ？
 そうだなぁ……
-	お、俺かよ？
-	そうだなぁ……
+	Me? Sure, I guess...
 
 『初動』っていうのは、
 つまり最初に動くってことさ。
-	『初動』っていうのは、
-	つまり最初に動くってことさ。
+	The first response, that
+	means the first thing we do
+	when receiving a report.
 
 事件が起きたての現場には、
 犯人の手がかりが
 けっこう残ってるんだぜ。
-	事件が起きたての現場には、
-	犯人の手がかりが
-	けっこう残ってるんだぜ。
+	The culprit often leaves clues
+	behind after the crime.
 
 例えば、犯人の足跡とかな。
 でも足跡ってのは、風が吹いたり
 雨が降ったりしたら消えちまうだろ？
-	例えば、犯人の足跡とかな。
-	でも足跡ってのは、風が吹いたり
-	雨が降ったりしたら消えちまうだろ？
+	Could be things things like footprints.
+	But footprints disappear quickly if
+	it's windy or rainy.
 
 だから、それが消えないうちに、
 ちゃんと残しておこうって
 ことだ。
-	だから、それが消えないうちに、
-	ちゃんと残しておこうって
-	ことだ。
+	So we need to get there before
+	the footprints disappear.
 
 （とりあえず、間違ったことは
 　言ってないよな……）
-	（とりあえず、間違ったことは
-	　言ってないよな……）
+	(That went better than I expected.)
 
+## Lloyd {{{4
 これは、俺の方から説明するよ。
-	これは、俺の方から説明するよ。
+	Give me a minute and I'll explain.
 
 初動捜査というのは、
 犯罪現場を保全して犯人の手がかりを
 探すことなんだ。
-	初動捜査というのは、
-	犯罪現場を保全して犯人の手がかりを
-	探すことなんだ。
+	The first-response investigation is when
+	we go to the crime scene and record any
+	ephemeral evidence that may be left behind.
 
+## Couta:
 先生、ホゼンってなに？
-	先生、ホゼンってなに？
+	What does ephemeral mean?
 
+## L:
 あ、保全というのは、
 現場を確保して……
-	あ、保全というのは、
-	現場を確保して……
+	Oh, it means it'll vanish quickly
+	if we don't safeguard it...
 
+## Red girl:
 カクホって、どうやるの？
-	カクホって、どうやるの？
+	Safeguard it, how?
 
+## L:
 え、えーと、それは……
-	え、えーと、それは……
+	Uh, that's...
 
 （うーん……。
 　子供にわかりやすく、というのは
 　難しいな……）
-	（うーん……。
-	　子供にわかりやすく、というのは
-	　難しいな……）
+	(Explaining things in a
+	way that children will
+	understand is hard...)
 
+## }}}4
+## L:
 とにかく、『初動』というのは
 とても大切なことなんだ。
-	とにかく、『初動』というのは
-	とても大切なことなんだ。
+	As you can see, the first
+	response is very important.
 
 最初に証拠を見つけられるか
 どうかで、その後の捜査が
 大きく変わってくるからね。
-	最初に証拠を見つけられるか
-	どうかで、その後の捜査が
-	大きく変わってくるからね。
+	The remainder of the investigation
+	depends greatly on whether we can
+	find any such first clues.
 
+## Question 4 {{{3
 さて、初動捜査には、
 どうしても必要なものがある。
 それは……
-	さて、初動捜査には、
-	どうしても必要なものがある。
-	それは……
+	Now, there is one thing that
+	is absolutely vital for the
+	first response...
 
 {color 5}犯人逮捕につながる『初動』。
 その捜査で必要なものを
 教えるのは……！{0x18}
-	{color 5}犯人逮捕につながる『初動』。
-	その捜査で必要なものを
-	教えるのは……！{0x18}
+	{color 5}Who will explain what is
+	important for the first response?{0x18}
 
 【①エリィ先生】
-	【①エリィ先生】
-
+	[①Elie]
 【②ティオ先生】
-	【②ティオ先生】
-
+	[②Tio]
 【③ランディ先生】
-	【③ランディ先生】
-
+	[③Randy]
 【④ロイド先生】
-	【④ロイド先生】
+	[④Lloyd]
 
+## Elie (+1) {{{4
 エリィ先生、何だと思う？
-	エリィ先生、何だと思う？
+	Elie, what do you think that is?
 
+## E:
 そうね……。
 証拠を集めるために、
 現場保存が必要になります。
-	そうね……。
-	証拠を集めるために、
-	現場保存が必要になります。
+	To be able to collect evidence,
+	we need to preserve the scene.
 
 事件の現場から、
 警察官以外の人間を
 速やかに遠ざける……
-	事件の現場から、
-	警察官以外の人間を
-	速やかに遠ざける……
+	We have to quickly evacuate any
+	bystanders not related to the case.
 
 また、現場のものに
 素手で触るのもダメです。
-	また、現場のものに
-	素手で触るのもダメです。
+	And touching anything on the scene
+	barehanded is a no-no.
 
 現場周辺に発見者や通報者、
 目撃者がいる場合は、
 協力を仰ぐことも必要ですね。
-	現場周辺に発見者や通報者、
-	目撃者がいる場合は、
-	協力を仰ぐことも必要ですね。
+	We also need the cooperation of
+	the person who reported the
+	incident, and any other witnesses.
 
 事件は、警察官だけでは解決
 できません。色んな人の協力が
 必要なんです。
-	事件は、警察官だけでは解決
-	できません。色んな人の協力が
-	必要なんです。
+	We can't solve the case on our
+	own. We need the assistance
+	of many other people.
 
+## Boy with hat:
 うーん……。
 何となく、わかったかなあ？
-	うーん……。
-	何となく、わかったかなあ？
+	I guess I kinda get it...
 
+## E:
 （間違ったことは言ってないと
 　思うけど……余計なことも
 　言っちゃったような気がする……）
-	（間違ったことは言ってないと
-	　思うけど……余計なことも
-	　言っちゃったような気がする……）
+	(I don't think I said anything
+	wrong, but maybe that was
+	too detailed.)
 
+## Tio {{{4
 ティオ先生、何だと思う？
-	ティオ先生、何だと思う？
+	Tio, what do you think that is?
 
+## T:
 そ、それは……
-	そ、それは……
+	That would be...
 
 視力、でしょうか。
-	視力、でしょうか。
+	Visual acuity, perhaps. Good
+	eyesight, in simpler terms.
 
 つまりその、どんなに小さいものも
 見逃さない目が必要かと。
-	つまりその、どんなに小さいものも
-	見逃さない目が必要かと。
+	Essentially, we must not overlook
+	any detail, no matter how small.
 
 あとは、その、根気です。
 証拠が残っているかどうか
 わからない現場で……
-	あとは、その、根気です。
-	証拠が残っているかどうか
-	わからない現場で……
+	And then there's, hmm, persistence?
+	We don't know whether there are
+	any clues remaining...
 
 砂粒ほどの証拠を探すのは、
 とても根気が必要で……
-	砂粒ほどの証拠を探すのは、
-	とても根気が必要で……
+	We must leave no stone unturned,
+	and that requires a great deal
+	of patience...
 
 （緊張して、言ってることが
 　チンプンカンプンに
 　なってしまいました……）
-	（緊張して、言ってることが
-	　チンプンカンプンに
-	　なってしまいました……）
+	(I'm so nervous I don't
+	even know what I'm saying...)
 
+## Randy (+3) {{{4
 ランディ先生、何だと思う？
-	ランディ先生、何だと思う？
+	Randy, what do you think that is?
 
+## R:
 とにかく、素早く動くことだな。
 時間が過ぎれば、証拠集めは
 どんどん難しくなっていくからな。
-	とにかく、素早く動くことだな。
-	時間が過ぎれば、証拠集めは
-	どんどん難しくなっていくからな。
+	Well, first off, we need to move
+	swiftly. The longer we wait, the
+	harder the clues will be to find.
 
 犯人だってバカじゃない。
 証拠を消そうとするはずだし、
 遠くに逃げようともするだろう。
-	犯人だってバカじゃない。
-	証拠を消そうとするはずだし、
-	遠くに逃げようともするだろう。
+	Our opponents aren't fools. They'll
+	do their best to erase the evidence
+	and escape.
 
 初動ってのは、時間との戦い！
 スピーディさが、
 勝負の決め手になるってわけだ。
-	初動ってのは、時間との戦い！
-	スピーディさが、
-	勝負の決め手になるってわけだ。
+	The first response is a race
+	against time! Speed is the
+	key to victory.
 
+## Green boy:
 わー、なんかかっこいい！
-	わー、なんかかっこいい！
+	Woah, that's kinda cool!
 
+## R:
 （んん、なかなかいい感じに
 　教えられたんじゃないか？）
-	（んん、なかなかいい感じに
-	　教えられたんじゃないか？）
+	(A pretty good bout of teachin',
+	if I say so myself.)
 
+## Lloyd {{{4
 これは、俺の方から説明するよ。
-	これは、俺の方から説明するよ。
+	Let me explain.
 
 『初動』で必要なものは……
 そうだな、警察官としての
 装備一式とか……
-	『初動』で必要なものは……
-	そうだな、警察官としての
-	装備一式とか……
+	The most important thing...
+	That'd be equipment, I'd say.
 
 たとえば、警察手帳がないと
 住民への聞きこみが
 円滑にできなかったり……
-	たとえば、警察手帳がないと
-	住民への聞きこみが
-	円滑にできなかったり……
+	For example, without our detective
+	notebooks, it would be much harder
+	to interview witnesses...
 
 警棒や拳銃がないと、
 いざという時に、その、
 困るからね。
-	警棒や拳銃がないと、
-	いざという時に、その、
-	困るからね。
+	And without a baton or gun,
+	we might not be able to act
+	when necessary...
 
 （何だか、しどろもどろに
 　なってしまったぞ……）
-	（何だか、しどろもどろに
-	　なってしまったぞ……）
+	(I completely lost my
+	train of thought...)
 
+## Question 5 {{{3
 ……さて、『初動』で、
 犯人につながる証拠を
 見つけたとしよう。
-	……さて、『初動』で、
-	犯人につながる証拠を
-	見つけたとしよう。
+	Now, let's assume we did
+	find compelling evidence
+	from the first response.
 
 次に重要なのは『推理』なんだ。
 証拠の品と、犯人を
 結びつけるものがなければ……
-	次に重要なのは『推理』なんだ。
-	証拠の品と、犯人を
-	結びつけるものがなければ……
+	The next important step is
+	deduction. We need to link
+	the evidence to the culprit....
 
 犯人の『逮捕』には
 結びつかないからね。
-	犯人の『逮捕』には
-	結びつかないからね。
+	Or we won't know who to arrest.
 
 {color 5}いよいよ捜査も佳境！
 はたして『推理』とは！？
 講義するのは……{0x18}
-	{color 5}いよいよ捜査も佳境！
-	はたして『推理』とは！？
-	講義するのは……{0x18}
+	{color 5}This is the juiciest part!
+	Sure enough, it's the deduction!
+	Who will teach about it?{0x18}
 
 【①エリィ先生】
-	【①エリィ先生】
-
+	[①Elie]
 【②ティオ先生】
-	【②ティオ先生】
-
+	[②Tio]
 【③ランディ先生】
-	【③ランディ先生】
-
+	[③Randy]
 【④ロイド先生】
-	【④ロイド先生】
+	[④Lloyd]
 
+## Elie (+3) {{{4
 エリィ先生、お願いします。
-	エリィ先生、お願いします。
+	Elie, if you please?
 
+## E:
 『推理』とは何か？
-	『推理』とは何か？
+	What does deduction mean?
 
 それは『初動』で集めた情報を元に、
 その先にある結末を
 予想することなの。
-	それは『初動』で集めた情報を元に、
-	その先にある結末を
-	予想することなの。
+	That's when we take the evidence from
+	the first response, and use that to
+	infer more information about the case.
 
 どんな事件にも、必ず手がかりや
 証拠になるものが出てくるわ。
-	どんな事件にも、必ず手がかりや
-	証拠になるものが出てくるわ。
+	No matter what sort of case it is,
+	there will be a number of clues.
 
 それらを集めて、順番に考え、
 パズルのように当てはめて……
 答えを導き出す。
-	それらを集めて、順番に考え、
-	パズルのように当てはめて……
-	答えを導き出す。
+	If we think of it like a puzzle
+	and line up the clues in the right
+	way, that'll lead us to the answer.
 
 それが、推理なのよ。
-	それが、推理なのよ。
+	That's what deduction means.
 
+## Brown girl:
 そうなの……
 警察官ってすごいわね！
-	そうなの……
-	警察官ってすごいわね！
+	The police must be really smart.
 
+## E:
 （うん。ちゃんと説明
 　できたわね）
-	（うん。ちゃんと説明
-	　できたわね）
+	(I think that went well.)
 
+## Tio (+1) {{{4
 ティオ先生、お願いします。
-	ティオ先生、お願いします。
+	Tio, if you please?
 
+## T:
 わ、わかりました。
-	わ、わかりました。
+	V-Very well.
 
 推理というのは、捜査で集めた証拠、
 情報、事実を元に、事件の経過と
 結末を導き出すことです。
-	推理というのは、捜査で集めた証拠、
-	情報、事実を元に、事件の経過と
-	結末を導き出すことです。
+	Deduction means that we predict how
+	the case will proceed or end based
+	on the clues and information we have.
 
 証拠をひとつずつ繋げていけば、
 いずれ犯人に
 辿り着きます。
-	証拠をひとつずつ繋げていけば、
-	いずれ犯人に
-	辿り着きます。
+	If we connect the dots one by one,
+	we will eventually arrive at the
+	identity of the perpetrator.
 
 その作業を、『推理』と
 いうわけです。
-	その作業を、『推理』と
-	いうわけです。
+	That is what we call deduction.
 
+## Red girl:
 ちょっとむずかしかったけど、
 何となくわかった……かしら。
-	ちょっとむずかしかったけど、
-	何となくわかった……かしら。
+	That was a bit hard to follow,
+	but I got the gist... I think.
 
+## T:
 （もう少しかみ砕いて説明できれば
 　よかったです……）
-	（もう少しかみ砕いて説明できれば
-	　よかったです……）
+	(I wish I could have broken
+	it down more clearly.)
 
+## Randy {{{4
 ランディ先生、お願いします。
-	ランディ先生、お願いします。
+	Randy, if you please?
 
+## R:
 ここで俺かよ！？
 参ったなぁ……
-	ここで俺かよ！？
-	参ったなぁ……
+	What, I get this part?
+	Fine, I'll do it.
 
 ま、簡単に言えば、
 『犯人はおまえだ！』ってヤツの
 前段階だ。
-	ま、簡単に言えば、
-	『犯人はおまえだ！』ってヤツの
-	前段階だ。
+	To put it simply, it's the
+	first step to be able to say
+	"The culprit... is you!"
 
 もっと簡単に言えば、
 犯人が誰かを考えるって事だが……
-	もっと簡単に言えば、
-	犯人が誰かを考えるって事だが……
+	To put it even simpler, you
+	pretty much think about who
+	the culprit might be.
 
 どうやって考えるかは、
 俺も苦手だからよくわかんねぇ。
-	どうやって考えるかは、
-	俺も苦手だからよくわかんねぇ。
+	How to think about it, I dunno.
+	That ain't my forte; I'd just
+	grab one of my pals to do it.
 
 要するに、推理ってのは
 大変ってことだな。
-	要するに、推理ってのは
-	大変ってことだな。
+	Long story short, it's tough work.
 
 ……って、こんな説明で
 わかるわけないよな、ははは……
-	……って、こんな説明で
-	わかるわけないよな、ははは……
+	...That didn't tell 'em a thing, haha...
 
+## Lloyd {{{4
 これは、俺の方から説明しようかな。
-	これは、俺の方から説明しようかな。
+	I'll take this one.
 
 推理というのは、
 犯人が誰かを考えることで……
-	推理というのは、
-	犯人が誰かを考えることで……
+	Deduction basically means that we
+	think about who the criminal is...
 
+## Couta:
 考えれば、犯人が誰かわかるの？
 すごーい！
-	考えれば、犯人が誰かわかるの？
-	すごーい！
+	You can find who the baddie is
+	just by thinking? That's amazing!
 
+## L:
 あ、いや。そうじゃなくて。
 あくまで、集めた証拠を元に
 誰が一番犯人である可能性が高いか……
-	あ、いや。そうじゃなくて。
-	あくまで、集めた証拠を元に
-	誰が一番犯人である可能性が高いか……
+	No, not quite. Rather, we use the
+	evidence we have to determine who
+	is most likely to be the culprit.
 
 それを、考えるということになるかな。
-	それを、考えるということになるかな。
+	That's what I mean by thinking about it.
 
+## Boy with hat:
 ね。推理って、絶対に当たるの？
-	ね。推理って、絶対に当たるの？
+	Does this deduction thing always work?
 
+## L:
 そ、そういうわけじゃないけど……
-	そ、そういうわけじゃないけど……
+	N-Not always, no.
 
+## Eugot:
 推理が外れてた場合は
 どうなっちゃうの？
-	推理が外れてた場合は
-	どうなっちゃうの？
+	What do you do if it
+	doesn't?
 
+## L:
 それは、最初から推理を……
 いや、その前にもう一度
 捜査をやり直して……
-	それは、最初から推理を……
-	いや、その前にもう一度
-	捜査をやり直して……
+	Well, in that case we'll have to
+	restart the deduction... No, the whole
+	investigation, from the beginning...
 
 （質問攻めになるとは
 　予想できなかった……）
-	（質問攻めになるとは
-	　予想できなかった……）
+	(I wasn't expecting this many questions...)
+## }}}4
 
 『推理』が、
 犯人逮捕に直接結びつく、とても重要な
 パートだということがわかったかな？
-	『推理』が、
-	犯人逮捕に直接結びつく、とても重要な
-	パートだということがわかったかな？
+	I hope you understand that the deduction
+	is a very important step on the road to
+	apprehending the criminal.
 
+## Question 6 {{{3
 では推理を行う上で、
 必要なものを考えてみよう。
-	では推理を行う上で、
-	必要なものを考えてみよう。
+	Let's think about what we need
+	for a good deduction.
 
 {color 5}授業は重大局面を迎えた。
 『推理』に必要なもの。
 それを教えるのは……！{0x18}
-	{color 5}授業は重大局面を迎えた。
-	『推理』に必要なもの。
-	それを教えるのは……！{0x18}
+	{color 5}This is the critical point!
+	Who should explain what is needed
+	for a deduction?{0x18}
 
 【①エリィ先生】
-	【①エリィ先生】
-
+	[①Elie]
 【②ティオ先生】
-	【②ティオ先生】
-
+	[②Tio]
 【③ランディ先生】
-	【③ランディ先生】
-
+	[③Randy]
 【④ロイド先生】
-	【④ロイド先生】
+	[④Lloyd]
 
+## Elie {{{4
 これは、エリィ先生に
 解説してもらおう。
-	これは、エリィ先生に
-	解説してもらおう。
+	I'm leaving this part to you, Elie.
 
+## E:
 えっ、ここはロイドが適役じゃ……
-	えっ、ここはロイドが適役じゃ……
+	Isn't this your specialty, though?
 
 ええと、『推理』に必要なもの……
 それはやっぱり、
 直感力だと思います。
-	ええと、『推理』に必要なもの……
-	それはやっぱり、
-	直感力だと思います。
+	The most important thing for a
+	deduction... I think that would
+	be intuition.
 
 正解が何かわからない状態から、
 事件を解決に導くのは、
 事件の本筋を見抜く力が大切です。
-	正解が何かわからない状態から、
-	事件を解決に導くのは、
-	事件の本筋を見抜く力が大切です。
+	Since we don't know the right
+	answer, we need to be able to see
+	through the core of the problem.
 
 ちなみに、私たちのチームで、
 一番推理が得意なのは、
 ロイド先生です。
-	ちなみに、私たちのチームで、
-	一番推理が得意なのは、
-	ロイド先生です。
+	Lloyd is our resident expert on
+	deduction, by the way.
 
+## Brown girl:
 それじゃ、エリィ先生は
 推理できないの？
-	それじゃ、エリィ先生は
-	推理できないの？
+	Does that mean you can't do it?
 
+## E:
 えっ！？
 それは、えーと、その……
-	えっ！？
-	それは、えーと、その……
+	Eh? Umm, that's...
 
 ご想像に、お任せします……
-	ご想像に、お任せします……
+	I'll leave that to your imagination.
 
 （説明は一応できたけど、
 　失敗したような気がするのは
 　何故かしら……）
-	（説明は一応できたけど、
-	　失敗したような気がするのは
-	　何故かしら……）
+	(I think I did okay with the explanation,
+	but why do I feel like I failed...?)
 
+## Tio (+1) {{{4
 これは、ティオ先生に
 解説してもらおう。
-	これは、ティオ先生に
-	解説してもらおう。
+	I'm leaving this part to you, Tio.
 
+## T:
 わ、わかりました。
-	わ、わかりました。
+	U-Understood.
 
 そうですね、『推理』に
 必要なもの……。
 それは、想像力かもしれません。
-	そうですね、『推理』に
-	必要なもの……。
-	それは、想像力かもしれません。
+	Hmm... I would say the most
+	important aspect is imagination.
 
 まだ見ぬ犯人の姿を想像し、
 事件の本質を見抜く……
-	まだ見ぬ犯人の姿を想像し、
-	事件の本質を見抜く……
+	You have to envision the criminal,
+	who you have not yet encountered,
+	to see the true nature of the case.
 
 そういう力が、必要なんだと
 思います。
-	そういう力が、必要なんだと
-	思います。
+	That's what I think is the most
+	important aspect.
 
 わたしもまだまだ勉強中で、
 なかなかうまく推理できないことが
 多いですが……
-	わたしもまだまだ勉強中で、
-	なかなかうまく推理できないことが
-	多いですが……
+	I am still learning, so I often fail
+	to draw the right conclusions.
 
 いつか、ロイド先生みたいな、
 『推理』ができる警察官に
 なりたいと思います。
-	いつか、ロイド先生みたいな、
-	『推理』ができる警察官に
-	なりたいと思います。
+	I wish to one day be as good
+	at deduction as Lloyd is.
 
 （あまり理論的に説明
 　できませんでしたが、
 　何となく概要は伝わったかと）
-	（あまり理論的に説明
-	　できませんでしたが、
-	　何となく概要は伝わったかと）
+	(I couldn't explain it
+	very theoretically, but
+	I hope they got the gist.)
 
+## Randy {{{4
 これは、ランディ先生に
 解説してもらおう。
-	これは、ランディ先生に
-	解説してもらおう。
+	I'm leaving this part to you, Randy.
 
+## R:
 お、俺に振るなよ……
 推理のことなんて、わからねーぞ
-	お、俺に振るなよ……
-	推理のことなんて、わからねーぞ
+	Are you joking? I'm shit
+	at deductions.
 
 ……とも言ってられねぇか。
 ええと、推理で必要なもの……
-	……とも言ってられねぇか。
-	ええと、推理で必要なもの……
+	...Guess I can't say that. Lessee,
+	most important for deduction...
 
 ……………………
-	……………………
+	...
 
 #5Sわからーん！！#3S
-	#5Sわからーん！！#3S
+	#5SDunno!#3S
 
 そんなもの、
 俺が教えてほしいくらいだぜ……
-	そんなもの、
-	俺が教えてほしいくらいだぜ……
+	If you kids got any
+	idea, you tell me.
 
+## Couta:
 先生にもわからないの？
-	先生にもわからないの？
+	Even the teacher doesn't know?
 
+## R:
 ああ。自慢じゃないが、
 ウチじゃ推理は
 ロイド先生の担当なんだ。
-	ああ。自慢じゃないが、
-	ウチじゃ推理は
-	ロイド先生の担当なんだ。
+	Yup, I couldn't do deductions
+	to save my life. I'll leave
+	that to Lloyd, thank you.
 
 そうか。推理に必要なもの……
 それはロイド先生ってことだな。
-	そうか。推理に必要なもの……
-	それはロイド先生ってことだな。
+	Oh yeah, I got it! The most
+	important thing for deductions#300W...#20W
+	is Lloyd!
 
 ロイド先生がいりゃ、
 どんな事件もたちどころに解決って
 わけだ。
-	ロイド先生がいりゃ、
-	どんな事件もたちどころに解決って
-	わけだ。
+	If we've got Lloyd, we can
+	easily solve any case.
 
+## Green kid:
 そっかー。ロイド先生、
 すごいなぁ！
-	そっかー。ロイド先生、
-	すごいなぁ！
+	I see! Lloyd sure is cool.
 
+## Lloyd (+3) {{{4
 これは、俺の方から説明しよう。
 『推理』に必要なもの……手がかり、
 証拠品、考えられるものは色々あるけど……
-	これは、俺の方から説明しよう。
-	『推理』に必要なもの……手がかり、
-	証拠品、考えられるものは色々あるけど……
+	Let me explain this part. You need all
+	sorts of things for a deduction. Clues,
+	evidence, anything you can think of.
 
 残念ながら、明確な答えはないと思う。
 少なくとも、俺はまだ
 見つけられていないんだ。
-	残念ながら、明確な答えはないと思う。
-	少なくとも、俺はまだ
-	見つけられていないんだ。
+	Sadly, I don't think there is
+	one true answer. At least I
+	haven't found one yet.
 
 けれど、警察官としての
 幅広い知識と経験が、
 推理に幅を与えてくれる。
-	けれど、警察官としての
-	幅広い知識と経験が、
-	推理に幅を与えてくれる。
+	But having extensive knowledge
+	and experience gives much more
+	depth to your deductions.
 
 俺はまだまだ新米だけど、
 そんな警察官になれるように
 頑張ってるつもりさ。
-	俺はまだまだ新米だけど、
-	そんな警察官になれるように
-	頑張ってるつもりさ。
+	I'm still a rookie, but I'm
+	doing my best to become that
+	kind of detective.
 
 （正しいかどうかはわからないけど
 　これが、俺なりに出した
 　結論なんだ）
-	（正しいかどうかはわからないけど
-	　これが、俺なりに出した
-	　結論なんだ）
+	(I'm not sure if that was the
+	right answer, but that's how
+	I think about it.)
 
+## Brown girl:
 ロイド先生……
 ちょっと素敵かも……
-	ロイド先生……
-	ちょっと素敵かも……
+	Lloyd... He's kinda cool...
 
+## Question 7 {{{3
 さて、いよいよ最後だ。
 『推理』によって
 犯人がわかれば……
-	さて、いよいよ最後だ。
-	『推理』によって
-	犯人がわかれば……
+	Finally, once we have
+	uncovered the culprit
+	with our deductions...
 
 ついに事態は
 最終局面『逮捕』へと
 向かっていくんだ。
-	ついに事態は
-	最終局面『逮捕』へと
-	向かっていくんだ。
+	It's finally time for the last
+	stage, namely the arrest.
 
 {color 5}緊迫の瞬間！
 『逮捕』について、
 講義をするのは……{0x18}
-	{color 5}緊迫の瞬間！
-	『逮捕』について、
-	講義をするのは……{0x18}
+	{color 5}A tense moment!
+	Who will explain the arrest?{0x18}
 
 【①エリィ先生】
-	【①エリィ先生】
-
+	[①Elie]
 【②ティオ先生】
-	【②ティオ先生】
-
+	[②Tio]
 【③ランディ先生】
-	【③ランディ先生】
-
+	[③Randy]
 【④ロイド先生】
-	【④ロイド先生】
+	[④Lloyd]
 
+## Elie {{{4
 エリィ先生、
 どうかな？
-	エリィ先生、
-	どうかな？
+	Elie, if you would?
 
+## E:
 え。そ、そうね……
-	え。そ、そうね……
+	Huh? Alright...
 
 『逮捕』というのは、
 犯罪を行った可能性のある容疑者を
 拘束することです。
-	『逮捕』というのは、
-	犯罪を行った可能性のある容疑者を
-	拘束することです。
+	The arrest is when we capture
+	the suspects.
 
 逮捕には３種類あります。
 通常逮捕、緊急逮捕、
 そして現行犯逮捕です。
-	逮捕には３種類あります。
-	通常逮捕、緊急逮捕、
-	そして現行犯逮捕です。
+	There are three types of arrest:
+	the usual one, arrest without a warrant,
+	and if they are caught in the act.
 
 逮捕された容疑者は
 最大で７２時間拘留され、
 その間に起訴か釈放かが決まります。
-	逮捕された容疑者は
-	最大で７２時間拘留され、
-	その間に起訴か釈放かが決まります。
+	The suspects are held for a maximum of
+	72 hours, during which it is judged whether
+	they are to be prosecuted or acquitted.
 
 （って、ちょっと難しすぎる説明かも
 　しれないわね……）
-	（って、ちょっと難しすぎる説明かも
-	　しれないわね……）
+	(That explanation is probably too difficult...)
 
+## Tio {{{4
 ティオ先生、どうかな？
-	ティオ先生、どうかな？
+	Tio, if you would?
 
+## T:
 あ、はい。えーと……
-	あ、はい。えーと……
+	Oh, very well. Let's see...
 
 犯罪を犯した可能性のある人物を、
 拘束することを『逮捕』と言います。
-	犯罪を犯した可能性のある人物を、
-	拘束することを『逮捕』と言います。
+	Arresting means apprehending a person
+	suspected of having committed a crime.
 
 逃走、もしくは犯罪の証拠を
 隠滅する可能性がある場合……
-	逃走、もしくは犯罪の証拠を
-	隠滅する可能性がある場合……
+	If it expected that they may try
+	to escape or to destroy evidence...
 
 身柄を拘束する必要が
 あるというわけです。
-	身柄を拘束する必要が
-	あるというわけです。
+	It is necessary to take the person
+	into custody.
 
+## Eugot:
 うーん。あんまりピンと来ないなぁ。
-	うーん。あんまりピンと来ないなぁ。
+	Hmm... Nope, don't get it.
 
+## T:
 （ちょっと難しすぎたかも……）
-	（ちょっと難しすぎたかも……）
+	(A bit too difficult, perhaps...)
 
+## Randy (+3) {{{4
 ランディ先生、どうかな？
-	ランディ先生、どうかな？
+	Randy, if you would?
 
+## R:
 おっし！
 俺の出番だな！
-	おっし！
-	俺の出番だな！
+	Oh yeah! Now this
+	is my gig!
 
 『逮捕』ってのは、
 要するに容疑者を
 とっ捕まえるってことだ。
-	『逮捕』ってのは、
-	要するに容疑者を
-	とっ捕まえるってことだ。
+	Simply put, arresting means
+	capturing the suspect.
 
 悪いことするヤツにも
 色んなタイプがいるから、
 警察官も大変なんだぜ。
-	悪いことするヤツにも
-	色んなタイプがいるから、
-	警察官も大変なんだぜ。
+	There are lots of kinds
+	of baddies, so it's not as
+	easy as it sounds.
 
 逃げようとするヤツ、
 武器を持って応戦するヤツ……
-	逃げようとするヤツ、
-	武器を持って応戦するヤツ……
+	Some baddies might try to
+	run away, others might have
+	weapons...
 
 でも、警察官は絶対に負けねえ。
 逃げたらどこまでも追いかけて
 向かってくるヤツはねじ伏せる！
-	でも、警察官は絶対に負けねえ。
-	逃げたらどこまでも追いかけて
-	向かってくるヤツはねじ伏せる！
+	But the CPD will never lose!
+	If they run, we'll chase 'em
+	to the ends of Zemuria.
 
 相手がどんなに強かろうと、
 すげー武器を持ってようと、
 ひるんじゃ駄目なんだ。
-	相手がどんなに強かろうと、
-	すげー武器を持ってようと、
-	ひるんじゃ駄目なんだ。
+	No matter how strong they are,
+	or whatever weapons they're carrying,
+	we won't falter.
 
+## Green boy:
 すげー……！
-	すげー……！
+	So cool...!
 
+## R:
 （おっし。これくらい単純な方が、
 　ちびっ子どもにはわかりやすいだろ）
-	（おっし。これくらい単純な方が、
-	　ちびっ子どもにはわかりやすいだろ）
+	(Oh yeah. If I explain like this,
+	it should be easy for the kiddos.)
 
+## Lloyd (+1) {{{4
 これは、俺の方から説明しようかな。
-	これは、俺の方から説明しようかな。
+	This part goes to me, I guess.
 
 『逮捕』というのは、
 悪いことをした人やその疑いが強い人を
 捕まえておくことだよ。
-	『逮捕』というのは、
-	悪いことをした人やその疑いが強い人を
-	捕まえておくことだよ。
+	The arrest is when we catch the
+	people who committed the crime,
+	or who we suspect did so.
 
 この時点では、まだ容疑者が
 犯人だと確定はしていないんだ。
-	この時点では、まだ容疑者が
-	犯人だと確定はしていないんだ。
+	Keep in mind that we haven't
+	confirmed their guilt yet
+	at this point.
 
 容疑者が犯人かどうかは、
 その後の裁判で争われる
 わけだけど……
-	容疑者が犯人かどうかは、
-	その後の裁判で争われる
-	わけだけど……
+	Whether they are guilty
+	will be settled at a trial...
 
 そこまでに、容疑者を
 捕まえておくのが
 警察の仕事なのさ。
-	そこまでに、容疑者を
-	捕まえておくのが
-	警察の仕事なのさ。
+	But it's the police's job to
+	catch them before that.
 
 （なるべく簡単に流れを説明
 　したつもりだけど、これなら
 　何とか子供にもわかると思う）
-	（なるべく簡単に流れを説明
-	　したつもりだけど、これなら
-	　何とか子供にもわかると思う）
+	(I tried to keep it simple,
+	so I think the children should
+	be able to understand.)
+## }}}4
 
 『逮捕』について、
 わかったかな？
-	『逮捕』について、
-	わかったかな？
+	Did you understand what
+	an arrest is about?
 
+## Question 8 {{{3
 これは、警察官としては
 花形の仕事でもあるんだけど……
-	これは、警察官としては
-	花形の仕事でもあるんだけど……
+	The arrest might be the
+	part that gets all the
+	attention...
 
 同時に、とても危険を伴う
 任務でもあるんだ。
-	同時に、とても危険を伴う
-	任務でもあるんだ。
+	But it can also be very dangerous.
 
 何しろ、犯人と直接向かい合う
 ことになるからね。
-	何しろ、犯人と直接向かい合う
-	ことになるからね。
+	After all, it essentially
+	boils down to a confrontation
+	between the suspect and us.
 
 ここで容疑者を取り逃がしたら、
 今までの任務は
 全て無駄になってしまう……
-	ここで容疑者を取り逃がしたら、
-	今までの任務は
-	全て無駄になってしまう……
+	If we allow them to them escape here,
+	all our work so far will have been for
+	nothing.
+## I disagree. You've still found out who the suspect is, and if they're
+## trying to escape, that not only hints strongly at their guilt, but isn't
+## not cooperating with law enforcement (especially in a violent fashion)
+## a crime on its own?
 
 そうしないために、
 大切なことは……
-	そうしないために、
-	大切なことは……
+	To ensure that doesn't happen...
 
 {color 5}『逮捕』において
 もっとも大切なもの。
 それを教える先生は……！{0x18}
-	{color 5}『逮捕』において
-	もっとも大切なもの。
-	それを教える先生は……！{0x18}
+	{color 5}Who will explain what
+	is necessary for a successful
+	arrest?{0x18}
 
 【①エリィ先生】
-	【①エリィ先生】
-
+	[①Elie]
 【②ティオ先生】
-	【②ティオ先生】
-
+	[②Tio]
 【③ランディ先生】
-	【③ランディ先生】
-
+	[③Randy]
 【④ロイド先生】
-	【④ロイド先生】
+	[④Lloyd]
 
+## Elie {{{4
 エリィ先生、いいかな？
-	エリィ先生、いいかな？
+	Elie, could you take this part?
 
+## E:
 ええと、『逮捕』するために
 大切なもの……
-	ええと、『逮捕』するために
-	大切なもの……
+	Hmm... The most important thing for
+	an arrest...
 
 それは、逮捕状の有無です。
-	それは、逮捕状の有無です。
+	That would be whether or not
+	we have an arrest warrant.
 
 緊急逮捕、現行犯逮捕の場合以外に
 容疑者と思われる人物を
 逮捕するには……
-	緊急逮捕、現行犯逮捕の場合以外に
-	容疑者と思われる人物を
-	逮捕するには……
+	Exceptional circumstances notwithstanding,
+	if we want to arrest a suspect...
 
 逮捕状が必要です。
-	逮捕状が必要です。
+	We need a warrant.
 
 （間違ってはいないけど、
 　何かが違うような……）
-	（間違ってはいないけど、
-	　何かが違うような……）
+	(That's not wrong, but I feel
+	that's not the right answer.)
 
+## Tio {{{4
 ティオ先生、いいかな？
-	ティオ先生、いいかな？
+	Tio, could you take this part?
 
+## T:
 あ、はい。
 『逮捕』に大切なこと……
-	あ、はい。
-	『逮捕』に大切なこと……
+	If I must. Something that
+	is necessary for an arrest...
 
 ええと……。
 それは、冷静な判断力です。
-	ええと……。
-	それは、冷静な判断力です。
+	That would be... the ability to
+	make calm decisions, perhaps.
 
 容疑者と対峙する時は、
 たいてい緊迫した状況ですから……
-	容疑者と対峙する時は、
-	たいてい緊迫した状況ですから……
+	Facing the suspect is always
+	a tense situation...
 
 その雰囲気に、
 呑まれないことが大切だと思います。
-	その雰囲気に、
-	呑まれないことが大切だと思います。
+	So it's important to not
+	get carried away in that
+	atmosphere.
 
 （うーん……
 　何か、違うような気がします……）
-	（うーん……
-	　何か、違うような気がします……）
+	(Hmm... That doesn't sound quite right.)
 
+## Randy (+1) {{{4
 これは、ランディ先生に
 解説してもらおう。
-	これは、ランディ先生に
-	解説してもらおう。
+	Let's have Randy explain this part.
 
 『逮捕』でもっとも必要なもの。
 それは……
-	『逮捕』でもっとも必要なもの。
-	それは……
+	The most important thing for
+	an arrest is...
 
 #5S気合いと気迫だ！#3S
-	#5S気合いと気迫だ！#3S
+	#5SIt's all 'bout that fighting
+	spirit, baby!#3S
 
 凶悪犯と対峙した時、
 絶対に負けないって
 気合いと気迫……
-	凶悪犯と対峙した時、
-	絶対に負けないって
-	気合いと気迫……
+	When facing a heinous criminal,
+	you must not lose, at any cost.
 
 それが一番大切だ。
 少なくとも、俺にとってはな。
-	それが一番大切だ。
-	少なくとも、俺にとってはな。
+	That's what's most important.
+	Well, to me, anyway.
 
+## Eugot:
 なんか、ちょっと怖い……
-	なんか、ちょっと怖い……
+	He's kinda scary...
 
+## R:
 （うっ……
 　ちょっと気合い入れすぎたか……）
-	（うっ……
-	　ちょっと気合い入れすぎたか……）
+	(Guess I shouldn't bring that
+	fighting spirit into the
+	classroom though...)
 
+## Lloyd (+3) {{{4
 これは、俺の方から説明しよう。
-	これは、俺の方から説明しよう。
+	I'll take this part.
 
 『逮捕』するために
 大切なのは……根拠と確信だ
-	『逮捕』するために
-	大切なのは……根拠と確信だ
+	The essential traits for an
+	arrest... are righteousness
+	and conviction.
 
 『逮捕』っていうのは、
 人ひとりの自由を奪う、
 重大な行為だ。
-	『逮捕』っていうのは、
-	人ひとりの自由を奪う、
-	重大な行為だ。
+	An arrest is, at its core, taking
+	away the freedom of an individual.
+	That's a pretty big deal.
 
 目の前の容疑者が
 無実である可能性だってある。
-	目の前の容疑者が
-	無実である可能性だってある。
+	There is always a possibility
+	that the suspect before you is
+	innocent.
 
 とはいえ、逮捕しなければ
 解決しない事件や、護れないものも
 たくさんある
-	とはいえ、逮捕しなければ
-	解決しない事件や、護れないものも
-	たくさんある
+	Nevertheless, if you don't arrest the
+	culprit the case won't be over, and then
+	they can go on and hurt the public again.
 
 だからこそ、自分の
 全身全霊をかけて捜査して、
 確かな根拠と確信を持って……
-	だからこそ、自分の
-	全身全霊をかけて捜査して、
-	確かな根拠と確信を持って……
+	That's why you need to
+	devote your whole being
+	to solving the case.
 
 『逮捕』をする。
 俺はいつもそんな気持ちで
 事件に臨んでいるんだ。
-	『逮捕』をする。
-	俺はいつもそんな気持ちで
-	事件に臨んでいるんだ。
+	And that means the arrest
+	too. That's how I always
+	think when I'm on a case.
 
+## Couta:
 ロイド先生、すごいなー！
-	ロイド先生、すごいなー！
+	Lloyd is so cool...!
 
+## L:
 （かなりうまく、
 　まとめられたんじゃないか？）
-	（かなりうまく、
-	　まとめられたんじゃないか？）
+	(I think I summarized that pretty well.)
+## }}}3
 
+## Marble:
 はい。そろそろ時間ね。
 今日はここまでにしましょう。
-	はい。そろそろ時間ね。
-	今日はここまでにしましょう。
+	Alright, that's the bell.
+	Let's stop here for today.
 
 皆さん、警察のお仕事について
 わかりましたか？
-	皆さん、警察のお仕事について
-	わかりましたか？
+	Everyone, did you understand what
+	these gentlemen were teaching?
 
+## Children:
 子供たち
-	子供たち
-
+	Children
 {color 0}#5Sはーーい！
-	{color 0}#5Sはーーい！
+	{color 0}#5SYeeees!
 
+## System:
 {color 5}どうにか授業は終了した。
 問題は、子供たちが
 どこまで理解できたかだが……
-	{color 5}どうにか授業は終了した。
-	問題は、子供たちが
-	どこまで理解できたかだが……
+	{color 5}The lesson is over.
+	But how much did the children
+	actually understand...?
 
+## [3] After lecture {{{2
+## Marble:
 お疲れ様、ロイド。
 授業の手応えはどうだった？
-	お疲れ様、ロイド。
-	授業の手応えはどうだった？
+	Good job, Lloyd. How
+	did it feel?
 
+## L:
 そうですね……
-	そうですね……
+	Well...
 
+## If ≥20 points {{{3
+## L:
 自分達で言うのも何だけど、
 いい出来だったと思います。
-	自分達で言うのも何だけど、
-	いい出来だったと思います。
+	I think we did a pretty good job,
+	if I say so myself.
 
 警察の業務について、
 かなり、理解して
 もらえたんじゃないかな。
-	警察の業務について、
-	かなり、理解して
-	もらえたんじゃないかな。
+	I think we managed to convey
+	accurately what it is we do.
 
+## M:
 ええ。私もそう思う。
 立派な警察官になったのね。
-	ええ。私もそう思う。
-	立派な警察官になったのね。
+	Yes, I think so too. You've
+	really grown up to be a splendid
+	police officer, haven't you?
 
 それは、チームの皆さんの
 お陰もあるのかしら？
-	それは、チームの皆さんの
-	お陰もあるのかしら？
+	Is that maybe the influence
+	of your teammates?
 
+## R:
 いや、まあ、
 それほどでもないっスよ。
-	いや、まあ、
-	それほどでもないっスよ。
+	Nah, not so much.
 
+## T:
 ロイドさんや皆さんには
 わたし、お世話になりっぱなしです。
-	ロイドさんや皆さんには
-	わたし、お世話になりっぱなしです。
+	Rather, Lloyd is the one who
+	takes care of us.
 
+## E:
 うふふ。私たち、
 いいチームってことかしら。
-	うふふ。私たち、
-	いいチームってことかしら。
+	Well, she's right that we do
+	make a good team.
 
+## If ≥15 points {{{3
+## L:
 悪くはなかったと思います。
 警察の業務について、ある程度
 理解してもらえたんじゃないかと。
-	悪くはなかったと思います。
-	警察の業務について、ある程度
-	理解してもらえたんじゃないかと。
+	It didn't feel too bad. I think
+	we more or less conveyed what
+	we needed to.
 
+## M:
 ええ、そうね。
 私自身も、勉強になったもの。
-	ええ、そうね。
-	私自身も、勉強になったもの。
+	I think so too. I learned
+	a bit as well.
 
 子供たちにも、きっと
 伝わったはずよ。
-	子供たちにも、きっと
-	伝わったはずよ。
+	I'm sure you got through to them.
 
+## R:
 照れるっスよ……
-	照れるっスよ……
+	It was pretty awkward, though.
 
+## T:
 恐縮です。
-	恐縮です。
+	Utterly so.
 
+## L:
 欲を言えば、もう少し
 的確な説明ができれば
 よかったんですけどね。
-	欲を言えば、もう少し
-	的確な説明ができれば
-	よかったんですけどね。
+	It would have been nice if we
+	could have been a little more
+	precise with our explanations.
 
+## If ≥10 points {{{3
+## L:
 警察の業務について、
 うまく説明できたかどうか、
 ちょっと微妙かもしれません。
-	警察の業務について、
-	うまく説明できたかどうか、
-	ちょっと微妙かもしれません。
+	I'm not really sure if we managed
+	to explain the procedure all that
+	well.
 
 反省点は、
 いくつかあります。
-	反省点は、
-	いくつかあります。
+	There are a number of pieces
+	that could have gone better,
+	that's for sure.
 
+## M:
 ふふ。向上心があることは
 いいことだと思うわ。
-	ふふ。向上心があることは
-	いいことだと思うわ。
+	Heehee. It's important to
+	be willing to improve.
 
 ……たしかに、少し
 お勉強が必要かもしれないわね。
-	……たしかに、少し
-	お勉強が必要かもしれないわね。
+	But yes, it does seems that
+	some studying would be in order.
 
+## E:
 そうですね……。
 私も、勉強不足を痛感しました。
-	そうですね……。
-	私も、勉強不足を痛感しました。
+	I, too, felt rather underprepared.
 
+## T:
 同じく。
 もう少しいい説明方法が
 あったかと。
-	同じく。
-	もう少しいい説明方法が
-	あったかと。
+	Same. I'm certain there existed
+	better ways to explain things.
 
+## R:
 だなぁ。俺たちも、
 まだまだ勉強しなきゃって
 ところかな。
-	だなぁ。俺たちも、
-	まだまだ勉強しなきゃって
-	ところかな。
+	For sure. We've got plenty
+	left to learn.
 
+## If <10 points {{{3
+## L:
 ……正直、警察の業務について、
 誤解を招いてしまったかも……
-	……正直、警察の業務について、
-	誤解を招いてしまったかも……
+	...To be honest, I think we've caused
+	quite a lot of misunderstandings.
 
+## M:
 そうねぇ……。
 よくわからない説明が、
 多かったように感じたわ。
-	そうねぇ……。
-	よくわからない説明が、
-	多かったように感じたわ。
+	Yes... I felt like you weren't
+	too sure about what you were
+	describing.
 
 もう少し、お勉強が
 必要みたいね。
-	もう少し、お勉強が
-	必要みたいね。
+	Maybe you need to study
+	a bit more yourselves.
 
+## E:
 お恥ずかしい限りです……
-	お恥ずかしい限りです……
+	Quite embarrassingly so.
 
+## T:
 はい。わたしも
 勉強不足でした……
-	はい。わたしも
-	勉強不足でした……
+	We were insufficiently
+	prepared.
 
+## R:
 うーん……
 ものを教えるって難しいよな。
-	うーん……
-	ものを教えるって難しいよな。
+	Ugh... Teachin' sure is hard.
+### }}}3
 
+### If 24 (max) points {{{3
+## M:
 それじゃあ、これ。
 授業のお礼よ。
 遠慮なく受けとってね。
-	それじゃあ、これ。
-	授業のお礼よ。
-	遠慮なく受けとってね。
+	This is for you, as thanks
+	for a wonderful lesson.
+	Please accept it.
 
 {item 97}{color 0}を受け取った。
-	{item 97}{color 0}を受け取った。
+	Received {item 97}{color 0}. ## Holy Locket
+## }}}3
 
+## M:
 次の授業があるから、
 私はこれで失礼するわね。
-	次の授業があるから、
-	私はこれで失礼するわね。
+	I have another class to attend to,
+	so I'll take my leave here.
 
 また、いつでも学校に
 遊びに来てちょうだい。
-	また、いつでも学校に
-	遊びに来てちょうだい。
+	Please come back to visit anytime.
 
 あなたたちなら、
 きっと子供たちも
 歓迎してくれるでしょうから。
-	あなたたちなら、
-	きっと子供たちも
-	歓迎してくれるでしょうから。
+	I'm sure the children would
+	be happy to see you as well.
 
+## L:
 ありがとうございます。
 それじゃ、失礼します。
-	ありがとうございます。
-	それじゃ、失礼します。
+	Thank you. We'll take
+	our leave here as well.
 
 {color 2}クエスト【続・日曜学校の特別講師】{color 0}を達成した！
-	{color 2}クエスト【続・日曜学校の特別講師】{color 0}を達成した！
+	Quest {color 2}Guest Lecturer for Sunday School (Continued){color 0} completed!
 
+## [4] Talking to Sister Marble, after quest {{{2
 みんな、お疲れ様。
 講師なんて慣れない仕事、
 疲れたでしょう？
-	みんな、お疲れ様。
-	講師なんて慣れない仕事、
-	疲れたでしょう？
+	Great job, everyone.
+	I'm sure you must be exhausted,
+	doing a job you're not used to.
 
 また、遊びに来てちょうだい。
 きっと子供たちも
 よろこぶと思うわ。
-	また、遊びに来てちょうだい。
-	きっと子供たちも
-	よろこぶと思うわ。
+	Please come and visit again sometime.
+	I'm sure the children would appreciate
+	it too.
 
+## [5] Talking to Couta (purple-haired boy) {{{2
+## Before quest {{{3
 お兄ちゃんたち、どうしたの？
 もしかして、シスターの授業を
 受けに来たとか？
-	お兄ちゃんたち、どうしたの？
-	もしかして、シスターの授業を
-	受けに来たとか？
+	Hey misters, what are you doing here?
+	Are you here to take classes too?
 
+## After quest {{{3
 先生の授業、面白かったよ！
 また、教えてね！
-	先生の授業、面白かったよ！
-	また、教えてね！
+	Your lesson was really good!
+	Come teach again!
 
+## [6] Talking to Eugot (gray-haired boy) {{{2
+## Before quest {{{3
 お兄ちゃんの戦術オーブメント
 なかなかカッコイイね。
-	お兄ちゃんの戦術オーブメント
-	なかなかカッコイイね。
+	Your tactical orbment
+	is really cool.
 
 警察も、なかなか捨てたものじゃ
 ないかも。
-	警察も、なかなか捨てたものじゃ
-	ないかも。
+	I guess police's nothing
+	to sneeze at.
 
+## After quest {{{3
 警察って、スゴイんだね。
 ぼくも将来は、
 警察官になろうかなあ……？
-	警察って、スゴイんだね。
-	ぼくも将来は、
-	警察官になろうかなあ……？
+	The police are really cool.
+	Maybe I'll also be a police
+	when I grow up?
 
 うーん、でも遊撃士も
 捨てがたいし……。
 悩むなぁ。
-	うーん、でも遊撃士も
-	捨てがたいし……。
-	悩むなぁ。
+	But bracers are cool too.
+	A tough choice.
 
+## [7] Talking to boy with hat {{{2
+## Before quest {{{3
 学校の授業なんて、つまらないな。
 どうせなら、他の勉強をしたいよ。
-	学校の授業なんて、つまらないな。
-	どうせなら、他の勉強をしたいよ。
+	The classes here are so boring.
+	I'd rather study something else.
 
 たとえば、世界情勢についてとかね。
 今は、エプスタイン財団に
 興味があるんだ。
-	たとえば、世界情勢についてとかね。
-	今は、エプスタイン財団に
-	興味があるんだ。
+	Like about world affairs. Right now,
+	I'm interested in the Epstein Foundation.
 
 エプスタイン博士って
 どんな人だったんだろう、とかね。
-	エプスタイン博士って
-	どんな人だったんだろう、とかね。
+	I wonder what kind of person
+	Professor Epstein was.
 
+## After quest {{{3
 ……日曜学校の授業で
 こんなに面白い話が聞けるなんて
 思わなかったな。
-	……日曜学校の授業で
-	こんなに面白い話が聞けるなんて
-	思わなかったな。
+	I never thought I'd hear about something
+	this interesting at Sunday School.
 
 また、警察の話を聞かせてよ。
-	また、警察の話を聞かせてよ。
+	Come teach more about the police
+	sometime.
 
+## [8] Talking to red-haired girl {{{2
+## Before quest {{{3
 『将来の為に
 　しっかり勉強しなさい』
 って、ママが言うんだけど……
-	『将来の為に
-	　しっかり勉強しなさい』
-	って、ママが言うんだけど……
+	My mom says that I have to
+	focus on my studies to
+	have a good future...
 
 ときどき、
 本当にそうなのかな？……って、
 ギモンに思ったりもするのよ。
-	ときどき、
-	本当にそうなのかな？……って、
-	ギモンに思ったりもするのよ。
+	But sometimes I wonder if
+	that's really true.
 
+## After quest {{{3
 警察の勉強、
 算数よりも面白かったわ。
 また来てね！
-	警察の勉強、
-	算数よりも面白かったわ。
-	また来てね！
+	Your lessons are much more
+	interesting than math. Come
+	teach again sometime!
 
+## [9] Talking to brown-haired girl {{{2
+## Before quest {{{3
 日曜学校の授業なんて、
 簡単すぎてつまんない！
-	日曜学校の授業なんて、
-	簡単すぎてつまんない！
+	Sunday School is way too easy.
+	It's boring.
 
 これなら、家で自習した方が
 よっぽど勉強になるのに。
-	これなら、家で自習した方が
-	よっぽど勉強になるのに。
+	I'd learn better at home
+	than listening to this drivel.
 
+## After quest {{{3
 うふふ、ロイド先生の授業、
 面白かったわ！
 次は違う科目も教えてほしいな！
-	うふふ、ロイド先生の授業、
-	面白かったわ！
-	次は違う科目も教えてほしいな！
+	Heehee, your lesson was really
+	interesting! Please come and teach
+	another subject someday.
 
+## [10] Talking to green-haired boy {{{2
+## Before quest {{{3
 ふぁ～……
 授業がはじまるって思うと
 眠くなるなぁ。
-	ふぁ～……
-	授業がはじまるって思うと
-	眠くなるなぁ。
+	*yawn* Just thinking of class
+	starting makes me sleepy.
 
 ……って、あくびなんかしてたら
 シスターに怒られちゃうや。
 ガマンしなきゃ……
-	……って、あくびなんかしてたら
-	シスターに怒られちゃうや。
-	ガマンしなきゃ……
+	Sister Marble'll get mad if I
+	yawn, though. Gotta stay sharp.
 
+## After quest {{{3
 ぼく、授業中に眠くならなかったの
 はじめてだよ。
 先生の授業、面白かったぁ。
-	ぼく、授業中に眠くならなかったの
-	はじめてだよ。
-	先生の授業、面白かったぁ。
+	This is the first time I didn't
+	get sleepy during class. It was
+	really interesting.
 
 また、先生やってね！
-	また、先生やってね！
-
+	Come teach again!

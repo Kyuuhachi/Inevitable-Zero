@@ -1156,10 +1156,10 @@
 今日の麺はひと味違うぞ！
 太めにもかかわらず
 しなやかにツユの中を泳ぐ麺……
-	## Copied directly from Geofront's
 	Today's noodles will defy your expectations!
 	They're plump, but they've got good elasticity
 	and swim through the broth nicely.
+## Copied directly from Geofront's
 
 ## L:
 あ、あの。
@@ -1203,7 +1203,7 @@
 無心に麺をすすってたよ。
 	Looked really hungry, she did.
 	Sat on that bench over there to eat.
-	## No idea how to get that 無心 to sound natural
+## No idea how to get that 無心 to sound natural
 
 その後のことは……知らないな。
 何しろ、次の注文が入って、

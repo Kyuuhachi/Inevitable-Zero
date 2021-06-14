@@ -57,8 +57,3 @@ The scripts can currently only patch against vanilla and Geofront version 1.0.2,
 due to a recent change in their patching infrastructure which makes it difficult
 to decompile. The patched scripts work if you install them over a more recent
 Geofront, though of course this reverts some of their changes.
-
-## TODO
-
-- [ ] Make it work on versions post 1.1
-- [ ] Finish translations

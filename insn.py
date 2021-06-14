@@ -363,7 +363,7 @@ insns_zero_pc = [
 	insn("BGM_SET_VOLUME", k.bytes(5)),
 	insn("BGM_STOP", k.u4),
 	insn("BGM_WAIT"),
-	insn("SOUND_PLAY", k.u2, k.bytes(3)),
+	insn("SOUND_PLAY", k.u2, k.u1, k.u2),
 	insn("SOUND_STOP", k.u2),
 	insn("SOUND_LOOP", k.u2, k.u1),
 	insn("SOUND_POSITION", k.u2, k.list(5)@k.i4, k.u1, k.u4),

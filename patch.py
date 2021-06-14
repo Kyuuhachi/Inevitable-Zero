@@ -235,7 +235,7 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 
 		copy_clause(vita, pc, 3, -2) # Add Girl
 
-	## Mishelam, Wonderland entrance
+	# Mishelam, Wonderland entrance
 	with ctx.get("t1030") as (vita, pc):
 		pc.includes = vita.includes
 		vita = transform_funcs(vita, {

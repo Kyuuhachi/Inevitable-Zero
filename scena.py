@@ -185,7 +185,7 @@ class battle:
 	)
 
 	_layout = k.list(8)@k.tuple(k.u1, k.u1, k.u2)
-	_sepith = sepith@later("sepith", k.u4)@k.iso(tuple, list)@k.list(7)@k.u1
+	_sepith = k.iso(tuple, list)@k.list(7)@k.u1
 
 	struct = "battle.struct"|k.struct(
 		_.flags@k.u2,
@@ -197,7 +197,7 @@ class battle:
 		_.moveSpeed@k.u2,
 		_.unk2@k.u2,
 		_.battlefield@k.later("string", k.u4)@insn.zstr,
-		_.sepith@_sepith,
+		_.sepith@sepith@later("sepith", k.u4)@_sepith,
 		_.setups@setups@k.struct(
 			_.enemies@k.iso(lambda a: list(zip(*a)), lambda b: list(zip(*b)))@k.tuple(
 				k.list(8)@monsterref,

@@ -833,7 +833,7 @@
 ## M:
 {color 10}みししっ☆
 へっちゃらへ～の、プー！
-	{color 10}Mishishi~☆
+	{color 10}Meeheehee~☆
 	No worries, phoo~!
 
 {color 10}これも、キミのおかげだヨ！
@@ -1005,7 +1005,7 @@
 {color 10}あの時はホントありがとネ！
 みししっ☆
 	{color 10}Thanks again for that!
-	Mishishi☆
+	Meeheehee☆
 
 ## R:
 ……なんだろうな。
@@ -1031,7 +1031,7 @@
 ## M:
 {color 10}みししぃ☆
 いつでも、待ってるヨ！
-	{color 10}Mishishi☆
+	{color 10}Meeheehee☆
 	I'll be waiting, anytime!
 
 ## Again {{{3
@@ -1040,5 +1040,5 @@
 	{color 10}Hello! Welcome to wonderland☆
 
 {color 10}みししっ、楽しんでいってネ～！
-	{color 10}Mishishi, have fun~!
+	{color 10}Meeheehee, have fun~!
 

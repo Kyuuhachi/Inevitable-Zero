@@ -2203,7 +2203,7 @@
 	take this as thanks.
 
 {item 510}{color 0}４個を受け取った。
-	Received {item 510}{color 0} x4。 ## Zeram Powder
+	Received {item 510}{color 0} x4. ## Zeram Powder
 
 ## L:
 ありがとうございます。

@@ -367,7 +367,7 @@ scenaStruct = k.struct(
 	_.objects@k.list(k.u1)@k.advance("object")@k.struct(
 		_.pos@insn.POS,
 		_.range@k.u4,
-		_.pos2@insn.POS,
+		_.bubble_pos@insn.POS,
 		_._1@k.bytes(3),
 		_.function@insn.FUNCTION,
 		_._2@k.bytes(3),

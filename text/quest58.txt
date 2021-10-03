@@ -92,7 +92,7 @@
 　日を改めてベーカリーカフェ　　　　　
 　《モルジュ》へ様子を見に行こう。　　
 	★Delivered the ingredients to Morges.
-	　The Support Request is officially completed,
+	　The support request is officially completed,
 	　but I'm curious about the outcome. We should
 	　come back and check at Morges' Bakery later.
 
@@ -172,7 +172,7 @@
 ところで、依頼を見て来たのですが……
 何でも、究極のパンを作るとか。
 	Anyway, we came regarding the
-	Support Request. Something about
+	support request. Something about
 	ultimate bread?
 
 ## M:
@@ -909,7 +909,7 @@
 ウチの店から依頼を出したんだが、
 見てくれたか？
 	Yo, Lloyd. We sent in a
-	Support Request, did you see it?
+	support request, did you see it?
 
 ## L:
 ああ。何でも究極のパンを
@@ -939,7 +939,7 @@
 
 そんなわけで、依頼受けてくれたら
 嬉しいんだけどな。
-	So I hope you accept the Support Request.
+	So I hope you accept the support request.
 
 ま、詳しい話は
 奥にいる親方に聞いてくれよ。
@@ -966,7 +966,7 @@
 ## if haven't started {{{3
 依頼、受けてくれると
 嬉しいんだけどな。
-	I'd be glad if accepted the Support Request.
+	I'd be glad if accepted the support request.
 
 ま、詳しい話は
 奥にいる親方に聞いてくれよ。

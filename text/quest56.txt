@@ -55,7 +55,7 @@
 ★捜索依頼を引き受けた。　　　　　　　
 　目撃者がいないか、　　　　　　　　　
 　病院内を聞き込みしてみよう。　　　　
-	★Accepted the Support Request. Let's ask
+	★Accepted the support request. Let's ask
 	　around the hospital for witnesses.
 
 ★マーサ師長の話では、　　　　　　　　
@@ -361,7 +361,7 @@
 ええ。状況はわかりました。
 依頼、お引き受けします。
 	I understand the situation.
-	We'll accept the Support Request.
+	We'll accept the support request.
 
 ## M:
 そうかい、助かるよ。
@@ -666,7 +666,7 @@
 どこにもないから捜してくれって
 依頼を受けたんだ。
 	Nobody's seen her this morning,
-	so we got a Support Request to
+	so we got a support request to
 	look for her.
 
 ## T:
@@ -2241,7 +2241,7 @@
 とにかく、任務完了だ。
 帰るとしようか。
 	Anyway, we've finished this
-	Support Request. Shall we
+	support request. Shall we
 	head back?
 
 ## e0010 On the bus {{{1

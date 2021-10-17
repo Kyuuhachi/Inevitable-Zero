@@ -328,8 +328,8 @@
 ## E:
 あちこち走り回っていた……
 どういうことかしら？
-	Running all over the place? "I
-	wonder what that was about", indeed.
+	Running all over the place?
+	"I wonder what that was about", indeed.
 
 ## T:
 追っ手から逃げていた、
@@ -460,7 +460,7 @@
 ## R:
 く～っ、また間に合わなかったか。{wait}
 #0300Fんで、どっちに行った？
-	Missed him a gain...{wait}
+	Missed him again...{wait}
 	#0300FSo, which way did he go?
 
 ## C:
@@ -546,7 +546,7 @@
 みっしぃは健康管理のため、
 適度な運動をしているのです！
 	Indeed. For the sake of his
-	health, Mishy mus exercise
+	health, Mishy must exercise
 	regularly.
 
 ## C:

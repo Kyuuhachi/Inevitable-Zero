@@ -1,8 +1,7 @@
 # Inevitable Zero
 
 A mod for *Trails from Zero* that ports over the PS Vita-exclusive quests to the
-PC version. Works with the original Japanese release and Geofront *version 1.0.2
-only*. The translation is a work in progress.
+PC version. The translation is a work in progress.
 
 <details><summary>Ultimate Bread Showdown!</summary>
 In chapter 2, first day, after returning from Armorica Village.
@@ -40,10 +39,6 @@ When asking the gang to find Colin, and after exploring the Moon Temple.
 <details><summary>One small line during a discussion with Sergei, which solves a minor plot hole (spoilers!)</summary>
 When discussing the D∴G Cult, Sergei writes down how it is spelled.
 </details>
-<details><summary>A small bugfix in Geofront's patch (which might have been fixed in recent versions)</summary>
-When Jona calls for the first time, it seems the delayed dialogue line
-might have screwed some things up.
-</details>
 
 ## Usage
 
@@ -53,7 +48,6 @@ might have screwed some things up.
 
 ## Compatibility
 
-The scripts can currently only patch against vanilla and Geofront version 1.0.2,
-due to a recent change in their patching infrastructure which makes it difficult
-to decompile. The patched scripts work if you install them over a more recent
-Geofront, though of course this reverts some of their changes.
+Patch was made against the version released on 2022-08-27. It is completely
+untested, but there aren't too many differences from the Geofront version,
+which has been tested to work.

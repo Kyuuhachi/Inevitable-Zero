@@ -14,10 +14,8 @@ from insn import Insn
 import translate
 
 class Context: # {{{1
-	def __init__(self, vitapath, pcpath, outpath, cachepath, is_geofront=None):
-		if is_geofront is None:
-			is_geofront = pcpath.name == "data_en"
-		self.is_geofront = is_geofront
+	def __init__(self, vitapath, pcpath, outpath, cachepath, en: bool):
+		self.en = en
 
 		self.vitapath = vitapath
 		self.vita_scripts = {}
@@ -26,24 +24,24 @@ class Context: # {{{1
 
 		self.pcpath = pcpath
 		self.pc_scripts = {}
-		with (pcpath/"text/t_quest._dt").open("rb") as f:
+		with (pcpath/("text_us" if self.en else "text")/"t_quest._dt").open("rb") as f:
 			self.pc_quests = kouzou.read(quest.questStruct, f)
 
-		self.outpath = outpath/("data_en" if self.is_geofront else "data")
+		self.outpath = outpath
 		self.cachepath = cachepath
 
 	def save(self):
-		with (self.outpath/"text/t_quest._dt").open("wb") as f:
+		with (self.outpath/("text_us" if self.en else "text")/"t_quest._dt").open("wb") as f:
 			kouzou.write(quest.questStruct, f, self.pc_quests)
 
 		for name, script in self.pc_scripts.items():
-			with (self.outpath/"scena"/name).with_suffix(".bin").open("wb") as f:
-				params = { "_insns": insn.insn_zero_pc }
+			with (self.outpath/("scena_us" if self.en else "scena")/name).with_suffix(".bin").open("wb") as f:
+				params = { "_insns": insn.insn_zero_22 }
 				kouzou.write(scena.scenaStruct, f, script, params)
 
 	def _load(self, name, params, *, vita, transform):
 		path = self.vitapath if vita else self.pcpath
-		path = (path/"scena"/name).with_suffix(".bin")
+		path = (path/("scena_us" if self.en and not vita else "scena")/name).with_suffix(".bin")
 
 		if self.cachepath:
 			cachepath = self.cachepath/(name+"-v" if vita else name)
@@ -72,9 +70,7 @@ class Context: # {{{1
 
 	def _get_pc(self, name):
 		if name not in self.pc_scripts:
-			params = { "_insns": insn.insn_zero_pc }
-			if self.is_geofront and name in scena.geofront_tweaks:
-				params["_geofront_tweaks"] = scena.geofront_tweaks[name]
+			params = { "_insns": insn.insn_zero_22 }
 			self.pc_scripts[name] = self._load(name, params, vita=False, transform={ "translate": True })
 		return self.pc_scripts[name]
 
@@ -93,7 +89,7 @@ class Context: # {{{1
 	def _do_translate(self, name, translation):
 		if translation is None:
 			translation = translate.null_translator()
-		if self.is_geofront:
+		if self.en:
 			self.pc_scripts[name] = do_transform(
 				self.pc_scripts[name],
 				{ "translate": translation },
@@ -135,8 +131,8 @@ def patch_furniture_minigames(ctx): # {{{1
 def patch_timing(ctx): # {{{1 Main infrastructure: starting and failing the quests
 	# Add to quest lists
 	for file, func in [
-			("c0110", 3),
-			("c011c", 8),
+		("c0110", 3),
+		("c011c", 8),
 	]:
 		with ctx.get(file) as (vita, pc):
 			vita_, pc_ = get(vita, pc, "code", func, "@WHILE", 1, "@SWITCH", 1)
@@ -274,9 +270,8 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 
 	# Copy dizzy Mishy sprite
 	name = "apl/ch50393.itc"
-	rawoutpath = ctx.outpath/"../data" # apl/ is not read from data_en/, so need to put it in data/ regardless of language
-	(rawoutpath/"apl").mkdir(parents=True, exist_ok=True)
-	(rawoutpath/name).write_bytes((ctx.vitapath/name).read_bytes())
+	(ctx.outpath/"apl").mkdir(parents=True, exist_ok=True)
+	(ctx.outpath/name).write_bytes((ctx.vitapath/name).read_bytes())
 
 def quest56(ctx): # {{{1 Search for the Oversleeping Doctor
 	tr = translate.translator("quest56")
@@ -467,7 +462,9 @@ def quest58(ctx): # {{{1 Ultimate Bread Showdown!
 	# West Street during festival?
 	with ctx.get("c020c") as (vita, pc):
 		pc.includes = vita.includes
-		copy_clause(vita, pc, 9, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", 0, 0) # Bennet
+		vita.code[0:0] = [None, None, None]
+		copy_clause(vita, pc, 12, "@WHILE", 1, "@IF:1", 0, -1, 1, "@IF", 0, 0) # Bennet
+		del vita.code[0:3]
 
 	# Bakery interior
 	with ctx.get("c0210") as (vita, pc):
@@ -495,16 +492,16 @@ def quest58(ctx): # {{{1 Ultimate Bread Showdown!
 	with ctx.get("r2000") as (vita, pc):
 		copy_clause(vita, pc, 0, 0)
 
-	# Rename Luscious Orange → Zesty Orange
-	if ctx.is_geofront:
+	# Rename Luscious Orange → Zesty Orange. I don't really want to do that, but can't get any good translation otherwise.
+	if ctx.en:
 		# This is an ugly way to do it, but it's much easier than doing it "properly"
 		frm = "Luscious Orange\0".encode("cp932")
 		to = "Zesty Orange\0".encode("cp932")
 		assert len(frm) >= len(to)
-		data = (ctx.pcpath/"text/t_ittxt._dt").read_bytes()
+		data = (ctx.pcpath/"text_us/t_ittxt._dt").read_bytes()
 		data2 = data.replace(frm, to.ljust(len(frm), b"\0"))
 		if data != data2:
-			(ctx.outpath/"text/t_ittxt._dt").write_bytes(data2)
+			(ctx.outpath/"text_us/t_ittxt._dt").write_bytes(data2)
 
 # }}}1
 
@@ -539,28 +536,20 @@ def patch_misc(ctx): # {{{1
 		line1, line2 = split(p[start], "{page}")
 		p[start:end] = [line1, *v[start+1:end-1], line2]
 
-	# Fran saying "Ah, Lloyd!" when calling; asking the gang to find Colin,
-	# and after exploring the Moon Temple
+	# Fran saying "Oh! Hello, Lloyd!" when calling; asking the gang to find Colin,
+	# and after exploring the Moon Temple.
 	pos = miscTranslator.pos
 	for script, func in ("c011c", 39), ("c011c", 40), ("r2050", 17):
 		miscTranslator.pos = pos
 		with ctx.get(script, miscTranslator) as (vita, pc):
-			startP = next(i+1 for i, a in enumerate(pc.code[func]) if a.name == "TEXT_SET_NAME")
-			startV = next(i+1 for i, a in enumerate(vita.code[func]) if a.name == "TEXT_SET_NAME")
+			startP = next(i for i, a in enumerate(pc.code[func]) if a.name == "TEXT_SET_NAME") + 1
+			startV = next(i for i, a in enumerate(vita.code[func]) if a.name == "TEXT_SET_NAME") + 1
+			# In Geofront all three copies were absent, but in 2022 one of them was added — but without voice.
+			# I'll just remove it and add my own.
+			if pc.code[func][startP] == Insn("TEXT_MESSAGE", 255, "{color 5}#18AOh! Hello, Lloyd!{wait}"):
+				del pc.code[func][startP:startP+2]
+
 			pc.code[func][startP:startP] = vita.code[func][startV:startV+2]
-
-	# This voice line is misplaced. Not sure if fixed.
-	with ctx.get("c110c") as (vita, pc):
-		idx = next(i for i, a in enumerate(pc.code[41]) if a.name == "FORK_FUNC")
-		pc.code[41][idx:idx] = vita.code[41][idx:idx+5]
-		pc.code[41][idx+1], pc.code[41][idx+7] = split(pc.code[41][idx+7], "#600W",
-			formatA=lambda a:a.rstrip()+"{wait}",
-			formatB=lambda b:"{color 0}"+ (b.replace("#20W", "#20W#3300058V") if ctx.is_geofront else b),
-		)
-
-		if ctx.is_geofront:
-			idx = next(~i for i, a in enumerate(pc.code[41][::-1]) if a.name == "TEXT_TALK")
-			pc.code[41][idx].args[1] = pc.code[41][idx].args[1].replace("#3300058V", "#3300107V")
 
 # {{{1 Utils
 def get(vita, pc, *path):
@@ -711,7 +700,7 @@ def do_transform(obj, tr):
 
 argp = argparse.ArgumentParser()
 argp.add_argument("vitapath", type=Path, help="Path to the Vita data. This should likely be named \"data\"")
-argp.add_argument("pcpath", type=Path, help="Path to the PC data. This should likely be named either \"data\" or \"data_en\"")
+argp.add_argument("pcpath", type=Path, help="Path to the PC data. This should likely be named either \"data\"")
 argp.add_argument("outpath", type=Path, help="Directory to place the patched files into. This should be merged into the data directory.")
 argp.add_argument("--minigame", action="store_true", help="Patches in dialogue for certain furniture in the headquarters. The minigames are not implemented, so it is simply a fade to black.")
 argp.add_argument("--no-misc", dest="misc", action="store_false", help="Include only the quests, and not the miscellaneous minor patches")
@@ -723,50 +712,54 @@ def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir, cachedir):
 	if not pcpath.is_dir():
 		raise ValueError("pcpath must be a directory")
 
-	if outpath.exists():
-		shutil.rmtree(outpath)
-
 	if cachedir is not None and not cachedir.exists():
 		cachedir.mkdir(parents=True)
 
-	ctx = Context(vitapath, pcpath, outpath, cachedir)
-	ctx.outpath.mkdir(parents=True)
-	(ctx.outpath/"scena").mkdir()
-	(ctx.outpath/"text").mkdir()
+	if outpath.exists():
+		shutil.rmtree(outpath)
 
-	if minigame:
-		print("furniture_minigames")
-		patch_furniture_minigames(ctx)
+	outpath.mkdir()
+	(outpath/"scena").mkdir()
+	(outpath/"text").mkdir()
+	(outpath/"scena_us").mkdir()
+	(outpath/"text_us").mkdir()
 
-	print("timing")
-	patch_timing(ctx)
-	print("quest54")
-	quest54(ctx)
-	print("quest55")
-	quest55(ctx)
-	print("quest56")
-	quest56(ctx)
-	print("quest57")
-	quest57(ctx)
-	print("quest58")
-	quest58(ctx)
+	for en in [False, True]:
+		ctx = Context(vitapath, pcpath, outpath, cachedir, en)
 
-	if misc:
-		print("misc")
-		patch_misc(ctx)
+		if minigame:
+			print("furniture_minigames")
+			patch_furniture_minigames(ctx)
 
-	print("save")
-	ctx.save()
+		print("timing")
+		patch_timing(ctx)
+		print("quest54")
+		quest54(ctx)
+		print("quest55")
+		quest55(ctx)
+		print("quest56")
+		quest56(ctx)
+		print("quest57")
+		quest57(ctx)
+		print("quest58")
+		quest58(ctx)
 
-	if dumpdir is not None:
-		print("dump")
-		if dumpdir.exists():
-			shutil.rmtree(dumpdir)
-		dumpdir.mkdir(parents=True)
+		if misc:
+			print("misc")
+			patch_misc(ctx)
 
-		for name, script in ctx.pc_scripts.items():
-			with (dumpdir/name).with_suffix(".py").open("wt") as f:
-				dump.dump(f, script, "verbose")
+		print("save")
+		ctx.save()
+
+		if dumpdir is not None:
+			print("dump")
+			if dumpdir.exists():
+				shutil.rmtree(dumpdir)
+			dumpdir.mkdir(parents=True)
+
+			for name, script in ctx.pc_scripts.items():
+				with (dumpdir/name).with_suffix(".py").open("wt") as f:
+					dump.dump(f, script, "verbose")
 
 if __name__ == "__main__":
 	__main__(**argp.parse_args().__dict__)

@@ -63,6 +63,15 @@
 	　more, we should have put more thought into
 	　who taught what.
 
+06
+	6
+07
+	7
+08
+	8
+09
+	9
+
 ## t4010_1 {{{1
 ## [0] Talking to Sister Marble {{{2
 ## First time {{{3

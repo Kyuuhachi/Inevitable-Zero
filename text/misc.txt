@@ -3,5 +3,4 @@
 	and symbols in the notebook.{color 0}
 
 {color 5}あ、ロイドさん。
-	{color 5}Ah, Lloyd.
-
+	{color 5}Oh! Hello, Lloyd!

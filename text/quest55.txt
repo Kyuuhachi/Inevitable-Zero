@@ -71,6 +71,13 @@
 	　were caused by bees. Tio does not like
 	　talking about the person inside the suit.
 
+07
+	7
+08
+	8
+09
+	9
+
 ## t1030_1 {{{1
 
 観光客

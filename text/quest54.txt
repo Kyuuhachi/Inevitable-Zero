@@ -20,8 +20,8 @@
 	　Our waitress is very capable, but she's surly
 	　and unapproachable.
 	　
-	　Her smile is super cute, so it's a waste not to
-	　put that to good use.
+	　Her smile is super cute, so it's a waste not
+	　to put that to good use.
 	　
 	　Do you think you could make her smile somehow?
 	　
@@ -69,6 +69,11 @@
 	★Thanks to Tio's tremendous sacrifice (?)
 	　we were able to bring a smile to Ruka's
 	　face.
+
+08
+	8
+09
+	9
 
 ## t0520_1 {{{1
 ## [0] Talking to Noma {{{2
@@ -807,8 +812,8 @@
 集めてるみたいだし、
 そういうのがいいんじゃないかな。
 	She seems to collect cat-related
-	goods, so something along those lines
-	might be good.
+	goods, so something along those
+	lines might be good.
 
 ## [14] Talking to Noma after refusing {{{2
 おっ、あんたたち！

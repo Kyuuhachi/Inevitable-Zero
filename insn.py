@@ -58,6 +58,7 @@ class TEXT(k.element):
 			elif ch == 0x06: buffer.extend(b"{0x06}")
 			elif ch == 0x07: buffer.extend(b"{color %d}" % k.u1.read(ctx))
 			elif ch == 0x09: buffer.extend(b"{0x09}")
+			elif ch == 0x0D: buffer.extend(b"\r")
 			elif ch == 0x18: buffer.extend(b"{0x18}")
 			elif ch == 0x1F: buffer.extend(b"{item %d}" % k.u2.read(ctx))
 			elif ch <= 0x1F: raise ValueError("%02X" % ch)
@@ -78,6 +79,7 @@ class TEXT(k.element):
 			elif tag == "0x06": ctx.write(b"\x06")
 			elif tag == "color":ctx.write(b"\x07"); k.u1.write(ctx, int(format.group(2)))
 			elif tag == "0x09": ctx.write(b"\x09")
+			elif tag == "\r": ctx.write(b"\x0D")
 			elif tag == "0x18": ctx.write(b"\x18")
 			elif tag == "item": ctx.write(b"\x1F"); k.u2.write(ctx, int(format.group(2)))
 			else: raise ValueError(format.group())
@@ -317,6 +319,7 @@ expr_ops = [
 ]
 expr = "expr"|k.iso(Expr, list)@k.while_(lambda a: a != Insn("END"))@choice(expr_ops)
 
+# {{{
 insns_zero_pc = [
 	None,
 	insn("RETURN"),
@@ -363,7 +366,7 @@ insns_zero_pc = [
 	insn("BGM_SET_VOLUME", k.bytes(5)),
 	insn("BGM_STOP", k.u4),
 	insn("BGM_WAIT"),
-	insn("SOUND_PLAY", k.u2, k.u1, k.u2),
+	insn("SOUND_PLAY", k.u2, k.u1, k.u2, k.const(100)),
 	insn("SOUND_STOP", k.u2),
 	insn("SOUND_LOOP", k.u2, k.u1),
 	insn("SOUND_POSITION", k.u2, k.list(5)@k.i4, k.u1, k.u4),
@@ -688,3 +691,11 @@ insns_zero_vita = [
 ]
 assert len(insns_zero_vita) == 256, len(insns_zero_vita)
 insn_zero_vita = choice(insns_zero_vita)
+
+insns_zero_22 = [
+	*insns_zero_pc[0x00:0x22+1], # 0x00..0x22
+	insn("SOUND_PLAY", k.u2, k.u1, k.u2, k.u2),
+	*insns_zero_pc[0x24:0xFF+1], # 0x24..0xFF
+]
+assert len(insns_zero_22) == 256, len(insns_zero_22)
+insn_zero_22 = choice(insns_zero_22)

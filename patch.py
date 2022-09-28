@@ -546,7 +546,10 @@ def patch_misc(ctx): # {{{1
 			startV = next(i for i, a in enumerate(vita.code[func]) if a.name == "TEXT_SET_NAME") + 1
 			# In Geofront all three copies were absent, but in 2022 one of them was added — but without voice.
 			# I'll just remove it and add my own.
-			if pc.code[func][startP] == Insn("TEXT_MESSAGE", 255, "{color 5}#18AOh! Hello, Lloyd!{wait}"):
+			if pc.code[func][startP] in [
+				Insn("TEXT_MESSAGE", 255, "{color 5}#18AOh! Hello, Lloyd!{wait}"),
+				Insn("TEXT_MESSAGE", 255, "{color 5}#18Aあ、ロイドさん。{wait}"),
+			]:
 				del pc.code[func][startP:startP+2]
 
 			pc.code[func][startP:startP] = vita.code[func][startV:startV+2]

@@ -43,8 +43,8 @@ When discussing the D∴G Cult, Sergei writes down how it is spelled.
 ## Installation
 
 Download the `.tar.gz` file from the latest [release](https://github.com/Kyuuhachi/Inevitable-Zero/releases)
-and extract the contents of the `patch/` directory into the game's `data/` directory. This is normally at
-`C:\Program Files (x86)\Steam\steamapps\common\The Legend of Heroes Trails from Zero\data`,
+and extract `data/` directory into the game's directory. This is normally at
+`C:\Program Files (x86)\Steam\steamapps\common\The Legend of Heroes Trails from Zero`,
 or it can be found by right-clicking the game in Steam and choosing Manage » Browse local files.
 
 ## Compatibility

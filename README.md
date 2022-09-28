@@ -40,14 +40,15 @@ When asking the gang to find Colin, and after exploring the Moon Temple.
 When discussing the D∴G Cult, Sergei writes down how it is spelled.
 </details>
 
-## Usage
+## Installation
 
-`python patch.py --help`  
-`python dump.py --help`
-
+Download the `.tar.gz` file from the latest [release](https://github.com/Kyuuhachi/Inevitable-Zero/releases)
+and extract the contents of the `patch/` directory into the game's `data/` directory. This is normally at
+`C:\Program Files (x86)\Steam\steamapps\common\The Legend of Heroes Trails from Zero\data`,
+or it can be found by right-clicking the game in Steam and choosing Manage » Browse local files.
 
 ## Compatibility
 
-Patch was made against the version released on 2022-08-27. It is completely
+Patch was made against the version released on Steam on 2022-08-27. It is completely
 untested, but there aren't too many differences from the Geofront version,
 which has been tested to work.

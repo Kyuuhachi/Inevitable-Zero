@@ -274,7 +274,7 @@
 #5Sおーい、オスカー、ベネット！
 ちょっと来い！#3S
 	#5SOi, Oscar, Bennet!
-	C'mere here for a bit!#3S
+	C'mere for a bit!#3S
 
 ## O:
 お、ロイド。

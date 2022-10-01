@@ -742,7 +742,7 @@ def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir):
 			dumpdir.mkdir(parents=True)
 
 			for name, script in ctx.pc_scripts.items():
-				with (dumpdir/name).with_suffix(".py").open("wt") as f:
+				with (dumpdir/name).with_suffix(".py").open("wt", encoding="utf-8") as f:
 					dump.dump(f, script, "verbose")
 
 if __name__ == "__main__":

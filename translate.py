@@ -47,7 +47,7 @@ class BaseTranslator:
 class translator(BaseTranslator):
 	def __init__(self, name):
 		super().__init__()
-		self.lines = self.load((PATH / name).with_suffix(".txt").read_text())
+		self.lines = self.load((PATH / name).with_suffix(".txt").read_text(encoding="utf-8"))
 		self.lines.append((None, None))
 
 	@staticmethod
@@ -73,7 +73,7 @@ class null_translator(BaseTranslator):
 class dump_translator(BaseTranslator):
 	def __init__(self, name):
 		super().__init__()
-		self.file = (PATH / name).with_suffix(".txt").open("wt")
+		self.file = (PATH / name).with_suffix(".txt").open("wt", encoding="utf-8")
 
 	def _translate(self, string):
 		if self.pos == len(self.lines):

@@ -171,7 +171,7 @@ def __main__(dump_mode, mode, inpath, outpath):
 				params["_geofront_tweaks"] = scena.geofront_tweaks[file.stem]
 			data = kouzou.read(scena.scenaStruct, f, params)
 
-		with outfile.open("wt") as f:
+		with outfile.open("wt", encoding="utf-8") as f:
 			dump(f, data, dump_mode)
 
 if __name__ == "__main__":

@@ -3,7 +3,6 @@ import shutil
 from pathlib import Path
 import argparse
 from contextlib import contextmanager
-import pickle
 from copy import deepcopy
 
 import kouzou
@@ -15,7 +14,7 @@ from insn import Insn
 import translate
 
 class Context: # {{{1
-	def __init__(self, vitapath, pcpath, outpath, cachepath, en: bool):
+	def __init__(self, vitapath, pcpath, outpath, en: bool):
 		self.en = en
 
 		self.vitapath = vitapath
@@ -29,7 +28,6 @@ class Context: # {{{1
 			self.pc_quests = kouzou.read(quest.questStruct, f)
 
 		self.outpath = outpath
-		self.cachepath = cachepath
 
 	def save(self):
 		with (self.outpath/("text_us" if self.en else "text")/"t_quest._dt").open("wb") as f:
@@ -43,20 +41,6 @@ class Context: # {{{1
 	def _load(self, name, params, *, vita, transform):
 		path = self.vitapath if vita else self.pcpath
 		path = (path/("scena_us" if self.en and not vita else "scena")/name).with_suffix(".bin")
-
-		if self.cachepath:
-			cachepath = self.cachepath/(name+"-v" if vita else name)
-			p = pickle.dumps(Path(insn.__file__).stat())
-			try:
-				p2, sc = pickle.loads(cachepath.read_bytes())
-				assert p2 == p
-				return sc
-			except Exception:
-				with path.open("rb") as f:
-					sc = kouzou.read(scena.scenaStruct, f, params)
-					sc = do_transform(sc, transform)
-				cachepath.write_bytes(pickle.dumps((p, sc)))
-				return sc
 
 		with path.open("rb") as f:
 			sc = kouzou.read(scena.scenaStruct, f, params)
@@ -709,15 +693,11 @@ argp.add_argument("outpath", type=Path, help="Directory to place the patched fil
 argp.add_argument("--minigame", action="store_true", help="Patches in dialogue for certain furniture in the headquarters. The minigames are not implemented, so it is simply a fade to black.")
 argp.add_argument("--no-misc", dest="misc", action="store_false", help="Include only the quests, and not the miscellaneous minor patches")
 argp.add_argument("-d", "--dump", dest="dumpdir", type=Path, help="Directory to place scenario dumps in, for all scenarios affected by the patch. Will be emptied.")
-argp.add_argument("-c", "--cache", dest="cachedir", type=Path, help="Directory to cache the parsed scenario files in, for performance.")
-def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir, cachedir):
+def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir):
 	if not vitapath.is_dir():
 		raise ValueError("vitapath must be a directory")
 	if not pcpath.is_dir():
 		raise ValueError("pcpath must be a directory")
-
-	if cachedir is not None and not cachedir.exists():
-		cachedir.mkdir(parents=True)
 
 	if outpath.exists():
 		shutil.rmtree(outpath)
@@ -729,7 +709,7 @@ def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir, cachedir):
 	(outpath/"text_us").mkdir()
 
 	for en in [False, True]:
-		ctx = Context(vitapath, pcpath, outpath, cachedir, en)
+		ctx = Context(vitapath, pcpath, outpath, en)
 
 		if minigame:
 			print("furniture_minigames")

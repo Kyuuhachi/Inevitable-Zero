@@ -694,7 +694,7 @@ insn_zero_vita = choice(insns_zero_vita)
 
 insns_zero_22 = [
 	*insns_zero_pc[0x00:0x22+1], # 0x00..0x22
-	insn("SOUND_PLAY", k.u2, k.u1, k.u2, k.u2),
+	insn("SOUND_PLAY", k.u2, k.u2, k.u1, k.u2),
 	*insns_zero_pc[0x24:0xFF+1], # 0x24..0xFF
 ]
 assert len(insns_zero_22) == 256, len(insns_zero_22)

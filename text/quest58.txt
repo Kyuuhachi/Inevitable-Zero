@@ -966,7 +966,7 @@
 ## if haven't started {{{3
 依頼、受けてくれると
 嬉しいんだけどな。
-	I'd be glad if accepted the support request.
+	I'd be glad if you accept the support request.
 
 ま、詳しい話は
 奥にいる親方に聞いてくれよ。

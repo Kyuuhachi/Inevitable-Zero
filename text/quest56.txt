@@ -459,8 +459,8 @@
 ## M:
 アーシュラ主任は、
 本当に毎日、寝坊するんです
-	Chief Ursuline really oversleeps
-	every single day.
+	Chief Ursuline really does
+	oversleep every single day.
 
 だから、毎日起こしに行くのが
 わたしの仕事なんです。
@@ -472,7 +472,7 @@
 なんて、絶対にあり得ません！
 	So I can firmly state that
 	there's no way she could have
-	woken up early!
+	woken up that early on her own!
 
 間違いありません。
 主任はきっと、事件かなんかに
@@ -646,7 +646,7 @@
 ## L:
 い、いやぁ、どうだろう。
 ていうかそれ、驚く所？
-	W-Well, we don't know.
+	W-Well, we don't know yet.
 	Wait, is that surprising?
 
 ## Ch:
@@ -899,12 +899,13 @@
 ## L:
 うーん。主任の姿は、
 院内には見当たらないな。
-	No luck. Nobody's seen her.
+	No luck. No one in the hospital
+	has seen a single trace of her.
 
 ## R:
 やっぱ、もう院内には
 いないってことかね？
-	Seems she's not inside, then.
+	So she's not inside, then.
 
 ## L:
 その可能性が高いな。
@@ -931,19 +932,20 @@
 ## G:
 おや、特務支援課の人たち。
 血相変えて、どうしたんだい？
-	Oh, the Special Support Section.
-	Your faces look red, do you need
-	something?
+	Oh, if it isn't the Special Support
+	Section. Your faces look flustered,
+	is there something you need?
 
 ## L:
 ええ、実は……
-	Yeah, thing is...
+	Yeah, the thing is...
 
 ## G:
 ああ。アーシュラ主任なら、
 今朝方、出てったぜ。
-	I see. If it's Chief Ursuline you're
-	looking for, she did leave this morning.
+	I see. If it's Chief Ursuline
+	you're looking for, I did see
+	her leave this morning.
 
 ## E:
 やっぱり……！
@@ -956,7 +958,7 @@
 ## G:
 始発のバスに乗っていたよ。
 ただ……
-	She left with the first bus.
+	She left with the earliest bus.
 
 何やら考え事をしてたみたいで、
 挨拶しても返事は
@@ -972,8 +974,8 @@
 やっぱり、アーシュラ主任は
 バスに乗ったことは
 間違いなさそうだ。
-	Seems there's no doubt that
-	she took the bus.
+	Seems there's conclusive evidence
+	that she took the bus.
 
 ## E:
 すると……行き先は、
@@ -985,7 +987,7 @@
 おそらくね。
 とにかく俺たちも、
 一度クロスベルに戻ろう。
-	Most likely, yeah. Anyway,
+	Most likely, yes. On that note,
 	we should return to the city too.
 
 ## Again {{{3
@@ -993,7 +995,7 @@
 アーシュラ主任なら、
 たしかに始発のバスに
 乗っていったよ。
-	The Chief left on the first bus of the day.
+	The Chief left with the first bus of the day.
 
 行き先は、まあクロスベルで
 間違いないと思うけどな。
@@ -1015,7 +1017,7 @@
 アーシュラ主任なら、
 たしかに始発のバスに
 乗っていったよ。
-	The Chief left on the first bus of the day.
+	The Chief left with the first bus of the day.
 
 行き先は、まあクロスベルで
 間違いないと思うけどな。
@@ -1856,7 +1858,7 @@
 	Her waking up before seven is...
 
 #5S絶 対 に あ り 得 ま せ ん ！#3S
-	#5SI M P O S S I B L E !
+	#5SU N T H I N K A B L E !
 
 ## E:
 筋金入りのねぼすけ……ってこと
@@ -1995,7 +1997,7 @@
 
 ## L:
 何か知ってるんですか！？
-	Do you know something?
+	Did you remember something?
 
 ## Ph:
 ええ。この前主任、
@@ -2035,7 +2037,7 @@
 あくまで可能性は、
 あるかもしれないけどね。
 	I'm not sure. It could
-	still be relevant.
+	still be.
 
 ## L:
 ……本か。

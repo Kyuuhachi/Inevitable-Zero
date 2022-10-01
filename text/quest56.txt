@@ -1856,7 +1856,7 @@
 	Her waking up before seven is...
 
 #5S絶 対 に あ り 得 ま せ ん ！#3S
-	#5SI M P O S S I B L E !#3S
+	#5SI M P O S S I B L E !
 
 ## E:
 筋金入りのねぼすけ……ってこと
@@ -1936,7 +1936,7 @@
 
 ## G:
 #4S……聞いているのかね、アーシュラ君！#3s
-	#4SAre you listening, Ursuline?#3S
+	#4SAre you listening, Ursuline?
 
 ## U:
 は、はひっ！

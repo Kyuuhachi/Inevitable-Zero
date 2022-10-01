@@ -1775,11 +1775,11 @@
 	...
 
 #5Sわからーん！！#3S
-	#5SDunno!#3S
+	#5SDunno!
 
 そんなもの、
 俺が教えてほしいくらいだぜ……
-	If you kids got any
+	#3SIf you kids got any
 	idea, you tell me.
 
 ## Couta:
@@ -2158,12 +2158,12 @@
 
 #5S気合いと気迫だ！#3S
 	#5SIt's all 'bout that fighting
-	spirit, baby!#3S
+	spirit, baby!
 
 凶悪犯と対峙した時、
 絶対に負けないって
 気合いと気迫……
-	When facing a heinous criminal,
+	#3SWhen facing a heinous criminal,
 	you must not lose, at any cost.
 
 それが一番大切だ。

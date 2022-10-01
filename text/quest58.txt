@@ -274,7 +274,7 @@
 #5Sおーい、オスカー、ベネット！
 ちょっと来い！#3S
 	#5SOi, Oscar, Bennet!
-	C'mere for a bit!#3S
+	C'mere for a bit!
 
 ## O:
 お、ロイド。
@@ -744,7 +744,7 @@
 ## Draw {{{3
 ## M:
 #5S引き分けだ。#3S
-	#5SNeither!#3S It's a draw.
+	#5SNeither!#3S It's a draw. ## This won't work, right?
 
 両方とも同じ数を出して、
 売り切れだった。

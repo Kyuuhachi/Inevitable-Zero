@@ -688,7 +688,7 @@ def do_transform(obj, tr):
 
 argp = argparse.ArgumentParser()
 argp.add_argument("vitapath", type=Path, help="Path to the Vita data. This should likely be named \"data\"")
-argp.add_argument("pcpath", type=Path, help="Path to the PC data. This should likely be named either \"data\"")
+argp.add_argument("pcpath", type=Path, help="Path to the PC data. This should likely be named \"data\"")
 argp.add_argument("outpath", type=Path, help="Directory to place the patched files into. This should be merged into the data directory.")
 argp.add_argument("--minigame", action="store_true", help="Patches in dialogue for certain furniture in the headquarters. The minigames are not implemented, so it is simply a fade to black.")
 argp.add_argument("--no-misc", dest="misc", action="store_false", help="Include only the quests, and not the miscellaneous minor patches")

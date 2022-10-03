@@ -744,7 +744,8 @@
 ## Draw {{{3
 ## M:
 #5S引き分けだ。#3S
-	#5SNeither!#3S It's a draw. ## This won't work, right?
+	#5SNeither!
+	#3SIt's a draw.
 
 両方とも同じ数を出して、
 売り切れだった。

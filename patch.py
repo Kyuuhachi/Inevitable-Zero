@@ -432,13 +432,34 @@ def quest57(ctx): # {{{1 Guest Lecturer for Sunday School (Continued)
 	# Inside Cathedral
 	with ctx.get("t4010") as (vita, pc):
 		pc.includes = vita.includes
+		vita.chcp = pc.chcp
+
+		vita.npcs += [None, None]
+		vita = transform_npcs(vita, vita_npcs := {
+			len(vita.npcs)-1: 19,
+			len(vita.npcs)-2: 20,
+		})
+
+		vita.code += [None, None, None]
+		vita = transform_funcs(vita, {
+			len(vita.code)-1: 24,
+			len(vita.code)-2: 25,
+			len(vita.code)-3: 26,
+		}, include=0)
+
+		# vita = transform_funcs(vita, {a: a+1 for a in range(24, 53)}, include=0)
+
 		# Couta, Eugot, Boy, Boy, Girl
-		for func in 21, 22, 24, 28, 29:
+		for func in 21, 22, 27, 31, 32:
 			copy_condition(vita, pc, func, -4)
-		copy_clause(vita, pc, 25, "@IF:-1", 0, 0) # Girl
+		copy_clause(vita, pc, 28, "@IF:-1", 0, 0) # Girl
 		copy_clause(vita, pc, 11, "@IF", [Insn('FLAG', 1536), Insn('END')], "@IF", 0, 0) # Marble
 
-	ctx.copy("t4010_1", tr)
+	vita = ctx._get_vita("t4010_1")
+	vita = transform_npcs(vita, vita_npcs)
+	# TODO need to manually adjust this script for Ken & Nana inclusion
+	ctx.pc_scripts["t4010_1"] = pc = vita
+	ctx._do_translate("t4010_1", tr)
 
 def quest58(ctx): # {{{1 Ultimate Bread Showdown!
 	tr = translate.translator("quest58")
@@ -633,7 +654,8 @@ def transform_npcs(script, tr):
 		k+8: v+8
 		for k, v in to_permutation(tr).items()
 	}})
-	permute(tr, script.npcs)
+	if script.npcs:
+		permute(tr, script.npcs)
 	return script
 
 def to_permutation(tr):

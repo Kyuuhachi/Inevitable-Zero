@@ -92,7 +92,6 @@ class Context: # {{{1
 			],
 		}
 
-
 def patch_furniture_minigames(ctx): # {{{1
 	# There are minigames on some room furniture in the Vita version, let's
 	# import that. Since the minigames don't exist on PC, it doesn't quite work.
@@ -252,11 +251,6 @@ def quest55(ctx): # {{{1 Search for a Certain Person
 	} })
 	for fn in 11, 14, 15, 16, 17:
 		pc.code[fn] = do_transform(pc.code[fn], {"npc": { k+8: v+8 for k, v in to_permutation(t1010_map).items() }})
-
-	# Copy dizzy Mishy sprite
-	name = "apl/ch50393.itc"
-	(ctx.outpath/"apl").mkdir(parents=True, exist_ok=True)
-	(ctx.outpath/name).write_bytes((ctx.vitapath/name).read_bytes())
 
 def quest56(ctx): # {{{1 Search for the Oversleeping Doctor
 	tr = translate.translator("quest56")
@@ -766,6 +760,16 @@ def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir):
 			for name, script in ctx.pc_scripts.items():
 				with (dumpdir/name).with_suffix(".py").open("wt", encoding="utf-8") as f:
 					dump.dump(f, script, "verbose")
+
+	# Copy dizzy Mishy sprite for quest55
+	name = "apl/ch50393.itc"
+	(outpath/name).parent.mkdir(parents=True, exist_ok=True)
+	(outpath/name).write_bytes((vitapath/name).read_bytes())
+
+	# Copy cat-Tio image for quest57
+	name = "visual/bu06900.itp"
+	(outpath/name).parent.mkdir(parents=True, exist_ok=True)
+	(outpath/name).write_bytes((vitapath/name).read_bytes())
 
 if __name__ == "__main__":
 	__main__(**argp.parse_args().__dict__)

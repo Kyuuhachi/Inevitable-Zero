@@ -435,13 +435,11 @@ def quest57(ctx): # {{{1 Guest Lecturer for Sunday School (Continued)
 		})
 
 		vita.code += [None, None, None]
-		vita = transform_funcs(vita, {
+		vita = transform_funcs(vita, vita_funcs := {
 			len(vita.code)-1: 24,
 			len(vita.code)-2: 25,
 			len(vita.code)-3: 26,
 		}, include=0)
-
-		# vita = transform_funcs(vita, {a: a+1 for a in range(24, 53)}, include=0)
 
 		# Couta, Eugot, Boy, Boy, Girl
 		for func in 21, 22, 27, 31, 32:
@@ -449,11 +447,48 @@ def quest57(ctx): # {{{1 Guest Lecturer for Sunday School (Continued)
 		copy_clause(vita, pc, 28, "@IF:-1", 0, 0) # Girl
 		copy_clause(vita, pc, 11, "@IF", [Insn('FLAG', 1536), Insn('END')], "@IF", 0, 0) # Marble
 
+		names = [n.name for n in pc.npcs]
+
 	vita = ctx._get_vita("t4010_1")
-	vita = transform_npcs(vita, vita_npcs)
-	# TODO need to manually adjust this script for Ken & Nana inclusion
-	ctx.pc_scripts["t4010_1"] = pc = vita
+	vita = transform_npcs(vita, vita_npcs, own=False)
+	vita = transform_funcs(vita, vita_funcs, include=0, own=False)
+	ctx.pc_scripts["t4010_1"] = patch_t4010_1(names, vita)
 	ctx._do_translate("t4010_1", tr)
+
+patched_script = None
+def patch_t4010_1(npc_names, raw):
+	global patched_script
+	if patched_script is not None:
+		return deepcopy(patched_script)
+
+	names = {}
+
+	names["C_Self"] = insn.Char(254)
+	names["C_None"] = insn.Char(255)
+	names["C_Lloyd"] = insn.Char(257)
+	names["C_Elie"] = insn.Char(258)
+	names["C_Tio"] = insn.Char(259)
+	names["C_Randy"] = insn.Char(260)
+
+	nboy = 0
+	ngirl = 0
+	for i, n in enumerate(npc_names, 8):
+		name = n.split()[-1]
+		if name == "Boy": nboy += 1; name += str(nboy)
+		if name == "Girl": ngirl += 1; name += str(ngirl)
+		names["C_" + name] = insn.Char(i)
+
+	# dump.dump(open("t4010_1.py", "wt"), raw, "verbose", names)
+
+	import tempfile
+	import subprocess
+	with tempfile.NamedTemporaryFile(mode="w+t", prefix="t4010_1-", suffix=".py") as f:
+		dump.dump(f, raw, "verbose", names)
+		f.flush()
+		subprocess.check_call(["patch", "-u", f.name, "text/t4010_1.patch"])
+		patched_script = undump(Path(f.name).read_text())
+
+	return patched_script
 
 def quest58(ctx): # {{{1 Ultimate Bread Showdown!
 	tr = translate.translator("quest58")
@@ -555,6 +590,12 @@ def patch_misc(ctx): # {{{1
 			pc.code[func][startP:startP] = vita.code[func][startV:startV+2]
 
 # {{{1 Utils
+def undump(src):
+	import insn
+	loc = {"data": None}
+	exec(src, dict(insn.__dict__), loc)
+	return loc["data"]
+
 def get(vita, pc, *path):
 	return (get_(vita, *path), get_(pc, *path))
 
@@ -622,7 +663,7 @@ def copy(objects, obj):
 	objects.append(obj)
 	return n
 
-def transform_funcs(script, tr, include=0):
+def transform_funcs(script, tr, include=0, own=True):
 	"""
 	In some cases functions are added, and not necessarily at the end. This
 	means that function indices are sometimes different between PC and Vita.
@@ -637,10 +678,11 @@ def transform_funcs(script, tr, include=0):
 		(include, k): (include, v)
 		for k, v in to_permutation(tr).items()
 	} })
-	permute(tr, script.code)
+	if own:
+		permute(tr, script.code)
 	return script
 
-def transform_npcs(script, tr):
+def transform_npcs(script, tr, own=True):
 	"""
 	Similar to transform_funcs, but concerning NPCs.
 	"""
@@ -648,7 +690,7 @@ def transform_npcs(script, tr):
 		k+8: v+8
 		for k, v in to_permutation(tr).items()
 	}})
-	if script.npcs:
+	if own:
 		permute(tr, script.npcs)
 	return script
 
@@ -724,7 +766,7 @@ def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir):
 	(outpath/"scena_us").mkdir()
 	(outpath/"text_us").mkdir()
 
-	for en in [False, True]:
+	for en in [True, False]:
 		ctx = Context(vitapath, pcpath, outpath, en)
 
 		if minigame:
@@ -751,7 +793,7 @@ def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir):
 		print("save")
 		ctx.save()
 
-		if dumpdir is not None:
+		if en and dumpdir is not None:
 			print("dump")
 			if dumpdir.exists():
 				shutil.rmtree(dumpdir)

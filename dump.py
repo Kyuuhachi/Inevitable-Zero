@@ -13,8 +13,22 @@ class CustomRepr:
 		self.repr = repr
 	def __repr__(self): return self.repr
 
-def dump(f, data, mode):
-	f.write("if 0: from . import Insn, Expr, Text, Translate, Char, Flag, Function, Color, Party, ResId, Object\n")
+def dump(f, data, mode, vars={}):
+	f.write("# pyright: reportImplicitStringConcatenation=none\n")
+	f.write("import typing as T\n")
+	f.write("if T.TYPE_CHECKING:\n")
+	f.write("\tfrom ..insn import Insn, Expr, Text, Translate, Char, Flag, Function, Color, Party, ResId, Object\n")
+	f.write("\n")
+
+	for k, v in vars.items():
+		f.write(f"{k} = ")
+		pprint(f, v, mode)
+		f.write("\n")
+	if vars:
+		f.write("\n")
+
+	vals = {(type(v), repr(v)): k for k, v in vars.items()}
+
 	f.write("data = ")
 	pprint(f, {**data, "code": CustomRepr(f"[None]*{len(data['code'])}")}, mode)
 	f.write("\n")
@@ -22,7 +36,7 @@ def dump(f, data, mode):
 	# of functions, both while reading the code and in diff context lines.
 	for i, func in enumerate(data["code"]):
 		f.write(f"\ndata[{'code'!r}][{i!r}] = ")
-		pprint(f, func, mode)
+		pprint(f, func, mode, vals=vals)
 		f.write("\n")
 
 def commas(f, items, indent):
@@ -43,7 +57,11 @@ def commas(f, items, indent):
 		if has:
 			f.write("\n" + "\t"*indent)
 
-def pprint(f, data, mode, indent=0):
+def pprint(f, data, mode, *, vals={}, indent=0):
+	if (type(data), repr(data)) in vals:
+		f.write(vals[type(data), repr(data)])
+		return
+
 	if isinstance(data, insn.Translate) and mode == "diff":
 		f.write("...")
 		return
@@ -67,7 +85,7 @@ def pprint(f, data, mode, indent=0):
 				if type(data).__repr__ is cls.__repr__:
 					f.write(type(data).__qualname__)
 					f.write("(")
-					pprint(f, cls(data), mode, indent)
+					pprint(f, cls(data), mode, vals=vals, indent=indent)
 					f.write(")")
 				else:
 					f.write(repr(data))
@@ -77,23 +95,23 @@ def pprint(f, data, mode, indent=0):
 	if isinstance(data, dict):
 		f.write("{")
 		for (k, v), ind in commas(f, data.items(), indent):
-			pprint(f, k, mode, None)
+			pprint(f, k, mode, vals=vals, indent=None)
 			f.write(": ")
-			pprint(f, v, mode, ind)
+			pprint(f, v, mode, vals=vals, indent=ind)
 		f.write("}")
 		return
 
 	if isinstance(data, list):
 		f.write("[")
 		for v, ind in commas(f, data, indent):
-			pprint(f, v, mode, ind)
+			pprint(f, v, mode, vals=vals, indent=ind)
 		f.write("]")
 		return
 
 	if isinstance(data, tuple):
 		f.write("(")
 		for v, _ in commas(f, data, None):
-			pprint(f, v, mode, indent)
+			pprint(f, v, mode, vals=vals, indent=indent)
 		if len(data) == 1:
 			f.write(",")
 		f.write(")")
@@ -103,28 +121,28 @@ def pprint(f, data, mode, indent=0):
 		f.write(f"Insn({data.name!r}, [")
 		for (cond, body), ind in commas(f, data.args[0], indent):
 			f.write("(")
-			pprint(f, cond, mode, None)
+			pprint(f, cond, mode, vals=vals, indent=None)
 			f.write(", ")
-			pprint(f, body, mode, ind)
+			pprint(f, body, mode, vals=vals, indent=ind)
 			f.write(")")
 		f.write("])")
 		return
 
 	if isinstance(data, insn.Insn) and data.name == "WHILE":
 		f.write(f"Insn({data.name!r}, {data.args[0]!r}, ")
-		pprint(f, data.args[1], mode, indent)
+		pprint(f, data.args[1], mode, vals=vals, indent=indent)
 		f.write(")")
 		return
 
 	if isinstance(data, insn.Insn) and data.name == "SWITCH":
 		f.write(f"Insn({data.name!r}, {data.args[0]!r}, ")
-		pprint(f, data.args[1], mode, indent)
+		pprint(f, data.args[1], mode, vals=vals, indent=indent)
 		f.write(")")
 		return
 
 	if isinstance(data, insn.Insn) and data.name in ["FORK", "FORK_LOOP"]:
 		f.write(f"Insn({data.name!r}, {data.args[0]!r}, {data.args[1]!r}, ")
-		pprint(f, data.args[2], mode, indent)
+		pprint(f, data.args[2], mode, vals=vals, indent=indent)
 		f.write(")")
 		return
 
@@ -132,7 +150,7 @@ def pprint(f, data, mode, indent=0):
 		f.write(f"Insn({data.name!r}")
 		for arg in data.args:
 			f.write(", ")
-			pprint(f, arg, mode, indent)
+			pprint(f, arg, mode, vals=vals, indent=indent)
 
 		f.write(")")
 		return

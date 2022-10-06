@@ -1,0 +1,351 @@
+--- t4010_1.py	2022-10-06 18:50:47.084960957 +0200
++++ text/t4010_1.py	2022-10-06 18:53:06.188294328 +0200
+@@ -9,35 +9,16 @@
+ C_Elie = Char(258)
+ C_Tio = Char(259)
+ C_Randy = Char(260)
+-C_Eralda = Char(8)
+-C_Genus = Char(9)
+-C_Renton = Char(10)
+-C_Hatina = Char(11)
++
+ C_Marble = Char(12)
+-C_Morgio = Char(13)
+-C_Seeker = Char(14)
+-C_Tamil = Char(15)
+-C_Hamil = Char(16)
+-C_Momo = Char(17)
+-C_Pansy = Char(18)
+-C_Couta = Char(19)
+-C_Eugot = Char(20)
+-C_Anri = Char(21)
+-C_Takt = Char(22)
+-C_Boy1 = Char(23)
+-C_Girl1 = Char(24)
+-C_Boy2 = Char(25)
+-C_Girl2 = Char(26)
++C_Couta = Char(19) # purple-haired boy
++C_Eugot = Char(20) # gray-haired boy
++C_Boy2 = Char(25) # green-haired boy
++C_Girl2 = Char(26) # red-haired girl
+ C_Ken = Char(27)
+ C_Nana = Char(28)
+-C_Boy3 = Char(29)
+-C_Girl3 = Char(30)
+-C_Harold = Char(31)
+-C_Sophia = Char(32)
+-C_Colin = Char(33)
+-C_Leyte = Char(34)
+-C_Ryu = Char(35)
+-C_Controls = Char(36)
++C_Boy3 = Char(29) # boy with hat
++C_Girl3 = Char(30) # brown-haired girl
+ 
+ data = {
+ 	'name1': 't4010',
+@@ -66,6 +47,7 @@
+ 	'anim': [],
+ }
+ 
++# Talking to Sister Marble
+ data['code'][0] = [
+ 	Insn('IF', [
+ 		(Expr([Insn('EXEC', Insn('QUEST_GET', 57, Insn('FLAG_GET', 16))), Insn('END')]), [
+@@ -199,6 +181,7 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# Quest accepted
+ data['code'][1] = [
+ 	Insn('TEXT_TALK', C_Lloyd, Text(
+ 		'#0000Fわかりました。\n'
+@@ -486,6 +469,7 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# The lecture
+ data['code'][2] = [
+ 	Insn('LOAD_CHCP', 'chr/ch21400', 30),
+ 	Insn('LOAD_CHCP', 'chr/ch34200', 31),
+@@ -513,8 +497,12 @@
+ 	Insn('CHAR_SET_CHCP', C_Boy2, 6),
+ 	Insn('CHAR_SET_POS', C_Boy2, (153930, 0, 14010), 135),
+ 	Insn('CHAR_SET_FRAME', C_Boy3, 1),
++	Insn('CHAR_SET_FRAME', C_Ken, 2), # face right
++	Insn('CHAR_SET_FRAME', C_Nana, 1), # face left
++	Insn('FORK_FUNC', C_Ken, 1, Function((1, 27))),
+ 	Insn('FORK_FUNC', C_Couta, 1, Function((1, 27))),
+ 	Insn('SLEEP', 150),
++	Insn('FORK_FUNC', C_Nana, 1, Function((1, 27))),
+ 	Insn('FORK_FUNC', C_Girl2, 1, Function((1, 27))),
+ 	Insn('SLEEP', 150),
+ 	Insn('FORK_FUNC', C_Girl3, 1, Function((1, 27))),
+@@ -528,6 +516,8 @@
+ 	Insn('FADE_OFF', 1000, Color(0x00000000)),
+ 	Insn('0x0D'),
+ 	Insn('0x6F', b'\x01'),
++	Insn('FORK_QUIT', C_Ken, 1),
++	Insn('FORK_QUIT', C_Nana, 1),
+ 	Insn('FORK_QUIT', C_Couta, 1),
+ 	Insn('FORK_QUIT', C_Girl2, 1),
+ 	Insn('FORK_QUIT', C_Girl3, 1),
+@@ -555,6 +545,10 @@
+ 	Insn('FORK_FUNC', C_Boy2, 3, Function((1, 26))),
+ 	Insn('CHAR_SET_FRAME', C_Boy3, 0),
+ 	Insn('CAM_OFFSET', (151860, 1500, 10590), 5000),
++	Insn('SLEEP', 300),
++	Insn('CHAR_SET_FRAME', C_Nana, 0), # face forward
++	Insn('SLEEP', 100),
++	Insn('CHAR_SET_FRAME', C_Ken, 0), # face forward
+ 	Insn('0x6F', b'\x01'),
+ 	Insn('FORK_AWAIT', C_Couta, 3),
+ 	Insn('SLEEP', 2000),
+@@ -647,6 +641,8 @@
+ 	Insn('CAM_ROTATE', 315, 23, 0, 2000),
+ 	Insn('0x6E', 300, 2000),
+ 	Insn('CAM_DISTANCE', 29780, 2000),
++	Insn('EMOTE', C_Ken, 0, 1700, (24, 27, 250, 0)),
++	Insn('EMOTE', C_Nana, 0, 1700, (24, 27, 250, 0)),
+ 	Insn('EMOTE', C_Couta, 0, 1700, (24, 27, 250, 0)),
+ 	Insn('EMOTE', C_Eugot, 0, 1700, (24, 27, 250, 0)),
+ 	Insn('EMOTE', C_Boy2, 0, 1700, (24, 27, 250, 0)),
+@@ -655,6 +651,8 @@
+ 	Insn('EMOTE', C_Girl3, 0, 1700, (24, 27, 250, 0)),
+ 	Insn('0x6F', b'\x01'),
+ 	Insn('SLEEP', 1500),
++	Insn('EMOTE_STOP', C_Ken),
++	Insn('EMOTE_STOP', C_Nana),
+ 	Insn('EMOTE_STOP', C_Couta),
+ 	Insn('EMOTE_STOP', C_Eugot),
+ 	Insn('EMOTE_STOP', C_Boy2),
+@@ -914,7 +912,7 @@
+ 				'通報に対応しています。{wait}'
+ 			)),
+ 			Insn('TEXT_WAIT'),
+-			Insn('TEXT_TALK', C_Boy3, Text(
++			Insn('TEXT_TALK', C_Ken, Text(
+ 				'うーん……。\n'
+ 				'何となく、わかったかなあ？{wait}'
+ 			)),
+@@ -2034,12 +2032,12 @@
+ 				'わけだ。{wait}'
+ 			)),
+ 			Insn('TEXT_WAIT'),
+-			Insn('CHAR_WATCH', C_Boy2, C_Lloyd, 300),
+-			Insn('EMOTE', C_Boy2, 300, 1300, (54, 57, 250, 0)),
++			Insn('CHAR_WATCH', C_Nana, C_Lloyd, 300),
++			Insn('EMOTE', C_Nana, 300, 1300, (54, 57, 250, 0)),
+ 			Insn('SOUND_PLAY', 892, 0, 0, 100),
+ 			Insn('SLEEP', 1500),
+-			Insn('EMOTE_STOP', C_Boy2),
+-			Insn('TEXT_TALK', C_Boy2, Text(
++			Insn('EMOTE_STOP', C_Nana),
++			Insn('TEXT_TALK', C_Nana, Text(
+ 				'そっかー。ロイド先生、\n'
+ 				'すごいなぁ！{wait}'
+ 			)),
+@@ -2521,6 +2519,7 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# After lecture
+ data['code'][3] = [
+ 	Insn('CAM_OFFSET', (7710, 2300, -90), 0),
+ 	Insn('CAM_ROTATE', 315, 25, 0, 0),
+@@ -2765,6 +2764,7 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# Talking to Sister Marble, after quest
+ data['code'][4] = [
+ 	Insn('TEXT_TALK', C_Marble, Text(
+ 		'みんな、お疲れ様。\n'
+@@ -2781,6 +2781,7 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# Talking to Couta (purple-haired boy)
+ data['code'][5] = [
+ 	Insn('IF', [
+ 		(Expr([Insn('EXEC', Insn('QUEST_GET', 57, Insn('FLAG_GET', 16))), Insn('NOT'), Insn('END')]), [
+@@ -2802,6 +2803,7 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# Talking to Eugot (gray-haired boy)
+ data['code'][6] = [
+ 	Insn('IF', [
+ 		(Expr([Insn('EXEC', Insn('QUEST_GET', 57, Insn('FLAG_GET', 16))), Insn('NOT'), Insn('END')]), [
+@@ -2834,6 +2836,7 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# Talking to Boy3 (boy with hat)
+ data['code'][7] = [
+ 	Insn('IF', [
+ 		(Expr([Insn('EXEC', Insn('QUEST_GET', 57, Insn('FLAG_GET', 16))), Insn('NOT'), Insn('END')]), [
+@@ -2870,6 +2873,7 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# Talking to Girl2 (red-haired girl)
+ data['code'][8] = [
+ 	Insn('IF', [
+ 		(Expr([Insn('EXEC', Insn('QUEST_GET', 57, Insn('FLAG_GET', 16))), Insn('NOT'), Insn('END')]), [
+@@ -2898,6 +2902,7 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# Talking to Girl3 (brown-haired girl)
+ data['code'][9] = [
+ 	Insn('IF', [
+ 		(Expr([Insn('EXEC', Insn('QUEST_GET', 57, Insn('FLAG_GET', 16))), Insn('NOT'), Insn('END')]), [
+@@ -2924,6 +2929,7 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# Talking to Boy2 (green-haired boy)
+ data['code'][10] = [
+ 	Insn('IF', [
+ 		(Expr([Insn('EXEC', Insn('QUEST_GET', 57, Insn('FLAG_GET', 16))), Insn('NOT'), Insn('END')]), [
+@@ -2956,6 +2962,7 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# Lloyd walking to stage
+ data['code'][11] = [
+ 	Insn('0x95', C_Self, (153500, 200, 18150), 3800, 0),
+ 	Insn('0x95', C_Self, (150500, 200, 18150), 3800, 0),
+@@ -2964,6 +2971,7 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# Elie walking to stage
+ data['code'][12] = [
+ 	Insn('0x95', C_Self, (153500, 200, 18150), 2000, 0),
+ 	Insn('0x95', C_Self, (150500, 200, 18150), 3000, 0),
+@@ -2972,18 +2980,21 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# Tio walking to stage
+ data['code'][13] = [
+ 	Insn('0x95', C_Self, (152750, 200, 16300), 2000, 0),
+ 	Insn('CHAR_ROTATE', C_Self, 180, 300),
+ 	Insn('RETURN'),
+ ]
+ 
++# Randy walking to stage
+ data['code'][14] = [
+ 	Insn('0x95', C_Self, (154500, 200, 16300), 1000, 0),
+ 	Insn('CHAR_ROTATE', C_Self, 180, 300),
+ 	Insn('RETURN'),
+ ]
+ 
++# Lloyd walking to stage
+ data['code'][15] = [
+ 	Insn('0x95', C_Self, (149500, 200, 17500), 1000, 0),
+ 	Insn('0x95', C_Self, (151000, 200, 17500), 2000, 0),
+@@ -2991,9 +3002,11 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# General confusion
+ data['code'][16] = [
+ 	Insn('WHILE', [Insn('CONST', 1), Insn('END')], [
+ 		Insn('EMOTE', C_Couta, 0, 1700, (0, 1, 250, 2)),
++		Insn('EMOTE', C_Ken, 0, 1700, (0, 1, 250, 2)),
+ 		Insn('SOUND_PLAY', 29, 0, 0, 100),
+ 		Insn('SLEEP', 1000),
+ 		Insn('EMOTE', C_Lloyd, 0, 2000, (40, 43, 100, 0)),
+@@ -3054,7 +3067,10 @@
+ 		}),
+ 		Insn('EMOTE', C_Eugot, 0, 1700, (0, 1, 250, 2)),
+ 		Insn('SOUND_PLAY', 29, 0, 0, 100),
+-		Insn('SLEEP', 550),
++		Insn('SLEEP', 250),
++		Insn('EMOTE', C_Nana, 0, 1700, (0, 1, 250, 2)),
++		Insn('SOUND_PLAY', 29, 0, 0, 100),
++		Insn('SLEEP', 300),
+ 		Insn('EMOTE', C_Girl2, 0, 1700, (0, 1, 250, 2)),
+ 		Insn('SOUND_PLAY', 29, 0, 0, 100),
+ 		Insn('EXPR_VAR', 2, Expr([Insn('RAND'), Insn('CONST', 3), Insn('MOD'), Insn('SET'), Insn('END')])),
+@@ -3072,6 +3088,20 @@
+ 				Insn('BREAK'),
+ 			],
+ 		}),
++		Insn('SWITCH', [Insn('VAR', 2), Insn('END')], {
++			0: [
++				Insn('CHAR_SET_FRAME', C_Nana, 0),
++				Insn('BREAK'),
++			],
++			1: [
++				Insn('CHAR_SET_FRAME', C_Nana, 1),
++				Insn('BREAK'),
++			],
++			None: [
++				Insn('CHAR_SET_FRAME', C_Nana, 2),
++				Insn('BREAK'),
++			],
++		}),
+ 		Insn('SLEEP', 350),
+ 		Insn('EXPR_VAR', 2, Expr([Insn('RAND'), Insn('CONST', 3), Insn('MOD'), Insn('SET'), Insn('END')])),
+ 		Insn('SWITCH', [Insn('VAR', 2), Insn('END')], {
+@@ -3106,6 +3136,21 @@
+ 				Insn('BREAK'),
+ 			],
+ 		}),
++		Insn('EXPR_VAR', 2, Expr([Insn('RAND'), Insn('CONST', 3), Insn('MOD'), Insn('SET'), Insn('END')])),
++		Insn('SWITCH', [Insn('VAR', 2), Insn('END')], {
++			0: [
++				Insn('CHAR_SET_FRAME', C_Ken, 0),
++				Insn('BREAK'),
++			],
++			1: [
++				Insn('CHAR_SET_FRAME', C_Ken, 1),
++				Insn('BREAK'),
++			],
++			None: [
++				Insn('CHAR_SET_FRAME', C_Ken, 2),
++				Insn('BREAK'),
++			],
++		}),
+ 		Insn('EMOTE_STOP', C_Lloyd),
+ 		Insn('EMOTE_STOP', C_Elie),
+ 		Insn('EMOTE_STOP', C_Tio),
+@@ -3122,6 +3167,8 @@
+ 	Insn('CHAR_SET_FRAME', C_Girl2, 0),
+ 	Insn('CHAR_SET_FRAME', C_Boy3, 0),
+ 	Insn('CHAR_SET_FRAME', C_Girl3, 0),
++	Insn('CHAR_SET_FRAME', C_Ken, 0),
++	Insn('CHAR_SET_FRAME', C_Nana, 0),
+ 	Insn('0x49'),
+ 	Insn('RETURN'),
+ ]
+@@ -3187,12 +3234,13 @@
+ 	Insn('RETURN'),
+ ]
+ 
++# Girl3 walking to her desk, originally into Ken
+ data['code'][25] = [
+ 	Insn('0x95', C_Self, (149930, 0, 8000), 3000, 0),
+-	Insn('0x95', C_Self, (152000, 0, 9030), 3000, 0),
++	Insn('0x95', C_Self, (152000, 0, 12130), 3000, 0),
+ 	Insn('CROSSFADE', 100),
+ 	Insn('CHAR_SET_CHCP', C_Girl3, 21),
+-	Insn('CHAR_SET_POS', C_Self, (153620, 150, 9130), 0),
++	Insn('CHAR_SET_POS', C_Self, (153620, 150, 12230), 0),
+ 	Insn('CHAR_FLAG1_SET', C_Girl3, 4),
+ 	Insn('SOUND_PLAY', 820, 0, 0, 100),
+ 	Insn('0x0D'),
+@@ -3224,6 +3272,10 @@
+ 
+ data['code'][28] = [
+ 	Insn('SLEEP', 300),
++	Insn('EMOTE', C_Ken, 0, 2000, (2, 7, 80, 1)),
++	Insn('SOUND_PLAY', 28, 0, 0, 100),
++	Insn('EMOTE', C_Nana, 0, 2000, (2, 7, 80, 1)),
++	Insn('SOUND_PLAY', 28, 0, 0, 100),
+ 	Insn('EMOTE', C_Couta, 0, 2000, (2, 7, 80, 1)),
+ 	Insn('SOUND_PLAY', 28, 0, 0, 100),
+ 	Insn('EMOTE', C_Eugot, 0, 2000, (2, 7, 80, 1)),

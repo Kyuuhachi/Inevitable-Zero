@@ -670,7 +670,7 @@
 例えば、泥棒や交通事故を
 目撃した時に……
 	Okay. When someone notices a
-	problem, for example a burglar
+	problem, for example a burglary
 	or a traffic accident...
 
 私たち、警察へ知らせることを
@@ -687,8 +687,8 @@
 している人を見かけたり、
 交通事故を見かけたら……
 	If any of you see people
-	doing something bad, or a
-	traffic accident...
+	doing something bad, or any
+	kind of accident...
 
 すぐに、警察に通報してね。
 	Be sure to alert us ASAP, okay?
@@ -733,7 +733,7 @@
 	to be able to respond to reports at any
 	hour.
 
-## Boy with hat
+## Boy with hat: (changed to Ken)
 うーん……。
 何となく、わかったかなあ？
 	Umm... I think kinda understand?
@@ -758,7 +758,7 @@
 	Well, simply put, reporting
 	means tipping off the police.
 
-## Boy with hat.
+## Boy with hat:
 先生、タレコミって何？
 	What does tipping off mean?
 
@@ -881,8 +881,8 @@
 普段、街中では、
 私たち警察官がパトロールを
 しています。
-	Usually, we are patrolling
-	inside the city.
+	We are always regularly
+	patrolling inside the city.
 
 けれど警察では、人員削減などで、
 充分な人手がありません。
@@ -942,9 +942,8 @@
 すごい物音が聞こえた、
 どこかで大声でケンカしてる
 人たちがいる、等の場合です。
-	If you hear strange sounds,
-	or see people fighting,
-	et cetera.
+	If you hear strange sounds, or
+	see people fighting, et cetera.
 
 通報が早ければ、
 事件や犯罪を、未然に防げるかも
@@ -1483,7 +1482,7 @@
 どんな事件にも、必ず手がかりや
 証拠になるものが出てくるわ。
 	No matter what sort of case it is,
-	there will be a number of clues.
+	there will be any number of clues.
 
 それらを集めて、順番に考え、
 パズルのように当てはめて……
@@ -1745,8 +1744,8 @@
 いつか、ロイド先生みたいな、
 『推理』ができる警察官に
 なりたいと思います。
-	I wish to one day be as good
-	at deduction as Lloyd is.
+	I wish to one day reach Lloyd's
+	level of deduction capability.
 
 （あまり理論的に説明
 　できませんでしたが、
@@ -1764,7 +1763,7 @@
 お、俺に振るなよ……
 推理のことなんて、わからねーぞ
 	Are you joking? I'm shit
-	at deductions.
+	at deduction.
 
 ……とも言ってられねぇか。
 ええと、推理で必要なもの……
@@ -1806,7 +1805,7 @@
 	If we've got Lloyd, we can
 	easily solve any case.
 
-## Green kid:
+## Green kid: (changed to Nana)
 そっかー。ロイド先生、
 すごいなぁ！
 	I see! Lloyd sure is cool.
@@ -1899,9 +1898,9 @@
 逮捕には３種類あります。
 通常逮捕、緊急逮捕、
 そして現行犯逮捕です。
-	There are three types of arrest:
-	the usual one, arrest without a warrant,
-	and if they are caught in the act.
+	There are three types of arrest: the usual
+	one, arrest without a warrant, and in flagrante
+	arrest, if someone is caught in the act.
 
 逮捕された容疑者は
 最大で７２時間拘留され、
@@ -2257,8 +2256,8 @@
 {color 5}どうにか授業は終了した。
 問題は、子供たちが
 どこまで理解できたかだが……
-	{color 5}The lesson is over.
-	But how much did the children
+	{color 5}The lesson is over. But
+	how much did the children
 	actually understand...?
 
 ## [3] After lecture {{{2

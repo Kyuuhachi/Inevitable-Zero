@@ -769,7 +769,7 @@ def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir):
 	# Copy cat-Tio image for quest57
 	name = "visual/bu06900.itp"
 	(outpath/name).parent.mkdir(parents=True, exist_ok=True)
-	(outpath/name).write_bytes((vitapath/name).read_bytes())
+	(outpath/name).write_bytes(Path("text/bu06900.itp").read_bytes())
 
 if __name__ == "__main__":
 	__main__(**argp.parse_args().__dict__)

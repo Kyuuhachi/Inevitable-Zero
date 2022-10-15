@@ -49,6 +49,9 @@ or it can be found by right-clicking the game in Steam and choosing Manage » Br
 
 ## Compatibility
 
-Patch was made against the version released on Steam on 2022-08-27. It is completely
-untested, but there aren't too many differences from the Geofront version,
-which has been tested to work.
+Tested to work on PC versions 1.3.5 and 1.3.7.
+Also works on the Nintendo Switch version, though this of course requires jailbreaking.
+
+Inevitable Zero is not compatible with ShinKiseki's [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero);
+since it is in active development it would not be feasible for either of us to maintain a compatibility patch.
+We will be looking into a solution once More Portraits is in a less volatile state.

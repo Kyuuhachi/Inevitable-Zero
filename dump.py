@@ -36,7 +36,7 @@ def dump(f, data, mode, vars={}):
 	# of functions, both while reading the code and in diff context lines.
 	for i, func in enumerate(data["code"]):
 		f.write(f"\ndata[{'code'!r}][{i!r}] = ")
-		pprint(f, func, mode, vals=vals)
+		pprint(f, list(func), mode, vals=vals)
 		f.write("\n")
 
 def commas(f, items, indent):

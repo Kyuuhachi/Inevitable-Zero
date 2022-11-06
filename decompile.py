@@ -63,10 +63,12 @@ def parse(asm, brk=None):
 
 	return asm[0], asm[1:]
 
+class Decompiled(list):
+	raw: list
+
 def decompile(asm):
-	asm0 = asm
-	o = []
-	asm = asm0
+	o = Decompiled()
+	o.raw = asm
 	while asm:
 		a, asm = parse(asm)
 		o.append(a)

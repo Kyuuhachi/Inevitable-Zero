@@ -90,10 +90,12 @@ class TEXT(k.element):
 		return "TEXT"
 TEXT = TEXT()
 
+class Addr(int): pass
+
 class ADDR(k.element):
 	def read(self, ctx, nil_ok=False, inner=None):
 		assert inner is not None
-		return inner.read(ctx)
+		return Addr(inner.read(ctx))
 
 	def write(self, ctx, v, inner=None):
 		assert inner is not None
@@ -259,6 +261,9 @@ class script(k.element):
 							break
 					break
 
+		if orig := ctx.scope.get("_eddec_original", []):
+			fix_eddecompiler(xs, orig.pop(0).raw)
+
 		return decompile.decompile(xs)
 
 	def write(self, ctx, v, inner=None):
@@ -272,6 +277,50 @@ class script(k.element):
 	def __repr__(self):
 		return "script"
 script = script()
+
+def diff(xs, ys):
+	import difflib
+	from itertools import zip_longest
+	def tostr(x):
+		match x.name:
+			case "GOTO": return repr(Insn("GOTO", ...))
+			case "IF": return repr(Insn("IF", x.args[0], ...))
+			case "SWITCH": return repr(Insn("SWITCH", x.args[0], [(k, ...) for k, v in x.args[1]], ...))
+			case _: return repr(x)
+	xn = [tostr(x) for x in xs]
+	yn = [tostr(y) for y in ys]
+	ops = difflib.SequenceMatcher(None, xn, yn).get_opcodes()
+
+	o = []
+	for i, (a,b,c,d,e) in enumerate(ops):
+		if a == "replace":
+			ops2 = difflib.SequenceMatcher(None, xn[b:c], yn[d:e]).get_opcodes()
+			if len(ops2) > 1:
+				ops[i+1:i+1] = [
+					(a1, b+b1, b+c1, d+d1, d+e1)
+					for a1, b1, c1, d1, e1 in ops2
+				]
+				continue
+		o += zip_longest(xs[b:c], ys[d:e])
+
+	return o
+
+def fix_eddecompiler(xs, ys):
+	o = []
+	xys = diff(xs, ys)
+	for x, y in xys:
+		if x is not None:
+			o.append(x)
+		elif y.name == "GOTO":
+			target = y.args[0]
+			for x_, y_ in xys[::-1]:
+				if x_ is not None:
+					target2 = x_.pos
+				if y_ is not None and y_.pos == target:
+					break
+			o.append(Insn("GOTO", target2))
+	
+	xs[:] = o
 
 class Expr(list): pass
 

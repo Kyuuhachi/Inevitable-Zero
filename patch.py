@@ -14,8 +14,9 @@ from insn import Insn
 import translate
 
 class Context: # {{{1
-	def __init__(self, vitapath, pcpath, outpath, en: bool):
+	def __init__(self, vitapath, pcpath, outpath, en: bool, portraits: Path|None = None):
 		self.en = en
+		self.portraits = portraits
 
 		self.vitapath = vitapath
 		self.vita_scripts = {}
@@ -40,10 +41,20 @@ class Context: # {{{1
 
 	def _load(self, name, params, *, vita, transform):
 		path = self.vitapath if vita else self.pcpath
-		path = (path/("scena_us" if self.en and not vita else "scena")/name).with_suffix(".bin")
+		# }}}
+		if self.en and not vita:
+			path = (path/"scena_us"/name).with_suffix(".bin")
+		else:
+			path = (path/"scena"/name).with_suffix(".bin")
 
 		with path.open("rb") as f:
 			sc = kouzou.read(scena.scenaStruct, f, params)
+			if self.en and not vita and self.portraits is not None:
+				path2 = (self.portraits/"scena_us"/name).with_suffix(".bin")
+				if path2.exists():
+					with path2.open("rb") as f:
+						from copy import deepcopy
+						sc = kouzou.read(scena.scenaStruct, f, {**params, "_eddec_original": deepcopy(sc.code)})
 			sc = do_transform(sc, transform)
 			return sc
 
@@ -512,7 +523,31 @@ def quest58(ctx): # {{{1 Ultimate Bread Showdown!
 		copy_clause(vita, pc, 9, "@IF", 0, 1) # -''-
 		copy_clause(vita, pc, 11, "@IF:1", 0, 0) # Bennet
 
-	ctx.copy("c0210_1", tr)
+	# }}}
+	def traverse(insns):
+		nfunc = []
+		for i in insns:
+			if len(nfunc) > 2 \
+					and i.name == "TEXT_TALK" \
+					and nfunc[-2].name == "TEXT_TALK" \
+					and nfunc[-1].name == "TEXT_WAIT" \
+					and nfunc[-2].args[0] == i.args[0]:
+				print(nfunc[-2], nfunc[-1], i)
+
+			if i.name == "IF":
+				for _, b in i.args[0]:
+					traverse(b)
+			if i.name == "WHILE":
+				traverse(i.args[1])
+			if i.name == "SWITCH":
+				for b in i.args[1].values():
+					traverse(b)
+			nfunc.append(i)
+		insns[:] = nfunc
+
+	pc = ctx.copy("c0210_1", tr)
+	for func in pc.code:
+		traverse(func)
 
 	# Set flag 1107. Not sure what that does
 	with ctx.get("e3010") as (vita, pc):
@@ -617,7 +652,10 @@ def get_(who, *path):
 						who = b
 						break
 				else:
-					raise ValueError(who, c)
+					import pprint
+					for c2, b in who.args[0]:
+						print(c2)
+					raise ValueError("couldn't find case " + str(c))
 			else:
 				raise ValueError(who, c)
 		else:
@@ -747,11 +785,12 @@ def do_transform(obj, tr):
 argp = argparse.ArgumentParser()
 argp.add_argument("vitapath", type=Path, help="Path to the Vita data. This should likely be named \"data\"")
 argp.add_argument("pcpath", type=Path, help="Path to the PC data. This should likely be named \"data\"")
+argp.add_argument("-p", "--portraitpath", type=Path, help="Path to the More Portraits data. This should likely be named \"data\"")
 argp.add_argument("outpath", type=Path, help="Directory to place the patched files into. This should be merged into the data directory.")
 argp.add_argument("--minigame", action="store_true", help="Patches in dialogue for certain furniture in the headquarters. The minigames are not implemented, so it is simply a fade to black.")
 argp.add_argument("--no-misc", dest="misc", action="store_false", help="Include only the quests, and not the miscellaneous minor patches")
 argp.add_argument("-d", "--dump", dest="dumpdir", type=Path, help="Directory to place scenario dumps in, for all scenarios affected by the patch. Will be emptied.")
-def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir):
+def __main__(vitapath, pcpath, portraitpath, outpath, minigame, misc, dumpdir):
 	if not vitapath.is_dir():
 		raise ValueError("vitapath must be a directory")
 	if not pcpath.is_dir():
@@ -766,8 +805,8 @@ def __main__(vitapath, pcpath, outpath, minigame, misc, dumpdir):
 	(outpath/"scena_us").mkdir()
 	(outpath/"text_us").mkdir()
 
-	for en in [True, False]:
-		ctx = Context(vitapath, pcpath, outpath, en)
+	for en in [True, False] if portraitpath is None else [True]:
+		ctx = Context(vitapath, pcpath, outpath, en, portraits=portraitpath)
 
 		if minigame:
 			print("furniture_minigames")

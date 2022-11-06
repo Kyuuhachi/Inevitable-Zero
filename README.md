@@ -52,6 +52,10 @@ or it can be found by right-clicking the game in Steam and choosing Manage » Br
 Tested to work on PC versions 1.3.5 and 1.3.7.
 Also works on the Nintendo Switch version, though this of course requires jailbreaking.
 
-Inevitable Zero is not compatible with ShinKiseki's [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero);
-since it is in active development it would not be feasible for either of us to maintain a compatibility patch.
-We will be looking into a solution once More Portraits is in a less volatile state.
+While not strictly compatible with ShinKiseki's [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) due to modifying some of the same scripts,
+there is a separate version for compatibility with that.
+You do not need to install the base version of Inevitable Zero for this,
+simply install `inevitable-portraits.tar.gz` after More Portraits and you're good to go.
+This version does not include the japanese scripts however.
+**Please note** that the dialogue *Ultimate Bread Showdown!*  does not currently include the added faces;
+we are working on this.

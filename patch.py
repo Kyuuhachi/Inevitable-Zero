@@ -546,8 +546,9 @@ def quest58(ctx): # {{{1 Ultimate Bread Showdown!
 		insns[:] = nfunc
 
 	pc = ctx.copy("c0210_1", tr)
-	for func in pc.code:
-		traverse(func)
+	if ctx.portraits:
+		for func in pc.code:
+			traverse(func)
 
 	# Set flag 1107. Not sure what that does
 	with ctx.get("e3010") as (vita, pc):

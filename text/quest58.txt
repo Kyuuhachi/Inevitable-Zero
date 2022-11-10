@@ -213,7 +213,7 @@
 なるほど……
 それで、材料集めを私たちにと
 いうわけですね。
-	I see. And you want us to
+	I see. And you'd like for us to
 	collect the ingredients for them.
 
 ## M:
@@ -273,13 +273,13 @@
 
 #5Sおーい、オスカー、ベネット！
 ちょっと来い！#3S
-	#5SOi, Oscar, Bennet!
+	#5SHey, Oscar, Bennet!
 	C'mere for a bit!
 
 ## O:
 お、ロイド。
 材料集め、引きうけてくれるのか？
-	Oh, Lloyd. So you're gonna help
+	{#14700F}Oh, Lloyd. So you're gonna help
 	us get those ingredients?
 
 ## L:
@@ -302,43 +302,44 @@
 そう言ってくれて助かるぜ。
 ちょうど俺も、新作パンのアイデアが
 出たところだったんだ。
-	Thanks for saying that.
+	{#14702F}That's great to hear.
 	I've got some ideas for new
-	bread I want to try out, too.
+	breads I want to try out, too.
 
 ちょっと手に入りにくい材料もあって、
 困ってたんだよな。
-	Some of the ingredients are hard to get hold
-	of, so we were having a bit of trouble.
+	{#14700F}Some of the ingredients are hard
+	to get hold of, so we were having
+	a bit of trouble.
 
 ## B:
 ついにこの日が来たわね……
-	The day has finally come...
+	{#14803F}The day has finally come...
 
 オスカー、どっちが
 パン職人として上か、
 これでハッキリさせてあげるわ……！
-	Oscar! Let's find out once and for all
+	{#14807F}Oscar! Let's find out once and for all
 	who's the better baker!
 
 ## O:
 お。ノリノリだな、ベネット。
 お互い頑張ろうぜ！
-	You sure are spirited.
-	Let's both do our best, yeah?
+	{#14709F}You sure are fired up.
+	Let's both do our best!
 
 ## R:
 （オスカー君、
 　ライバル視されてることに
 　気がついてないみたいだな……）
-	(Oscar sure doesn't seem to care much
-	about this supposed rivalry of theirs...)
+	(Oscar seriously hasn't noticed that
+	Bennet sees him as a rival, huh...)
 
 ## T:
 （はい。さすがはロイドさんの友達と
 　いった感じですね）
-	(Indeed. It's no surpise that one like
-	him would become Lloyd's friend.)
+	(Indeed. Though, it stands to reason that a
+	friend of Lloyd would be as dense as him.)
 
 ## L:
 ん？　俺がどうかした？
@@ -356,12 +357,12 @@
 ## O:
 ああ、そうだったな。
 俺が集めてほしいものは……
-	Oh right. This is what I need...
+	{#14704F}Oh, right. This is what I need...
 ## Call [15] for some reason
 
 ## B:
 私が集めて欲しいものは……
-	I'd like for you to get me...
+	{#14804F}I'd like for you to get me...
 ## Call [16]
 
 ## E:
@@ -395,8 +396,8 @@
 ## O:
 仕事とはいえ、面倒なこと
 頼んじまってすまないな、ロイド。
-	I'm sorry to have to ask you for such a
-	tedious favor, Lloyd.
+	{#14806F}Sorry to have you go through all this
+	trouble for us, Lloyd.
 
 ## L:
 気にするなよ。
@@ -408,7 +409,7 @@
 ## O:
 そう言ってくれるとありがたいぜ。
 よろしく頼んだ、ロイド！
-	Yeah, thanks. I'll leave it to you!
+	{#14809F}Yeah, thanks. I'll leave it to you!
 
 ## System:
 {color 2}クエスト【究極のパン対決！】{color 0}を開始した！
@@ -430,8 +431,8 @@
 お、どうだいロイド。
 頼んでたものは
 集まりそうかい？
-	How's it, Lloyd? Looks like you've collected
-	the items they wanted.
+	How's it going, Lloyd? Looks like you've
+	collected the items they wanted.
 
 【集めた材料を渡す】
 	[Give ingredients]
@@ -580,18 +581,18 @@
 ## L:
 これが、依頼された
 材料になります。
-	Here are the items you requested.
+	Here are the ingredients you requested.
 
 ふむふむ……うん、確かに！
-	Hmmhmm... Aye, checks out.
+	Hmm... Yep, that's all of 'em!
 
 ## if gave any extras {{{6
 ## M:
 ……おや？　頼んでない材料も
 混じってるみたいだが……？
-	Hm? Looks like there are
-	some items in there that
-	we didn't ask for...?
+	Oh? Looks like there are
+	some ingredients in here
+	that we didn't ask for...?
 
 ## L:
 ああ、それは……差し入れ、
@@ -630,7 +631,7 @@
 そうだ。
 お前らこんなコーヒー知ってるか？
 ついでにこいつも覚えていけよ。
-	Oh yeah, do you guys know this blend?
+	Oh, yeah. Do you guys know this blend?
 	I'll teach you the recipe while I'm at it.
 
 {item 467}{color 0}のレシピを教えてもらった。
@@ -655,7 +656,7 @@
 新作パンが完成すりゃ、
 客足も伸びるだろうしな。
 感謝するぜ。
-	The new breads they've created'll
+	And the new breads they've created'll
 	bring in plenty of customers.
 	So thanks for that, too.
 
@@ -720,7 +721,7 @@
 ## O:
 お、ロイド、
 ちょうどいいところに来たな。
-	Yo, Lloyd. Nice timing.
+	{#14700F}Yo, Lloyd. Nice timing.
 
 ## L:
 ん？　どうかしたのか？
@@ -735,7 +736,7 @@
 ## E:
 それで……。
 どちらが勝ったんですか？
-	So... Who did win?
+	So... Who won?
 
 ## M:
 ああ。勝負は……
@@ -753,24 +754,24 @@
 
 ## B:
 くやしい……！
-	How vexing...
+	{#14806F}How frustrating...
 
 ## O:
 俺は、そうでもないかな。
 せいいっぱいやったし、
 悔いはないさ。
-	I don't think so. I did my
+	{#14704F}I don't think so. I did my
 	best, and that's what counts.
 
 それに、ベネットのパンも
 うまかったしな。
-	And your bread was delicious.
+	{#14702F}And your bread was delicious.
 
 ## B:
 な、なによ……。
 敵を褒めるなんて、
 どうかしてるんじゃない？
-	Wh-What are you talking about...
+	{#14815F}Wh-What are you talking about...
 	Why are you praising your enemy?
 
 ## Oscar wins {{{3
@@ -782,47 +783,47 @@
 はは。
 これもロイドたちのおかげさ。
 ありがとな。
-	Haha. All thanks to you guys.
-	Thanks, Lloyd.
+	{#14702F}Haha. I couldn't have done it without
+	the SSS. Thanks for your help.
 
 特に、差し入れの
 『{item 322}』が効いたよ。
 あれでアイデアが湧いたんだ。
-	Especially that {item 322}.
+	{#14704F}Especially that {item 322}.
 	I got a lot of inspiration from that.
 
 ## B:
 く、悔しい……！
 今度こそ勝てるって
 思ったのに！
-	How vexing... I thought
-	for sure I'd win this time!
+	{#14811F}Th-This is so frustrating!
+	I thought for sure I'd win this time!
 
 ## O:
 何だよ、別にどっちが勝っても
 いいだろ。
-	What, it's not like it matters
+	{#14705F}What, it's not like it matters
 	who won. It was just a
 	friendly competition.
 
 ベネットのパンだって、うまいぜ。
 新作が２つそろえば、
 客足だって増えるだろうしさ。
-	Your bread was really good too.
+	{#14702F}Your bread was really good too.
 	With two new breads we'll get a lot
 	of new customers.
 
 ## B:
 な、何よ……
 それでなぐさめてるつもり？
-	Wh-What, are you trying to
+	{#14813F}Wh-What, are you trying to
 	console me now?
 
 ## O:
 ん？　別にそんなつもりじゃない。
 ベネットの新作、
 よくできてると思うぜ。
-	Not at all. I think
+	{#14702F}Not at all. I think
 	you did a great job on
 	your bread, is all.
 
@@ -833,31 +834,31 @@
 
 え……ホ、ホントに！？
 ……やった、やったー！
-	R-really!? Hooray,
-	I won, I won!
+	{#14809F}R-Really?!
+	YES! I won, I won!
 
 ## O:
 はは。おめでとう、ベネット。
-	Haha. Congratulations, Bennet.
+	{#14709F}Haha. Congratulations, Bennet.
 
 ## B:
 な、何よ……
 悔しがったりしないわけ？
-	What, aren't you lamenting
+	{#14805F}What, aren't you lamenting
 	your loss?
 
 ## O:
 ん？　いや別に。
 俺も、満足する新作を
 作れたからな。
-	Nah, not really. I'm
+	{#14704F}Nah, not really. I'm
 	happy enough with my bread,
 	even if I didn't win.
 
 それに、ベネットのパン、
 たしかによくできてるよ。
 美味いし、気持ちがこもってるのもわかる。
-	Besides, your bread was really
+	{#14702F}Besides, your bread was really
 	well done. It's great, and you
 	know it.
 
@@ -865,32 +866,32 @@
 な、何よ……
 そんなに誉めたって、
 感謝なんか、しないわよ……
-	Wh-What? Don't think that
+	{#14813F}Wh-What? Don't think that
 	kind of praise will
 	make me happy!
 
 ……こ、今回勝てたのは
 ロイドさんたちが集めてくれた
 材料の良さもあるし……
-	...I only won because of the
-	ingredients those guys gave me
+	{#14808F}...I only won because of the
+	ingredients the SSS gathered for us.
 
 あの、『{item 326}』が
 なかったら、正直、
 勝ててなかったと思う……
-	I don't think I would have won if
-	I didn't have that {item 326},
+	{#14804F}I don't think I would have won if
+	I didn't have that {item 326}...
 ## }}}3
 
 ## O:
 ははっ。これからも
 お互い頑張っていこうぜ。
-	Haha, let's keep this up.
+	{#14709F}Haha, let's keep this up.
 
 ## B:
 あ、あんたがそう言うなら、
 そうしてもいいけど……
-	W-Well, if you insist...
+	{#14813F}W-Well, if you insist...
 
 ## E:
 （何だか……）
@@ -909,8 +910,8 @@
 よう、ロイド。
 ウチの店から依頼を出したんだが、
 見てくれたか？
-	Yo, Lloyd. We sent in a
-	support request, did you see it?
+	{#14702F}Yo, Lloyd. You guys here for the
+	support request?
 
 ## L:
 ああ。何でも究極のパンを
@@ -922,44 +923,44 @@
 そうなんだ。
 俺は対決とか勝ち負けとか
 あまり興味はないんだけどさ……
-	Exactly. To be honest, I don't
-	really care about showdowns
-	or whatever...
+	{#14704F}Yep. To be honest, I don't
+	really care about the showdown
+	part of it...
 
 どうもベネットは、
 今回の勝負に乗り気みたいでさ。
-	Seems Bennet is really
+	{#14700F}Seems Bennet is really
 	hyped about it though.
 
 けど、究極のパンを
 作るってのは面白い。
 職人としちゃ、腕が鳴るよ。
-	But making the ultimate bread?
+	{#14709F}But making the ultimate bread?
 	As a baker, I can hardly contain
 	my excitement.
 
 そんなわけで、依頼受けてくれたら
 嬉しいんだけどな。
-	So I hope you accept the support request.
+	{#14702F}So I hope you accept our support request.
 
 ま、詳しい話は
 奥にいる親方に聞いてくれよ。
-	Well, you should ask the boss for
+	{#14700F}Well, you should ask the boss for
 	the details. He's in the back.
 
 ## elif haven't given goods {{{3
 ## O:
 おう、ロイド。
 材料集めは順調か？
-	Sup, Lloyd. How's the
-	ingredient collection goin'?
+	{#14702F}Yo, Lloyd. How's the
+	ingredient collecting goin'?
 
 ## else {{{3
 ## O:
 ロイドたちのおかげで、
 いい新作パンが開発できそうだ。
 職人としちゃ、腕が鳴るよ。
-	Thanks to you guys, I'll be able to
+	{#14709F}Thanks to you guys, I'll be able to
 	make a great new bread. As a baker,
 	I can hardly contain my excitement.
 
@@ -967,11 +968,12 @@
 ## if haven't started {{{3
 依頼、受けてくれると
 嬉しいんだけどな。
-	I'd be glad if you accept the support request.
+	{#14702F}I'd be glad if you accept
+	our support request.
 
 ま、詳しい話は
 奥にいる親方に聞いてくれよ。
-	Well, you should ask the boss for
+	{#14700F}Well, you should ask the boss for
 	the details. He's in the back.
 
 ## elif haven't given goods {{{3
@@ -979,24 +981,24 @@
 パン職人としちゃ、
 新作パンを作るのは
 気合いが入る仕事なんだ。
-	As a baker, I put a lot of effort
+	{#14704F}As a baker, I put a lot of effort
 	into creating new bread.
 
 ……なんだけど、今回の新作パン、
 もうひとつ
 パンチが足りない気がしててさ。
-	But this time, my ordinary level
+	{#14702F}But this time, my ordinary level
 	won't cut it. It needs some more oomph.
 
 なんかこう、『情熱』が
 ガツンと加わるといいんだが……
-	Y'know, gotta throw in some
+	{#14703F}Y'know, gotta throw in some
 	more zest somehow...
 
 おっと、これは俺の問題だな。
 ロイド達は材料集めの方、
 よろしく頼む！
-	Oh, but that's my problem. You guys
+	{#14700F}Oh, but that's my problem. You guys
 	are already helping a lot by gathering
 	the ingredients.
 
@@ -1004,8 +1006,8 @@
 ## O:
 お、ロイド。
 食材集めの方、どうなった？
-	Yo, Lloyd. How goes the
-	ingredient gathering?
+	{#14702F}Yo, Lloyd. How's the
+	ingredient collecting goin'?
 
 ## L:
 ああ。
@@ -1015,17 +1017,17 @@
 ## O:
 おっ、さすがロイドだな。
 仕事が早い！
-	That was really fast. I guess
-	that's Lloyd for you.
+	{#14709F}Whoa, that was really fast!
+	Consider me impressed.
 
 これで、新作パンの開発に
 取り掛かれるぜ。
-	Now we can get to work
-	on our bread.
+	{#14702F}Now we can get to work
+	on our breads.
 
 サンキュー、ロイド！
 やっぱりお前は頼りになるよ。
-	Thanks, Lloyd! I knew I
+	{#14709F}Thanks, Lloyd! I knew I
 	could count on you.
 
 ## L:
@@ -1039,26 +1041,26 @@
 ## O:
 あ、そうだ。忘れるところだったぜ。
 材料は、奥にいる親方に渡してくれ。
-	Oh yeah, I almost forgot. You
-	should give the materials to
+	{#14702F}Oh yeah, I almost forgot. You
+	should give the ingredients to
 	the boss, in the back.
 
 依頼の報酬も
 親方からもらえるはずだ。
-	He'll give you your pay.
+	{#14700F}He'll give you your pay.
 
 …………。
-	... ... ...
+	{#14703F}...
 
 ## else {{{4
 ## O:
 材料は、奥にいる親方に渡してくれ。
 依頼の報酬もらえるはずだ。
-	Give the ingredients to the boss in the
+	{#14700F}Give the ingredients to the boss in the
 	back room. He'll give you your pay.
 
 …………。
-	... ... ...
+	{#14703F}...
 
 ## L:
 ……？
@@ -1068,43 +1070,43 @@
 ## O:
 ああ、せっかく材料を用意してくれたのに
 こんなことを言うと申し訳ないんだが……
-	Well, it'd be rude to ask after
-	you've taken your time to collect
-	all this, but...
+	{#14706F}Well, I feel bad for saying this
+	after you've already collected all of
+	these ingredients for us, but...
 
 今回の新作パン、もうひとつ
 パンチが足りない気がしててさ。
-	This time, my ordinary level won't
-	cut it. It needs some more oomph.
+	{#14701F}...I don't think an ordinary bread
+	will be enough this time.
 
 なんかこう、『情熱』が
 ガツンと加わるといいんだが……
-	Y'know, gotta throw in some
-	more zest somehow...
+	{#14703F}I need to come up with something with
+	a little oomph. Y'know, some zest.
 
 う～ん、ちょっと漠然としすぎてるよな。
 悪い、気にしないでくれ！
-	Hmm, that's a bit vague I guess.
-	Sorry, nevermind.
+	{#14700F}Hmm, that's a bit vague I guess.
+	Sorry, don't mind me.
 
 ## elif first talk {{{3
 さっそく、新作パンの開発に
 取りかからせてもらうよ。
-	I'll get right to work.
+	{#14702F}I'll get right to work.
 
 焼き上がり、楽しみにしててくれよな！
-	Look forward to the results!
+	{#14709F}Look forward to the results!
 
 ## else {{{3
 ベネットの奴、
 さっそく新作パンの開発に
 取りかかったみたいだ。
-	Looks like Bennet's gotten
+	{#14700F}Looks like Bennet's gotten
 	started on her bread.
 
 どんなパンができるか、
 俺も楽しみだぜ。
-	I'm looking forward to
+	{#14702F}I'm looking forward to
 	seeing what kind of
 	bread she makes.
 
@@ -1113,47 +1115,47 @@
 新作パンのおかげで、
 客足もかなり伸びたんだ。
 感謝するぜ、ロイド。
-	Thanks to this new bread,
-	we've pulled in plenty
-	of new customers. Thanks,
-	Lloyd.
+	{#14702F}Thanks to this new bread, we've
+	pulled in plenty of new customers.
+	Thanks, Lloyd.
 
 ただ、ベネットの奴が
 すんげぇ悔しそうに
 してるんだよな……
-	But Bennet looked really
-	sad for losing...
+	{#14703F}Bennet looks really bummed out over
+	not winning the showdown, but...
 
 別にどっちが勝っても
 客が増えれば
 それでいいと思うんだけどなあ。
-	Me, I don't particularly mind.
-	As long as the customers are
-	happy, it's all good with me.
+	{#14700F}...as long as we're bringing in more
+	customers, it doesn't matter who won
+	in my book. I'm happy either way.
 
 ## else {{{3
 新作パンのおかげで、
 客足もかなり伸びたんだ。
 ありがとな。
-	Thanks to this new bread,
-	we've pulled in plenty
-	of new customers.
+	{#14702F}Thanks to this new bread, we've
+	pulled in plenty of new customers.
+	Thanks, Lloyd.
 
 ベネットの奴も、
 ロイドに感謝してたぜ。
-	I know Bennet is grateful, too.
+	{#14704F}I know Bennet is grateful to
+	you guys, too.
 
 ## [13] Talking to Bennet {{{2
 ## if haven't started {{{3
 ## B:
 私の見たところ、
 私とオスカーの腕は互角……
-	As far as I can tell,
+	{#14803F}As far as I can tell,
 	Oscar and I are evenly matched...
 
 だからこそ……今度の対決で、
 どっちが上か、はっきりさせる！
-	We'll find out once and for all
+	{#14807F}We'll find out once and for all
 	who's better in this showdown!
 
 ## elif haven't given goods {{{3
@@ -1163,27 +1165,28 @@
 ブツブツ……食べた人が
 感動できるような……
 涙……？　『号泣』……？
-	Mumble mumble... Something
-	emotional... Tears...? Crying...?
+	{#14803F}*mumble* *mumble* A bread that can make
+	the eater misty-eyed... Or better yet,
+	cry tears of joy...
 
 ……あっ、ご、ごめんなさい。
 新作パンのアイデアを
 練っていたところだったの。
-	...Oh, s-sorry! I was just
-	brainstorming ideas for my bread.
+	{#14805F}...Oh, s-sorry! I was just brainstorming
+	ideas for my bread.
 
 ## else {{{5
 ## B:
 今考えてる新作なら、
 きっとオスカーよりも
 美味しいパンが作れるはず……
-	If I do this, my bread will blow
+	{#14804F}If I make this bread, I'll blow
 	Oscar's out of the water...
 
 ……そのためには、どうしても
 あの材料が必要なの。
 オスカーには、負けたくないから……！
-	...But for that, I really need
+	{#14807F}...But to make it, I really need
 	that one ingredient... I won't lose
 	to Oscar, no matter what!
 
@@ -1195,12 +1198,12 @@
 ## B:
 ブツブツ……
 何か、何かが足りないのよ、う～ん……
-	Mumble mumble... Not enough... This
-	isn't enough... Hmm...
+	{#14803F}*mumble* *mumble* Not enough... This
+	isn't good enough... Hmm...
 
 あ、あら、あなたたち……
 食材集めの方、進んでる？
-	Oh my, you guys. Are
+	{#14800F}Oh, it's you guys. Are
 	you making progress
 	with the ingredients?
 
@@ -1212,38 +1215,39 @@
 ## B:
 そ、そう！
 思ったより早かったわね！
-	R-really? That was faster
+	{#14805F}R-Really? That was faster
 	than I expected.
 
 材料は、工房にいる父さんに
 渡してくれればいいから。
-	You should give the materials
-	to my father in the workshop.
+	{#14810F}You should give the ingredients
+	to my father, in the kitchen.
 
 …………。
-	... ... ...
+	{#14803F}...
 
 ## else {{{4
 ブツブツ……食べた人が
 感動できるような……
 涙……？　『号泣』……？
-	Mumble mumble... Something
-	emotional... Tears...? Crying...?
+	{#14803F}*mumble* *mumble* A bread that can make
+	the eater misty-eyed... Or better yet,
+	cry tears of joy...
 
 ……あっ、ご、ごめんなさい。
 新作パンのアイデアを
 練っていたところだったの。
-	...Oh, s-sorry! I was just
-	brainstorming ideas for my bread.
+	{#14805F}...Oh, s-sorry! I was just brainstorming
+	ideas for my bread.
 
 材料は、
 工房にいる父さんに渡してね。
-	Please give the materials
-	to my father in the workshop.
+	{#14810F}Please give the ingredients
+	to my father, in the kitchen.
 
 そ、それから、その……
 手伝ってくれて、ありがとう。
-	A-and, um... thanks for
+	{#14817F}A-And, um... thanks for
 	helping us out with this.
 	It means a lot to me.
 
@@ -1251,82 +1255,81 @@
 オスカーは、
 どうやら新作パンの開発を
 はじめたみたい。
-	Looks like Oscar has started
+	{#14803F}Looks like Oscar has started
 	on his bread.
 
 私も、負けてられないわ。
 ぜったいあいつに勝ってみせる……！
-	I can't afford to lose either. I'm
+	{#14807F}I can't afford to lose either. I'm
 	gonna beat that guy for sure...!
 
 …………。
-	... ... ...
+	{#14803F}...
 
 ……あ、ありがとう、ロイドさん。
 それにみなさんも。
-	...Thank you, Lloyd, and
+	{#14810F}...Thank you, Lloyd, and
 	everyone else too.
 
 ……き、期待しててね。
 いいパンを作るから。
-	...Do look forward to it, okay?
+	{#14802F}...Do look forward to it, okay?
 	Because I'm gonna make a great bread.
 
 ## else {{{3
 今考えてる新作が完成したら、
 今度こそオスカーに勝てるはず。
 ふふ……楽しみだわ。
-	When I'm finished with this,
+	{#14809F}When I'm finished with this,
 	I'm gonna beat Oscar for sure.
 	Heehee, I can't wait.
 
 ……あ、あなたたちには
 感謝してるわ。
 ……ありがとう。
-	...I'm grateful to you guys.
+	{#14810F}...I'm grateful to you guys.
 	Thank you.
 
 ## [14] Talking to Bennet after results announcement {{{2
 ## if Bennet won {{{3
 ふふ……ついにあのオスカーに
 勝つことができた！
-	Heehee, I've finally defeated
+	{#14809F}Heehee, I've finally defeated
 	Oscar once and for all!
 
 ……けど、オスカーの奴、
 おめでとう、だなんて……
 ……調子、狂うじゃない……
-	But Oscar was just like,
-	"Congratulations!" Would
-	it hurt to be at least a
-	little disappointed?
+	{#14801F}...But Oscar was just like,
+	'Congratulations!' Can't he
+	act a LITTLE disappointed?
 
 ## elif it's a draw {{{3
 まさか引き分けだなんて……
 今度こそ決着をつけるはずだったのに！
-	I can't believe it was a draw.
+	{#14806F}I can't believe it was a draw.
 	We were supposed to settle it
 	with this match!
 
 いいわ。
 次の対決までにもっともっと腕を磨いて、
 絶ーっ対ぎゃふんと言わせてやるんだから！
-	Oh well. I'll just practice and practice,
+	{#14804F}Oh well. I'll just practice and practice,
 	so I can leave him speechless next time.
 
 ## else {{{3
 く、悔しい！
 また負けた……！
-	Ugh... I lost again...
+	{#14806F}Ugh... I lost again...
 
 ……けど、負けたのは材料の差。
 腕なら、負けてないんだから！
-	But that was only because of the ingredients!
+	{#14807F}But that was only because of the ingredients!
 	I'm not losing in skill!
 
 そのうち、絶対リベンジ
 してやるわ……！
-	I'll have my revenge one of these days...
+	{#14813F}I'll have my revenge one of these days...
 
 ## [15] {{{2
 {item 300}　　　×５

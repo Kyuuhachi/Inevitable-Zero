@@ -57,5 +57,3 @@ there is a separate version for compatibility with that.
 You do not need to install the base version of Inevitable Zero for this,
 simply install `inevitable-portraits.tar.gz` after More Portraits and you're good to go.
 This version does not include the japanese scripts however.
-**Please note** that the dialogue *Ultimate Bread Showdown!*  does not currently include the added faces;
-we are working on this.

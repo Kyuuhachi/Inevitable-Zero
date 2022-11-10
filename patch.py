@@ -523,16 +523,23 @@ def quest58(ctx): # {{{1 Ultimate Bread Showdown!
 		copy_clause(vita, pc, 9, "@IF", 0, 1) # -''-
 		copy_clause(vita, pc, 11, "@IF:1", 0, 0) # Bennet
 
-	# }}}
 	def traverse(insns):
 		nfunc = []
-		for i in insns:
-			if len(nfunc) > 2 \
-					and i.name == "TEXT_TALK" \
-					and nfunc[-2].name == "TEXT_TALK" \
-					and nfunc[-1].name == "TEXT_WAIT" \
-					and nfunc[-2].args[0] == i.args[0]:
-				print(nfunc[-2], nfunc[-1], i)
+		import re
+		rx = re.compile(r"\{(#\d+F)\}")
+		for x, i in enumerate(insns):
+			if i.name == "TEXT_TALK" and rx.search(i.args[1]):
+				if ctx.portraits:
+					while x < len(insns)-2 \
+							and insns[x+1].name == "TEXT_WAIT" \
+							and insns[x+2].name == "TEXT_TALK" \
+							and insns[x+2].args[0] == i.args[0]:
+						i.args[1] += "{page}" + insns[x+2].args[1]
+						del insns[x+1]
+						del insns[x+1]
+					i.args[1] = insn.Text(rx.sub(r"\1", i.args[1]))
+				else:
+					i.args[1] = insn.Text(rx.sub(r"", i.args[1]))
 
 			if i.name == "IF":
 				for _, b in i.args[0]:
@@ -546,9 +553,8 @@ def quest58(ctx): # {{{1 Ultimate Bread Showdown!
 		insns[:] = nfunc
 
 	pc = ctx.copy("c0210_1", tr)
-	if ctx.portraits:
-		for func in pc.code:
-			traverse(func)
+	for func in pc.code:
+		traverse(func)
 
 	# Set flag 1107. Not sure what that does
 	with ctx.get("e3010") as (vita, pc):

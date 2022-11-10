@@ -57,3 +57,12 @@ there is a separate version for compatibility with that.
 You do not need to install the base version of Inevitable Zero for this,
 simply install `inevitable-portraits.tar.gz` after More Portraits and you're good to go.
 This version does not include the japanese scripts however.
+
+## Credits
+Nihon Falcom: for creating the game.
+
+[GeofrontTeam](https://github.com/GeofrontTeam) and NIS America: for bringing it to the west.
+
+[Ouroboros](https://github.com/Ouroboros): for creating [EDDecompiler](https://github.com/Ouroboros/EDDecompiler). While I do not use it directly, it was invaluable as documentation for creating my own.
+
+[ShinKiseki](https://github.com/shinkiseki): for collaboration regarding the compatibility patch, and some proofreading.

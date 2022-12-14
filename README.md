@@ -27,9 +27,8 @@ Start of chapter 4.
 Start of chapter 4.
 </details>
 
-I haven't figured out if it's possible to change the detective rank milestones,
-so since this mod adds a total of 14 extra DP, those are somewhat easier to
-reach.
+I have not found any way to change the detective rank milestones,
+so since this mod adds a total of 14 extra DP, those are somewhat easier to reach.
 
 It also contains a small number of other patches:
 
@@ -42,21 +41,24 @@ When discussing the D∴G Cult, Sergei writes down how it is spelled.
 
 ## Installation
 
-Download the `.tar.gz` file from the latest [release](https://github.com/Kyuuhachi/Inevitable-Zero/releases)
-and extract `data/` directory into the game's directory. This is normally at
+Download the `inevitable.tar.gz` file from the latest [release](https://github.com/Kyuuhachi/Inevitable-Zero/releases)
+and extract `data/` directory into the game's directory (you can open it like a .zip file).
+This is normally at
 `C:\Program Files (x86)\Steam\steamapps\common\The Legend of Heroes Trails from Zero`,
 or it can be found by right-clicking the game in Steam and choosing Manage » Browse local files.
+
+### Inevitable Portraits
+
+ShinKiseki's [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) modifies some of the same files as Inevitable Zero, and is thus not directly compatible. Instead there is a separate version of the mod, which should be installed after after More Portraits. The base Inevitable Zero is not required.[^no-jp]
+
+[^no-jp]: Since More Portraits does not support the Japanese version of the game, Inevitable Portraits does not either. You can install all three of More Portraits, Inevitable Zero, and Inevitable Portraits if you want that.
 
 ## Compatibility
 
 Tested to work on PC versions 1.3.5 and 1.3.7.
 Also works on the Nintendo Switch version, though this of course requires jailbreaking.
 
-While not strictly compatible with ShinKiseki's [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) due to modifying some of the same scripts,
-there is a separate version for compatibility with that.
-You do not need to install the base version of Inevitable Zero for this,
-simply install `inevitable-portraits.tar.gz` after More Portraits and you're good to go.
-This version does not include the japanese scripts however.
+Compatible with ShinKiseki's [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) (commit #8fee7cc) via the Inevitable Portraits version
 
 ## Credits
 Nihon Falcom: for creating the game.

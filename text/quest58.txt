@@ -396,7 +396,7 @@
 ## O:
 仕事とはいえ、面倒なこと
 頼んじまってすまないな、ロイド。
-	{#14806F}Sorry to have you go through all this
+	{#14706F}Sorry to have you go through all this
 	trouble for us, Lloyd.
 
 ## L:
@@ -409,7 +409,7 @@
 ## O:
 そう言ってくれるとありがたいぜ。
 よろしく頼んだ、ロイド！
-	{#14809F}Yeah, thanks. I'll leave it to you!
+	{#14709F}Yeah, thanks. I'll leave it to you!
 
 ## System:
 {color 2}クエスト【究極のパン対決！】{color 0}を開始した！

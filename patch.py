@@ -318,7 +318,7 @@ def quest56(ctx): # {{{1 Search for the Oversleeping Doctor
 		})
 		copy_clause(vita, pc, 1, "@IF", None, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0) # Talking to Philia
 		copy_clause(vita, pc, 3, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0) # Talking to Clark
-		copy_clause(vita, pc, 10, -4, [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0) # Talking to Gary
+		copy_clause(vita, pc, 10, -4, [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0) # Talking to Gailey
 		copy_condition(vita, pc, 13, "@IF", [Insn('FLAG', 1040), Insn('END')], 0) # Talking to Chaleur
 		copy_clause(vita, pc, 17, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0) # Talking to Ursuline
 

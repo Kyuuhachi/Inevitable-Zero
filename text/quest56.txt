@@ -74,12 +74,12 @@
 　ゲイリー教授に怒られていたようだ。　
 　姿を消してしまった原因だろうか？　　
 	★Chaleur says that she's been getting
-	　scolded by Professor Gary on a
+	　scolded by Professor Gailey on a
 	　daily basis. Maybe she got fed up?
 
 ★ゲイリー教授は困っているものの、　　
 　あまり心配はしていないようだ。　　　
-	★Professor Gary was annoyed, but
+	★Professor Gailey was annoyed, but
 	　did not seem particularly worried.
 
 ★グェンさんは、主任から　　　　　　　
@@ -512,7 +512,7 @@
 毎日クドクド怒られて、
 嫌気が差したのかな……
 	Maybe she got sick of getting scolded
-	by Professor Gary day after day...?
+	by Professor Gailey day after day...?
 
 ## T:
 そんなに毎日、
@@ -541,7 +541,7 @@
 ゲイリー教授に怒られて、
 研究に嫌気が差したのかもしれない。
 	Maybe she got sick of her research
-	after getting scolded by Professor Gary.
+	after getting scolded by Professor Gailey.
 
 先輩もひょうひょうとした
 人だから、怒られても
@@ -553,7 +553,7 @@
 傷ついていたのかもしれないな。
 	But maybe she did take offense inwardly.
 
-## [6] Talking to Gary {{{2
+## [6] Talking to Gailey {{{2
 ## First time {{{3
 ## G:
 まったく、アーシュラ君には
@@ -723,7 +723,7 @@
 
 最近、特にゲイリー教授が
 ガミガミうるさいらしいから。
-	Professor Gary in particular
+	Professor Gailey in particular
 	has been nagging a lot lately.
 
 ゆっくり朝寝坊できる場所にでも
@@ -824,7 +824,7 @@
 ゲイリー教授からも、
 早くレポートを提出しろと、
 言われていたみたいだし。
-	I hear Professor Gary has been telling
+	I hear Professor Gailey has been telling
 	her to hurry up and send in a report, too.
 
 ## E:
@@ -1569,7 +1569,7 @@
 んかー……
 もう、ゲイリー教授……
 そんなに怒らないで……
-	Mmm... Hey, Gary...
+	Mmm... Hey, Gailey...
 	Don't get so mad...
 
 くおー……すぴー……
@@ -1591,7 +1591,7 @@
 んかっ！
 はひっ、ゲイリー教授！？
 寝てません、寝てませんよっ！
-	Wh- Yesh, Professor Gary!?
+	Wh- Yesh, Professor Gailey!?
 	I'm not sleeping, I'm not sleeping!
 
 ……あれ？　夢？
@@ -1717,7 +1717,7 @@
 長いんですよねぇ……
 	Ahaha...ha... I'm going
 	to be subjected to one of
-	Gary's lectures, aren't I?
+	Gailey's lectures, aren't I?
 
 ## [24] Talking to Martha, post-quest {{{2
 とにかく、あんたたちのおかげで
@@ -1748,7 +1748,7 @@
 毎日クドクド怒られて、
 本当に嫌気が差したとか……
 	Maybe she got really sick of getting
-	scolded by Professor Gary every day...?
+	scolded by Professor Gailey every day...?
 
 ## [27] Talking to Gwen, post-quest {{{2
 ほんと、主任は人騒がせ
@@ -1759,7 +1759,7 @@
 でも、今回はさすがに、
 ゲイリー教授に、こってりと
 絞られるんじゃないかしら。
-	Professor Gary must be really
+	Professor Gailey must be really
 	chewing her out today.
 
 ## [28] Talking to Chiron, post-quest {{{2
@@ -1890,7 +1890,7 @@
 見つけてあげてください！
 	Please, find her quickly!
 
-## [81] Talking to Gary and Ursuline, post-quest {{{2
+## [81] Talking to Gailey and Ursuline, post-quest {{{2
 ## G:
 以後気をつける……か。
 まるで、魔法のような
@@ -1950,7 +1950,7 @@
 	Chief Ursuline
 
 ゲイリー教授
-	Professor Gary
+	Professor Gailey
 
 ## t1540_1 -''- {{{1
 ## [50] Talking to Philia {{{2
@@ -2093,7 +2093,7 @@
 優しいなぁ。
 	Cecile... You're too kind.
 
-## Gary:
+## Gailey:
 ヘラヘラ笑う前に、
 何か言うことはないのかね、
 アーシュラ君？
@@ -2104,7 +2104,7 @@
 ## U:
 や、やだなぁ、ゲイリー教授。
 そんなに怖い顔しないでくださいよ。
-	Oh no, Professor Gary. Don't
+	Oh no, Professor Gailey. Don't
 	make such a scary face.
 
 教え子が無事に帰ってきたんですから

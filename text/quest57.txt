@@ -217,7 +217,7 @@
 
 ## System:
 {color 2}クエスト【続・日曜学校の特別講師】{color 0}を開始した！
-	Quest {color 2}Guest Lecturer for Sunday School (Continued){color 0} started!
+	{color 0}Quest {color 2}Guest Lecturer for Sunday School (Continued){color 0} started!
 
 ## L:
 さて、授業の内容だけど
@@ -2465,7 +2465,7 @@
 	our leave here as well.
 
 {color 2}クエスト【続・日曜学校の特別講師】{color 0}を達成した！
-	Quest {color 2}Guest Lecturer for Sunday School (Continued){color 0} completed!
+	{color 0}Quest {color 2}Guest Lecturer for Sunday School (Continued){color 0} completed!
 
 ## [4] Talking to Sister Marble, after quest {{{2
 みんな、お疲れ様。

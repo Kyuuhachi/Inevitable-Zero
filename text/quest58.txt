@@ -413,7 +413,7 @@
 
 ## System:
 {color 2}クエスト【究極のパン対決！】{color 0}を開始した！
-	Quest {color 2}[Ultimate Bread Showdown!]{color 0} started!
+	{color 0}Quest {color 2}[Ultimate Bread Showdown!]{color 0} started!
 
 ## E:
 それじゃ、材料集めを
@@ -661,7 +661,7 @@
 	So thanks for that, too.
 
 {color 2}クエスト【究極のパン対決！】{color 0}を達成した！
-	Quest {color 2}[Ultimate Bread Showdown!]{color 0} completed!
+	{color 0}Quest {color 2}[Ultimate Bread Showdown!]{color 0} completed!
 
 ## else (insufficient ingredients) {{{4
 ## M:

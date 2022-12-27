@@ -372,7 +372,7 @@
 
 ## System:
 {color 2}クエスト【寝坊医者の捜索願い】{color 0}を開始した！
-	Quest {color 2}[Search for the Oversleeping Doctor]{color 0} started!
+	{color 0}Quest {color 2}[Search for the Oversleeping Doctor]{color 0} started!
 
 ## else {{{3
 ## L:
@@ -2195,7 +2195,7 @@
 
 ## System:
 {color 2}クエスト【寝坊医者の捜索願い】{color 0}を達成した！
-	Quest {color 2}[Search for the Oversleeping Doctor]{color 0} completed!
+	{color 0}Quest {color 2}[Search for the Oversleeping Doctor]{color 0} completed!
 
 ## M:
 世話になったね。

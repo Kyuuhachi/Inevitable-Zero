@@ -266,7 +266,7 @@
 	Well, let's give it a shot.
 
 {color 2}クエスト【店員の接客指導】{color 0}を開始した！
-	Quest {color 2}[Clerk's Customer Service Guidance]{color 0} started!
+	{color 0}Quest {color 2}[Clerk's Customer Service Guidance]{color 0} started!
 
 ## [3] Talking to Luka {{{2
 ……いらっしゃい。
@@ -702,7 +702,7 @@
 	Ahahaha...
 
 {color 2}クエスト【店員の接客指導】{color 0}を達成した！
-	Quest {color 2}[Clerk's Customer Service Guidance]{color 0} completed!
+	{color 0}Quest {color 2}[Clerk's Customer Service Guidance]{color 0} completed!
 
 ## [10] Talking to Noma again {{{2
 ## N:

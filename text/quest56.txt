@@ -102,7 +102,7 @@
 　知らなかったようだ。　　　　　　　　
 　知って安心するのは、　　　　　　　　
 　何か違うような気がするけど……　　　
-	★Chiron didn't know she had
+	★Cirone didn't know she had
 	　disappeared. She seemed relieved
 	　to know, strangely enough.
 
@@ -628,7 +628,7 @@
 知らないけどね。
 	But I don't know what sort of problem.
 
-## [8] Talking to Chiron {{{2
+## [8] Talking to Cirone {{{2
 ## First time {{{3
 ## Ch:
 あ、ロイドさん、大変です！
@@ -690,7 +690,7 @@
 ## R:
 シロンちゃんて
 もしかして……天然？
-	Chiron, are you... an airhead?
+	Cirone, are you... an airhead?
 
 ## Again {{{3
 朝から、みんなが
@@ -1762,7 +1762,7 @@
 	Dr. Gailey must be really
 	chewing her out today.
 
-## [28] Talking to Chiron, post-quest {{{2
+## [28] Talking to Cirone, post-quest {{{2
 とにかく、主任が見つかって
 よかったです～。
 	I'm glad the Chief was
@@ -1779,7 +1779,7 @@
 シロンよりも上かも
 しれないわね……
 	The Chief may be even more of a klutz
-	than Chiron...
+	than Cirone...
 
 ## [30] Talking to Cecile, post-quest {{{2
 ## C:

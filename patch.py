@@ -49,8 +49,8 @@ class Context: # {{{1
 
 		with path.open("rb") as f:
 			sc = kouzou.read(scena.scenaStruct, f, params)
-			if self.en and not vita and self.portraits is not None:
-				path2 = (self.portraits/"scena_us"/name).with_suffix(".bin")
+			if not vita and self.portraits is not None:
+				path2 = (self.portraits/("scena_us" if self.en else "scena")/name).with_suffix(".bin")
 				if path2.exists():
 					with path2.open("rb") as f:
 						from copy import deepcopy
@@ -812,7 +812,7 @@ def __main__(vitapath, pcpath, portraitpath, outpath, minigame, misc, dumpdir):
 	(outpath/"scena_us").mkdir()
 	(outpath/"text_us").mkdir()
 
-	for en in [True, False] if portraitpath is None else [True]:
+	for en in [True, False]:
 		ctx = Context(vitapath, pcpath, outpath, en, portraits=portraitpath)
 
 		if minigame:

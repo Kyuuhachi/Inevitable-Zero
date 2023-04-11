@@ -49,16 +49,14 @@ or it can be found by right-clicking the game in Steam and choosing Manage » Br
 
 ### Inevitable Portraits
 
-ShinKiseki's [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) modifies some of the same files as Inevitable Zero, and is thus not directly compatible. Instead there is a separate version of the mod, which should be installed after after More Portraits. The base Inevitable Zero is not required.[^no-jp]
-
-[^no-jp]: Since More Portraits does not support the Japanese version of the game, Inevitable Portraits does not either. You can install all three of More Portraits, Inevitable Zero, and Inevitable Portraits if you want that.
+ShinKiseki's [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) modifies some of the same files as Inevitable Zero, and is thus not directly compatible. Instead there is a separate version of the mod, which should be installed after after More Portraits. The base Inevitable Zero is not required.
 
 ## Compatibility
 
-Inevitable Zero was built against Steam version 1.4.4 (released 2022-12-27). The script files are the same between all 1.4.\* versions, so there should be no problems if they don't match exactly.
+Inevitable Zero was built against Steam version 1.4.6 (released 2023-03-28). The script files are the same between all 1.4.\* versions, so there should be no problems if they don't match exactly.
 It also works on the Nintendo Switch version, though this of course requires jailbreaking.
 
-Inevitable Portraits was built against [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) version 1.1.0, which was also built against 1.4.4.
+Inevitable Portraits was built against [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) version 1.2.0, which was also built against 1.4.6.
 
 ## Credits
 Nihon Falcom: for creating the game.

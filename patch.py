@@ -143,10 +143,12 @@ def patch_timing(ctx): # {{{1 Main infrastructure: starting and failing the ques
 
 	# 56, 58
 	with ctx.get("c0400") as (vita, pc):
-		copy_clause(vita, pc, 49, pc.code[49].index(Insn('EXPR_VAR', 3, [Insn('CONST', 0), Insn('SET'), Insn('END')]))+9)
-		copy_clause(vita, pc, 49, pc.code[49].index(Insn('EXPR_VAR', 3, [Insn('CONST', 0), Insn('SET'), Insn('END')]))+10)
-		copy_clause(vita, pc, 49, pc.code[49].index(Insn('ITEM_REMOVE', 805, 1))+8)
-		copy_clause(vita, pc, 49, pc.code[49].index(Insn('ITEM_REMOVE', 805, 1))+9)
+		pc_index   =   pc.code[49].index(Insn('EXPR_VAR', 3, [Insn('CONST', 0), Insn('SET'), Insn('END')]))
+		vita_index = vita.code[49].index(Insn('EXPR_VAR', 3, [Insn('CONST', 0), Insn('SET'), Insn('END')]))
+		pc.code[49][pc_index+9:pc_index+9] = vita.code[49][vita_index+9:vita_index+11]
+		pc_index   =   pc.code[49].index(Insn('ITEM_REMOVE', 805, 1))
+		vita_index = vita.code[49].index(Insn('ITEM_REMOVE', 805, 1))
+		pc.code[49][pc_index+8:pc_index+8] = vita.code[49][vita_index+8:vita_index+10]
 
 	# 55
 	with ctx.get("t105b") as (vita, pc):

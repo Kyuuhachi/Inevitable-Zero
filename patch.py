@@ -808,7 +808,7 @@ def __main__(vitapath, pcpath, portraitpath, outpath, minigame, misc, dumpdir):
 	if outpath.exists():
 		shutil.rmtree(outpath)
 
-	outpath.mkdir()
+	outpath.mkdir(parents=True)
 	(outpath/"scena").mkdir()
 	(outpath/"text").mkdir()
 	(outpath/"scena_us").mkdir()

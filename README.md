@@ -41,7 +41,7 @@ When discussing the D∴G Cult, Sergei writes down how it is spelled.
 
 ## Installation
 
-Download the `inevitable.tar.gz` file from the latest [release](https://github.com/Kyuuhachi/Inevitable-Zero/releases)
+Download the `inevitable.zip` file from the latest [release](https://github.com/Kyuuhachi/Inevitable-Zero/releases)
 and extract `data/` directory into the game's directory (you can open it like a .zip file).
 This is normally at
 `C:\Program Files (x86)\Steam\steamapps\common\The Legend of Heroes Trails from Zero`,
@@ -51,12 +51,29 @@ or it can be found by right-clicking the game in Steam and choosing Manage » Br
 
 ShinKiseki's [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) modifies some of the same files as Inevitable Zero, and is thus not directly compatible. Instead there is a separate version of the mod, which should be installed after after More Portraits. The base Inevitable Zero is not required.
 
+
 ## Compatibility
 
-Inevitable Zero was built against Steam version 1.4.6 (released 2023-03-28). The script files are the same between all 1.4.\* versions, so there should be no problems if they don't match exactly.
+Inevitable Zero was built against Steam version 1.4.12. The differences between different versions are minor, so there will be no issues if using the mod on a different version.
 It also works on the Nintendo Switch version, though this of course requires jailbreaking.
 
-Inevitable Portraits was built against [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) version 1.2.0, which was also built against 1.4.6.
+Inevitable Portraits was built against [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) version 1.3.0, which was also built against 1.4.12.
+
+## FAQ
+
+**Can I install this mid-playthrough?** Yes. But I can't guarantee stability if
+you are in an area with added NPCs, so I would recommend saving on one of the
+highways.
+
+**Do these support English/Japanese?** Yes, both languages are fully supported.
+
+**Are they voiced?** No. They're not voiced in Evolution, so there are no voice
+clips for them.
+
+**Do you receive any DP?/Does this affect achievements?** Yes, it does make
+detective ranks easier to attain since there are more DP in total. I believe
+adjusting the rank thresholds would require modding the exe, which is beyond
+the scope of this mod.
 
 ## Credits
 Nihon Falcom: for creating the game.

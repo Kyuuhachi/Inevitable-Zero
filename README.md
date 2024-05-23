@@ -57,7 +57,7 @@ ShinKiseki's [More Portraits in Zero](https://github.com/shinkiseki/MorePortrait
 Inevitable Zero was built against Steam version 1.4.12. The differences between different versions are minor, so there will be no issues if using the mod on a different version.
 It also works on the Nintendo Switch version, though this of course requires jailbreaking.
 
-Inevitable Portraits was built against [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) version 1.3.0, which was also built against 1.4.12.
+Inevitable Portraits was built against [More Portraits in Zero](https://github.com/shinkiseki/MorePortraitsInZero) version 1.4.0, which was also built against 1.4.12.
 
 ## FAQ
 

@@ -10,7 +10,7 @@ import scena
 import quest
 import insn
 import dump
-from insn import Insn
+from insn import Insn, Char
 import translate
 
 class Context: # {{{1
@@ -346,6 +346,9 @@ def quest56(ctx): # {{{1 Search for the Oversleeping Doctor
 		copy_clause(vita, pc, 6, "@IF", 0, 1) # Martha
 		copy_clause(vita, pc, 7, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0) # Meifa
 		copy_clause(vita, pc, 8, "@IF", [Insn('FLAG', 1040), Insn('END')], "@IF", 0, 0) # Cecile
+
+		# Fix bug when playing as Tio
+		pc.code[51].insert(-2, Insn("CHAR_SET_POS", Char(0), (101750, 0, -1250), 0))
 
 	# Hospital roof
 	with ctx.get("t1600") as (vita, pc):
